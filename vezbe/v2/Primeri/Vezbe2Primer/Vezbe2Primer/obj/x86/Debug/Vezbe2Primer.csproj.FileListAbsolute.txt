@@ -1,0 +1,52 @@
+H:\ftn\nastava\HCI-EO\2015\vezbe\v2\Primeri\Vezbe2Primer\Vezbe2Primer\bin\Debug\Vezbe2Primer.exe
+H:\ftn\nastava\HCI-EO\2015\vezbe\v2\Primeri\Vezbe2Primer\Vezbe2Primer\bin\Debug\Vezbe2Primer.pdb
+H:\ftn\nastava\HCI-EO\2015\vezbe\v2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.frmPrimer2.resources
+H:\ftn\nastava\HCI-EO\2015\vezbe\v2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.Properties.Resources.resources
+H:\ftn\nastava\HCI-EO\2015\vezbe\v2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csproj.GenerateResource.Cache
+H:\ftn\nastava\HCI-EO\2015\vezbe\v2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.exe
+H:\ftn\nastava\HCI-EO\2015\vezbe\v2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.pdb
+C:\Users\Olja\Desktop\HCI-SIIT-2016-V2 (1)\Primeri\Vezbe2Primer\Vezbe2Primer\bin\Debug\Vezbe2Primer.exe
+C:\Users\Olja\Desktop\HCI-SIIT-2016-V2 (1)\Primeri\Vezbe2Primer\Vezbe2Primer\bin\Debug\Vezbe2Primer.pdb
+C:\Users\Olja\Desktop\HCI-SIIT-2016-V2 (1)\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csprojAssemblyReference.cache
+C:\Users\Olja\Desktop\HCI-SIIT-2016-V2 (1)\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.frmPrimer2.resources
+C:\Users\Olja\Desktop\HCI-SIIT-2016-V2 (1)\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.Properties.Resources.resources
+C:\Users\Olja\Desktop\HCI-SIIT-2016-V2 (1)\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csproj.GenerateResource.cache
+C:\Users\Olja\Desktop\HCI-SIIT-2016-V2 (1)\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csproj.CoreCompileInputs.cache
+C:\Users\Olja\Desktop\HCI-SIIT-2016-V2 (1)\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.exe
+C:\Users\Olja\Desktop\HCI-SIIT-2016-V2 (1)\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.pdb
+C:\Users\Olja\Desktop\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\bin\Debug\Vezbe2Primer.exe
+C:\Users\Olja\Desktop\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\bin\Debug\Vezbe2Primer.pdb
+C:\Users\Olja\Desktop\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csprojAssemblyReference.cache
+C:\Users\Olja\Desktop\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.frmPrimer2.resources
+C:\Users\Olja\Desktop\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.Properties.Resources.resources
+C:\Users\Olja\Desktop\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csproj.GenerateResource.cache
+C:\Users\Olja\Desktop\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csproj.CoreCompileInputs.cache
+C:\Users\Olja\Desktop\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.exe
+C:\Users\Olja\Desktop\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.pdb
+C:\Users\Olja\Desktop\HCI 2019\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\bin\Debug\Vezbe2Primer.exe
+C:\Users\Olja\Desktop\HCI 2019\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\bin\Debug\Vezbe2Primer.pdb
+C:\Users\Olja\Desktop\HCI 2019\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csprojAssemblyReference.cache
+C:\Users\Olja\Desktop\HCI 2019\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.frmPrimer2.resources
+C:\Users\Olja\Desktop\HCI 2019\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.Properties.Resources.resources
+C:\Users\Olja\Desktop\HCI 2019\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csproj.GenerateResource.cache
+C:\Users\Olja\Desktop\HCI 2019\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csproj.CoreCompileInputs.cache
+C:\Users\Olja\Desktop\HCI 2019\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.exe
+C:\Users\Olja\Desktop\HCI 2019\HCI 2019\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.pdb
+C:\Users\Olja\Desktop\HCI 2020\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csprojAssemblyReference.cache
+C:\Users\Olja\Desktop\HCI 2020\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.frmPrimer2.resources
+C:\Users\Olja\Desktop\HCI 2020\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.Properties.Resources.resources
+C:\Users\Olja\Desktop\HCI 2020\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csproj.GenerateResource.cache
+C:\Users\Olja\Desktop\HCI 2020\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csproj.CoreCompileInputs.cache
+C:\Users\Olja\Desktop\HCI 2020\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.exe
+C:\Users\Olja\Desktop\HCI 2020\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.pdb
+C:\Users\Olja\Desktop\HCI 2020\V2\Primeri\Vezbe2Primer\Vezbe2Primer\bin\Debug\Vezbe2Primer.exe
+C:\Users\Olja\Desktop\HCI 2020\V2\Primeri\Vezbe2Primer\Vezbe2Primer\bin\Debug\Vezbe2Primer.pdb
+C:\Users\Olja\Desktop\HCI 2020\V2 - materijali\V2\Primeri\Vezbe2Primer\Vezbe2Primer\bin\Debug\Vezbe2Primer.exe
+C:\Users\Olja\Desktop\HCI 2020\V2 - materijali\V2\Primeri\Vezbe2Primer\Vezbe2Primer\bin\Debug\Vezbe2Primer.pdb
+C:\Users\Olja\Desktop\HCI 2020\V2 - materijali\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csprojAssemblyReference.cache
+C:\Users\Olja\Desktop\HCI 2020\V2 - materijali\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.frmPrimer2.resources
+C:\Users\Olja\Desktop\HCI 2020\V2 - materijali\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.Properties.Resources.resources
+C:\Users\Olja\Desktop\HCI 2020\V2 - materijali\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csproj.GenerateResource.cache
+C:\Users\Olja\Desktop\HCI 2020\V2 - materijali\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.csproj.CoreCompileInputs.cache
+C:\Users\Olja\Desktop\HCI 2020\V2 - materijali\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.exe
+C:\Users\Olja\Desktop\HCI 2020\V2 - materijali\V2\Primeri\Vezbe2Primer\Vezbe2Primer\obj\x86\Debug\Vezbe2Primer.pdb
