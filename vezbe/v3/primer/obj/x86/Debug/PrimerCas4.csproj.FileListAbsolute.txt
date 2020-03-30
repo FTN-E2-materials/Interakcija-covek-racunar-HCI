@@ -1,0 +1,58 @@
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\bin\Debug\PrimerCas4.exe
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\bin\Debug\PrimerCas4.pdb
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\2DG\Prikaz.baml
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Layouts\ComplexLayoutExample.baml
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Layouts\DockPanelExample.baml
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Layouts\GridExample.baml
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Layouts\StackPanelExample.baml
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Layouts\WrapPanelExample.baml
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\MainWindow.baml
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Table\TableExample.baml
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\2DG\Prikaz.g.cs
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Binding\SimpleBinding.g.cs
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Layouts\ComplexLayoutExample.g.cs
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Layouts\DockPanelExample.g.cs
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Layouts\GridExample.g.cs
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Layouts\StackPanelExample.g.cs
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Layouts\WrapPanelExample.g.cs
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\MainWindow.g.cs
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Table\TableExample.g.cs
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Validation\ValidationExample.g.cs
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\App.g.cs
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\PrimerCas4_MarkupCompile.cache
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\PrimerCas4_MarkupCompile.lref
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Binding\SimpleBinding.baml
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\Validation\ValidationExample.baml
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\PrimerCas4.g.resources
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\PrimerCas4.Properties.Resources.resources
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\PrimerCas4.csproj.GenerateResource.Cache
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\PrimerCas4.exe
+H:\ftn\nastava\HCI-LOZ\blok2\PrimerCas4\obj\x86\Debug\PrimerCas4.pdb
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\bin\Debug\PrimerCas4.exe
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\bin\Debug\PrimerCas4.pdb
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\PrimerCas4.csprojAssemblyReference.cache
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\Layouts\ComplexLayoutExample.baml
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\Layouts\DockPanelExample.baml
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\Layouts\GridExample.baml
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\Layouts\StackPanelExample.baml
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\Layouts\WrapPanelExample.baml
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\MainWindow.baml
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\Binding\SimpleBinding.g.cs
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\Layouts\ComplexLayoutExample.g.cs
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\Layouts\DockPanelExample.g.cs
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\Layouts\GridExample.g.cs
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\Layouts\StackPanelExample.g.cs
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\Layouts\WrapPanelExample.g.cs
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\App.g.cs
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\PrimerCas4_MarkupCompile.cache
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\PrimerCas4_MarkupCompile.lref
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\Binding\SimpleBinding.baml
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\PrimerCas4.g.resources
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\PrimerCas4.Properties.Resources.resources
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\PrimerCas4.csproj.GenerateResource.cache
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\PrimerCas4.csproj.CoreCompileInputs.cache
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\PrimerCas4.exe
+C:\Users\Olja\Desktop\HCI 2020\V3 - materijali\HCI-2018-PrimerA\Primer A\PrimerCas4\obj\x86\Debug\PrimerCas4.pdb

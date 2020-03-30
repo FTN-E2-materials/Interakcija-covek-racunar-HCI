@@ -1,0 +1,42 @@
+﻿<Window x:Class="PrimerCas4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Primeri upotrebe WPF" Height="350" Width="525">
+    <DockPanel>
+        <Menu DockPanel.Dock ="Top">
+            <Menu.ItemsPanel>
+                <!--Podkontrola koja određuje kako se item-i prikazuju.-->
+                <ItemsPanelTemplate>
+                    <!-- Specificiramo ne šta je u kontroli nego template koji je formira-->
+                    <DockPanel HorizontalAlignment="Stretch"></DockPanel>
+                    <!-- Prikazujemo preko Dock Panela koji preuzme sav prostor -->
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Header="_Izgled">
+                <MenuItem Header="Stack Panel" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Grid" Click="MenuItem_Click_1"></MenuItem>
+                <MenuItem Header="Dock Panel" Click="MenuItem_Click_2"></MenuItem>
+                <MenuItem Header="Wrap Panel" Click="MenuItem_Click_3"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Kompleksni Layout" Click="MenuItem_Click_4"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Binding">
+                <MenuItem Header="Prost primer" Click="MenuItem_Click_5"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Meni Primeri" HorizontalAlignment="Right"> <!-- Poravnano udesno -->
+                <MenuItem>
+                    <MenuItem.Header>
+                        <DockPanel HorizontalAlignment="Stretch">
+                            <TextBlock>Tekst: </TextBlock>
+                            <TextBlock Width="10"/>
+                            <TextBox>Unos teksta</TextBox>
+                        </DockPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid DockPanel.Dock="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+        </Grid>
+    </DockPanel>
+</Window>

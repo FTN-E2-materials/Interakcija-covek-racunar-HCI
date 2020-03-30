@@ -1,0 +1,51 @@
+﻿<Window x:Class="PrimerCas4.Layouts.WrapPanelExample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WrapPanelExample" Height="300" Width="300">
+    <WrapPanel Orientation="Horizontal">
+        <Button>Test button 1</Button>
+        <Button>Test button 2</Button>
+        <Button>Test button 3</Button>
+        <Button Height="40">Test button 4</Button>
+        <Button>Test button 5</Button>
+        <Button>Test button 6</Button>
+        <Button>Test button 7</Button>
+        <Button>Test button 8</Button>
+        <Button>Test button 9</Button>
+        <Button Height="40">Test button 10</Button>
+        <Button>Test button 11</Button>
+        <Button>Test button 12</Button>
+        <Button>Test button 13</Button>
+        <Button>Test button 14</Button>
+        <Button>Test button 15</Button>
+        <Button>Test button 16</Button>
+        <Button>Test button 17</Button>
+        <Button>Test button 18</Button>
+        <Button>Test button 19</Button>
+        <Button>Test button 20</Button>
+        <Button>Test button 21</Button>
+        <Button>Test button 22</Button>
+        <Button>Test button 23</Button>
+        <Button>Test button 24</Button>
+        <Button>Test button 25</Button>
+        <Button>Test button 26</Button>
+        <Button>Test button 27</Button>
+        <Button>Test button 28</Button>
+        <Button>Test button 29</Button>
+        <Button>Test button 30</Button>
+        <Button>Test button 31</Button>
+        <Button>Test button 32</Button>
+        <Button>Test button 33</Button>
+        <Button>Test button 34</Button>
+        <Button>Test button 35</Button>
+        <Button>Test button 36</Button>
+        <Button>Test button 37</Button>
+        <Button>Test button 38</Button>
+        <Button>Test button 39</Button>
+        <Button>Test button 40</Button>
+        <Button>Test button 41</Button>
+        <Button>Test button 42</Button>
+        <Button>Test button 43</Button>
+        <Button>Test button 44</Button>
+    </WrapPanel>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="PrimerCas4.Layouts.StackPanelExample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StackPanelExample" Height="300" Width="300">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <Button>JEDAN</Button>
+            <Button>DVA</Button>
+            <Button Margin="5" Padding="5">TRI</Button>
+        </StackPanel>
+        <Button>ČETIRI</Button>
+        <Button>PET</Button>
+        <Button>ŠEST</Button>
+        <!--Ovo jednostavno slaže kontrole sa leva na desno ili odozgo na dole. Ne može da uradi mnogo više, i ne treba da se koristi za kompleksnije stvari.-->
+    </StackPanel>
+</Window>
