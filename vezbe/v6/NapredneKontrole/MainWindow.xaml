@@ -1,0 +1,33 @@
+﻿<Window x:Class="NapredneKontrole.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cmd="clr-namespace:NapredneKontrole.Komande"
+        Title="Komande, stilovi i okidači" Height="350" Width="525">
+    <Window.CommandBindings>
+        <CommandBinding Command="cmd:RoutedCommands.HelloWorld" CanExecute="HelloWorld_CanExecute" Executed="HelloWorld_Executed"></CommandBinding>
+        <CommandBinding Command="cmd:RoutedCommands.Enable" CanExecute="Enable_CanExecute" Executed="Enable_Executed"></CommandBinding>
+        <CommandBinding Command="cmd:RoutedCommands.Komanda" CanExecute="Komanda_CanExecute" Executed="Komanda_Executed"></CommandBinding>
+        <CommandBinding Command="cmd:RoutedCommands.Ugradjene" CanExecute="Ugradjene_CanExecute" Executed="Ugradjene_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock ="Top">
+            <MenuItem Header="Komande">
+                <MenuItem Header="_Hello World" Command="cmd:RoutedCommands.HelloWorld"></MenuItem>
+                <MenuItem Header="_Enable" IsCheckable="True" Command="cmd:RoutedCommands.Enable" IsChecked="{Binding Path=MenuEnabled}"></MenuItem>
+                <MenuItem Header="_Komanda" Command="cmd:RoutedCommands.Komanda"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="_Custom komande" Command="cmd:CustomCommands.testKomanda"></MenuItem>
+                <MenuItem Header="_Ugradjene komande" Command="cmd:RoutedCommands.Ugradjene"></MenuItem>
+            </MenuItem>            
+            <MenuItem Header="_Stil">
+                <MenuItem Header="_Stilovi i triggeri" Click="MenuItem_Click_3"></MenuItem>
+            </MenuItem>            
+        </Menu>
+        <Grid DockPanel.Dock="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="165*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </DockPanel>
+</Window>

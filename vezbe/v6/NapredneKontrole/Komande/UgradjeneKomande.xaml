@@ -1,0 +1,20 @@
+﻿<Window x:Class="NapredneKontrole.Komande.UgradjeneKomande"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="UgradjeneKomande" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Grid.Row="0" Command="ApplicationCommands.Cut" CommandTarget="{Binding ElementName=txtMain}">Cut</Button>
+        <Button Grid.Column="1" Grid.Row="0" Command="ApplicationCommands.Copy" CommandTarget="{Binding ElementName=txtMain}">Copy</Button>
+        <Button Grid.Column="2" Grid.Row="0" Command="ApplicationCommands.Paste" CommandTarget="{Binding ElementName=txtMain}">Paste</Button>
+        <TextBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Name="txtMain" AcceptsReturn="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></TextBox>
+    </Grid>
+</Window>
