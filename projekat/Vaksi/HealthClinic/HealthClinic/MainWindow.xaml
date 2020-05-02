@@ -6,34 +6,67 @@
         xmlns:local="clr-namespace:HealthClinic"
         mc:Ignorable="d"
         
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        TextElement.FontWeight="Regular"
-        TextElement.FontSize="13"
-        TextOptions.TextFormattingMode="Ideal"
-        TextOptions.TextRenderingMode="Auto"
-        Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}"
-        
-        Title="Home page" Height="450" Width="800">
-    <DockPanel>
-        <Menu DockPanel.Dock="Top" Height="41">
-            <Menu.ItemsPanel>
-                <ItemsPanelTemplate>
-
-                    <DockPanel HorizontalAlignment="Stretch"></DockPanel>
-                </ItemsPanelTemplate>
-            </Menu.ItemsPanel>
-
-            <MenuItem Header="_Home">
-
-            </MenuItem>
-            <MenuItem Header="_Login">
-
-            </MenuItem>
-        </Menu>
-        <Grid DockPanel.Dock="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Height="600" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <StackPanel Background="WhiteSmoke">
+        <!-- Gornji deo iznad menija-->
+        <Grid Height="40">
+            
+            <!-- Biranje jezika aplikacije -->
+            <StackPanel HorizontalAlignment="Left" Margin="20 0">
+                <ComboBox FontSize="15" Width="50" Foreground="#FFA2A2A2" SelectedIndex="0" VerticalAlignment="Center">
+                    <ComboBoxItem Content="EN"/>
+                </ComboBox>
+            </StackPanel>
+            <!-- Kraj birnje jezika aplikacije. -->
+            
+            <!-- Meni deo iznad glavnog menija koji omogucue odredjene funkcionalnosti za sve korisnike aplikacije. -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20 0">
+                <Button Content="FAQ" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
+                <Button Content="CONTACT" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
+                <Button Content="ABOUT US" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
+                <Button Content="MY ACCOUNT" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
+                
+                <!-- Dugme za gasenje aplikacije. -->
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                    <materialDesign:PackIcon Kind="Power" Foreground="#FFA2A2A2" Width="25" Height="25" /> <!-- Dugme za gasenje iz materijal design-era-->
+                </Button>
+            </StackPanel>
+            <!-- Kraj meni dela iznad menija -->
 
         </Grid>
+        <!-- Kraj gornjeg dela iznad menija-->
+        
+        
+        
+        <!-- Meni deo. -->
+        <Grid Height="100">
+            <!-- Deo sa dugmicima koji oznacavaju stavke menija -->
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10 0">
+                <Button Uid="0" Width="150" Content="HOME" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="promenaTaba"/>
+                <Button Uid="1" Width="150" Content="BLOG" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="promenaTaba"/>
+                <Button Uid="2" Width="150" Content="ABOUT US" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="promenaTaba"/>
+                <Button Uid="3" Width="150" Content="EMPLOYEES" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="promenaTaba"/>
+                <Button Uid="4" Width="150" Content="ROOMS" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="promenaTaba"/>
+                <Button Uid="5" Width="150" Content="MEDICINE" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="promenaTaba"/>
+                <Button Uid="6" Width="150" Content="MY ACCOUNT" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="promenaTaba"/>
+            </StackPanel>
+            <!-- Kraj dela sa dugmicima menija -->
 
-    </DockPanel>
+            <!-- Ikonica koja glumi selektor koji se krece u zavisnosti koji smo tab u meniju izabrali-->
+            <Grid x:Name="GridCursor" Width="150" Height="5" Background="#FF2196F3" HorizontalAlignment="Left" Margin="10 0"/>
+        
+        </Grid>
+        <!-- Kraj meni dela.-->
+        
+        
+        <!-- Telo nase aplikacije -->
+        <Grid x:Name="GridMain" Height="460" Background="Aquamarine">
+            
+        </Grid>
+        <!-- Kraj tela aplikacije.-->
+        
+    </StackPanel>
+        
+    
 </Window>
