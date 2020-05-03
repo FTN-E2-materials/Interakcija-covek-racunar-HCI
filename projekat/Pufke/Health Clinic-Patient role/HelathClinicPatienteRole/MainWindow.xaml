@@ -1,0 +1,34 @@
+﻿<Window x:Class="HelathClinicPatienteRole.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelathClinicPatienteRole"
+        mc:Ignorable="d"
+        Title="Zdravo Klinika" Height="600" Width="1200">
+    <DockPanel>
+        <Menu DockPanel.Dock ="Top">
+            <Menu.ItemsPanel>
+                <!--Podkontrola koja određuje kako se item-i prikazuju.-->
+                <ItemsPanelTemplate>
+                    <!-- Specificiramo ne šta je u kontroli nego template koji je formira-->
+                    <DockPanel HorizontalAlignment="Stretch"></DockPanel>
+                    <!-- Prikazujemo preko Dock Panela koji preuzme sav prostor -->
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Header="_Početna" FontSize="18" Foreground="White"  Background="#FF148DF0" BorderBrush="#FF1489E9"/>
+            <MenuItem Header="_Blog" FontSize="18" Foreground="White" Background="#FF148DF0" BorderBrush="#FF1489E9"/>
+            <MenuItem Header="_O Klinici" FontSize="18"  Foreground="White" Background="#FF148DF0" BorderBrush="#FF1489E9"/>
+            <MenuItem Header="_Kontakt" FontSize="18" Foreground="White" Background="#FF148DF0" BorderBrush="#FF1489E9"/>
+            <MenuItem Header="_Recenzija" FontSize="18" Foreground="White" Background="#FF148DF0" BorderBrush="#FF1489E9">
+                
+            </MenuItem>
+            
+        </Menu>
+        
+        <Grid DockPanel.Dock="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></Grid>
+        <Label Content="Zdravo klinika" Height="543" VerticalAlignment="Top" FontSize="40"/>
+
+    </DockPanel>
+    
+</Window>
