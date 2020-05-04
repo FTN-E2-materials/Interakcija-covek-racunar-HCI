@@ -28,9 +28,7 @@
                 <Button Content="MY ACCOUNT" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
                 
                 <!-- Dugme za gasenje aplikacije. -->
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
-                    <materialDesign:PackIcon Kind="Power" Foreground="#FFA2A2A2" Width="25" Height="25" /> <!-- Dugme za gasenje iz materijal design-era-->
-                </Button>
+                
             </StackPanel>
             <!-- Kraj meni dela iznad menija -->
 
@@ -40,10 +38,13 @@
         
         
         <!-- Meni deo. -->
-        <Grid Height="100">
+        <Grid Height="150">
             <!-- Deo sa dugmicima koji oznacavaju stavke menija -->
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10 0">
-                <Button Uid="0" Width="150" Content="HOME" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="promenaTaba"/>
+                <StackPanel Width="150" Height="70">
+                    <Button Uid="0" Width="150" Content="LEKOVI" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="promenaTaba"/>
+                    <materialDesign:PackIcon Kind="Pill" Foreground="#FFA2A2A2" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
                 <Button Uid="1" Width="150" Content="BLOG" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="promenaTaba"/>
                 <Button Uid="2" Width="150" Content="ABOUT US" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="promenaTaba"/>
                 <Button Uid="3" Width="150" Content="EMPLOYEES" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="promenaTaba"/>
