@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HealthClinic.ViewModels
 {
-    public class ZaposleniVModel
+    public class HomeViewModel
     {
     }
 }

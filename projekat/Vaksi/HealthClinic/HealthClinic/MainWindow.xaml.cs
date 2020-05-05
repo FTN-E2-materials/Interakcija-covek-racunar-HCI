@@ -24,22 +24,12 @@ namespace HealthClinic
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new UcitavanjeViewModel();
-        }
-        /*
-         * <Button Grid.Column="0" Content="Pocetna" Click="PocetnaTab_Click"/>
-                <Button Grid.Column="1" Content="Blog" Click="BlogTab_Click" />
-                <Button Grid.Column="2" Content="O klinici" Click="AboutTab_Click" />
-                <Button Grid.Column="3" Content="Recenzije" Click="RecenzijeTab_Click" />
-                <Button Grid.Column="4" Content="Zaposleni" Click="ZaposleniTab_Click" />
-                <Button Grid.Column="5" Content="Prostorije" Click="ProstorijeTab_Click" />
-                <Button Grid.Column="6" Content="Lekovi" Click="LekoviTab_Click" />
-                <Button Grid.Column="7" Content="Profil" Click="ProfilTab_Click" />
-         */
+            DataContext = new UcitavanjeViewModel();                    // na pocetku dajem jedan view koji ce samo da bude pri ucitavanju
+        }                                                               // TODO: Kasnije poraditi na tome da nestane nakon par sekundi
 
         private void PocetnaTab_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new HomePageVModel();
+            DataContext = new HomeViewModel();
         }
         private void BlogTab_Click(object sender, RoutedEventArgs e)
         {
@@ -57,12 +47,12 @@ namespace HealthClinic
 
         private void ZaposleniTab_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new ZaposleniVModel();
+            DataContext = new ZaposleniViewModel();
         }
 
         private void ProstorijeTab_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new ZaposleniVModel();
+            DataContext = new ProstorijeViewModel();
         }
 
         private void LekoviTab_Click(object sender, RoutedEventArgs e)

@@ -6,7 +6,12 @@
              xmlns:local="clr-namespace:HealthClinic.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="YellowGreen">
-            
+    <Grid Background="RosyBrown">
+        <TextBox HorizontalAlignment="Center"  FontSize="30" Padding="30" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Teal">
+            TAB RECENZIJA, za nastavak koriscenja izaberite
+        </TextBox>
+        <TextBlock HorizontalAlignment="Center"  FontSize="30" Padding="100" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Teal">
+            tab koji zelite koristiti.
+        </TextBlock>
     </Grid>
 </UserControl>

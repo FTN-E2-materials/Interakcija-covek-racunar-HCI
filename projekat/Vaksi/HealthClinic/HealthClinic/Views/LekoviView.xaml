@@ -7,6 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="Brown">
-            
+        <TextBox HorizontalAlignment="Center"  FontSize="30" Padding="30" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Aqua">
+            TAB LEKOVI, za nastavak koriscenja izaberite
+        </TextBox>
+        <TextBlock HorizontalAlignment="Center"  FontSize="30" Padding="100" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Aqua">
+            tab koji zelite koristiti.
+        </TextBlock>
     </Grid>
 </UserControl>

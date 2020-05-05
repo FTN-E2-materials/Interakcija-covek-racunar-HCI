@@ -8,7 +8,12 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="PaleVioletRed"  Opacity="0.9">
-        
+        <TextBox HorizontalAlignment="Center"  FontSize="30" Padding="30" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Teal">
+            TAB POCETNA, za nastavak koriscenja izaberite
+        </TextBox>
+        <TextBlock HorizontalAlignment="Center"  FontSize="30" Padding="100" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Teal">
+            tab koji zelite koristiti.
+        </TextBlock>
         
     </Grid>
 </UserControl>

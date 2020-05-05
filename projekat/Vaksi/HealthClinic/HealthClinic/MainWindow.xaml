@@ -17,7 +17,7 @@
             <views:UcitavanjeView DataContext="{Binding}"/>
         </DataTemplate>
         
-        <DataTemplate x:Name="homePageViewTemplate" DataType="{x:Type viewmodels:HomePageVModel}">
+        <DataTemplate x:Name="homePageViewTemplate" DataType="{x:Type viewmodels:HomeViewModel}">
             <views:HomeView DataContext="{Binding}"/>
         </DataTemplate>
 
@@ -33,7 +33,7 @@
             <views:RecenzijaView DataContext="{Binding}"/>
         </DataTemplate>
         
-        <DataTemplate x:Name="zaposleniViewTemplate" DataType="{x:Type viewmodels:ZaposleniVModel}">
+        <DataTemplate x:Name="zaposleniViewTemplate" DataType="{x:Type viewmodels:ZaposleniViewModel}">
             <views:ZaposleniView DataContext="{Binding}"/>
         </DataTemplate>
 
