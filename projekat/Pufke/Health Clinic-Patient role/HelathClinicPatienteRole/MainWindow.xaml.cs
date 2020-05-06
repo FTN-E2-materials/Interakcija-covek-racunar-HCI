@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelathClinicPatienteRole.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,9 +26,30 @@ namespace HelathClinicPatienteRole
             InitializeComponent();
         }
 
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        private void BlogView_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            DataContext = new BlogViewModel();
+        }
+
+        private void PocetnaItem_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new PocetnaViewModel();
+        }
+
+        private void OKliniciItem_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new OKliniciViewModel();
+        }
+
+        private void KontaktItem_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new KontaktViewModel();
+        }
+
+
+        private void RecenzijeItem_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new RecenzijeViewModel();
         }
     }
 }
