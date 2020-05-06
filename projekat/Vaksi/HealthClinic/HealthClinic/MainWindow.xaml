@@ -10,7 +10,7 @@
         mc:Ignorable="d"
         
         
-        Height="600" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" >
+        Height="600" Width="1080"  WindowStyle="None" MinHeight="600" MinWidth="569"  >
     <Window.Resources>
         <!-- Bajndovanje DateConteksta za svaki view zasebno -->
         <DataTemplate x:Name="ucitavanjeViewTemplate" DataType="{x:Type viewmodels:UcitavanjeViewModel}">
@@ -89,7 +89,7 @@
         <!-- Kraj gornjeg dela iznad menija-->
 
 
-        <Grid Height="1000">
+        <Grid Height="550">
             <!-- Pravljenje table 10x10 kako bi vrsio laksu manipulaciju elementima + RESPONSIVE-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -118,36 +118,16 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <!-- 10 -->
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <!-- 14 -->
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <!-- 18 -->
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <!-- 22 -->
             </Grid.RowDefinitions>
             <!-- Kraj definisanja table -->
 
             <!-- Meni bar aplikacije-->
-            <!-- Pozadina meni bara. -->
-            <DockPanel Background="Aquamarine" Opacity="0.3" Grid.Row="0" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="10">
-
-            </DockPanel>
-            <!-- Kraj pozadine meni bara.-->
 
             <!-- Glavni deo meni bara.-->
             <DockPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="10">
-
+    
                 <Grid>
-
+                    <!-- OMOGUCUJE RESPONSIVE DEO: Definisanje koliko narednih kolona ce primiti button-->
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -158,16 +138,16 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
+                    <!-- Kraj definisanja broja kolona za meni -->
 
-
-                    <Button Grid.Column="0" Height="40" Content="Pocetna" Click="PocetnaTab_Click"/>
-                    <Button Grid.Column="1" Height="40" Content="Blog" Click="BlogTab_Click" />
-                    <Button Grid.Column="2" Height="40" Content="O klinici" Click="AboutTab_Click" />
-                    <Button Grid.Column="3" Height="40" Content="Recenzije" Click="RecenzijeTab_Click" />
-                    <Button Grid.Column="4" Height="40" Content="Zaposleni" Click="ZaposleniTab_Click" />
-                    <Button Grid.Column="5" Height="40" Content="Prostorije" Click="ProstorijeTab_Click" />
-                    <Button Grid.Column="6" Height="40" Content="Lekovi" Click="LekoviTab_Click" />
-                    <Button Grid.Column="7" Height="40" Content="Profil" Click="ProfilTab_Click" />
+                    <Button Grid.Column="0" Height="50" Content="Pocetna" Click="PocetnaTab_Click"/>
+                    <Button Grid.Column="1" Height="50" Content="Blog" Click="BlogTab_Click" />
+                    <Button Grid.Column="2" Height="50" Content="O klinici" Click="AboutTab_Click" />
+                    <Button Grid.Column="3" Height="50" Content="Recenzije" Click="RecenzijeTab_Click" />
+                    <Button Grid.Column="4" Height="50" Content="Zaposleni" Click="ZaposleniTab_Click" />
+                    <Button Grid.Column="5" Height="50" Content="Prostorije" Click="ProstorijeTab_Click" />
+                    <Button Grid.Column="6" Height="50" Content="Lekovi" Click="LekoviTab_Click" />
+                    <Button Grid.Column="7" Height="50" Content="Profil" Click="ProfilTab_Click" />
                 </Grid>
             </DockPanel>
             <!--Kraj glavnog dela meni bara. -->

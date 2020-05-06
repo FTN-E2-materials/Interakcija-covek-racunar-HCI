@@ -33,7 +33,9 @@ namespace HealthClinic
         }
         private void BlogTab_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new BlogViewModel();
+            DataContext = new AboutViewModel();
+            //TODO: Otkomentarisati po zavrsetku blog view dela. A gornji deo zakomentarisati.
+            //DataContext = new BlogViewModel();
         }
         private void AboutTab_Click(object sender, RoutedEventArgs e)
         {
@@ -42,7 +44,9 @@ namespace HealthClinic
 
         private void RecenzijeTab_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new RecenzijaViewModel();
+            DataContext = new AboutViewModel();
+            // TODO: Otkomentarisati po zavrsetku recenzije view dela. A gornji deo zakomentarisati
+            //DataContext = new RecenzijaViewModel();
         }
 
         private void ZaposleniTab_Click(object sender, RoutedEventArgs e)
