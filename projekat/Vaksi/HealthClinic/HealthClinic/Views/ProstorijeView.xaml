@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:HealthClinic.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="AntiqueWhite" Opacity="0.94">
+    <Grid Background="#cdfbf4">
         <TextBox HorizontalAlignment="Center"  FontSize="30" Padding="30" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Teal">
             TAB PROSTORIJA, za nastavak koriscenja izaberite
         </TextBox>

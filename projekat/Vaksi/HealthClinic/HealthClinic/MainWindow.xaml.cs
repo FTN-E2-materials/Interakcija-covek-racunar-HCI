@@ -64,6 +64,19 @@ namespace HealthClinic
         {
             DataContext = new ProfilViewModel();
         }
+        
 
+        // Gasenje aplikacije na klik exit u glavnoj app.
+        private void ExitApp_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            // moze i Application.Current.Shutdown();
+        }
+
+        // Pomeranje citave aplikacije na klik od nekih komponeneti koje nemaju event lisener.
+        private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }

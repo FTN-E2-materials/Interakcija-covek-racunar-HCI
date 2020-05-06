@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:HealthClinic.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="DodgerBlue" >
+    <Grid Background="#cdfbf4">
         <TextBox HorizontalAlignment="Center"  FontSize="30" Padding="30" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Aqua">
             TAB PROFIL, za nastavak koriscenja izaberite
         </TextBox>
