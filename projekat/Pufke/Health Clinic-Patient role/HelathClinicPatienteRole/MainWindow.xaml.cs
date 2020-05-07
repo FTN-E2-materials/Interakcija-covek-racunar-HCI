@@ -32,6 +32,7 @@ namespace HelathClinicPatienteRole
             DataContext = new BlogViewModel();
         }
 
+
         private void PocetnaItem_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new PocetnaViewModel();
@@ -52,5 +53,7 @@ namespace HelathClinicPatienteRole
         {
             DataContext = new RecenzijeViewModel();
         }
+
+ 
     }
 }

@@ -15,21 +15,13 @@ using System.Windows.Shapes;
 namespace HelathClinicPatienteRole
 {
     /// <summary>
-    /// Interaction logic for LoginPacijent.xaml
+    /// Interaction logic for PatientMainWindow.xaml
     /// </summary>
-    public partial class LoginPacijent : Window
+    public partial class PatientMainWindow : Window
     {
-
-        public LoginPacijent()
+        public PatientMainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Login_Click(object sender, RoutedEventArgs e)
-        {
-            PatientMainWindow patientMainWindow = new PatientMainWindow();
-            this.Visibility = Visibility.Hidden;
-            patientMainWindow.Show();
         }
     }
 }
