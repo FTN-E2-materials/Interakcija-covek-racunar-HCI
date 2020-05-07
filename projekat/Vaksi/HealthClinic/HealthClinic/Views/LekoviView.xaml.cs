@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LiveCharts;               // biblioteka za cartove
+using LiveCharts.Wpf;           // uz dodatak na WPF
 
 namespace HealthClinic.Views
 {
@@ -23,6 +25,21 @@ namespace HealthClinic.Views
         public LekoviView()
         {
             InitializeComponent();
+            this.PieChart();
+        }
+
+        public Func<ChartPoint, string> PointLabel { get; set; }
+
+        public void PieChart()
+        {
+            PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
+            DataContext = this;
+            
+        }
+
+        private void PieChart_DataClick(object sender, ChartPoint chartPoint)
+        {
+
         }
     }
 }

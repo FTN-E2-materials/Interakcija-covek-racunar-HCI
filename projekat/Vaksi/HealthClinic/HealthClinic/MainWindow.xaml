@@ -10,7 +10,7 @@
         mc:Ignorable="d"
         
         
-        Height="600" Width="1080"  WindowStyle="None" MinHeight="600" MinWidth="569"  >
+        Height="600" Width="1080"  WindowStyle="None" MinHeight="600" MinWidth="1080"  >
     <Window.Resources>
         <!-- Bajndovanje DateConteksta za svaki view zasebno -->
         <DataTemplate x:Name="ucitavanjeViewTemplate" DataType="{x:Type viewmodels:UcitavanjeViewModel}">
