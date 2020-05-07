@@ -24,6 +24,7 @@ namespace HelathClinicPatienteRole
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new PocetnaViewModel();
         }
 
         private void BlogView_Click(object sender, RoutedEventArgs e)

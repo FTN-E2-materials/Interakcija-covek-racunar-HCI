@@ -63,6 +63,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LoginPacijent.xaml.cs">
+      <DependentUpon>LoginPacijent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\BlogViewModel.cs" />
     <Compile Include="ViewModel\KontaktViewModel.cs" />
     <Compile Include="ViewModel\OKliniciViewModel.cs" />
@@ -83,6 +86,10 @@
     <Compile Include="View\RecenzijeView.xaml.cs">
       <DependentUpon>RecenzijeView.xaml</DependentUpon>
     </Compile>
+    <Page Include="LoginPacijent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

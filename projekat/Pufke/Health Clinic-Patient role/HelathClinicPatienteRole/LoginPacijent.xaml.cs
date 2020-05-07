@@ -10,25 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HelathClinicPatienteRole.View
+namespace HelathClinicPatienteRole
 {
     /// <summary>
-    /// Interaction logic for PocetnaView.xaml
+    /// Interaction logic for LoginPacijent.xaml
     /// </summary>
-    public partial class PocetnaView : UserControl
+    public partial class LoginPacijent : Window
     {
-        public PocetnaView()
+        public LoginPacijent()
         {
             InitializeComponent();
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
-        {
-            LoginPacijent loginPacijent = new LoginPacijent();
-            loginPacijent.Show();
-        }
+
     }
 }

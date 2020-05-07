@@ -19,7 +19,7 @@
             <MenuItem Header="_Kontakt" FontSize="18" Foreground="White" Background="#FF148DF0" BorderBrush="#FF1489E9" Click="KontaktItem_Click"/>
             <MenuItem Header="_Recenzija" FontSize="18" Foreground="White" Background="#FF148DF0" BorderBrush="#FF1489E9" Click="RecenzijeItem_Click"></MenuItem>
         </Menu>
-
+   
         <Grid Height="620">
             
             <Grid.ColumnDefinitions>
