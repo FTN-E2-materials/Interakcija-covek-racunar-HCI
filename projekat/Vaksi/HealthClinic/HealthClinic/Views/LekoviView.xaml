@@ -7,32 +7,104 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" x:Class="HealthClinic.Views.LekoviView"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="1080">
+             d:DesignHeight="550" d:DesignWidth="1080">
     <Grid Background="#cdfbf4">
 
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="16*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
 
 
         <!-- Deo za tabelu[prikaz stanja lekova. -->
         <StackPanel Grid.Column="0">
+
+            <!-- Text iznad tabele-->
             <TextBlock 
                 HorizontalAlignment="Center"
                 FontFamily="Times New Roman" 
-                FontSize="18" 
+                FontSize="22" 
                 FontStyle="Italic"
-                Text="Trenutno stnje lekova"
+                Text="Trenutno stanje lekova"
                 Margin="0, 20, 0, 0"
-                Foreground="#FF003AFF">
+                Foreground="#FF2196F3">
 
 
             </TextBlock>
-        </StackPanel>
+            <!-- Kraj teksta iznad tabele -->
 
+            <!-- Shadow karta za TEBELU -->
+            <materialDesign:Card
+                Height="360"
+                Width="620"
+                HorizontalAlignment="Center"
+                materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                Margin="0, 20, 0, 0"
+                Padding="3" 
+                Background="#FFCDFBF8">
+
+                <!-- Tabela lekova -->
+                <DataGrid x:Name="dataGridLekovi"
+                          ItemsSource="{Binding Path=Lekovi}"
+                          AutoGenerateColumns="True" 
+                          SelectionMode="Single" 
+                          IsReadOnly="True" 
+                          AutoGeneratingColumn="generisiKolone" 
+                          Margin="0, 0, 0, 0" 
+                          HorizontalAlignment="Center"                 
+                          Height="340"
+                          Width="602" 
+                          Background="#FF226397"
+                          >
+
+                </DataGrid>
+                <!-- Kraj tabele lekova. -->
+
+
+            </materialDesign:Card>
+            <!-- Kraj shadow karte [ TABELE ]-->
+
+            <!-- CRUD dugmad -->
+            <StackPanel 
+                Orientation="Horizontal" 
+                Height="100" 
+                Width="400"
+                HorizontalAlignment="Right"
+                Margin="0, 0, 50, 0">
+                
+                <Button
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Width="100"
+                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    Content="Dodaj lek"
+                    Margin="60, 0, 0, 0">
+
+                </Button>
+
+                <Button
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Width="100"
+                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    Content="Izmeni lek"
+                    Margin="10">
+
+                </Button>
+
+                <Button
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Width="100"
+                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    Content="Ukloni lek"
+                    Margin="10">
+
+                </Button>
+
+            </StackPanel>
+            <!-- Kraj CRUD dugmadi. -->
+
+        </StackPanel>
         <!-- Kraj dela vezanog za tebelu. -->
 
         <StackPanel Grid.Column="1"/>
@@ -48,7 +120,7 @@
                 Width="280"
                 HorizontalAlignment="Center"
                 materialDesign:ShadowAssist.ShadowDepth="Depth1"
-                Margin="0, 20, 0, 0"
+                Margin="0, 70, 20, 0"
                 Padding="32" Background="#FFCDFBF8">
                 
                 <!-- Content u karti. -->
