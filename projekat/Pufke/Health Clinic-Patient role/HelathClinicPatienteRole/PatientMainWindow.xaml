@@ -9,11 +9,8 @@
     <Grid>
         <StackPanel Background="White">
 
-
             <DockPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="10">
-
                 <Grid>
-                    <!-- OMOGUCUJE RESPONSIVE DEO: Definisanje koliko narednih kolona ce primiti button-->
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -24,16 +21,17 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <!-- Kraj definisanja broja kolona za meni -->
-
+          
                     <Button Grid.Column="0" Height="50" Content="Pocetna" />
                     <Button Grid.Column="1" Height="50" Content="Blog" />
-                    <Button Grid.Column="2" Height="50" Content="O klinici" />
-                    <Button Grid.Column="3" Height="50" Content="Recenzije"/>
-                    <Button Grid.Column="4" Height="50" Content="Zaposleni"  />
-                    <Button Grid.Column="5" Height="50" Content="Prostorije"  />
-                    <Button Grid.Column="6" Height="50" Content="Lekovi" />
-                    <Button Grid.Column="7" Height="50" Content="Profil"/>
+                    <Button Grid.Column="2" Height="50" Content="Profil"/>
+                    <Button Grid.Column="3" Height="50" Content="Propisana terapija" />
+                    <Button Grid.Column="4" Height="50" Content="Zakaži pregled"/>
+                    <Button Grid.Column="5" Height="50" Content="Karton"  />
+                    <Button Grid.Column="6" Height="50" Content="O klinici"  />
+                    <Button Grid.Column="7" Height="50" Content="Kontakt" />
+                    <Button Grid.Column="8" Height="50" Content="Recenzija app" />
+                    <Button Grid.Column="9" Height="50" Content="Pomoć" />
                 </Grid>
             </DockPanel>
 
@@ -66,11 +64,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
-
                 </Grid.RowDefinitions>
-
-
-                <ContentControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="10" Grid.RowSpan="14" Content="{Binding}"/>
             </Grid>
         </StackPanel>
 
