@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelathClinicPatienteRole.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,50 @@ namespace HelathClinicPatienteRole
         public PatientMainWindow()
         {
             InitializeComponent();
+            DataContext = new PocetnaPatientViewModel();
         }
+
+        private void PocetnaButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new PocetnaPatientViewModel();
+        }
+        private void BlogButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new BlogPatientViewModel();
+        }
+        private void ProfilButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ProfilPatientViewModel();
+        }
+        private void PropisanaTerapijaButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new PropisanaTerapijaPatientViewModel();
+        }
+        private void ZakaziPregledButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ZakaziPregledPatientViewModel();
+        }
+        private void KartonButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new KartonPatientViewModel();
+        }
+        private void OkliniciButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new OkliniciPatientViewModel();
+        }
+        private void KontaktButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new KontaktPatientViewModel();
+        }
+        private void RecenzijaButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new RecenzijaAppPatientViewModel();
+        }
+        private void PomocButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new PomocPatientViewModel();
+        }
+
     }
 }
+

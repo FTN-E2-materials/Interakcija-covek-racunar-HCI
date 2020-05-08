@@ -69,25 +69,65 @@
     <Compile Include="PatientMainWindow.xaml.cs">
       <DependentUpon>PatientMainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\BlogPatientViewModel.cs" />
     <Compile Include="ViewModel\BlogViewModel.cs" />
+    <Compile Include="ViewModel\KartonPatientViewModel.cs" />
+    <Compile Include="ViewModel\KontaktPatientViewModel.cs" />
     <Compile Include="ViewModel\KontaktViewModel.cs" />
+    <Compile Include="ViewModel\OkliniciPatientViewModel.cs" />
     <Compile Include="ViewModel\OKliniciViewModel.cs" />
+    <Compile Include="ViewModel\PocetnaPatientViewModel.cs" />
     <Compile Include="ViewModel\PocetnaViewModel.cs" />
+    <Compile Include="ViewModel\PomocPatientViewModel.cs" />
+    <Compile Include="ViewModel\ProfilPatientViewModel.cs" />
+    <Compile Include="ViewModel\PropisanaTerapijaPatientViewModel.cs" />
+    <Compile Include="ViewModel\RecenzijaAppPatientViewModel.cs" />
     <Compile Include="ViewModel\RecenzijeViewModel.cs" />
+    <Compile Include="ViewModel\ZakaziPregledPatientViewModel.cs" />
+    <Compile Include="View\BlogPatientView.xaml.cs">
+      <DependentUpon>BlogPatientView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\BlogView.xaml.cs">
       <DependentUpon>BlogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KartonPatientView.xaml.cs">
+      <DependentUpon>KartonPatientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KontaktPatientView.xaml.cs">
+      <DependentUpon>KontaktPatientView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\KontaktView.xaml.cs">
       <DependentUpon>KontaktView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OkliniciPatientView.xaml.cs">
+      <DependentUpon>OkliniciPatientView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OKliniciView.xaml.cs">
       <DependentUpon>OKliniciView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PocetnaPatientView.xaml.cs">
+      <DependentUpon>PocetnaPatientView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PocetnaView.xaml.cs">
       <DependentUpon>PocetnaView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PomocPatientView.xaml.cs">
+      <DependentUpon>PomocPatientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfilPatientView.xaml.cs">
+      <DependentUpon>ProfilPatientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PropisanaTerapijaPatientView.xaml.cs">
+      <DependentUpon>PropisanaTerapijaPatientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecenzijaAppPatientView.xaml.cs">
+      <DependentUpon>RecenzijaAppPatientView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RecenzijeView.xaml.cs">
       <DependentUpon>RecenzijeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ZakaziPregledPatientView.xaml.cs">
+      <DependentUpon>ZakaziPregledPatientView.xaml</DependentUpon>
     </Compile>
     <Page Include="LoginPacijent.xaml">
       <SubType>Designer</SubType>
@@ -109,7 +149,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\BlogPatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\BlogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KartonPatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KontaktPatientView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -117,7 +169,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\OkliniciPatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\OKliniciView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PocetnaPatientView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,7 +185,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PomocPatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProfilPatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PropisanaTerapijaPatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecenzijaAppPatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\RecenzijeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ZakaziPregledPatientView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

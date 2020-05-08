@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelathClinicPatienteRole.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace HelathClinicPatienteRole
     public partial class LoginPacijent : Window
     {
 
+       
         public LoginPacijent()
         {
             InitializeComponent();

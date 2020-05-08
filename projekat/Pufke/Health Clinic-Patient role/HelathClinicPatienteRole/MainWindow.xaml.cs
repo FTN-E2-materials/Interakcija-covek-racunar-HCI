@@ -21,11 +21,13 @@ namespace HelathClinicPatienteRole
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
             DataContext = new PocetnaViewModel();
         }
+
 
         private void BlogView_Click(object sender, RoutedEventArgs e)
         {

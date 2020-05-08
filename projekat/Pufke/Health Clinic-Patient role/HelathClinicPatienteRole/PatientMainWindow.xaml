@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:HelathClinicPatienteRole"
+        xmlns:view="clr-namespace:HelathClinicPatienteRole.View"
+        xmlns:viewModel="clr-namespace:HelathClinicPatienteRole.ViewModel"
         mc:Ignorable="d"
-        Title="Pacijent APP" Height="450" Width="800">
+        Title="Pacijent APP"  Height="700" Width="1500">
     <Grid>
         <StackPanel Background="White">
 
@@ -20,53 +23,108 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-          
-                    <Button Grid.Column="0" Height="50" Content="Pocetna" />
-                    <Button Grid.Column="1" Height="50" Content="Blog" />
-                    <Button Grid.Column="2" Height="50" Content="Profil"/>
-                    <Button Grid.Column="3" Height="50" Content="Propisana terapija" />
-                    <Button Grid.Column="4" Height="50" Content="Zakaži pregled"/>
-                    <Button Grid.Column="5" Height="50" Content="Karton"  />
-                    <Button Grid.Column="6" Height="50" Content="O klinici"  />
-                    <Button Grid.Column="7" Height="50" Content="Kontakt" />
-                    <Button Grid.Column="8" Height="50" Content="Recenzija app" />
-                    <Button Grid.Column="9" Height="50" Content="Pomoć" />
+
+                    <Button Grid.Column="0" Height="50" Content="Početna" Click="PocetnaButton_Click"/>
+                    <Button Grid.Column="1" Height="50" Content="Blog"  Click="BlogButton_Click"/>
+                    <Button Grid.Column="2" Height="50" Content="Profil"  Click="ProfilButton_Click"/>
+                    <Button Grid.Column="3" Height="50" Content="Propisana terapija"  Click="PropisanaTerapijaButton_Click"/>
+                    <Button Grid.Column="4" Height="50" Content="Zakaži pregled"  Click="ZakaziPregledButton_Click"/>
+                    <Button Grid.Column="5" Height="50" Content="Karton"   Click="KartonButton_Click"/>
+                    <Button Grid.Column="6" Height="50" Content="O klinici"  Click="OkliniciButton_Click"  />
+                    <Button Grid.Column="7" Height="50" Content="Kontakt"  Click="KontaktButton_Click" />
+                    <Button Grid.Column="8" Height="50" Content="Recenzija app"  Click="RecenzijaButton_Click"/>
+                    <Button Grid.Column="9" Height="50" Content="Pomoć"  Click="PomocButton_Click"/>
                 </Grid>
             </DockPanel>
 
+
             <Grid Height="620">
+     
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition  Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
             </Grid>
         </StackPanel>
 
+        <ContentControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="10" Grid.RowSpan="14" Content="{Binding}"/>
+
+
+
     </Grid>
+    <Window.Resources>
+        <DataTemplate x:Name="pocetnaPatientViewTemplate" DataType="{x:Type viewModel:PocetnaPatientViewModel}">
+            <view:PocetnaPatientView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Name="BlogPatientViewTemplate" DataType="{x:Type viewModel:BlogPatientViewModel}">
+            <view:BlogPatientView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Name="ProfilPatientViewTemplate" DataType="{x:Type viewModel:ProfilPatientViewModel}">
+            <view:ProfilPatientView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Name="PropisanaTerapijaPatientViewTemplate" DataType="{x:Type viewModel:PropisanaTerapijaPatientViewModel}">
+            <view:PropisanaTerapijaPatientView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Name="ZakaziPregledPatientViewTemplate" DataType="{x:Type viewModel:ZakaziPregledPatientViewModel}">
+            <view:ZakaziPregledPatientView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Name="KartonPatientViewTemplate" DataType="{x:Type viewModel:KartonPatientViewModel}">
+            <view:KartonPatientView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Name="OkliniciPatientViewTemplate" DataType="{x:Type viewModel:OkliniciPatientViewModel}">
+            <view:OkliniciPatientView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Name="KontaktPatientViewTemplate" DataType="{x:Type viewModel:KontaktPatientViewModel}">
+            <view:KontaktPatientView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Name="RecenzijaAppPatientViewTemplate" DataType="{x:Type viewModel:RecenzijaAppPatientViewModel}">
+            <view:RecenzijaAppPatientView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Name="PomocPatientViewTemplate" DataType="{x:Type viewModel:PomocPatientViewModel}">
+            <view:PomocPatientView DataContext="{Binding}"/>
+        </DataTemplate>
+
+    </Window.Resources>
 </Window>

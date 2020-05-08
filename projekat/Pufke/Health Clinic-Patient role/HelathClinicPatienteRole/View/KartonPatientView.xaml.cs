@@ -16,21 +16,13 @@ using System.Windows.Shapes;
 namespace HelathClinicPatienteRole.View
 {
     /// <summary>
-    /// Interaction logic for PocetnaView.xaml
+    /// Interaction logic for KartonPatientView.xaml
     /// </summary>
-    public partial class PocetnaView : UserControl
+    public partial class KartonPatientView : UserControl
     {
-
-        public PocetnaView()
+        public KartonPatientView()
         {
             InitializeComponent();
-        }
-
-        private void Login_Click(object sender, RoutedEventArgs e)
-        {
-            LoginPacijent loginPacijent = new LoginPacijent();
-            loginPacijent.Show();
-
         }
     }
 }
