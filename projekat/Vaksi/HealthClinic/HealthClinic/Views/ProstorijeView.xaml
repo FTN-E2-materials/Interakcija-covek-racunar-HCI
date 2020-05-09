@@ -4,14 +4,120 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HealthClinic.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+              xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="550" d:DesignWidth="1080">
     <Grid Background="#cdfbf4">
-        <TextBox HorizontalAlignment="Center"  FontSize="30" Padding="30" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Teal">
-            TAB PROSTORIJA, za nastavak koriscenja izaberite
-        </TextBox>
-        <TextBlock HorizontalAlignment="Center"  FontSize="30" Padding="100" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Teal">
-            tab koji zelite koristiti.
-        </TextBlock>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        
+        
+        <!-- Deo sa kalendarom. -->
+        <StackPanel Grid.Column="0">
+            
+            <!-- Okvir u koji stavljamo kalendar. -->
+            <Viewbox Stretch="Fill"
+                 Height="400" 
+                 Width="400" 
+                 Margin="0, 20 ,0 ,0" 
+                 HorizontalAlignment="Center">
+                <Calendar />
+            </Viewbox>
+            <!-- Kraj okvira u kojem je kalendar. -->
+
+            <!-- CRUD dugmad -->
+            <StackPanel 
+                Orientation="Horizontal" 
+                Height="100" 
+                Width="200"
+                HorizontalAlignment="Center"
+                Margin="200, 0, 0, 0">
+
+                <Button
+                    
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Width="200"
+                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    Content="Manipulacija prostorijama"
+                    Margin="0, 0, 0, 0">
+
+                </Button>
+
+
+            </StackPanel>
+            <!-- Kraj CRUD dugmadi. -->
+
+
+        </StackPanel>
+        <!-- Kraj dela sa kalendarom. -->
+        
+        
+        <!-- Deo za grafikon -->
+        <StackPanel Grid.Column="1" >
+
+            <!-- Shadow karta u kojoj smestamo grafikon.-->
+            <materialDesign:Card
+                Height="400"
+                Width="280"
+                HorizontalAlignment="Center"
+                materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                Margin="0, 70, 20, 0"
+                Padding="32" Background="#FFCDFBF8">
+
+                <!-- Content u karti. -->
+                <StackPanel>
+                    <!-- Grafikon -->
+                    <Wpf:PieChart 
+                    HorizontalAlignment="Center" 
+                    Height="230"
+                    Width="200"
+                    Margin="0, 0, 0, 0"
+                    VerticalAlignment="Top" 
+                    LegendLocation="Bottom"
+                    DataClick="PieChart_DataClick">
+
+                        <!-- Parcad u grafikonu.-->
+                        <Wpf:PieChart.Series>
+                            <Wpf:PieSeries Title="Antibiotici" Values="25" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                            <Wpf:PieSeries Title="Kardiovaskularni" Values="25" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                            <Wpf:PieSeries Title="Alergijski" Values="25" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                            <Wpf:PieSeries Title="Kardiovaskularni" Values="25" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                            <Wpf:PieSeries Title="Kardiovaskularni" Values="25" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                        </Wpf:PieChart.Series>
+                        <!-- Kraj parcadi u grafikonu -->
+
+                    </Wpf:PieChart>
+                    <!-- Kraj grafikona.-->
+
+                    <!-- Dugme za generisanje izvestaja-->
+                    <Grid
+                      Margin="0, 40, 0, 0"
+                      Width="144">
+                        <Button
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            materialDesign:ButtonProgressAssist.Value="-1"
+                            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                            materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                            Content="Generisi izvestaj"
+                            Margin="2,0"/>
+                    </Grid>
+                    <!-- Kraj dugmeta za generisanje izvestaja. -->
+
+                </StackPanel>
+                <!-- Kraj contenta u karti. -->
+
+            </materialDesign:Card>
+            <!-- Kraj shadow karte-->
+
+        </StackPanel>
+        <!-- Kraj dela sa grafikonom. -->
+        
+
+
     </Grid>
 </UserControl>

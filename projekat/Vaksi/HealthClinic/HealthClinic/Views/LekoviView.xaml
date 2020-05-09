@@ -23,12 +23,12 @@
 
             <!-- Text iznad tabele-->
             <TextBlock 
-                HorizontalAlignment="Center"
+                HorizontalAlignment="Left"
                 FontFamily="Times New Roman" 
                 FontSize="22" 
                 FontStyle="Italic"
                 Text="Trenutno stanje lekova"
-                Margin="0, 20, 0, 0"
+                Margin="60, 20, 0, 0"
                 Foreground="#FF2196F3">
 
 

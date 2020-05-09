@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using LiveCharts;               // biblioteka za cartove
-using LiveCharts.Wpf;           // uz dodatak na WPF
-using System.Collections.ObjectModel;       // za kolekciju lekova
-using HealthClinic.Models;
+using LiveCharts;                               // biblioteka za cartove
+using LiveCharts.Wpf;                           // uz dodatak na WPF
+using System.Collections.ObjectModel;           // za kolekciju lekova
+using HealthClinic.Models;                      // ubacivanje paketa modela
 
 namespace HealthClinic.Views
 {
@@ -60,7 +60,7 @@ namespace HealthClinic.Views
         #endregion
 
 
-        #region Tabela
+        #region Tabela lekova
         
         private int brojKolone = 0;
 
@@ -73,7 +73,7 @@ namespace HealthClinic.Views
             //{
             //    e.Column.Width = new DataGridLength(1, DataGridLengthUnitType.Star);
             //}
-            e.Column.Width = new DataGridLength(++brojKolone, DataGridLengthUnitType.Star);
+            //e.Column.Width = new DataGridLength(++brojKolone, DataGridLengthUnitType.Star);
         }
 
         #endregion
