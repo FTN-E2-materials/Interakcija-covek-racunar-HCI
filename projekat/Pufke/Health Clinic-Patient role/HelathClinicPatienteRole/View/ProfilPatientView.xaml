@@ -4,11 +4,104 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HelathClinicPatienteRole.View"
+             xmlns:ViewModel="clr-namespace:HelathClinicPatienteRole.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+            
+              d:DesignHeight="700" d:DesignWidth="1300">
     <Grid>
-        <StackPanel Background="Blue" Margin="0,48,0,0">
+        <StackPanel Background="White" Margin="0,48,0,0" >
+            <Grid Height="653" >
+
+
+                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Patient.png"   Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="4" Grid.RowSpan="6" Margin="48,0,38,0" />
+
+
+                <Grid x:Name="Korisnici" Grid.Row="10" Grid.Column="3" Grid.ColumnSpan="8" Grid.RowSpan="14"  DataContext="{Binding Users}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Text="Ime:" Margin="0,0,24,0" />
+                    <TextBox  Grid.Column="1" Grid.Row="0"  Foreground="#FF148DF0" HorizontalAlignment="Left" FontSize="30"   Text="{Binding FirstName}" />
+
+                    <TextBlock Foreground="#FF148DF0" Grid.Row="1" FontSize="35"  HorizontalAlignment="Right" Text="Prezime:" Margin="0,0,24,0"/>
+                    <TextBox   Grid.Column="1" Grid.Row="1"  Foreground="#FF148DF0" HorizontalAlignment="Left" FontSize="30"   Text="{Binding LastName}" />
+
+                    <TextBlock Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Text="JMBG:" Grid.Row="2" Margin="0,0,24,0"/>
+                    <TextBox  HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="2"  Foreground="#FF148DF0" FontSize="30" Text="{Binding Jmbg}" />
+
+                    <TextBlock Text="Broj Telefona:"  Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Grid.Row="3" Margin="0,0,24,0"/>
+                    <TextBox  HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="3"   Foreground="#FF148DF0" FontSize="30" Text="{Binding PhoneNumber}" />
+
+                    <TextBlock Text="E-Mail:" Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Grid.Row="4" Margin="0,0,24,0"/>
+                    <TextBox  HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="4"  Foreground="#FF148DF0" FontSize="30" Text="{Binding Email}" />
+
+                    <Button Content="Update" Grid.Row="7" HorizontalAlignment="Left"  Name="btnUpdatee"   
+                      VerticalAlignment="Top" Width="140"  
+                      Command="{Binding Path=UpdateCommad}" Grid.Column="1"  />
+                </Grid>
+
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+            </Grid>
+
 
         </StackPanel>
+
+
+
     </Grid>
 </UserControl>

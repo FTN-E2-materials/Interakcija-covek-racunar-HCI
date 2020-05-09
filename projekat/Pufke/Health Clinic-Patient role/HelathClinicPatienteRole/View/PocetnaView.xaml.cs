@@ -30,7 +30,6 @@ namespace HelathClinicPatienteRole.View
         {
             LoginPacijent loginPacijent = new LoginPacijent();
             loginPacijent.Show();
-
         }
     }
 }

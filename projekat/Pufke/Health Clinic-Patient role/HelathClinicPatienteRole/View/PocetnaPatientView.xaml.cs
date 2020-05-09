@@ -24,5 +24,6 @@ namespace HelathClinicPatienteRole.View
         {
             InitializeComponent();
         }
+
     }
 }
