@@ -8,7 +8,7 @@
         xmlns:view="clr-namespace:HelathClinicPatienteRole.View"
         xmlns:viewModel="clr-namespace:HelathClinicPatienteRole.ViewModel"
         mc:Ignorable="d"
-        Title="Pacijent APP"  Height="750" Width="1300">
+        Title="Pacijent APP"  Height="700" Width="1300">
     <Grid>
         <StackPanel Background="White">
 
@@ -43,7 +43,7 @@
 
             <Grid Height="620">
 
-       
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -77,10 +77,9 @@
                     <RowDefinition />
                     <RowDefinition />
                 </Grid.RowDefinitions>
+                <ContentControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="25" Grid.RowSpan="14" Content="{Binding}"/>
             </Grid>
         </StackPanel>
-
-        <ContentControl  Content="{Binding}"/>
 
     </Grid>
     <Window.Resources>

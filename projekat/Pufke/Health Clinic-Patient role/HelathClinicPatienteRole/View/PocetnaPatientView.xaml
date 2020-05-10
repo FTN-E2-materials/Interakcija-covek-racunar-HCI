@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="1300">
     <Grid>
-        <StackPanel Background="White" Margin="0,48,0,0">
+        <StackPanel Background="White" >
             <Grid Height="653" >
                 <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\logo.png" Grid.ColumnSpan="2" Grid.RowSpan="6" />
                 <Label HorizontalAlignment="Center"  Content="Zakazani pregledi" Foreground="#FF148DF0" FontSize="40"  Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="5" Grid.RowSpan="3"/>
@@ -58,7 +58,7 @@
                     </Border>
                 </ScrollViewer>
 
-                <Button Grid.Column="1" Grid.Row="18" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Propisana terapija" />
+                <Button Grid.Column="1" Grid.Row="18" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Propisana terapija" Command="{Binding ButtonCommand}"/>
                 <Button Grid.Column="1" Grid.Row="20" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Zakaži pregled" />
                 <Button Grid.Column="1" Grid.Row="22" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Karton" />
 

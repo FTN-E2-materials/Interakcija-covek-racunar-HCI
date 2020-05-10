@@ -9,11 +9,11 @@
             
               d:DesignHeight="700" d:DesignWidth="1300">
     <Grid>
-        <StackPanel Background="White" Margin="0,48,0,0" >
+        <StackPanel Background="White" >
             <Grid Height="653" >
 
 
-                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Patient.png"   Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="4" Grid.RowSpan="6" Margin="48,0,38,0" />
+                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Patient.png"   Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="4" Grid.RowSpan="6" Margin="48,0,38,0" />
 
 
                 <Grid x:Name="Korisnici" Grid.Row="10" Grid.Column="3" Grid.ColumnSpan="8" Grid.RowSpan="14"  DataContext="{Binding Users}">

@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel Background="Brown" Margin="0,48,0,0">
+        <StackPanel Background="Brown" >
 
         </StackPanel>
 
