@@ -58,7 +58,7 @@
                     </Border>
                 </ScrollViewer>
 
-                <Button Grid.Column="1" Grid.Row="18" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Propisana terapija" Command="{Binding ButtonCommand}"/>
+                <Button Grid.Column="1" Grid.Row="18" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Propisana terapija" />
                 <Button Grid.Column="1" Grid.Row="20" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Zakaži pregled" />
                 <Button Grid.Column="1" Grid.Row="22" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Karton" />
 
