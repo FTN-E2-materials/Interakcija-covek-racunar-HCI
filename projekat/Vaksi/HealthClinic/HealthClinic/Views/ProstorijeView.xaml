@@ -13,6 +13,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
         
@@ -23,7 +24,7 @@
             <!-- Okvir u koji stavljamo kalendar. -->
             <Viewbox Stretch="Fill"
                  Height="400" 
-                 Width="400" 
+                 Width="300" 
                  Margin="0, 20 ,0 ,0" 
                  HorizontalAlignment="Center">
                 <Calendar />
@@ -36,7 +37,7 @@
                 Height="100" 
                 Width="200"
                 HorizontalAlignment="Center"
-                Margin="200, 0, 0, 0">
+                Margin="0, 0, 0, 0">
 
                 <Button
                     
@@ -57,8 +58,15 @@
         <!-- Kraj dela sa kalendarom. -->
         
         
+        <!-- Deo za prikaz aktivnosti selektovanog datuma-->
+        <StackPanel Grid.Column="1">
+            
+        </StackPanel>
+        <!-- Kraj dela za aktivnosti tog datuma-->
+        
+        
         <!-- Deo za grafikon -->
-        <StackPanel Grid.Column="1" >
+        <StackPanel Grid.Column="2" >
 
             <!-- Shadow karta u kojoj smestamo grafikon.-->
             <materialDesign:Card
