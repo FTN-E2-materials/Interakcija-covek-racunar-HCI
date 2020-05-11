@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="MVVM1.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVM1.Views"
+             xmlns:vml="clr-namespace:MVVM1.VML"
+             vml:ViewModelLocator.AutoHookedUpViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <TextBlock Text="{Binding HomeViewStartMessage}" FontSize="24" FontWeight="Bold"/>
+    </Grid>
+</UserControl>

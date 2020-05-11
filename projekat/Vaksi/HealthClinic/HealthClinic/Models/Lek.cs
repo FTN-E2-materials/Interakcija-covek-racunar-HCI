@@ -35,7 +35,7 @@ namespace HealthClinic.Models
                 if(value != _nazivLeka)
                 {
                     _nazivLeka = value;
-                    OnPropertyChanged("NazivLeka");
+                    OnPropertyChanged("Naziv Leka");
                 }
             }
         }
@@ -51,7 +51,7 @@ namespace HealthClinic.Models
                 if (value != _sifraLeka)
                 {
                     _sifraLeka = value;
-                    OnPropertyChanged("SifraLeka");
+                    OnPropertyChanged("Sifra Leka");
                 }
             }
         }
