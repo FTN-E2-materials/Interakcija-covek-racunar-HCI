@@ -14,7 +14,8 @@
                  <TextBlock Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Text="Lekarski karton: " Grid.Column="3" Grid.Row="1"  Grid.ColumnSpan="4" Grid.RowSpan="2" />
                  <TextBlock Foreground="#FF148DF0" FontSize="35"  Text="{Binding FirstName}"  Grid.Column="7" Grid.Row="1"  Grid.ColumnSpan="4" Grid.RowSpan="2" />
                  <TextBlock Foreground="#FF148DF0" FontSize="35"  Text="{Binding LastName}"    HorizontalAlignment="Right"  Grid.Column="12" Grid.Row="1"  Grid.ColumnSpan="4" Grid.RowSpan="2" />
-
+    
+                  
                 
 
 

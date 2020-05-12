@@ -5,8 +5,71 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HelathClinicPatienteRole.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Bisque">
-            
+             d:DesignHeight="700" d:DesignWidth="1300">
+    <Grid >
+        <StackPanel Background="White">
+            <Grid Height="700"  DataContext="{Binding Users}">
+
+                <TextBlock Foreground="#FF148DF0" FontSize="50"  HorizontalAlignment="Center" Text="О klinici" Grid.Column="6" Grid.Row="1"  Grid.ColumnSpan="4" Grid.RowSpan="3" />
+
+                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\OkliniciPhoto.jpg"  Grid.Column="1" Grid.Row="4" Grid.RowSpan="12" Grid.ColumnSpan="7" />
+
+                <Label  Content="    Lekare čine specijalisti i subspecijalisti iz oblasti   &#10;    ginekologije (ginekolog-onkolog, subspecijalista &#10;    za fertilnost, subspecijalista adolescentne &#10;    ginekologije, akušer), interne medicine &#10;    (konzilijarno lečenje hormonskih disbalanasa), &#10;    embriologije, radiologije" Foreground="#FF148DF0" FontSize="25"  Grid.Column="8" Grid.Row="5"  Grid.ColumnSpan="8" Grid.RowSpan="10" />
+                <Grid.ColumnDefinitions>
+                    <!--16 columns-->
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="24*"/>
+                    <RowDefinition Height="24*"/>
+                    <RowDefinition Height="24*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="24*"/>
+                    <RowDefinition Height="24*"/>
+                    <RowDefinition Height="24*"/>
+                    <RowDefinition Height="24*"/>
+                    <RowDefinition Height="24*"/>
+                    <RowDefinition Height="24*"/>
+                    <RowDefinition Height="24*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="23*"/>
+                </Grid.RowDefinitions>
+
+
+            </Grid>
+
+        </StackPanel>
     </Grid>
 </UserControl>
