@@ -4,14 +4,356 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HealthClinic.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="1080">
     <Grid Background="#cdfbf4">
-        <TextBox HorizontalAlignment="Center"  FontSize="30" Padding="30" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Aqua">
-            TAB PROFIL, za nastavak koriscenja izaberite
-        </TextBox>
-        <TextBlock HorizontalAlignment="Center"  FontSize="30" Padding="100" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Aqua">
-            tab koji zelite koristiti.
-        </TextBlock>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        
+        <!-- Deo sa grafikonima -->
+        <StackPanel Grid.Column="0">
+
+            <!-- Text iznad grafikona-->
+            <TextBlock 
+                HorizontalAlignment="Left"
+                FontFamily="Times New Roman" 
+                FontSize="22" 
+                FontStyle="Italic"
+                Text="Grafikoni stanja nase klinike "
+                Margin="60, 20, 0, 0"
+                Foreground="#FF2196F3">
+
+
+            </TextBlock>
+            <!-- Kraj teksta iznad grafikona -->
+
+            <!-- Prva dva gornja grafikona -->
+            <StackPanel Orientation="Horizontal" Margin="20">
+                <!-- Shadow karta u kojoj smestamo grafikon.-->
+                <materialDesign:Card
+                Height="170"
+                Width="230"
+                HorizontalAlignment="Center"
+                materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                Margin="60, 14, 40, 0"
+                Background="#FFCDFBF8">
+
+                    <!-- Content u karti. -->
+                    <StackPanel>
+                        <!-- Grafikon -->
+                        <Wpf:PieChart 
+                            HorizontalAlignment="Center" 
+                            Height="130"
+                            Width="100"
+                            Margin="0, 0, 0, 0"
+                            VerticalAlignment="Top"
+                            DataClick="PieChart_DataClick">
+
+                                <!-- Parcad u grafikonu.-->
+                                <Wpf:PieChart.Series>
+                                    <Wpf:PieSeries Title="Antibiotici" Values="25" LabelPoint="{Binding PointLabel}"/>
+                                    <Wpf:PieSeries Title="Kardiovaskularni" Values="25" LabelPoint="{Binding PointLabel}"/>
+                                    <Wpf:PieSeries Title="Alergijski" Values="45" LabelPoint="{Binding PointLabel}"/>
+                                    <Wpf:PieSeries Title="Kardiovaskularni" Values="5"  LabelPoint="{Binding PointLabel}"/>
+                                    <Wpf:PieSeries Title="Kardiovaskularni" Values="5"  LabelPoint="{Binding PointLabel}"/>
+                                </Wpf:PieChart.Series>
+                                <!-- Kraj parcadi u grafikonu -->
+
+                        </Wpf:PieChart>
+                        <!-- Kraj grafikona.-->
+                        
+                        <!-- Ime grafikona -->
+                        <TextBlock 
+                            HorizontalAlignment="Center"
+                            FontFamily="Times New Roman" 
+                            FontSize="15" 
+                            FontStyle="Italic"
+                            FontWeight="Bold"
+                            Text="1. Posecenost klinike"
+                            Margin="0, 1, 0, 0"
+                            Foreground="#FF2196F3">
+
+                        </TextBlock>
+                        <!-- Kraj imena grafikona -->
+
+                    </StackPanel>
+                    <!-- Kraj contenta u karti. -->
+
+                </materialDesign:Card>
+                <!-- Kraj shadow karte-->
+
+                <!-- Shadow karta u kojoj smestamo grafikon.-->
+                <materialDesign:Card
+                Height="170"
+                Width="230"
+                HorizontalAlignment="Center"
+                materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                Margin="60, 14, 40, 0"
+                Background="#FFCDFBF8">
+
+                    <!-- Content u karti. -->
+                    <StackPanel>
+                        <!-- Grafikon -->
+                        <Wpf:PieChart 
+                            HorizontalAlignment="Center" 
+                            Height="130"
+                            Width="100"
+                            Margin="0, 0, 0, 0"
+                            VerticalAlignment="Top"
+                            DataClick="PieChart_DataClick">
+
+                            <!-- Parcad u grafikonu.-->
+                            <Wpf:PieChart.Series>
+                                <Wpf:PieSeries Title="Antibiotici" Values="25" LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Kardiovaskularni" Values="25" LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Alergijski" Values="25" LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Kardiovaskularni" Values="25"  LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Kardiovaskularni" Values="25"  LabelPoint="{Binding PointLabel}"/>
+                            </Wpf:PieChart.Series>
+                            <!-- Kraj parcadi u grafikonu -->
+
+                        </Wpf:PieChart>
+                        <!-- Kraj grafikona.-->
+
+                        <!-- Ime grafikona -->
+                        <TextBlock 
+                            HorizontalAlignment="Center"
+                            FontFamily="Times New Roman" 
+                            FontSize="15" 
+                            FontStyle="Italic"
+                            FontWeight="Bold"
+                            Text="2. Popunjenost sala"
+                            Margin="0, 1, 0, 0"
+                            Foreground="#FF2196F3">
+
+                        </TextBlock>
+                        <!-- Kraj imena grafikona -->
+
+                    </StackPanel>
+                    <!-- Kraj contenta u karti. -->
+
+                </materialDesign:Card>
+                <!-- Kraj shadow karte-->
+
+            </StackPanel>
+            <!-- Kraj prva dva gornja grafikona -->
+            
+            
+            
+            <!-- Donja dva grafikona -->
+            <StackPanel Orientation="Horizontal" Margin="20">
+
+                <!-- Shadow karta u kojoj smestamo grafikon.-->
+                <materialDesign:Card
+                Height="170"
+                Width="230"
+                HorizontalAlignment="Center"
+                materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                Margin="60, 14, 40, 0"
+                Background="#FFCDFBF8">
+
+                    <!-- Content u karti. -->
+                    <StackPanel>
+                        <!-- Grafikon -->
+                        <Wpf:PieChart 
+                            HorizontalAlignment="Center" 
+                            Height="130"
+                            Width="100"
+                            Margin="0, 0, 0, 0"
+                            VerticalAlignment="Top"
+                            DataClick="PieChart_DataClick">
+
+                            <!-- Parcad u grafikonu.-->
+                            <Wpf:PieChart.Series>
+                                <Wpf:PieSeries Title="Antibiotici" Values="15" LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Kardiovaskularni" Values="5" LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Alergijski" Values="20" LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Kardiovaskularni" Values="5"  LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Kardiovaskularni" Values="5"  LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Kardiovaskularni" Values="5"  LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Kardiovaskularni" Values="35"  LabelPoint="{Binding PointLabel}"/>
+                            </Wpf:PieChart.Series>
+                            <!-- Kraj parcadi u grafikonu -->
+
+                        </Wpf:PieChart>
+                        <!-- Kraj grafikona.-->
+
+                        <!-- Ime grafikona -->
+                        <TextBlock 
+                            HorizontalAlignment="Center"
+                            FontFamily="Times New Roman" 
+                            FontSize="15" 
+                            FontStyle="Italic"
+                            FontWeight="Bold"
+                            Text="3. Produktivnost zaposlenih"
+                            Margin="0, 1, 0, 0"
+                            Foreground="#FF2196F3">
+
+                        </TextBlock>
+                        <!-- Kraj imena grafikona -->
+
+                    </StackPanel>
+                    <!-- Kraj contenta u karti. -->
+
+                </materialDesign:Card>
+                <!-- Kraj shadow karte-->
+
+                <!-- Shadow karta u kojoj smestamo grafikon.-->
+                <materialDesign:Card
+                    Height="170"
+                    Width="230"
+                    HorizontalAlignment="Center"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                    Margin="60, 14, 40, 0"
+                    Background="#FFCDFBF8">
+
+                    <!-- Content u karti. -->
+                    <StackPanel>
+                        <!-- Grafikon -->
+                        <Wpf:PieChart 
+                            HorizontalAlignment="Center" 
+                            Height="130"
+                            Width="100"
+                            Margin="0, 0, 0, 0"
+                            VerticalAlignment="Top"
+                            DataClick="PieChart_DataClick">
+
+                            <!-- Parcad u grafikonu.-->
+                            <Wpf:PieChart.Series>
+                                <Wpf:PieSeries Title="Antibiotici" Values="75" LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Kardiovaskularni" Values="5" LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Alergijski" Values="5" LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Kardiovaskularni" Values="5"  LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries Title="Kardiovaskularni" Values="5"  LabelPoint="{Binding PointLabel}"/>
+                            </Wpf:PieChart.Series>
+                            <!-- Kraj parcadi u grafikonu -->
+
+                        </Wpf:PieChart>
+                        <!-- Kraj grafikona.-->
+
+                        <!-- Ime grafikona -->
+                        <TextBlock 
+                            HorizontalAlignment="Center"
+                            FontFamily="Times New Roman" 
+                            FontSize="15" 
+                            FontStyle="Italic"
+                            FontWeight="Bold"
+                            Text="4. Trenutno stanje lekova"
+                            Margin="0, 1, 0, 0"
+                            Foreground="#FF2196F3">
+
+                        </TextBlock>
+                        <!-- Kraj imena grafikona -->
+
+                    </StackPanel>
+                    <!-- Kraj contenta u karti. -->
+
+                </materialDesign:Card>
+                <!-- Kraj shadow karte-->
+
+            </StackPanel>
+            <!-- Kraj donja dva grafikona -->
+            
+        </StackPanel>
+        <!-- Kraj dela sa grafikonima -->
+        
+
+        
+        <!-- Deo sa profilom -->
+        <StackPanel Grid.Column="1">
+
+            <materialDesign:Card
+                  HorizontalAlignment="Left"
+                  HorizontalContentAlignment="Center"
+                  Background="#FF2196F3"
+                  Foreground="White"
+                  Width="300"
+                  Height="350"
+                  Margin="30, 60, 0, 0"
+                  Padding="8">
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Deo sa slikom -->
+                    <StackPanel Grid.Row="0">
+                        <materialDesign:PackIcon
+                                HorizontalAlignment="Center"
+                                Height="120"
+                                Width="120"
+                                Kind="AccountCircle"
+                                Foreground="White"/>
+                    </StackPanel>
+                    <!-- Kraj dela sa slikom -->
+                    
+                    <!-- Deo sa biografijom-->
+                    <StackPanel Grid.Row="1" Margin="10, 30, 0, 0">
+                        <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                           
+                           Width="270"
+                           Height="210"
+                           VerticalAlignment="Center" 
+                           
+                           HorizontalAlignment="Center"
+                           FontSize="13"
+                           FontWeight="DemiBold"
+                           TextWrapping="WrapWithOverflow"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                            It has survived not only five centuries, but also the leap into electronic typesetting.
+                            
+                            </TextBlock>
+                    </StackPanel>
+                    <!-- Kraj biografije-->
+                    
+                </Grid>
+
+            </materialDesign:Card>
+
+
+
+
+            <!-- Dugmad izmene i odjavi se-->
+            <StackPanel 
+                Orientation="Horizontal" 
+                Height="100" 
+                Width="325"
+                HorizontalAlignment="Center"
+                Margin="30, 0, 0, 0">
+
+                <Button
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Width="150"
+                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    Content="Izmena profila"
+                    Margin="0, 0, 0, 0">
+
+                </Button>
+
+                <Button
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Width="140"
+                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    Content="Odjavi se"
+                    Margin="10">
+
+                </Button>
+            </StackPanel>
+            <!-- Kraj dugmadi izmene i odjave-->
+            
+        </StackPanel>
+        <!-- Kraj dela sa profilom -->
+        
+        
     </Grid>
 </UserControl>

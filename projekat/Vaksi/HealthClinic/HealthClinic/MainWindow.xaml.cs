@@ -26,12 +26,15 @@ namespace HealthClinic
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new UcitavanjeViewModel();                    // na pocetku dajem jedan view koji ce samo da bude pri ucitavanju
-        }                                                               // TODO: Kasnije poraditi na tome da nestane nakon par sekundi
+            //DataContext = new UcitavanjeViewModel();                    
+            //TODO: ovde staviti mozda nesto prilikom ucitvanja aplikacije
+            DataContext = new ProfilViewModel();
+        }                                                               
 
         private void PocetnaTab_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new HomeViewModel();
+            DataContext = new ProfilViewModel();
+            // TODO: Prebaciti na homeviewmodel ako se odlucim za tu varijantu.
         }
         private void BlogTab_Click(object sender, RoutedEventArgs e)
         {
