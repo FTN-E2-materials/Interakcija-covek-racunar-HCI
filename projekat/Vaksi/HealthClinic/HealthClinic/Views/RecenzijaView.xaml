@@ -37,8 +37,8 @@
               <materialDesign:Card
                   HorizontalAlignment="Left"
                   HorizontalContentAlignment="Center"
-                  Background="{DynamicResource PrimaryHueLightBrush}"
-                  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                  Background="#FF2196F3"
+                  Foreground="White"
                   Width="300"
                   Height="150"
                   Margin="20, 20, 0, 0"
@@ -71,11 +71,11 @@
 
                         <!-- Ocene -->
                         <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow"/>
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
                         </StackPanel>
                         <!-- Kraj ocene-->
                         
@@ -87,8 +87,8 @@
                            VerticalAlignment="Center" 
                            
                            HorizontalAlignment="Right"
-                           FontSize="15"
-                           FontWeight="Bold"
+                           FontSize="14"
+                           FontWeight="DemiBold"
                            TextWrapping="WrapWithOverflow"/>
                         <!-- Kraj komentara-->
                         
@@ -100,8 +100,8 @@
                 <materialDesign:Card
                   HorizontalAlignment="Left"
                   HorizontalContentAlignment="Center"
-                  Background="{DynamicResource PrimaryHueLightBrush}"
-                  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                  Background="#FF2196F3"
+                  Foreground="White"
                   Width="300"
                   Height="150"
                   Margin="80, 20, 0, 0"
@@ -134,11 +134,11 @@
 
                         <!-- Ocene -->
                         <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow"/>
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
                         </StackPanel>
                         <!-- Kraj ocene-->
 
@@ -150,8 +150,8 @@
                            VerticalAlignment="Center" 
                            
                            HorizontalAlignment="Right"
-                           FontSize="15"
-                           FontWeight="Bold"
+                           FontSize="14"
+                           FontWeight="DemiBold"
                            TextWrapping="WrapWithOverflow"/>
                         <!-- Kraj komentara-->
 
@@ -170,8 +170,8 @@
                 <materialDesign:Card
                   HorizontalAlignment="Left"
                   HorizontalContentAlignment="Center"
-                  Background="{DynamicResource PrimaryHueLightBrush}"
-                  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                  Background="#FF2196F3"
+                  Foreground="White"
                   Width="300"
                   Height="150"
                   Margin="20, 20, 0, 0"
@@ -204,11 +204,11 @@
 
                         <!-- Ocene -->
                         <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
                         </StackPanel>
                         <!-- Kraj ocene-->
 
@@ -220,8 +220,8 @@
                            VerticalAlignment="Center" 
                            
                            HorizontalAlignment="Right"
-                           FontSize="15"
-                           FontWeight="Bold"
+                           FontSize="14"
+                           FontWeight="DemiBold"
                            TextWrapping="WrapWithOverflow"/>
                         <!-- Kraj komentara-->
 
@@ -233,8 +233,8 @@
                 <materialDesign:Card
                   HorizontalAlignment="Left"
                   HorizontalContentAlignment="Center"
-                  Background="{DynamicResource PrimaryHueLightBrush}"
-                  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                  Background="#FF2196F3"
+                  Foreground="White"
                   Width="300"
                   Height="150"
                   Margin="80, 20, 0, 0"
@@ -267,10 +267,10 @@
 
                         <!-- Ocene -->
                         <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow"/>
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow"/>
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
                             <materialDesign:PackIcon Kind="Star" />
                         </StackPanel>
                         <!-- Kraj ocene-->
@@ -283,8 +283,8 @@
                            VerticalAlignment="Center" 
                            
                            HorizontalAlignment="Right"
-                           FontSize="15"
-                           FontWeight="Bold"
+                           FontSize="14"
+                           FontWeight="DemiBold"
                            TextWrapping="WrapWithOverflow"/>
                         <!-- Kraj komentara-->
 

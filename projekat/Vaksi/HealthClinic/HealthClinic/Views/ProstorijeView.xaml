@@ -27,7 +27,12 @@
                  Width="300" 
                  Margin="0, 20 ,0 ,0" 
                  HorizontalAlignment="Center">
-                <Calendar />
+                <Calendar>
+                    <Calendar.BlackoutDates>
+                        <CalendarDateRange Start="5/1/2020" End="5/7/2020"/>
+                        <CalendarDateRange Start="5/20/2020" End="5/25/2020"/>
+                    </Calendar.BlackoutDates>
+                </Calendar>
             </Viewbox>
             <!-- Kraj okvira u kojem je kalendar. -->
 

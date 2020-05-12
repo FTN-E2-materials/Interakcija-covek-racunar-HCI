@@ -25,9 +25,5 @@ namespace HealthClinic.Views
             InitializeComponent();
         }
 
-        private void StackPanel_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
-        {
-
-        }
     }
 }
