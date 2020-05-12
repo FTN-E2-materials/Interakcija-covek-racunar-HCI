@@ -11,46 +11,91 @@
     <Grid Background="#cdfbf4">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        
-        
-        <!-- Deo sa kalendarom. -->
+
+
+        <!-- Deo za tabelu[prikaz prostorija]. -->
         <StackPanel Grid.Column="0">
-            
-            <!-- Okvir u koji stavljamo kalendar. -->
-            <Viewbox Stretch="Fill"
-                 Height="400" 
-                 Width="300" 
-                 Margin="0, 20 ,0 ,0" 
-                 HorizontalAlignment="Center">
-                <Calendar>
-                    <Calendar.BlackoutDates>
-                        <CalendarDateRange Start="5/1/2020" End="5/7/2020"/>
-                        <CalendarDateRange Start="5/20/2020" End="5/25/2020"/>
-                    </Calendar.BlackoutDates>
-                </Calendar>
-            </Viewbox>
-            <!-- Kraj okvira u kojem je kalendar. -->
+
+            <!-- Text iznad tabele-->
+            <TextBlock 
+                HorizontalAlignment="Left"
+                FontFamily="Times New Roman" 
+                FontSize="22" 
+                FontStyle="Italic"
+                Text="Prostorije s kojima raspolaze nasa klinika"
+                Margin="60, 20, 0, 0"
+                Foreground="#FF2196F3">
+
+
+            </TextBlock>
+            <!-- Kraj teksta iznad tabele -->
+
+            <!-- Shadow karta za TEBELU -->
+            <materialDesign:Card
+                Height="360"
+                Width="620"
+                HorizontalAlignment="Center"
+                materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                Margin="0, 20, 0, 0"
+                Padding="3" 
+                Background="#FFCDFBF8">
+
+                <!-- Tabela prostorija -->
+                <DataGrid x:Name="dataGridLekovi"
+                          ItemsSource="{Binding Path=Prostorije}"
+                          AutoGenerateColumns="True" 
+                          SelectionMode="Single" 
+                          IsReadOnly="True" 
+                          AutoGeneratingColumn="generisiKolone" 
+                          Margin="0, 0, 0, 0" 
+                          HorizontalAlignment="Center"                 
+                          Height="340"
+                          Width="602" 
+                          Background="#FF226397"
+                          >
+
+                </DataGrid>
+                <!-- Kraj tabele lekova. -->
+
+
+            </materialDesign:Card>
+            <!-- Kraj shadow karte [ TABELE ]-->
 
             <!-- CRUD dugmad -->
             <StackPanel 
                 Orientation="Horizontal" 
                 Height="100" 
-                Width="200"
-                HorizontalAlignment="Center"
-                Margin="0, 0, 0, 0">
+                Width="525"
+                HorizontalAlignment="Right"
+                Margin="0, 0, 50, 0">
 
                 <Button
-                    
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    Width="200"
+                    Width="140"
                     ToolTip="Resource name: MaterialDesignRaisedButton"
-                    Content="Manipulacija prostorijama"
-                    Margin="0, 0, 0, 0">
+                    Content="Dodaj prostoriju"
+                    Margin="60, 0, 0, 0">
+
+                </Button>
+
+                <Button
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Width="140"
+                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    Content="Izmeni prostoriju"
+                    Margin="10">
+
+                </Button>
+
+                <Button
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Width="150"
+                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    Content="Ukloni prostoriju"
+                    Margin="10">
 
                 </Button>
 
@@ -58,20 +103,12 @@
             </StackPanel>
             <!-- Kraj CRUD dugmadi. -->
 
+        </StackPanel>
+        <!-- Kraj dela vezanog za tebelu. -->
 
-        </StackPanel>
-        <!-- Kraj dela sa kalendarom. -->
-        
-        
-        <!-- Deo za prikaz aktivnosti selektovanog datuma-->
-        <StackPanel Grid.Column="1">
-            
-        </StackPanel>
-        <!-- Kraj dela za aktivnosti tog datuma-->
-        
-        
+
         <!-- Deo za grafikon -->
-        <StackPanel Grid.Column="2" >
+        <StackPanel Grid.Column="1" >
 
             <!-- Shadow karta u kojoj smestamo grafikon.-->
             <materialDesign:Card

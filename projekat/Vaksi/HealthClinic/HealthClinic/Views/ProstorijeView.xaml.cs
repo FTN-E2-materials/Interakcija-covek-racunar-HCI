@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LiveCharts;                               // biblioteka za cartove
 using LiveCharts.Wpf;                           // uz dodatak na WPF
+using System.Collections.ObjectModel;           // za kolekciju prostorija
+using HealthClinic.Models;                      // ubacivanje paketa modela
 
 namespace HealthClinic.Views
 {
@@ -26,6 +28,18 @@ namespace HealthClinic.Views
         {
             InitializeComponent();
             this.PieChart();
+
+            //Tabela - popunjavanje
+            Prostorije = new ObservableCollection<Prostorija>();
+            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "12", Namena = "operaciona sala", Zauzetost = "otvaranje", Oprema = "otvaranje" });
+            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "9", Namena = "soba", Zauzetost = "otvaranje", Oprema = "otvaranje" });
+            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "13", Namena = "soba", Zauzetost = "otvaranje", Oprema = "otvaranje" });
+            Prostorije.Add(new Prostorija() { Odeljenje = "decije", BrojSobe = "8", Namena = "soba", Zauzetost = "otvaranje", Oprema = "otvaranje" });
+            Prostorije.Add(new Prostorija() { Odeljenje = "decije", BrojSobe = "10", Namena = "operaciona sala", Zauzetost = "otvaranje", Oprema = "otvaranje" });
+            Prostorije.Add(new Prostorija() { Odeljenje = "otorinolaringologija", BrojSobe = "2", Namena = "soba", Zauzetost = "otvaranje", Oprema = "otvaranje" });
+            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "7", Namena = "operaciona sala", Zauzetost = "otvaranje", Oprema = "otvaranje" });
+
+
 
         }
 
@@ -42,6 +56,25 @@ namespace HealthClinic.Views
         private void PieChart_DataClick(object sender, ChartPoint chartPoint)
         {
 
+        }
+
+        #endregion
+
+
+        #region Tabela prostorija
+
+        private int brojKolone = 0;
+
+        public ObservableCollection<Prostorija> Prostorije { get; set; }
+
+        private void generisiKolone(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            //brojKolone++;
+            //if(brojKolone == 1)
+            //{
+            //    e.Column.Width = new DataGridLength(1, DataGridLengthUnitType.Star);
+            //}
+            //e.Column.Width = new DataGridLength(++brojKolone, DataGridLengthUnitType.Star);
         }
 
         #endregion

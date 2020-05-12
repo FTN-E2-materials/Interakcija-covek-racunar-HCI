@@ -324,7 +324,7 @@
                 <materialDesign:Card
                   HorizontalAlignment="Left"
                   HorizontalContentAlignment="Center"
-                  Background="#FFE4F2FF"
+                  Background="#FF3E9DF5"
                   Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
                   Width="280"
                   Height="130"
@@ -358,11 +358,11 @@
 
                         <!-- Ocene -->
                         <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow"/>
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
                         </StackPanel>
                         <!-- Kraj ocene-->
 
@@ -389,7 +389,7 @@
                 <materialDesign:Card
                   HorizontalAlignment="Left"
                   HorizontalContentAlignment="Center"
-                  Background="#FFE4F2FF"
+                  Background="#FF3E9DF5"
                   Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
                   Width="280"
                   Height="130"
@@ -423,11 +423,11 @@
 
                         <!-- Ocene -->
                         <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow"/>
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
                         </StackPanel>
                         <!-- Kraj ocene-->
 
@@ -454,7 +454,7 @@
                 <materialDesign:Card
                   HorizontalAlignment="Left"
                   HorizontalContentAlignment="Center"
-                  Background="#FFE4F2FF"
+                  Background="#FF3E9DF5"
                   Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
                   Width="280"
                   Height="130"
@@ -488,11 +488,11 @@
 
                         <!-- Ocene -->
                         <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow"/>
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
                         </StackPanel>
                         <!-- Kraj ocene-->
 
@@ -514,11 +514,12 @@
 
                 </materialDesign:Card>
                 <!-- Kraj kartice sa komentarima-->
+
                 <!-- Kartica sa komentarima -->
                 <materialDesign:Card
                   HorizontalAlignment="Left"
                   HorizontalContentAlignment="Center"
-                  Background="#FFE4F2FF"
+                  Background="#FF3E9DF5"
                   Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
                   Width="280"
                   Height="130"
@@ -552,11 +553,76 @@
 
                         <!-- Ocene -->
                         <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
-                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow"/>
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                        </StackPanel>
+                        <!-- Kraj ocene-->
+
+                        <!-- Komentar na lekara-->
+                        <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                           Text="Jedna jako profesionalna klinika, rukovodstvo i zaposleni cine sklad i entropiju sistema savrsenom!"
+                           Width="170"
+                           Height="100"
+                           VerticalAlignment="Center" 
+                           
+                           HorizontalAlignment="Right"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           TextWrapping="WrapWithOverflow"/>
+                        <!-- Kraj komentara-->
+
+                    </Grid>
+                    <!-- Kraj kontenta-->
+
+                </materialDesign:Card>
+                <!-- Kraj kartice sa komentarima-->
+
+                <!-- Kartica sa komentarima -->
+                <materialDesign:Card
+                  HorizontalAlignment="Left"
+                  HorizontalContentAlignment="Center"
+                  Background="#FF3E9DF5"
+                  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                  Width="280"
+                  Height="130"
+                  Margin="40, 20, 0, 0"
+                  Padding="8"
+                  >
+                    <!-- Kontent kartice -->
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Ikonica i ime osobe koja je ostavila ocenu klinike-->
+                        <StackPanel Grid.Column="0" Grid.Row="0">
+
+                            <materialDesign:PackIcon
+                                Height="65"
+                                Width="84"
+                                Kind="AccountCircle" />
+                            <TextBox Text="Jasa Tomic" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+                        </StackPanel>
+                        <!-- Kraj ikonice i ime osobe koja je ostavila ocenu klinike-->
+
+                        <!-- Ocene -->
+                        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow"/>
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
+                            <materialDesign:PackIcon Kind="Star" Foreground="Yellow" />
                         </StackPanel>
                         <!-- Kraj ocene-->
 
