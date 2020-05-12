@@ -10,20 +10,18 @@ namespace HelathClinicPatienteRole.ViewModel
 {
     class KartonPatientViewModel
     {
-        private IList<User> _UsersList;
+        private MedicinskiKarton _MedicinskiKarton;
 
         public KartonPatientViewModel()
         {
-            _UsersList = new List<User>
-            {
-                new User{UserId = 1,FirstName="Marko",LastName="Markovic", Jmbg="0208998500079", PhoneNumber="0602545687",Email="marko@gmail.com"}
-            };
+            _MedicinskiKarton = new MedicinskiKarton { UserId = 1, FirstAndLastName = "Marko Marković", ParentName = "Stefan", DateOfBirth = "01.01.1980", Jmbg = "0208998500079", Address = "Narodnog Fronta, Novi Sad", PhoneNumber = "0622554652", HealthInsuranceNumber = "251365", HealthInsuranceCarrier = "Stefan Marković" };
+
         }
 
-        public IList<User> Users
+        public MedicinskiKarton MedicinskiKarton
         {
-            get { return _UsersList; }
-            set { _UsersList = value; }
+            get { return _MedicinskiKarton; }
+            set { _MedicinskiKarton = value; }
         }
 
         private ICommand mUpdater;

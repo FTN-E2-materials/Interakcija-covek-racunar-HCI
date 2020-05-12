@@ -8,18 +8,39 @@
              d:DesignHeight="700" d:DesignWidth="1300">
     <Grid>
         <StackPanel Background="White">
-            <Grid Height="700"  DataContext="{Binding Users}">
+            <Grid Height="700"  DataContext="{Binding MedicinskiKarton}">
 
-                    
-                 <TextBlock Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Text="Lekarski karton: " Grid.Column="3" Grid.Row="1"  Grid.ColumnSpan="4" Grid.RowSpan="2" />
-                 <TextBlock Foreground="#FF148DF0" FontSize="35"  Text="{Binding FirstName}"  Grid.Column="7" Grid.Row="1"  Grid.ColumnSpan="4" Grid.RowSpan="2" />
-                 <TextBlock Foreground="#FF148DF0" FontSize="35"  Text="{Binding LastName}"    HorizontalAlignment="Right"  Grid.Column="12" Grid.Row="1"  Grid.ColumnSpan="4" Grid.RowSpan="2" />
-    
-                  
+
+                <TextBlock Foreground="#FF148DF0" FontSize="40"  HorizontalAlignment="Right" Text="Lekarski karton " Grid.Column="4" Grid.Row="1"  Grid.ColumnSpan="5" Grid.RowSpan="2" />
+                <TextBlock Foreground="#FF148DF0" FontSize="40"  Text="{Binding FirstAndLastName}"  Grid.Column="9" Grid.Row="1"  Grid.ColumnSpan="6" Grid.RowSpan="2" />
+
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Ime jednog roditelja: " Grid.Column="1" Grid.Row="7"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding ParentName}"  Grid.Column="6" Grid.Row="7"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Datum rođenja: " Grid.Column="1" Grid.Row="9"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding DateOfBirth}"  Grid.Column="6" Grid.Row="9"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="JMBG: " Grid.Column="1" Grid.Row="11"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding Jmbg}"  Grid.Column="6" Grid.Row="11"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+
+
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Adresa: " Grid.Column="1" Grid.Row="13"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding Address}"  Grid.Column="6" Grid.Row="13"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+               
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Broj telefona: " Grid.Column="1" Grid.Row="15"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding PhoneNumber}"  Grid.Column="6" Grid.Row="15"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Broj zdravstvenog: " Grid.Column="1" Grid.Row="17"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding HealthInsuranceNumber}"  Grid.Column="6" Grid.Row="17"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
                 
-
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Nosilac zdravstvenog: " Grid.Column="1" Grid.Row="19"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding HealthInsuranceCarrier}"  Grid.Column="6" Grid.Row="19"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
 
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
