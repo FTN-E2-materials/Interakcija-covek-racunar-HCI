@@ -3,15 +3,587 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:HealthClinic.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="1080" MinHeight="600">
     <Grid Background="#cdfbf4">
-        <TextBox HorizontalAlignment="Center"  FontSize="30" Padding="30" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Teal">
-            TAB RECENZIJA, za nastavak koriscenja izaberite
-        </TextBox>
-        <TextBlock HorizontalAlignment="Center"  FontSize="30" Padding="100" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Teal">
-            tab koji zelite koristiti.
-        </TextBlock>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Deo o nasim lekarima. -->
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+
+            
+            <!-- Text iznad recenzija-->
+            <TextBlock 
+                HorizontalAlignment="Left"
+                FontFamily="Times New Roman" 
+                FontSize="22" 
+                FontStyle="Italic"
+                Text="Rezultati ankete nasih lekara"
+                Margin="60, 20, 0, 0"
+                Foreground="#FF2196F3">
+
+            </TextBlock>
+            <!-- Kraj teksta iznad recenzija -->
+
+            <!-- Deo sa prva dva rezultata ankete-->
+            <StackPanel Orientation="Horizontal" Margin="0, 20, 0, 20">
+                
+              <materialDesign:Card
+                  HorizontalAlignment="Left"
+                  HorizontalContentAlignment="Center"
+                  Background="{DynamicResource PrimaryHueLightBrush}"
+                  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                  Width="300"
+                  Height="150"
+                  Margin="20, 20, 0, 0"
+                  Padding="8">
+                    <!-- Kontent kartice -->
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <!-- Ikonica i ime lekara-->
+                        <StackPanel Grid.Column="0" Grid.Row="0">
+
+                            <materialDesign:PackIcon
+                                Height="80"
+                                Width="90"
+                                Kind="AccountCircle"
+                                Foreground="White"/>
+                            <TextBox Text="Dr.Nikolic M." HorizontalAlignment="Center" FontWeight="Bold"/>
+
+                        </StackPanel>
+                        <!-- Kraj ikonice i imena lekara-->
+
+                        <!-- Ocene -->
+                        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                        </StackPanel>
+                        <!-- Kraj ocene-->
+                        
+                        <!-- Komentar na lekara-->
+                        <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                           Text="Jako ljubazan i veoma strucan lekar, u svakom trenutku profesionalan sve pohvale i preporuke za ovog lekara!"
+                           Width="170"
+                           Height="100"
+                           VerticalAlignment="Center" 
+                           
+                           HorizontalAlignment="Right"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           TextWrapping="WrapWithOverflow"/>
+                        <!-- Kraj komentara-->
+                        
+                    </Grid>
+                    <!-- Kraj kontenta-->
+
+                </materialDesign:Card>
+
+                <materialDesign:Card
+                  HorizontalAlignment="Left"
+                  HorizontalContentAlignment="Center"
+                  Background="{DynamicResource PrimaryHueLightBrush}"
+                  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                  Width="300"
+                  Height="150"
+                  Margin="80, 20, 0, 0"
+                  Padding="8">
+                    <!-- Kontent kartice -->
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Ikonica i ime lekara-->
+                        <StackPanel Grid.Column="0" Grid.Row="0">
+
+                            <materialDesign:PackIcon
+                                Height="80"
+                                Width="90"
+                                Kind="AccountCircle"
+                                Foreground="White"/>
+                            <TextBox Text="Dr.Nikolic M." HorizontalAlignment="Center" FontWeight="Bold"/>
+
+                        </StackPanel>
+                        <!-- Kraj ikonice i imena lekara-->
+
+                        <!-- Ocene -->
+                        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                        </StackPanel>
+                        <!-- Kraj ocene-->
+
+                        <!-- Komentar na lekara-->
+                        <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                           Text="Jako ljubazan i veoma strucan lekar, u svakom trenutku profesionalan sve pohvale i preporuke za ovog lekara!"
+                           Width="170"
+                           Height="100"
+                           VerticalAlignment="Center" 
+                           
+                           HorizontalAlignment="Right"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           TextWrapping="WrapWithOverflow"/>
+                        <!-- Kraj komentara-->
+
+                    </Grid>
+                    <!-- Kraj kontenta-->
+
+                </materialDesign:Card>
+
+
+            </StackPanel>
+            <!-- Kraj dela sa prva dva rezultata ankete-->
+
+            <!-- Deo sa druga dva rezultata ankete-->
+            <StackPanel Orientation="Horizontal" Margin="0,35,10,0">
+
+                <materialDesign:Card
+                  HorizontalAlignment="Left"
+                  HorizontalContentAlignment="Center"
+                  Background="{DynamicResource PrimaryHueLightBrush}"
+                  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                  Width="300"
+                  Height="150"
+                  Margin="20, 20, 0, 0"
+                  Padding="8">
+                    <!-- Kontent kartice -->
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Ikonica i ime lekara-->
+                        <StackPanel Grid.Column="0" Grid.Row="0">
+
+                            <materialDesign:PackIcon
+                                Height="80"
+                                Width="90"
+                                Kind="AccountCircle"
+                                Foreground="White"/>
+                            <TextBox Text="Dr.Nikolic M." HorizontalAlignment="Center" FontWeight="Bold"/>
+
+                        </StackPanel>
+                        <!-- Kraj ikonice i imena lekara-->
+
+                        <!-- Ocene -->
+                        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                        </StackPanel>
+                        <!-- Kraj ocene-->
+
+                        <!-- Komentar na lekara-->
+                        <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                           Text="Jako ljubazan i veoma strucan lekar, u svakom trenutku profesionalan sve pohvale i preporuke za ovog lekara!"
+                           Width="170"
+                           Height="100"
+                           VerticalAlignment="Center" 
+                           
+                           HorizontalAlignment="Right"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           TextWrapping="WrapWithOverflow"/>
+                        <!-- Kraj komentara-->
+
+                    </Grid>
+                    <!-- Kraj kontenta-->
+
+                </materialDesign:Card>
+
+                <materialDesign:Card
+                  HorizontalAlignment="Left"
+                  HorizontalContentAlignment="Center"
+                  Background="{DynamicResource PrimaryHueLightBrush}"
+                  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                  Width="300"
+                  Height="150"
+                  Margin="80, 20, 0, 0"
+                  Padding="8">
+                    <!-- Kontent kartice -->
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Ikonica i ime lekara-->
+                        <StackPanel Grid.Column="0" Grid.Row="0">
+
+                            <materialDesign:PackIcon
+                                Height="80"
+                                Width="90"
+                                Kind="AccountCircle"
+                                Foreground="White"/>
+                            <TextBox Text="Dr.Nikolic M." HorizontalAlignment="Center" FontWeight="Bold"/>
+
+                        </StackPanel>
+                        <!-- Kraj ikonice i imena lekara-->
+
+                        <!-- Ocene -->
+                        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                        </StackPanel>
+                        <!-- Kraj ocene-->
+
+                        <!-- Komentar na lekara-->
+                        <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                           Text="Jako ljubazan i veoma strucan lekar, u svakom trenutku profesionalan sve pohvale i preporuke za ovog lekara!"
+                           Width="170"
+                           Height="100"
+                           VerticalAlignment="Center" 
+                           
+                           HorizontalAlignment="Right"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           TextWrapping="WrapWithOverflow"/>
+                        <!-- Kraj komentara-->
+
+                    </Grid>
+                    <!-- Kraj kontenta-->
+
+                </materialDesign:Card>
+
+
+
+            </StackPanel>
+            <!-- Kraj dela sa druga dva rezultata ankete-->
+            
+            
+
+        </StackPanel>
+        <!-- Kraj dela o nasim lekarima -->
+
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="500" VerticalAlignment="Top">
+            <!-- Deo sa 'o nama su rekli' -->
+            <StackPanel>
+
+                <!-- Text iznad 'o nama su rekli'-->
+                <TextBlock 
+                HorizontalAlignment="Center"
+                FontFamily="Times New Roman" 
+                FontSize="22" 
+                FontStyle="Italic"
+                Text="O nama su rekli"
+                Margin="10, 20, 0, 0"
+                Foreground="#FF2196F3">
+
+                </TextBlock>
+                <!-- Kraj teksta iznad 'o nama su rekli' -->
+
+                <!-- Kartica sa komentarima -->
+                <materialDesign:Card
+                  HorizontalAlignment="Left"
+                  HorizontalContentAlignment="Center"
+                  Background="#FFE4F2FF"
+                  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                  Width="280"
+                  Height="130"
+                  Margin="40, 20, 0, 0"
+                  Padding="8"
+                  >
+                    <!-- Kontent kartice -->
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Ikonica i ime osobe koja je ostavila ocenu klinike-->
+                        <StackPanel Grid.Column="0" Grid.Row="0">
+
+                            <materialDesign:PackIcon
+                                Height="65"
+                                Width="84"
+                                Kind="AccountCircle" />
+                            <TextBox Text="Jasa Tomic" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+                        </StackPanel>
+                        <!-- Kraj ikonice i ime osobe koja je ostavila ocenu klinike-->
+
+                        <!-- Ocene -->
+                        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                        </StackPanel>
+                        <!-- Kraj ocene-->
+
+                        <!-- Komentar na lekara-->
+                        <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                           Text="Jedna jako profesionalna klinika, rukovodstvo i zaposleni cine sklad i entropiju sistema savrsenom!"
+                           Width="170"
+                           Height="100"
+                           VerticalAlignment="Center" 
+                           
+                           HorizontalAlignment="Right"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           TextWrapping="WrapWithOverflow"/>
+                        <!-- Kraj komentara-->
+
+                    </Grid>
+                    <!-- Kraj kontenta-->
+
+                </materialDesign:Card>
+                <!-- Kraj kartice sa komentarima-->
+
+                <!-- Kartica sa komentarima -->
+                <materialDesign:Card
+                  HorizontalAlignment="Left"
+                  HorizontalContentAlignment="Center"
+                  Background="#FFE4F2FF"
+                  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                  Width="280"
+                  Height="130"
+                  Margin="40, 20, 0, 0"
+                  Padding="8"
+                  >
+                    <!-- Kontent kartice -->
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Ikonica i ime osobe koja je ostavila ocenu klinike-->
+                        <StackPanel Grid.Column="0" Grid.Row="0">
+
+                            <materialDesign:PackIcon
+                                Height="65"
+                                Width="84"
+                                Kind="AccountCircle" />
+                            <TextBox Text="Jasa Tomic" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+                        </StackPanel>
+                        <!-- Kraj ikonice i ime osobe koja je ostavila ocenu klinike-->
+
+                        <!-- Ocene -->
+                        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                        </StackPanel>
+                        <!-- Kraj ocene-->
+
+                        <!-- Komentar na lekara-->
+                        <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                           Text="Jedna jako profesionalna klinika, rukovodstvo i zaposleni cine sklad i entropiju sistema savrsenom!"
+                           Width="170"
+                           Height="100"
+                           VerticalAlignment="Center" 
+                           
+                           HorizontalAlignment="Right"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           TextWrapping="WrapWithOverflow"/>
+                        <!-- Kraj komentara-->
+
+                    </Grid>
+                    <!-- Kraj kontenta-->
+
+                </materialDesign:Card>
+                <!-- Kraj kartice sa komentarima-->
+
+                <!-- Kartica sa komentarima -->
+                <materialDesign:Card
+                  HorizontalAlignment="Left"
+                  HorizontalContentAlignment="Center"
+                  Background="#FFE4F2FF"
+                  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                  Width="280"
+                  Height="130"
+                  Margin="40, 20, 0, 0"
+                  Padding="8"
+                  >
+                    <!-- Kontent kartice -->
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Ikonica i ime osobe koja je ostavila ocenu klinike-->
+                        <StackPanel Grid.Column="0" Grid.Row="0">
+
+                            <materialDesign:PackIcon
+                                Height="65"
+                                Width="84"
+                                Kind="AccountCircle" />
+                            <TextBox Text="Jasa Tomic" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+                        </StackPanel>
+                        <!-- Kraj ikonice i ime osobe koja je ostavila ocenu klinike-->
+
+                        <!-- Ocene -->
+                        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                        </StackPanel>
+                        <!-- Kraj ocene-->
+
+                        <!-- Komentar na lekara-->
+                        <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                           Text="Jedna jako profesionalna klinika, rukovodstvo i zaposleni cine sklad i entropiju sistema savrsenom!"
+                           Width="170"
+                           Height="100"
+                           VerticalAlignment="Center" 
+                           
+                           HorizontalAlignment="Right"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           TextWrapping="WrapWithOverflow"/>
+                        <!-- Kraj komentara-->
+
+                    </Grid>
+                    <!-- Kraj kontenta-->
+
+                </materialDesign:Card>
+                <!-- Kraj kartice sa komentarima-->
+                <!-- Kartica sa komentarima -->
+                <materialDesign:Card
+                  HorizontalAlignment="Left"
+                  HorizontalContentAlignment="Center"
+                  Background="#FFE4F2FF"
+                  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                  Width="280"
+                  Height="130"
+                  Margin="40, 20, 0, 0"
+                  Padding="8"
+                  >
+                    <!-- Kontent kartice -->
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Ikonica i ime osobe koja je ostavila ocenu klinike-->
+                        <StackPanel Grid.Column="0" Grid.Row="0">
+
+                            <materialDesign:PackIcon
+                                Height="65"
+                                Width="84"
+                                Kind="AccountCircle" />
+                            <TextBox Text="Jasa Tomic" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+                        </StackPanel>
+                        <!-- Kraj ikonice i ime osobe koja je ostavila ocenu klinike-->
+
+                        <!-- Ocene -->
+                        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                            <materialDesign:PackIcon Kind="Star" />
+                        </StackPanel>
+                        <!-- Kraj ocene-->
+
+                        <!-- Komentar na lekara-->
+                        <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                           Text="Jedna jako profesionalna klinika, rukovodstvo i zaposleni cine sklad i entropiju sistema savrsenom!"
+                           Width="170"
+                           Height="100"
+                           VerticalAlignment="Center" 
+                           
+                           HorizontalAlignment="Right"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           TextWrapping="WrapWithOverflow"/>
+                        <!-- Kraj komentara-->
+
+                    </Grid>
+                    <!-- Kraj kontenta-->
+
+                </materialDesign:Card>
+                <!-- Kraj kartice sa komentarima-->
+
+            </StackPanel>
+            <!-- Kraj dela 'o nama su rekli' -->
+        </ScrollViewer>
+        
+        
+        
     </Grid>
 </UserControl>

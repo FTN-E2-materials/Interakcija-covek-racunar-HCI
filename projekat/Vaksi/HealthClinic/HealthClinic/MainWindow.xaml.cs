@@ -46,9 +46,7 @@ namespace HealthClinic
 
         private void RecenzijeTab_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new AboutViewModel();
-            // TODO: Otkomentarisati po zavrsetku recenzije view dela. A gornji deo zakomentarisati
-            //DataContext = new RecenzijaViewModel();
+            DataContext = new RecenzijaViewModel();
         }
 
         private void ZaposleniTab_Click(object sender, RoutedEventArgs e)
