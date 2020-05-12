@@ -19,33 +19,18 @@ namespace HealthClinic.Models
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
-
+        
         private string _odeljenje;
         private string _brojSobe;
         private string _namena;
-        private string _oprema;     //TODO: Na otvaranje ovoga dobijamo dijalog sa tabelom opreme
-        private string _zauzetost;  //TODO: Na otvaranje ovoga mozemo da vidimo kad je soba zauzeta/slobodna
+        private string _spisakOpreme;     //TODO: Na otvaranje ovoga dobijamo dijalog sa tabelom opreme
+        private string _uvidZauzetosti;  //TODO: Na otvaranje ovoga mozemo da vidimo kad je soba zauzeta/slobodna
 
-        public string Zauzetost
+        public string Odeljenje
         {
-            get { return _zauzetost; }
-            set { _zauzetost = value; OnPropertyChanged("Zauzetost"); }
+            get { return _odeljenje; }
+            set { _odeljenje = value; OnPropertyChanged("Odeljenje"); }
         }
-
-        public string Oprema
-        {
-            get { return _oprema; }
-            set { _oprema = value;  OnPropertyChanged("Oprema"); }
-        }
-
-
-        public string Namena
-        {
-            get { return _namena; }
-            set { _namena = value; OnPropertyChanged("Namena"); }
-        }
-
-
 
         public string BrojSobe
         {
@@ -53,12 +38,35 @@ namespace HealthClinic.Models
             set { _brojSobe = value; OnPropertyChanged("BrojSobe"); }
         }
 
+        public string Namena
+        {
+            get { return _namena; }
+            set { _namena = value; OnPropertyChanged("Namena"); }
+        }
 
-        public string Odeljenje
-		{
-			get { return _odeljenje; }
-			set { _odeljenje = value; OnPropertyChanged("Odeljenje"); }
-		}
+        public string SpisakOpreme
+        {
+            get { return _spisakOpreme; }
+            set { _spisakOpreme = value; OnPropertyChanged("SpisakOpreme"); }
+        }
+
+        public string UvidZauzetosti
+        {
+            get { return _uvidZauzetosti; }
+            set { _uvidZauzetosti = value; OnPropertyChanged("UvidZauzetosti"); }
+        }
+
+        
+
+
+        
+
+
+
+        
+
+
+  
 
 	}
 }

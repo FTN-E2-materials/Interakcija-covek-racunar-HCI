@@ -31,13 +31,13 @@ namespace HealthClinic.Views
 
             //Tabela - popunjavanje
             Prostorije = new ObservableCollection<Prostorija>();
-            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "12", Namena = "operaciona sala", Zauzetost = "otvaranje", Oprema = "otvaranje" });
-            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "9", Namena = "soba", Zauzetost = "otvaranje", Oprema = "otvaranje" });
-            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "13", Namena = "soba", Zauzetost = "otvaranje", Oprema = "otvaranje" });
-            Prostorije.Add(new Prostorija() { Odeljenje = "decije", BrojSobe = "8", Namena = "soba", Zauzetost = "otvaranje", Oprema = "otvaranje" });
-            Prostorije.Add(new Prostorija() { Odeljenje = "decije", BrojSobe = "10", Namena = "operaciona sala", Zauzetost = "otvaranje", Oprema = "otvaranje" });
-            Prostorije.Add(new Prostorija() { Odeljenje = "otorinolaringologija", BrojSobe = "2", Namena = "soba", Zauzetost = "otvaranje", Oprema = "otvaranje" });
-            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "7", Namena = "operaciona sala", Zauzetost = "otvaranje", Oprema = "otvaranje" });
+            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "12", Namena = "operaciona sala", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
+            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "9", Namena = "soba", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
+            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "13", Namena = "soba", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
+            Prostorije.Add(new Prostorija() { Odeljenje = "decije", BrojSobe = "8", Namena = "soba", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
+            Prostorije.Add(new Prostorija() { Odeljenje = "decije", BrojSobe = "10", Namena = "operaciona sala", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
+            Prostorije.Add(new Prostorija() { Odeljenje = "otorinolaringologija", BrojSobe = "2", Namena = "soba", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
+            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "7", Namena = "operaciona sala", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
 
 
 
