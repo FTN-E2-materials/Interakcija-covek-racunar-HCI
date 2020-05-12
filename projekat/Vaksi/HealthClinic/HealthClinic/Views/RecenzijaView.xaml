@@ -6,13 +6,27 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:HealthClinic.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1080" MinHeight="600">
+             d:DesignHeight="500" d:DesignWidth="1080" MinHeight="500">
     <Grid Background="#cdfbf4">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+
+
+        <!-- Shadow karta za rezultate ankete -->
+        <materialDesign:Card
+                Grid.Column="0"
+                Height="410"
+                Width="700"
+                HorizontalAlignment="Center"
+                materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                Margin="0, 30, 0, 0"
+                Padding="0" 
+                Background="#FFCDFBF8"/>
+
+        <!-- Kraj shadow karte za rezultate ankete -->
 
         <!-- Deo o nasim lekarima. -->
         <StackPanel Grid.Column="0" HorizontalAlignment="Center">
@@ -25,7 +39,7 @@
                 FontSize="22" 
                 FontStyle="Italic"
                 Text="Rezultati ankete nasih lekara"
-                Margin="60, 20, 0, 0"
+                Margin="40, 20, 0, 0"
                 Foreground="#FF2196F3">
 
             </TextBlock>
@@ -41,7 +55,7 @@
                   Foreground="White"
                   Width="300"
                   Height="150"
-                  Margin="20, 20, 0, 0"
+                  Margin="30, 20, 0, 0"
                   Padding="8">
                     <!-- Kontent kartice -->
                     <Grid>
@@ -104,7 +118,7 @@
                   Foreground="White"
                   Width="300"
                   Height="150"
-                  Margin="80, 20, 0, 0"
+                  Margin="50, 20, 0, 0"
                   Padding="8">
                     <!-- Kontent kartice -->
                     <Grid>
@@ -165,7 +179,7 @@
             <!-- Kraj dela sa prva dva rezultata ankete-->
 
             <!-- Deo sa druga dva rezultata ankete-->
-            <StackPanel Orientation="Horizontal" Margin="0,35,10,0">
+            <StackPanel Orientation="Horizontal" Margin="0,15,10,0">
 
                 <materialDesign:Card
                   HorizontalAlignment="Left"
@@ -174,7 +188,7 @@
                   Foreground="White"
                   Width="300"
                   Height="150"
-                  Margin="20, 20, 0, 0"
+                  Margin="30, 20, 0, 0"
                   Padding="8">
                     <!-- Kontent kartice -->
                     <Grid>
@@ -237,7 +251,7 @@
                   Foreground="White"
                   Width="300"
                   Height="150"
-                  Margin="80, 20, 0, 0"
+                  Margin="50, 20, 0, 0"
                   Padding="8">
                     <!-- Kontent kartice -->
                     <Grid>
@@ -303,7 +317,12 @@
         </StackPanel>
         <!-- Kraj dela o nasim lekarima -->
 
-        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="500" VerticalAlignment="Top">
+        <ScrollViewer Grid.Column="1"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto"
+                      
+                      Height="500"
+                      VerticalAlignment="Top">
             <!-- Deo sa 'o nama su rekli' -->
             <StackPanel>
 

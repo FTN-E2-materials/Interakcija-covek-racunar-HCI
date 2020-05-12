@@ -137,11 +137,11 @@
 
                         <!-- Parcad u grafikonu.-->
                         <Wpf:PieChart.Series>
-                            <Wpf:PieSeries Title="Antibiotici" Values="25" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                            <Wpf:PieSeries Title="Kardiovaskularni" Values="25" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                            <Wpf:PieSeries Title="Alergijski" Values="25" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                            <Wpf:PieSeries Title="Kardiovaskularni" Values="25" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                            <Wpf:PieSeries Title="Kardiovaskularni" Values="25" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                            <Wpf:PieSeries Title="Lekari" Values="75" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                            <Wpf:PieSeries Title="Sekretari" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                            <Wpf:PieSeries Title="Cistacice" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                            <Wpf:PieSeries Title="Sobarice" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                            <Wpf:PieSeries Title="Cuvari" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
                         </Wpf:PieChart.Series>
                         <!-- Kraj parcadi u grafikonu -->
 
