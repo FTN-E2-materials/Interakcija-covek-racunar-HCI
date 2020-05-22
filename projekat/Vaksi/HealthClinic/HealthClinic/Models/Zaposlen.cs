@@ -7,18 +7,8 @@ using System.ComponentModel;        // za podatke/tabelu
 
 namespace HealthClinic.Models
 {
-    public class Zaposlen : INotifyPropertyChanged
+    public class Zaposlen : ObservableObject
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
-
         private string _ime;
         private string _prezime;
         private string _struka;

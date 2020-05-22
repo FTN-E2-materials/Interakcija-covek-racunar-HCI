@@ -7,19 +7,9 @@ using System.ComponentModel;        // za podatke/tabelu
 
 namespace HealthClinic.Models
 {
-    public class Prostorija : INotifyPropertyChanged
+    public class Prostorija : ObservableObject
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
-        
         private string _odeljenje;
         private string _brojSobe;
         private string _namena;

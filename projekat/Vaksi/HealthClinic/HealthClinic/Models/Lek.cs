@@ -8,18 +8,8 @@ using System.ComponentModel;        // za podatke/tabelu
 
 namespace HealthClinic.Models
 {
-    public class Lek : INotifyPropertyChanged
+    public class Lek : ObservableObject
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
-
         private string _nazivLeka;
         private string _sifraLeka;
         private string _kolicina;

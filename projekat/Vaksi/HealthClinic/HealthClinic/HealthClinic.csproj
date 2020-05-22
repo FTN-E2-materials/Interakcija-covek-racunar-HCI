@@ -90,6 +90,7 @@
     <Compile Include="Models\Lek.cs" />
     <Compile Include="Models\Prostorija.cs" />
     <Compile Include="Models\Zaposlen.cs" />
+    <Compile Include="ObservableObject.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\BlogViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
