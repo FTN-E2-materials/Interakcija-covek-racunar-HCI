@@ -10,9 +10,9 @@ namespace HealthClinic.ViewModels.Commands
     public class PorukaCommand : ICommand
     {
 
-        private Action _execute;
+        private Action<string> _execute;
 
-        public PorukaCommand(Action execute)
+        public PorukaCommand(Action<string> execute)
         {
             // Action je delegate koji kaze da ocekujemo metodu kao parametar
             // Action - bez parametara
@@ -33,7 +33,7 @@ namespace HealthClinic.ViewModels.Commands
 
         public void Execute(object parameter)
         {
-            _execute.Invoke();   
+            _execute.Invoke(parameter as string);
         }
 
         #endregion

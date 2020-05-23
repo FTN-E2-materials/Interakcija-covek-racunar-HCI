@@ -25,12 +25,12 @@ namespace HealthClinic.ViewModels
 
         #region Poruka 
 
-        public string TekstPoruke { get; set; }
+        
         public PorukaCommand PrikaziPorukuCommand { get; private set; }
 
-        public void PrikaziPoruku()
+        public void PrikaziPoruku(string poruka)
         {
-            MessageBox.Show(TekstPoruke);
+            MessageBox.Show(poruka);
         }
 
         #endregion

@@ -28,7 +28,7 @@
                 FontFamily="Times New Roman" 
                 FontSize="22" 
                 FontStyle="Italic"
-                Text="{Binding TekstPoruke, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
+                x:Name="naslovnaPoruka"
                 Margin="60, 20, 0, 0"
                 Foreground="#FF2196F3">
 
@@ -332,7 +332,10 @@
                     Content="Izmena profila"
                     Margin="0, 0, 0, 0"
                     Command="{Binding PrikaziPorukuCommand}"
+                    CommandParameter="{Binding ElementName=naslovnaPoruka, Path=Text}" 
                     >
+                    <!-- content iz naslovne poruke prosledjujemo kao parametar(text iz nje prosledjujemo ovde) -->
+
 
                 </Button>
 
