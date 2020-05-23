@@ -20,17 +20,20 @@
         <StackPanel Grid.Column="0">
 
             <!-- Text iznad grafikona-->
-            <TextBlock 
+            <TextBox
+                Height="30"
+                Width="250"
+                Background="WhiteSmoke"
                 HorizontalAlignment="Left"
                 FontFamily="Times New Roman" 
                 FontSize="22" 
                 FontStyle="Italic"
-                Text="{Binding Zaposlen.Ime}"
+                Text="{Binding TekstPoruke, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
                 Margin="60, 20, 0, 0"
                 Foreground="#FF2196F3">
 
 
-            </TextBlock>
+            </TextBox>
             <!-- Kraj teksta iznad grafikona -->
 
             <!-- Prva dva gornja grafikona -->
@@ -325,9 +328,11 @@
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="150"
-                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    ToolTip="Ovim menjas profil"
                     Content="Izmena profila"
-                    Margin="0, 0, 0, 0">
+                    Margin="0, 0, 0, 0"
+                    Command="{Binding PrikaziPorukuCommand}"
+                    >
 
                 </Button>
 

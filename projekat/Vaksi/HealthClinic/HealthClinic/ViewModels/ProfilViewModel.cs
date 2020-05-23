@@ -1,4 +1,5 @@
 ﻿using HealthClinic.Models;
+using HealthClinic.ViewModels.Commands;
 using LiveCharts;
 using LiveCharts.Wpf;
 using System;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace HealthClinic.ViewModels
 {
@@ -17,16 +19,21 @@ namespace HealthClinic.ViewModels
         {
             this.PieChart();
             this.Cartesian();
+
+            PrikaziPorukuCommand = new PorukaCommand(PrikaziPoruku);
         }
-        public Zaposlen Zaposlen { get; set; } = new Zaposlen()
+
+        #region Poruka 
+
+        public string TekstPoruke { get; set; }
+        public PorukaCommand PrikaziPorukuCommand { get; private set; }
+
+        public void PrikaziPoruku()
         {
-            Ime = "Vlado",
-            Prezime = "Maksimovic",
-            Struka = "Dr.",
-            Sifra = "1234",
-            RadniKalendar = "slobodan",
-            BrojOperacijaOveNedelje = "100"
-        };
+            MessageBox.Show(TekstPoruke);
+        }
+
+        #endregion
 
         #region Grafikon PieChart
         public Func<ChartPoint, string> PointLabel { get; set; }
