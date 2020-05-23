@@ -22,6 +22,10 @@
               materialDesign:ButtonProgressAssist.IsIndeterminate="True"
               Content="Ucitavanje" >
         </Button>
+        <TextBox
+            Text="{Binding Zaposlen.Ime}">
+            
+        </TextBox>
 
         <TextBlock HorizontalAlignment="Center"  FontSize="30" Padding="350" FontFamily="Times New Roman" FontStyle="Italic" Foreground="Teal">
             ucitavanje zavrseno, mozete izabrati tab.

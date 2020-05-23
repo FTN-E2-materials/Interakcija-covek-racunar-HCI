@@ -33,6 +33,7 @@ namespace HealthClinic
 
         private void PocetnaTab_Click(object sender, RoutedEventArgs e)
         {
+            //DataContext = new UcitavanjeViewModel();
             DataContext = new ProfilViewModel();
             // TODO: Prebaciti na homeviewmodel ako se odlucim za tu varijantu.
         }

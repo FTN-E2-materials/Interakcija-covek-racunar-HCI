@@ -49,7 +49,7 @@
                           AutoGenerateColumns="True" 
                           SelectionMode="Single" 
                           IsReadOnly="True" 
-                          AutoGeneratingColumn="generisiKolone" 
+                          
                           Margin="0, 0, 0, 0" 
                           HorizontalAlignment="Center"                 
                           Height="340"
@@ -129,7 +129,7 @@
                     Margin="0, 0, 0, 0"
                     VerticalAlignment="Top" 
                     LegendLocation="Bottom"
-                    DataClick="PieChart_DataClick">
+                    >
 
                         <!-- Parcad u grafikonu.-->
                         <Wpf:PieChart.Series>

@@ -27,56 +27,6 @@ namespace HealthClinic.Views
         public ProstorijeView()
         {
             InitializeComponent();
-            this.PieChart();
-
-            //Tabela - popunjavanje
-            Prostorije = new ObservableCollection<Prostorija>();
-            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "12", Namena = "operaciona sala", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
-            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "9", Namena = "soba", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
-            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "13", Namena = "soba", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
-            Prostorije.Add(new Prostorija() { Odeljenje = "decije", BrojSobe = "8", Namena = "soba", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
-            Prostorije.Add(new Prostorija() { Odeljenje = "decije", BrojSobe = "10", Namena = "operaciona sala", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
-            Prostorije.Add(new Prostorija() { Odeljenje = "otorinolaringologija", BrojSobe = "2", Namena = "soba", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
-            Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "7", Namena = "operaciona sala", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
-
-
-
         }
-
-        #region Grafikon 
-        public Func<ChartPoint, string> PointLabel { get; set; }
-
-        public void PieChart()
-        {
-            PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
-            DataContext = this;
-
-        }
-
-        private void PieChart_DataClick(object sender, ChartPoint chartPoint)
-        {
-
-        }
-
-        #endregion
-
-
-        #region Tabela prostorija
-
-        private int brojKolone = 0;
-
-        public ObservableCollection<Prostorija> Prostorije { get; set; }
-
-        private void generisiKolone(object sender, DataGridAutoGeneratingColumnEventArgs e)
-        {
-            //brojKolone++;
-            //if(brojKolone == 1)
-            //{
-            //    e.Column.Width = new DataGridLength(1, DataGridLengthUnitType.Star);
-            //}
-            //e.Column.Width = new DataGridLength(++brojKolone, DataGridLengthUnitType.Star);
-        }
-
-        #endregion
     }
 }
