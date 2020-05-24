@@ -1,5 +1,6 @@
 ﻿using HealthClinic.Dialogs;
 using HealthClinic.Models;
+using HealthClinic.Utilities;
 using HealthClinic.ViewModels.Commands;
 using LiveCharts;
 using System;
@@ -19,15 +20,15 @@ namespace HealthClinic.ViewModels
             PieChart();
             ucitavanjeProstorija();
 
-            GenerisiIzvestajCommand = new PorukaCommand(PrikazDijalogaGenerisiIzvestaj);
+            GenerisiIzvestajCommand = new RelayCommand(PrikazDijalogaGenerisiIzvestaj);
 
         }
 
         #region Komande
 
-        public PorukaCommand GenerisiIzvestajCommand { get; private set; }
+        public RelayCommand GenerisiIzvestajCommand { get; private set; }
 
-        public void PrikazDijalogaGenerisiIzvestaj(string poruka)
+        public void PrikazDijalogaGenerisiIzvestaj(object obj)
         {
             var s = new GenerisiIzvestajDijalog();
             s.ShowDialog();

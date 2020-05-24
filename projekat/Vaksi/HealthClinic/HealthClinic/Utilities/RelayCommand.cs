@@ -54,6 +54,8 @@ namespace HealthClinic.Utilities
         [DebuggerStepThrough]
         public bool CanExecute(object parameters)
         {
+            // when we do not have Predicate _canExecute is null,so it need to stay null
+            // otherwise Predicate get/invoke function 'parameters'
             return _canExecute == null ? true : _canExecute(parameters);
         }
 
@@ -65,7 +67,7 @@ namespace HealthClinic.Utilities
 
         public void Execute(object parameters)
         {
-            _execute(parameters);
+            _execute.Invoke(parameters);
         }
 
         #endregion // ICommand Members

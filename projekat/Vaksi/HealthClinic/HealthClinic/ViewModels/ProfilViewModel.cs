@@ -1,5 +1,6 @@
 ﻿using HealthClinic.Dialogs;
 using HealthClinic.Models;
+using HealthClinic.Utilities;
 using HealthClinic.ViewModels.Commands;
 using LiveCharts;
 using LiveCharts.Wpf;
@@ -18,23 +19,25 @@ namespace HealthClinic.ViewModels
 
         public ProfilViewModel()
         {
-            this.PieChart();
-            this.Cartesian();
+            PieChart();
+            Cartesian();
 
-            PrikaziPorukuCommand = new PorukaCommand(PrikaziPoruku);
+            IzmenaDijalogCommand = new RelayCommand(PrikaziDijalog);            
+            // kao parametar se ocekuje delegat, posto je delegat pokazivac na funkciju
+            // prosledjujem funkciju i onda se ona okida, u ovom slucaju bez uslova pod kojim se okida
+            // ali moze se proslediti i uslov pod kojim se okida
         }
 
-        #region Poruka 
+        #region Komande
 
-        
-        public PorukaCommand PrikaziPorukuCommand { get; private set; }
+        public RelayCommand IzmenaDijalogCommand { get; private set; }
 
-        public void PrikaziPoruku(string poruka)
+        public void PrikaziDijalog(object obj)
         {
-            var s = new IzmenaProfilaDijalog();
-            s.ShowDialog();
-
+            var dijalog = new IzmenaProfilaDijalog();
+            dijalog.ShowDialog();
         }
+
 
         #endregion
 
