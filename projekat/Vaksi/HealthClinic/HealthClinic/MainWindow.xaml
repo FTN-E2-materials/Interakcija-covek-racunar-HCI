@@ -8,8 +8,7 @@
         xmlns:viewmodels="clr-namespace:HealthClinic.ViewModels"
         xmlns:views="clr-namespace:HealthClinic.Views"
         mc:Ignorable="d"
-        
-        
+        WindowStartupLocation="CenterScreen"
         Height="620" Width="1080"  WindowStyle="None" MinHeight="620" MinWidth="1080"  >
     <Window.Resources>
         <!-- Bajndovanje DateConteksta za svaki view zasebno -->

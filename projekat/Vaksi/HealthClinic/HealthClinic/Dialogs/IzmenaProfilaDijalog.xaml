@@ -1,0 +1,105 @@
+﻿<Window x:Class="HealthClinic.Dialogs.IzmenaProfilaDijalog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:HealthClinic.Dialogs"
+        mc:Ignorable="d"
+        Title="IzmenaProfilaDijalog" Height="400" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Podaci -->
+        <StackPanel Grid.Row="0">
+
+            <!-- Kontakt telefon -->
+            <TextBox
+                Width="320"
+                Height="40"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="KontaktTelefon"
+                materialDesign:HintAssist.Hint="Ovde unesti kontakt telefon"
+                materialDesign:HintAssist.HelperText="Kontakt telefon">
+                
+            </TextBox>
+            <!-- Kraj kontakt telefon-a-->
+
+
+            <!-- Adresa stanovanja -->
+            <TextBox
+                Width="320"
+                Height="40"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="AdresaStanovanja"
+                materialDesign:HintAssist.Hint="Ovde unesite adresu stanovanja"
+                materialDesign:HintAssist.HelperText="Adresa stanovanja">
+
+            </TextBox>
+            <!-- Kraj adrese stanovanja -->
+
+            <!-- Trenutna lozinka -->
+            <TextBox
+                Width="320"
+                Height="40"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="TrenutnaLozinka"
+                materialDesign:HintAssist.Hint="Ovde unesite trenutnu lozinku"
+                materialDesign:HintAssist.HelperText="Trenutna lozinka">
+
+            </TextBox>
+            <!-- Kraj trenutne lozinke -->
+
+            <!-- Nova lozinka -->
+            <TextBox
+                Width="320"
+                Height="40"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="NovaLozinka"
+                materialDesign:HintAssist.Hint="Ovde unesite novu lozinku"
+                materialDesign:HintAssist.HelperText="Nova lozinka">
+
+            </TextBox>
+            <!-- Kraj nove lozinke -->
+
+        </StackPanel>
+        <!-- Kraj dela sa podacima -->
+               
+
+        <!-- Dugmad -->
+        <StackPanel Margin="0, 40, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+
+            <Button 
+                Height="40"
+                Width="100"
+                Margin="10"
+                >
+                    Potvrdi
+            </Button>
+
+            <Button 
+                Height="40"
+                Width="100"
+                Margin="10"
+                >
+                    Odustani
+            </Button>
+
+        </StackPanel>
+        <!-- Kraj dugmad dela-->
+            
+    </Grid>
+</Window>

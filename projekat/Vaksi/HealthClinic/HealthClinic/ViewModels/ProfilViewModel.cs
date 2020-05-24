@@ -1,4 +1,5 @@
-﻿using HealthClinic.Models;
+﻿using HealthClinic.Dialogs;
+using HealthClinic.Models;
 using HealthClinic.ViewModels.Commands;
 using LiveCharts;
 using LiveCharts.Wpf;
@@ -30,7 +31,9 @@ namespace HealthClinic.ViewModels
 
         public void PrikaziPoruku(string poruka)
         {
-            MessageBox.Show(poruka);
+            var s = new IzmenaProfilaDijalog();
+            s.ShowDialog();
+
         }
 
         #endregion

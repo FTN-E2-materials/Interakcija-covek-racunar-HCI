@@ -16,7 +16,7 @@ namespace PrimerCas4
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            var s = new PrimerCas4.Layouts.StackPanelExample();
+            var s = new StackPanelExample();
             s.Show();
         }
 
