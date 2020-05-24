@@ -1,0 +1,125 @@
+﻿<Window x:Class="HealthClinic.Dialogs.IzmeniProstorijuDijalog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HealthClinic.Dialogs"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Izmeni prostoriju" Height="400" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Podaci -->
+        <StackPanel Grid.Row="0">
+
+            <!-- Naziv odeljenja -->
+            <TextBox
+                Background="WhiteSmoke"
+                Width="320"
+                Height="40"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="NazivOdeljenja"
+                materialDesign:HintAssist.Hint="Ovde unesite naziv odeljenja"
+                materialDesign:HintAssist.HelperText="Naziv odeljenja">
+
+            </TextBox>
+            <!-- Kraj naziva odeljenja -->
+
+            <!-- Broj prostorije-->
+            <TextBox
+                Background="WhiteSmoke"
+                Width="320"
+                Height="40"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="BrojProstorije"
+                materialDesign:HintAssist.Hint="Ovde unesite broj prostorije"
+                materialDesign:HintAssist.HelperText="Broj prostorije">
+
+            </TextBox>
+            <!-- Kraj broja prostorije-->
+
+            <!-- Tip prostorije -->
+            <ComboBox
+                Background="WhiteSmoke"
+                Width="320"
+                Height="40"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="TipLeka"
+                materialDesign:HintAssist.Hint="Izaberite tip prostorije"
+                materialDesign:HintAssist.HelperText="Tip prostorije"
+                >
+                <ComboBoxItem>
+                    Operaciona sala
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Soba za preglede
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Soba za pacijente
+                </ComboBoxItem>
+
+            </ComboBox>
+            <!-- Kraj tipa prostorije -->
+
+            <!-- Oprema -->
+            <ComboBox
+                Background="WhiteSmoke"
+                Width="320"
+                Height="40"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="Oprema"
+                materialDesign:HintAssist.Hint="Izaberite opremu koja se nalazi u prostorij"
+                materialDesign:HintAssist.HelperText="Oprema"
+                >
+                <ComboBoxItem>
+                    Krevet
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Sto
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Respirator
+                </ComboBoxItem>
+
+            </ComboBox>
+            <!-- Kraj opreme -->
+            
+        </StackPanel>
+        <!-- Kraj dela sa podacima -->
+
+
+        <!-- Dugmad -->
+        <StackPanel Margin="0, 40, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+
+            <Button 
+                Height="40"
+                Width="100"
+                Margin="10"
+                >
+                Potvrdi
+            </Button>
+
+            <Button 
+                Height="40"
+                Width="100"
+                Margin="10"
+                >
+                Odustani
+            </Button>
+
+        </StackPanel>
+        <!-- Kraj dugmad dela-->
+    </Grid>
+</Window>

@@ -1,0 +1,133 @@
+﻿<Window x:Class="HealthClinic.Dialogs.DodajLekDijalog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:HealthClinic.Dialogs"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Dodaj lek" Height="510" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Podaci -->
+        <StackPanel Grid.Row="0">
+
+            <!-- Naziv leka -->
+            <TextBox
+                Background="WhiteSmoke"
+                Width="320"
+                Height="40"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="Naziv"
+                materialDesign:HintAssist.Hint="Ovde unesite naziv"
+                materialDesign:HintAssist.HelperText="Naziv leka">
+
+            </TextBox>
+            <!-- Kraj naziva -->
+
+            <!-- Kolicina -->
+            <TextBox
+                Background="WhiteSmoke"
+                Width="320"
+                Height="40"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="Kolicina"
+                materialDesign:HintAssist.Hint="Ovde unesite kolicinu leka"
+                materialDesign:HintAssist.HelperText="Kolicina leka">
+
+            </TextBox>
+            <!-- Kraj kolicine -->
+
+            <!-- Nuspojava -->
+            <TextBox
+                TextWrapping="Wrap"
+                Background="WhiteSmoke"
+                Width="320"
+                Height="80"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="Nuspojava"
+                materialDesign:HintAssist.Hint="Ovde unesite nuspojavu, ako postoji"
+                materialDesign:HintAssist.HelperText="Nuspojava">
+
+            </TextBox>
+            <!-- Kraj nuspojave -->
+
+            <!-- Alergija -->
+            <TextBox
+                TextWrapping="Wrap"
+                Background="WhiteSmoke"
+                Width="320"
+                Height="70"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="Alergija"
+                materialDesign:HintAssist.Hint="Ovde unesite koju alergiju izaziva, ako izaziva"
+                materialDesign:HintAssist.HelperText="Alergija">
+
+            </TextBox>
+            <!-- Kraj alergije -->
+           
+            <!-- Tip leka -->
+            <ComboBox
+                Background="WhiteSmoke"
+                Width="320"
+                Height="40"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="TipLeka"
+                materialDesign:HintAssist.Hint="Izaberite tip leka"
+                materialDesign:HintAssist.HelperText="Tip leka"
+                >
+                <ComboBoxItem>
+                    Tableta
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Sirup
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Septoleta
+                </ComboBoxItem>
+
+            </ComboBox>
+            <!-- Kraj tipa leka -->
+
+        </StackPanel>
+        <!-- Kraj dela sa podacima -->
+
+
+        <!-- Dugmad -->
+        <StackPanel Margin="0, 40, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+
+            <Button 
+                Height="40"
+                Width="100"
+                Margin="10"
+                >
+                Potvrdi
+            </Button>
+
+            <Button 
+                Height="40"
+                Width="100"
+                Margin="10"
+                >
+                Odustani
+            </Button>
+
+        </StackPanel>
+        <!-- Kraj dugmad dela-->
+    </Grid>
+</Window>

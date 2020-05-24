@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace HealthClinic.Dialogs
 {
     /// <summary>
-    /// Interaction logic for GenerisiIzvestajDijalog.xaml
+    /// Interaction logic for IzmeniZaposlenogDijalog.xaml
     /// </summary>
-    public partial class GenerisiIzvestajDijalog : Window
+    public partial class IzmeniZaposlenogDijalog : Window
     {
-        public GenerisiIzvestajDijalog()
+        public IzmeniZaposlenogDijalog()
         {
             InitializeComponent();
         }

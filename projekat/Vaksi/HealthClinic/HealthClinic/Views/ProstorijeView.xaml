@@ -75,8 +75,9 @@
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="140"
-                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    ToolTip="Dodaj novu prostoriju nasoj klinici"
                     Content="Dodaj prostoriju"
+                    Command="{Binding DodajProstorijuCommand}"
                     Margin="60, 0, 0, 0">
 
                 </Button>
@@ -86,6 +87,7 @@
                     Width="140"
                     ToolTip="Resource name: MaterialDesignRaisedButton"
                     Content="Izmeni prostoriju"
+                    Command="{Binding IzmeniProstorijuCommand}"
                     Margin="10">
 
                 </Button>
@@ -155,7 +157,7 @@
                             materialDesign:ButtonProgressAssist.IsIndeterminate="True"
                             Content="Generisi izvestaj"
                             Margin="2,0"
-                            Command="{Binding GenerisiIzvestajCommand}"
+                            Command="{Binding GenerisiIzvestajProstorijaCommand}"
                             />
                     </Grid>
                     <!-- Kraj dugmeta za generisanje izvestaja. -->

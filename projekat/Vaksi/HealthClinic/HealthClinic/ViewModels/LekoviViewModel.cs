@@ -1,4 +1,6 @@
-﻿using HealthClinic.Models;
+﻿using HealthClinic.Dialogs;
+using HealthClinic.Models;
+using HealthClinic.Utilities;
 using LiveCharts;
 using System;
 using System.Collections.Generic;
@@ -16,7 +18,40 @@ namespace HealthClinic.ViewModels
         {
             ucitavanjeLekova();
             PieChart();
+
+            DodajLekCommand = new RelayCommand(PrikaziDijalogDodavanjaLeka);
+            IzmeniLekCommand = new RelayCommand(PrikaziDijalogIzmeneLeka);
+            GenerisiIzvestajLekaCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
         }
+
+
+        #region Komande
+
+        public RelayCommand GenerisiIzvestajLekaCommand { get; private set; }
+
+        public void PrikaziDijalogGenerisanjaIzvestaja(object obj)
+        {
+            var dijalog = new GenerisiIzvestajLekovaDijalog();
+            dijalog.ShowDialog();
+        }
+
+        public RelayCommand DodajLekCommand { get; private set; }
+
+        public void PrikaziDijalogDodavanjaLeka(object obj)
+        {
+            var dijalog = new DodajLekDijalog();
+            dijalog.ShowDialog();
+        }
+
+        public RelayCommand IzmeniLekCommand { get; private set; }
+
+        public void PrikaziDijalogIzmeneLeka(object obj)
+        {
+            var dijalog = new IzmenaLekaDijalog();
+            dijalog.ShowDialog();
+        }
+
+        #endregion
 
         #region Tabela
         public ObservableCollection<Lek> Lekovi { get; set; }

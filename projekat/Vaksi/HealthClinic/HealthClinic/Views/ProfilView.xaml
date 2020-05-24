@@ -20,20 +20,19 @@
         <StackPanel Grid.Column="0">
 
             <!-- Text iznad grafikona-->
-            <TextBox
-                Height="30"
-                Width="250"
-                Background="WhiteSmoke"
+            <TextBlock
+                Text="Grafikoni stanja nase klinike"
+                
                 HorizontalAlignment="Left"
                 FontFamily="Times New Roman" 
                 FontSize="22" 
                 FontStyle="Italic"
-                x:Name="naslovnaPoruka"
+                
                 Margin="60, 20, 0, 0"
                 Foreground="#FF2196F3">
 
 
-            </TextBox>
+            </TextBlock>
             <!-- Kraj teksta iznad grafikona -->
 
             <!-- Prva dva gornja grafikona -->
@@ -332,7 +331,7 @@
                     Content="Izmena profila"
                     Margin="0, 0, 0, 0"
                     Command="{Binding IzmenaDijalogCommand}"
-                    CommandParameter="{Binding ElementName=naslovnaPoruka, Path=Text}" 
+                    
                     >
                     <!-- content iz naslovne poruke prosledjujemo kao parametar(text iz nje prosledjujemo ovde) -->
 

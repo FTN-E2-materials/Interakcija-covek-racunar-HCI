@@ -19,19 +19,36 @@ namespace HealthClinic.ViewModels
             PieChart();
             ucitavanjeProstorija();
 
-            GenerisiIzvestajCommand = new RelayCommand(PrikazDijalogaGenerisiIzvestaj);
-
+            
+            DodajProstorijuCommand = new RelayCommand(PrikaziDijalogDodavanjaProstorije);
+            IzmeniProstorijuCommand = new RelayCommand(PrikaziDijalogIzmeneProstorije);
+            GenerisiIzvestajProstorijaCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
         }
 
         #region Komande
 
-        public RelayCommand GenerisiIzvestajCommand { get; private set; }
-
-        public void PrikazDijalogaGenerisiIzvestaj(object obj)
+        public RelayCommand GenerisiIzvestajProstorijaCommand { get; private set; }
+        public void PrikaziDijalogGenerisanjaIzvestaja(object obj)
         {
-            var s = new GenerisiIzvestajDijalog();
-            s.ShowDialog();
+            var dijalog = new GenerisiIzvestajProstorijaDijalog();
+            dijalog.ShowDialog();
         }
+        public RelayCommand DodajProstorijuCommand { get; private set; }
+
+        public void PrikaziDijalogDodavanjaProstorije(object obj)
+        {
+            var dijalog = new DodajProstorijuDijalog();
+            dijalog.ShowDialog();
+        }
+
+        public RelayCommand IzmeniProstorijuCommand { get; private set; }
+
+        public void PrikaziDijalogIzmeneProstorije(object obj)
+        {
+            var dijalog = new IzmeniProstorijuDijalog();
+            dijalog.ShowDialog();
+        }
+
 
         #endregion 
 

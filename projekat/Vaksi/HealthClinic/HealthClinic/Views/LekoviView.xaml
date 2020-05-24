@@ -79,6 +79,7 @@
                     Width="100"
                     ToolTip="Resource name: MaterialDesignRaisedButton"
                     Content="Dodaj lek"
+                    Command="{Binding DodajLekCommand}"
                     Margin="60, 0, 0, 0">
 
                 </Button>
@@ -88,6 +89,7 @@
                     Width="100"
                     ToolTip="Resource name: MaterialDesignRaisedButton"
                     Content="Izmeni lek"
+                    Command="{Binding IzmeniLekCommand}"
                     Margin="10">
 
                 </Button>
@@ -158,6 +160,7 @@
                             materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
                             materialDesign:ButtonProgressAssist.IsIndeterminate="True"
                             Content="Generisi izvestaj"
+                            Command="{Binding GenerisiIzvestajLekaCommand}"
                             Margin="2,0"/>
                     </Grid>
                     <!-- Kraj dugmeta za generisanje izvestaja. -->
