@@ -67,6 +67,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dialogs\IzmenaPregledaDialog.xaml.cs">
+      <DependentUpon>IzmenaPregledaDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginPacijent.xaml.cs">
       <DependentUpon>LoginPacijent.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,7 @@
     </Compile>
     <Compile Include="ViewModel\BlogPatientViewModel.cs" />
     <Compile Include="ViewModel\BlogViewModel.cs" />
+    <Compile Include="ViewModel\Commands\IzmeniPregledCommand.cs" />
     <Compile Include="ViewModel\KartonPatientViewModel.cs" />
     <Compile Include="ViewModel\KontaktPatientViewModel.cs" />
     <Compile Include="ViewModel\KontaktViewModel.cs" />
@@ -135,6 +139,10 @@
     <Compile Include="View\ZakaziPregledPatientView.xaml.cs">
       <DependentUpon>ZakaziPregledPatientView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Dialogs\IzmenaPregledaDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

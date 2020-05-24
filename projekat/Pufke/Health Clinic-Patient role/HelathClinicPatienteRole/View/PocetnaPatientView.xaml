@@ -39,8 +39,8 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Label  Content="Naziv pregleda 1 - Termin pregleda" Foreground="#FF148DF0" FontSize="20" Grid.Row="0" />
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Otkaži pregled" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" />
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Izmeni pregled" Grid.Row="1"  />
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Otkaži pregled" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"   />
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Izmeni pregled" Grid.Row="1"  Command="{Binding PrikaziDialogCommand}" />
 
                                 <Label  Content="Naziv pregleda 2 - Termin pregleda" Foreground="#FF148DF0" FontSize="20"  Grid.Row="2" />
                                 <Button HorizontalAlignment="Right"  Height="27" Content="Otkaži pregled" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" />
