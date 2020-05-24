@@ -45,27 +45,26 @@
                 <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
 
                     <!-- Video promocija-->
-                    <MediaElement 
-                           Height="300" Width="500" Name="KontrolaKlipa" 
-                           Source="C:\Users\Vaxi\Desktop\6-semestar\HCI\projekat\Vaksi\HealthClinic\HealthClinic\videos\thanks.mp4" 
-                           MediaOpened="KontrolaKlipa_MediaOpened">
-
-                    </MediaElement>
+                    <ContentControl Height="300" Width="500" Content="{Binding MediaElementObject}">
+                        
+                    </ContentControl>
                     <!-- Kraj video promocije -->
-
 
                     <!-- Slajderi -->
                     <StackPanel Orientation="Horizontal">
 
                         <!-- Vremena -->
                         <Slider
-                          Margin="10"
-                          TickFrequency="5"
-                          Orientation="Horizontal"
-                          Minimum="1"
-                          Maximum="50"
-                          Value="1" Width="410" 
-                          Name="SlajderVremenaVidea" ValueChanged="SlajderVremenaVidea_ValueChanged"
+                            Margin="10"
+                            TickFrequency="5"
+                            Orientation="Horizontal"
+                            Minimum="1"
+                            Maximum="{Binding MaxVreme}"
+                            Value="{Binding TrenutniProgresKlipa}"
+                            Width="410" 
+                          
+                            Name="SlajderVremenaVidea" 
+                            
                                         />
                         <!-- Kraj slajdera vremena -->
 
@@ -79,8 +78,8 @@
                           Maximum="1"
                           LargeChange="0.1"
                           SmallChange="0.01"
-                          Value="0.5"
-                          Name="SlajderZvuka" ValueChanged="SlajderZvuka_ValueChanged"
+                          Value="{Binding TrenutniProgresZvuka}"
+                          Name="SlajderZvuka" 
                                         />
                         <!-- Kraj slajdera zvuka -->
 
@@ -102,7 +101,6 @@
         
         <!-- Slika gde nalazi nasa klinika-->
         <StackPanel Grid.Column="2" Width="363" Margin="10, 60, 0, 0">
-
             <!-- Adresa-->
             <TextBlock 
                 HorizontalAlignment="Center"
