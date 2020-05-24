@@ -331,7 +331,7 @@
                     ToolTip="Ovim menjas profil"
                     Content="Izmena profila"
                     Margin="0, 0, 0, 0"
-                    Command="{Binding PrikaziPorukuCommand}"
+                    Command="{Binding IzmenaDijalogCommand}"
                     CommandParameter="{Binding ElementName=naslovnaPoruka, Path=Text}" 
                     >
                     <!-- content iz naslovne poruke prosledjujemo kao parametar(text iz nje prosledjujemo ovde) -->
