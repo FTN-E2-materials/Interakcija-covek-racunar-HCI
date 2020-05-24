@@ -1,7 +1,6 @@
 ﻿using HealthClinic.Dialogs;
 using HealthClinic.Models;
 using HealthClinic.Utilities;
-using HealthClinic.ViewModels.Commands;
 using LiveCharts;
 using System;
 using System.Collections.Generic;
