@@ -87,6 +87,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dialogs\GenerisiIzvestajDijalog.xaml.cs">
+      <DependentUpon>GenerisiIzvestajDijalog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\IzmenaProfilaDijalog.xaml.cs">
       <DependentUpon>IzmenaProfilaDijalog.xaml</DependentUpon>
     </Compile>
@@ -132,6 +135,10 @@
     <Compile Include="Views\ZaposleniView.xaml.cs">
       <DependentUpon>ZaposleniView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Dialogs\GenerisiIzvestajDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dialogs\IzmenaProfilaDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

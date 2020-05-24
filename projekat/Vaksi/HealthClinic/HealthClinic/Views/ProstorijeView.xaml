@@ -154,7 +154,9 @@
                             materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
                             materialDesign:ButtonProgressAssist.IsIndeterminate="True"
                             Content="Generisi izvestaj"
-                            Margin="2,0"/>
+                            Margin="2,0"
+                            Command="{Binding GenerisiIzvestajCommand}"
+                            />
                     </Grid>
                     <!-- Kraj dugmeta za generisanje izvestaja. -->
 

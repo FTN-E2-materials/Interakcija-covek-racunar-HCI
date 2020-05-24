@@ -1,4 +1,6 @@
-﻿using HealthClinic.Models;
+﻿using HealthClinic.Dialogs;
+using HealthClinic.Models;
+using HealthClinic.ViewModels.Commands;
 using LiveCharts;
 using System;
 using System.Collections.Generic;
@@ -16,7 +18,22 @@ namespace HealthClinic.ViewModels
         {
             PieChart();
             ucitavanjeProstorija();
+
+            GenerisiIzvestajCommand = new PorukaCommand(PrikazDijalogaGenerisiIzvestaj);
+
         }
+
+        #region Komande
+
+        public PorukaCommand GenerisiIzvestajCommand { get; private set; }
+
+        public void PrikazDijalogaGenerisiIzvestaj(string poruka)
+        {
+            var s = new GenerisiIzvestajDijalog();
+            s.ShowDialog();
+        }
+
+        #endregion 
 
         #region Tabela
         private void ucitavanjeProstorija()
