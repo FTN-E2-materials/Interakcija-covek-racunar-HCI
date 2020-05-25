@@ -29,5 +29,6 @@ namespace HelathClinicPatienteRole.ViewModel.Commands
             _execute.Invoke(parameter as string);
         }
 
+
     }
 }
