@@ -47,6 +47,7 @@
 
                 <!-- Tabela lekova -->
                 <DataGrid x:Name="dataGridLekovi"
+                          SelectedItem="{Binding Path=SelektovaniZaposleni, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                           ItemsSource="{Binding Path=Zaposleni}"
                           AutoGenerateColumns="True" 
                           SelectionMode="Single" 

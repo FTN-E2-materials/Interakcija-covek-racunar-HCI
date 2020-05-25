@@ -26,6 +26,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Ime"
+                Text="{Binding SelektovaniZaposleni.Ime}"
                 materialDesign:HintAssist.Hint="Ovde unesite ime"
                 materialDesign:HintAssist.HelperText="Ime zaposlenog">
 
@@ -41,6 +42,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Prezime"
+                Text="{Binding SelektovaniZaposleni.Prezime}"
                 materialDesign:HintAssist.Hint="Ovde unesite prezime"
                 materialDesign:HintAssist.HelperText="Prezime zaposlenog">
 
@@ -71,6 +73,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Lozinka"
+                Text="{Binding SelektovaniZaposleni.Sifra}"
                 materialDesign:HintAssist.Hint="Ovde unesite lozinku"
                 materialDesign:HintAssist.HelperText="Lozinka zaposlenog">
 
