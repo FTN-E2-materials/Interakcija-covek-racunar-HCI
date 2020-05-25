@@ -26,7 +26,8 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Naziv"
-                materialDesign:HintAssist.Hint="Ovde unesite naziv"
+                Text="{Binding SelektovaniLek.NazivLeka}"
+                materialDesign:HintAssist.Hint="Ovde unesite naziv leka"
                 materialDesign:HintAssist.HelperText="Naziv leka">
 
             </TextBox>
@@ -41,6 +42,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Kolicina"
+                Text="{Binding SelektovaniLek.Kolicina}"
                 materialDesign:HintAssist.Hint="Ovde unesite kolicinu leka"
                 materialDesign:HintAssist.HelperText="Kolicina leka">
 

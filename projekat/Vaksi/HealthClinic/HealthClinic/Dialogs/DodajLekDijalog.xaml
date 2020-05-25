@@ -19,6 +19,8 @@
 
             <!-- Naziv leka -->
             <TextBox
+                
+                Foreground="Black"
                 Background="WhiteSmoke"
                 Width="320"
                 Height="40"

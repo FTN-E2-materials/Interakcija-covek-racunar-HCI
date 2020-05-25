@@ -46,6 +46,7 @@
                 <!-- Tabela prostorija -->
                 <DataGrid x:Name="dataGridLekovi"
                           ItemsSource="{Binding Path=Prostorije}"
+                          SelectedItem="{Binding Path=SelektovanaProstorija, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                           AutoGenerateColumns="True" 
                           SelectionMode="Single" 
                           IsReadOnly="True" 

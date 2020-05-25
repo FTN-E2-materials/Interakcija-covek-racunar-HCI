@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace HealthClinic.ViewModels
 {
-    public class LekoviViewModel
+    public class LekoviViewModel : ObservableObject
     {
-
+        
         public LekoviViewModel()
         {
             ucitavanjeLekova();
@@ -22,8 +22,28 @@ namespace HealthClinic.ViewModels
             DodajLekCommand = new RelayCommand(PrikaziDijalogDodavanjaLeka);
             IzmeniLekCommand = new RelayCommand(PrikaziDijalogIzmeneLeka);
             GenerisiIzvestajLekaCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
+            
         }
 
+        
+
+        #region Selektovani lek
+
+        private Lek _selektovaniLek;
+
+
+        // Bajndujem na SelectedItem u tabeli i dalje radim sa njim sta hocu
+        // mogu ga dalje prikazivati
+        // a moze se i proslediti u dijalog
+        // tako sto se .DatContext tog dijalog postavi na this
+        public Lek SelektovaniLek
+        {
+            get { return _selektovaniLek; }
+            set { _selektovaniLek = value; OnPropertyChanged("SelektovaniLek"); }
+        }
+
+
+        #endregion
 
         #region Komande
 
@@ -48,7 +68,8 @@ namespace HealthClinic.ViewModels
         public void PrikaziDijalogIzmeneLeka(object obj)
         {
             var dijalog = new IzmenaLekaDijalog();
-            dijalog.ShowDialog();
+            dijalog.DataContext = this;             // kako bi prebacio podatke iz ovog prozora u dijalog
+            dijalog.ShowDialog();                   // podesavam da i dijalog moze upravljati istim podacima
         }
 
         #endregion

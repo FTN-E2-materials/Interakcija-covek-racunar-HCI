@@ -25,6 +25,8 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="NazivOdeljenja"
+                
+                Text="{Binding SelektovanaProstorija.Odeljenje}"
                 materialDesign:HintAssist.Hint="Ovde unesite naziv odeljenja"
                 materialDesign:HintAssist.HelperText="Naziv odeljenja">
 
@@ -40,6 +42,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="BrojProstorije"
+                Text="{Binding SelektovanaProstorija.BrojSobe}"
                 materialDesign:HintAssist.Hint="Ovde unesite broj prostorije"
                 materialDesign:HintAssist.HelperText="Broj prostorije">
 
@@ -48,24 +51,27 @@
 
             <!-- Tip prostorije -->
             <ComboBox
+                
                 Background="WhiteSmoke"
                 Width="320"
                 Height="40"
                 Margin="10"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
-                x:Name="TipLeka"
+                x:Name="TipProstorije"
+                SelectedIndex="{Binding IndeksTipaProstorije}"
                 materialDesign:HintAssist.Hint="Izaberite tip prostorije"
                 materialDesign:HintAssist.HelperText="Tip prostorije"
                 >
+                
                 <ComboBoxItem>
-                    Operaciona sala
+                    soba za preglede
                 </ComboBoxItem>
                 <ComboBoxItem>
-                    Soba za preglede
+                    soba za pacijente
                 </ComboBoxItem>
                 <ComboBoxItem>
-                    Soba za pacijente
+                    operaciona sala
                 </ComboBoxItem>
 
             </ComboBox>

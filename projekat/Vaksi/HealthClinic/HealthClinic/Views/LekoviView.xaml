@@ -46,17 +46,19 @@
                 Background="#FFCDFBF8">
 
                 <!-- Tabela lekova -->
-                <DataGrid x:Name="dataGridLekovi"
-                          ItemsSource="{Binding Path=Lekovi}"
-                          AutoGenerateColumns="True" 
-                          SelectionMode="Single" 
-                          IsReadOnly="True" 
+                <DataGrid 
+                    SelectedItem="{Binding Path=SelektovaniLek, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    x:Name="dataGridLekovi"
+                    ItemsSource="{Binding Path=Lekovi}"
+                    AutoGenerateColumns="True" 
+                    SelectionMode="Single" 
+                    IsReadOnly="True" 
                          
-                          Margin="0, 0, 0, 0" 
-                          HorizontalAlignment="Center"                 
-                          Height="340"
-                          Width="602" 
-                          Background="#FF226397"
+                    Margin="0, 0, 0, 0" 
+                    HorizontalAlignment="Center"                 
+                    Height="340"
+                    Width="602" 
+                    Background="#FF226397"
                           >
 
                 </DataGrid>
