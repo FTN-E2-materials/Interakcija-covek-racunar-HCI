@@ -45,18 +45,36 @@
 
                 <!-- Tabela prostorija -->
                 <DataGrid x:Name="dataGridLekovi"
-                          ItemsSource="{Binding Path=Prostorije}"
-                          SelectedItem="{Binding Path=SelektovanaProstorija, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                          AutoGenerateColumns="True" 
-                          SelectionMode="Single" 
-                          IsReadOnly="True" 
+                    ItemsSource="{Binding Path=Prostorije}"
+                    SelectedItem="{Binding Path=SelektovanaProstorija, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    AutoGenerateColumns="True" 
+                    SelectionMode="Single" 
+                    IsReadOnly="True" 
                           
-                          Margin="0, 0, 0, 0" 
-                          HorizontalAlignment="Center"                 
-                          Height="340"
-                          Width="602" 
-                          Background="#FF226397"
-                          >
+                    Margin="0, 0, 0, 0" 
+                    HorizontalAlignment="Center"                 
+                    Height="340"
+                    Width="602" 
+                    Background="#FF226397"
+                    >
+
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn  Header="Spiska opreme">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button>Prikazi/Otvori</Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        
+                        <DataGridTemplateColumn  Header="Zauzetost/aktivnost">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button>Prikazi/Otvori</Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
 
                 </DataGrid>
                 <!-- Kraj tabele lekova. -->

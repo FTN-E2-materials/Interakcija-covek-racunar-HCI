@@ -47,18 +47,28 @@
 
                 <!-- Tabela lekova -->
                 <DataGrid x:Name="dataGridLekovi"
-                          SelectedItem="{Binding Path=SelektovaniZaposleni, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                          ItemsSource="{Binding Path=Zaposleni}"
-                          AutoGenerateColumns="True" 
-                          SelectionMode="Single" 
-                          IsReadOnly="True" 
+                    SelectedItem="{Binding Path=SelektovaniZaposleni, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    ItemsSource="{Binding Path=Zaposleni}"
+                    AutoGenerateColumns="True" 
+                    SelectionMode="Single" 
+                    IsReadOnly="True" 
                      
-                          Margin="0, 0, 0, 0" 
-                          HorizontalAlignment="Center"                 
-                          Height="340"
-                          Width="602" 
-                          Background="#FF226397"
-                          >
+                    Margin="0, 0, 0, 0" 
+                    HorizontalAlignment="Center"                 
+                    Height="340"
+                    Width="602" 
+                    Background="#FF226397"
+                    >
+
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn  Header="Radni kalendar">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button>Prikazi/Otvori</Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
 
                 </DataGrid>
                 <!-- Kraj tabele lekova. -->
