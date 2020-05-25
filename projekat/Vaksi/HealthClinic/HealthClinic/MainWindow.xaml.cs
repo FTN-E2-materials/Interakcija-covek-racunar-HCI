@@ -27,13 +27,13 @@ namespace HealthClinic
             InitializeComponent();
             //DataContext = new UcitavanjeViewModel();                    
             //TODO: ovde staviti mozda nesto prilikom ucitvanja aplikacije
-            DataContext = new ProfilViewModel();
+            DataContext = new HomeViewModel();
         }                                                               
 
         private void PocetnaTab_Click(object sender, RoutedEventArgs e)
         {
             //DataContext = new UcitavanjeViewModel();
-            DataContext = new ProfilViewModel();
+            DataContext = new HomeViewModel();
             // TODO: Prebaciti na homeviewmodel ako se odlucim za tu varijantu.
         }
         private void BlogTab_Click(object sender, RoutedEventArgs e)
