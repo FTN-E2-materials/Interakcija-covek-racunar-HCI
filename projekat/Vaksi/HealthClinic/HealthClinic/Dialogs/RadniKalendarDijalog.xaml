@@ -7,16 +7,150 @@
         xmlns:local="clr-namespace:HealthClinic.Dialogs"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Radni kalendar" Height="450" Width="400">
+        Title="Radni kalendar" Height="450" Width="400"
+        MaxHeight="450" MinHeight="450"
+        MaxWidth="400" MinWidth="400">
     <Grid Background="#cdfbf4">
+        <!-- Podaci-->
+        <StackPanel>
+            <!-- Text iznad forme za odredjivanje radnog vremena -->
+            <TextBlock 
+                HorizontalAlignment="Left"
+                FontFamily="Times New Roman" 
+                FontSize="22" 
+                FontStyle="Italic"
+                Text=" Odredjivanje radnog vremena zaposlenih"
+                Margin="10, 10, 0, 0"
+                Foreground="#FF2196F3">
+            </TextBlock>
+            <!-- Kraj teksta iznad forme za odredjivanje radnog vremena  -->
+            
+            <!-- Pocetni datum -->
+            <DatePicker
+                ToolTip="U desnom delu mozes klikom na kalendar, izabrati zeljeni datum"
+                Background="WhiteSmoke"
+                FontWeight="DemiBold"
+                Width="320"
+                Height="40"
+                Margin="10, 20, 10, 10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                materialDesign:HintAssist.HelperText="Od datuma"
+                materialDesign:HintAssist.Hint="Izaberite od kog datuma">
+                <DatePicker.SelectedDate>
+                    <Binding
+                        Path="PocetniDatum"
+                        UpdateSourceTrigger="PropertyChanged">
+                    </Binding>
+                </DatePicker.SelectedDate>
+            </DatePicker>
+            <!-- Kraj pocetni datum-->
 
-        <Viewbox     
-            Width="280"
-            Height="350">
-            <Calendar>
+            <!-- Krajnji datum -->
+            <DatePicker
+                ToolTip="U desnom delu mozes klikom na kalendar, izabrati zeljeni datum"
+                Background="WhiteSmoke"
+                FontWeight="DemiBold"
+                Width="320"
+                Height="40"
+                Margin="10, 20, 10, 10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                materialDesign:HintAssist.HelperText="Do datuma"
+                materialDesign:HintAssist.Hint="Izaberite do kog datuma">
+                <DatePicker.SelectedDate>
+                    <Binding
+                        Path="KrajnjiDatum"
+                        UpdateSourceTrigger="PropertyChanged">
+                    </Binding>
+                </DatePicker.SelectedDate>
+            </DatePicker>
+            <!-- Kraj pocetni datum-->
+
+            <StackPanel Orientation="Horizontal">
+                <!-- Pocetno radno vreme/sat -->
+                <materialDesign:TimePicker
+                    ToolTip="U desnom delu mozes klikom na satnicu, izabrati zeljeni sat"                    Background="WhiteSmoke"
+                    FontWeight="DemiBold"
+                    Width="150"
+                    Height="40"
+                    Margin="36, 20, 10, 10"
+                    materialDesign:HintAssist.HelperText="Do datuma"
+                    materialDesign:HintAssist.Hint="Izaberite do kog datuma"
+                    Is24Hours="True"
+                    x:Name="PocetniSat"
+                    SelectedTime="{Binding PocetniSat}"
+                    />
+                <!-- Kraj pocetnog radnog vremena/sata-->
                 
-            </Calendar>
-        </Viewbox>
-        
+                <!-- Krajno radno vreme/sat -->
+                <materialDesign:TimePicker
+                    ToolTip="U desnom delu mozes klikom na satnicu, izabrati zeljeni sat"
+                    Background="WhiteSmoke"
+                    FontWeight="DemiBold"
+                    Width="150"
+                    Height="40"
+                    Margin="10, 20, 10, 10"
+                    materialDesign:HintAssist.HelperText="Do datuma"
+                    materialDesign:HintAssist.Hint="Izaberite do kog datuma"
+                    Is24Hours="True"
+                    x:Name="KrajnjiSat"
+                    SelectedTime="{Binding KrajnjiSat}"
+                    />
+                
+                <!-- Kraj krajnog radnog vremena/sata-->
+            </StackPanel>
+
+            <!-- Zaposleni za tu smenu -->
+            <ComboBox
+                Background="WhiteSmoke"
+                FontWeight="DemiBold"
+                Width="320"
+                Height="40"
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="ZaposleniZaIzabranuSmenu"
+                materialDesign:HintAssist.Hint="Izaberite zaposlene za tu smenu"
+                materialDesign:HintAssist.HelperText="Ponuda zaposlenih slobodnih u izabranoj smeni"
+                >
+                
+                <ComboBoxItem>
+                    Dr. Kon
+                </ComboBoxItem>
+                
+                <ComboBoxItem>
+                    Dr. Kisic Tepavcevic
+                </ComboBoxItem>
+                
+                <ComboBoxItem>
+                    Dr. Zlatibor Loncar
+                </ComboBoxItem>
+
+            </ComboBox>
+            <!-- Kraj zaposlenih za tu smenu -->
+
+            <!-- Dugmad -->
+            <StackPanel Margin="0, 40, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <Button 
+                    Height="40"
+                    Width="100"
+                    Margin="10">
+                    Potvrdi
+                </Button>
+
+                <Button 
+                    Height="40"
+                    Width="100"
+                    Margin="10">
+                    Odustani
+                </Button>
+
+            </StackPanel>
+            <!-- Kraj dugmad dela-->
+
+        </StackPanel>
+        <!-- Kraj podataka -->
     </Grid>
 </Window>

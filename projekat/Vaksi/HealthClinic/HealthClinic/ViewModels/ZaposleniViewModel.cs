@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace HealthClinic.ViewModels
 {
@@ -24,8 +25,48 @@ namespace HealthClinic.ViewModels
             GenerisiIzvestajZaposlenogCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
             RadniKalendarCommand = new RelayCommand(PrikaziRadniKalendar);
 
+            PocetniDatum = DateTime.Now.Date;
+            KrajnjiDatum = DateTime.Now.Date;
 
         }
+
+        #region Radno vreme zaposlenih
+
+        private DateTime _pocetniDatum;
+
+        public DateTime PocetniDatum
+        {
+            get { return _pocetniDatum; }
+            set { _pocetniDatum = value; OnPropertyChanged("PocetniDatum"); }
+        }
+
+        private DateTime _krajnjiDatum;
+
+        public DateTime KrajnjiDatum
+        {
+            get { return _krajnjiDatum; }
+            set { _krajnjiDatum = value; OnPropertyChanged("KrajnjiDatum"); }
+        }
+
+
+        private DateTime _pocetniSat;
+
+        public DateTime PocetniSat
+        {
+            get { return _pocetniSat; }
+            set { _pocetniSat = value; OnPropertyChanged("PocetniSat"); }
+        }
+
+        private DateTime _krajnjiSat;
+
+        public DateTime KrajnjiSat
+        {
+            get { return _krajnjiSat; }
+            set { _krajnjiSat = value; }
+        }
+
+
+        #endregion
 
         #region Selektovani zaposlen
 

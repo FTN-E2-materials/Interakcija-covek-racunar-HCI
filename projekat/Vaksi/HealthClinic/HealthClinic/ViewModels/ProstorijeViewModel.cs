@@ -31,7 +31,8 @@ namespace HealthClinic.ViewModels
             KalendarObject = new Calendar();
             PodesavanjeZauzetihDatumaIzabraneProstorije();
 
-            Renoviranje = true;
+            // Zelim da renoviranje bude prvo selektovano u radio button grupi
+            Renoviranje = true;                            
             
         }
 
@@ -53,8 +54,6 @@ namespace HealthClinic.ViewModels
                     PrikazDrugeNoveProstorije = Visibility.Collapsed;
                     PrikazSobeSaKojomSpajamo = Visibility.Collapsed;
                 }
-                    
-
                 OnPropertyChanged("Renoviranje");
             }
         }
@@ -161,7 +160,6 @@ namespace HealthClinic.ViewModels
             // TODO: Napraviti da se stave pravi datumi kada je prostorija zauzeta
             KalendarObject.BlackoutDates.Add(new CalendarDateRange(new DateTime(2020, 6, 2), new DateTime(2020, 6, 15)));
         }
-
 
 
         #endregion

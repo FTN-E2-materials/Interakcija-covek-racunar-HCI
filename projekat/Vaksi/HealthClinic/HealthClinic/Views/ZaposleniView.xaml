@@ -59,23 +59,6 @@
                     Width="602" 
                     Background="#FF226397"
                     >
-
-                    <DataGrid.Columns>
-                        <DataGridTemplateColumn  Header="Radni kalendar">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-                                        <Button
-                                            Command="{Binding Path=DataContext.RadniKalendarCommand,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGrid}}}"
-                                            >
-                                            Prikazi/Otvori
-                                        </Button>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
-
                 </DataGrid>
                 <!-- Kraj tabele lekova. -->
 
@@ -87,17 +70,27 @@
             <StackPanel 
                 Orientation="Horizontal" 
                 Height="100" 
-                Width="450"
+                Width="650"
                 HorizontalAlignment="Right"
                 Margin="0, 0, 50, 0">
 
+                <Button
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Width="180"
+                    ToolTip="Podesi radno vreme zaposlenih"
+                    Content="Podesi radno vreme"
+                    Command="{Binding RadniKalendarCommand}"
+                    Margin="40, 0, 0, 0">
+
+                </Button>
+                
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="120"
                     ToolTip="Dodaj novo zaposlenog u nasu kliniku"
                     Content="Dodaj radnika"
                     Command="{Binding DodajZaposlenogCommand}"
-                    Margin="60, 0, 0, 0">
+                    Margin="35, 0, 0, 0">
 
                 </Button>
 
@@ -115,7 +108,7 @@
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="120"
                     ToolTip="Resource name: MaterialDesignRaisedButton"
-                    Content="Ukloni lekara"
+                    Content="Ukloni radnika"
                     Margin="10">
 
                 </Button>

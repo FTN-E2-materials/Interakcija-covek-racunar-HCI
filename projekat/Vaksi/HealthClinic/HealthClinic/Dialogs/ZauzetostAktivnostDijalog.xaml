@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Stek za kalendar-->
-        <StackPanel>
+        <StackPanel Grid.Column="0">
             <!-- Text iznad kalendara -->
             <TextBlock 
                 HorizontalAlignment="Left"
@@ -41,7 +41,7 @@
             <Viewbox 
                 Stretch="Fill"
                 Height="340"
-                Width="280"
+                Width="270"
                 Grid.Column="0"
                 Margin="0, 10, 0, 0"
             >
@@ -55,11 +55,8 @@
         
         <!-- Manipulacija prostorijom-->
         <StackPanel Grid.Column="1">
-
             <!-- Podaci -->
             <StackPanel >
-
-
                 <Label
                     Margin="40,10 ,0, 0"
                     FontFamily="Times New Roman" 
@@ -216,7 +213,6 @@
             <!-- Kraj dugmad dela-->
         </StackPanel>
         <!-- Kraj manipulacije prostorijom-->
-        
-        
+
     </Grid>
 </Window>
