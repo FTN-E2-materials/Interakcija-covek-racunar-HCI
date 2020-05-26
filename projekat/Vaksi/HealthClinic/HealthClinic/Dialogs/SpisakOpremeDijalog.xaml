@@ -7,23 +7,99 @@
         xmlns:local="clr-namespace:HealthClinic.Dialogs"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Spisak opreme" Height="450" Width="400">
-    <Grid>
-        <!-- Text iznad spiska-->
-        <TextBlock 
-                HorizontalAlignment="Left"
-                FontFamily="Times New Roman" 
-                FontSize="22" 
-                FontStyle="Italic"
-                Text="Spisak opreme koju poseduje nasa klinika"
-                Margin="10, 20, 0, 0"
-                Foreground="#FF2196F3">
+        Title="Spisak opreme" Height="450" Width="400" 
+        MaxHeight="450" MinHeight="450"
+        MaxWidth="400" MinWidth="400">
+    <Grid Background="#cdfbf4">
 
+        <StackPanel>
+            <!-- Informacije iznad spiska opreme-->
+            <StackPanel HorizontalAlignment="Center">
+                <!-- Odeljenje-->
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock 
+                        HorizontalAlignment="Left"
+                        FontFamily="Times New Roman" 
+                        FontSize="20" 
+                        
+                        Text="Odeljenje: "
+                        Margin="20, 20, 0, 0"
+                        Foreground="#FF2196F3">
+                    </TextBlock>
+                    <TextBlock 
+                        HorizontalAlignment="Left"
+                        FontFamily="Times New Roman" 
+                        FontSize="20" 
+                        FontStyle="Italic"
+                        FontWeight="Bold"
+                        Text="{Binding SelektovanaProstorija.Odeljenje}"
+                        Margin="10, 20, 0, 0"
+                        Foreground="#FF2196F3">
+                    </TextBlock>
+                </StackPanel>
+                <!-- Kraj odeljenja -->
 
-        </TextBlock>
-        <!-- Kraj teksta iznad spiska -->
-        <ListView>
+                <!-- Broj sobe-->
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock 
+                        HorizontalAlignment="Left"
+                        FontFamily="Times New Roman" 
+                        FontSize="20" 
+                        
+                        
+                        Text="Broj prostorije: "
+                        Margin="20, 5, 0, 0"
+                        Foreground="#FF2196F3">
+                    </TextBlock>
+                    <TextBlock 
+                        HorizontalAlignment="Left"
+                        FontFamily="Times New Roman" 
+                        FontSize="20" 
+                        FontStyle="Italic"
+                        FontWeight="Bold"
+                        Text="{Binding SelektovanaProstorija.BrojSobe}"
+                        Margin="10, 5, 0, 0"
+                        Foreground="#FF2196F3">
+                    </TextBlock>
+                </StackPanel>
+                
+                <!-- Kraj broja sobe -->
+            </StackPanel>
+            <!-- Kraj informacija iznad spiska opreme-->
             
-        </ListView>
+            <!-- Prikaz spiska opreme-->
+            <GroupBox
+                Background="#FF226397"
+                Header="Spisak opreme u izabranoj prostoriji"
+                Height="300"
+                Width="350"
+                FontSize="15"
+                HorizontalContentAlignment="Center"
+                
+                Style="{DynamicResource MaterialDesignGroupBox}"
+                Margin="16"
+                materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                BorderThickness="1">
+                <ListView  
+                    Width="335"
+                    
+                    SelectionMode="Single"
+                    FontSize="14"
+                    ItemsSource="{Binding Prostorije}" 
+                    >
+                    <ListView.View>
+                        <GridView >
+                            <GridViewColumn Header="Odeljenje" DisplayMemberBinding="{Binding Odeljenje}" Width="100"/>
+                            <GridViewColumn Header="Broj sobe" DisplayMemberBinding="{Binding BrojSobe}" Width="100"/>
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </GroupBox>
+            <!-- Kraj spiska opreme-->
+            
+            
+        </StackPanel>
+        
     </Grid>
 </Window>

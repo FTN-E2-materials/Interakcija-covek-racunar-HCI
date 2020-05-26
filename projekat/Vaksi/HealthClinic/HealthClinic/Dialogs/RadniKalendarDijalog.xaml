@@ -8,9 +8,10 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Radni kalendar" Height="450" Width="400">
-    <Grid>
-        <Calendar Width="280" Height="350">
-            
+    <Grid Background="#cdfbf4">
+        <Calendar             
+            Width="280"
+            Height="350">
         </Calendar>
     </Grid>
 </Window>

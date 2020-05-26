@@ -7,8 +7,10 @@
         xmlns:local="clr-namespace:HealthClinic.Dialogs"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Zauzetost/Aktivnost" Height="450" Width="400">
-    <Grid>
+        Title="Zauzetost/Aktivnost" Height="450" Width="400"
+        MaxHeight="450" MinHeight="450"
+        MaxWidth="400" MinWidth="400">
+    <Grid Background="#cdfbf4">
 
         <!-- Text iznad aktivnosti-->
         <TextBlock 
@@ -19,8 +21,6 @@
                 Text="Trenutna zauzetost i aktivnost prostorije"
                 Margin="20, 20, 0, 0"
                 Foreground="#FF2196F3">
-
-
         </TextBlock>
         <!-- Kraj teksta iznad aktivnosti -->
 
