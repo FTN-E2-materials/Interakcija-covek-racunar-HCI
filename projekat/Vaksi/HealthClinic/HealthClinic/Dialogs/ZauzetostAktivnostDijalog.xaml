@@ -194,17 +194,18 @@
             <StackPanel Margin="0, 20, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
 
                 <Button 
-                Height="40"
-                Width="100"
-                Margin="10"
+                    Height="40"
+                    Width="100"
+                    Margin="10"
                 >
                     Potvrdi
                 </Button>
 
                 <Button 
-                Height="40"
-                Width="100"
-                Margin="10"
+                    IsCancel="True"
+                    Height="40"
+                    Width="100"
+                    Margin="10"
                 >
                     Odustani
                 </Button>

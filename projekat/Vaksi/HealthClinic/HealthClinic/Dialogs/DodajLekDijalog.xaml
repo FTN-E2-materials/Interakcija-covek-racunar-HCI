@@ -7,6 +7,7 @@
         xmlns:local="clr-namespace:HealthClinic.Dialogs"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
+        
         Title="Dodaj lek" Height="510" Width="400">
     <Grid Background="#cdfbf4">
         <Grid.RowDefinitions>
@@ -124,7 +125,8 @@
                 Potvrdi
             </Button>
 
-            <Button 
+            <Button
+                IsCancel="True"
                 Height="40"
                 Width="100"
                 Margin="10"

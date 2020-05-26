@@ -116,6 +116,7 @@
             </Button>
 
             <Button 
+                IsCancel="True"
                 Height="40"
                 Width="100"
                 Margin="10"
