@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Izmena leka" Height="510" Width="400">
-    <Grid>
+    <Grid Background="#cdfbf4">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -20,6 +20,7 @@
             <!-- Naziv leka -->
             <TextBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"
@@ -36,6 +37,7 @@
             <!-- Kolicina -->
             <TextBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"
@@ -53,6 +55,7 @@
             <TextBox
                 TextWrapping="Wrap"
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="80"
                 Margin="10"
@@ -69,6 +72,7 @@
             <TextBox
                 TextWrapping="Wrap"
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="70"
                 Margin="10"
@@ -84,6 +88,7 @@
             <!-- Tip leka -->
             <ComboBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"

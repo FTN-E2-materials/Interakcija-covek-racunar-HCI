@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Izmeni prostoriju" Height="400" Width="400" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Background="#cdfbf4">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -19,6 +19,7 @@
             <!-- Naziv odeljenja -->
             <TextBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"
@@ -36,6 +37,7 @@
             <!-- Broj prostorije-->
             <TextBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"
@@ -51,8 +53,8 @@
 
             <!-- Tip prostorije -->
             <ComboBox
-                
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"
@@ -80,6 +82,7 @@
             <!-- Oprema -->
             <ComboBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"

@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         Title="Generisi izvestaj prostorija" Height="265" Width="400">
-    <Grid>
+    <Grid Background="#cdfbf4">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -20,6 +20,7 @@
             <!-- Naziv fajla  -->
             <TextBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"
@@ -35,6 +36,7 @@
             <!-- Format izvestaja -->
             <ComboBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"

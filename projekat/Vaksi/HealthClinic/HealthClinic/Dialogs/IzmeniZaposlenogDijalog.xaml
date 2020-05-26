@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         Title="Izmeni zaposlenog" Height="510" Width="400">
-    <Grid>
+    <Grid Background="#cdfbf4">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -20,6 +20,7 @@
             <!-- Ime zaposlenog -->
             <TextBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"
@@ -36,6 +37,7 @@
             <!-- Prezime -->
             <TextBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"
@@ -52,6 +54,7 @@
             <!-- Korisnicko ime -->
             <TextBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"
@@ -67,6 +70,7 @@
             <!-- Lozinka -->
             <TextBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"
@@ -83,6 +87,7 @@
             <!-- Tip zaposlenog -->
             <ComboBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"
@@ -105,6 +110,7 @@
             <!-- Specijalizacija -->
             <ComboBox
                 Background="WhiteSmoke"
+                FontWeight="DemiBold"
                 Width="320"
                 Height="40"
                 Margin="10"
