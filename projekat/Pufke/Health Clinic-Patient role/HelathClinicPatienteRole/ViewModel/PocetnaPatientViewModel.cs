@@ -5,15 +5,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace HelathClinicPatienteRole.ViewModel
 {
-    class PocetnaPatientViewModel
+    class PocetnaPatientViewModel 
     {
         public PocetnaPatientViewModel()
         {
             PirkaziIzmeniPregledDialogCommand = new RelayCommand(PirkaziIzmeniPregledDialog);
             PirkaziOtkaziPregledDialogCommand = new RelayCommand(PirkaziOtkaziPregledDialog);
+            PirkaziOtkaziPregledDialogCommand = new RelayCommand(PirkaziPropisanuTerapijuView);
         }
 
         #region Izmeni pregled Dialog 
@@ -38,6 +40,18 @@ namespace HelathClinicPatienteRole.ViewModel
         {
             var s = new OtkaziPregled();
             s.ShowDialog();
+
+        }
+
+        #endregion
+
+        #region Otkazi pregled Dialog 
+
+        public RelayCommand PirkaziPropisanuTerapijuViewCommand { get; private set; }
+
+        public void PirkaziPropisanuTerapijuView(object obj)
+        {
+           
 
         }
 

@@ -3,12 +3,172 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:HelathClinicPatienteRole.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="1300">
     <Grid>
-        <StackPanel Background="LightYellow">
+        <StackPanel Background="White" >
+            <Grid Height="580" >
 
+                <Label HorizontalAlignment="Center"  Content="Izaberite datum pregleda" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="2" Grid.Column="13" Grid.ColumnSpan="15" Grid.RowSpan="4"/>
+
+                <DatePicker FontSize="21"  Foreground="#FF148DF0" Grid.Row ="3" Grid.Column="16" Grid.ColumnSpan="9" Grid.RowSpan="4" materialDesign:HintAssist.Hint="Izaberite datum" Style="{StaticResource MaterialDesignFloatingHintDatePicker}"  />
+
+                <Label HorizontalAlignment="Center"  Content="Lista slobodnih lekara opste " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="7" Grid.Column="12" Grid.ColumnSpan="16" Grid.RowSpan="3"/>
+                <Label HorizontalAlignment="Center"  Content=" prakse za taj datum " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="8" Grid.Column="12" Grid.ColumnSpan="16" Grid.RowSpan="3"/>
+
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="15" Grid.Row="10" Grid.ColumnSpan="12" Grid.RowSpan="10" Margin="0,0,33,0">
+                    <Border BorderThickness="1,1,1,1" BorderBrush="#FF148DF0" >
+                        <ItemsControl  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="6" Grid.RowSpan="10">
+                            <Grid  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="6" Grid.RowSpan="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label  Content="Naziv lekara 1" Foreground="#FF148DF0" FontSize="20" Grid.Row="0" />
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="0" Grid.Column="2"/>
+
+                                <Label  Content="Naziv lekara 2" Foreground="#FF148DF0" FontSize="20"  Grid.Row="2" />
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="2" Grid.Column="2" />
+
+                                <Label  Content="Naziv lekara 3" Foreground="#FF148DF0" FontSize="20"   Grid.Row="3"/>
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="3"  Grid.Column="2"/>
+
+                                <Label  Content="Naziv lekara 4" Foreground="#FF148DF0" FontSize="20"  Grid.Row="4" />
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="4" Grid.Column="2" />
+
+                                <Label  Content="Naziv lekara 5" Foreground="#FF148DF0" FontSize="20"  Grid.Row="6" />
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="6" Grid.Column="2" />
+
+                                <Label  Content="Naziv lekara 6" Foreground="#FF148DF0" FontSize="20"  Grid.Row="8" />
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="8" Grid.Column="2" />
+
+                                <Label  Content="Naziv lekara 7" Foreground="#FF148DF0" FontSize="20"  Grid.Row="10" />
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="10" Grid.Column="2" />
+
+                                <Label  Content="Naziv lekara 8" Foreground="#FF148DF0" FontSize="20"  Grid.Row="12" />
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="12" Grid.Column="2" />
+
+                                <Label  Content="Naziv lekara 9" Foreground="#FF148DF0" FontSize="20"  Grid.Row="14" />
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="14" Grid.Column="2" />
+
+                                <Label  Content="Naziv lekara 10" Foreground="#FF148DF0" FontSize="20"  Grid.Row="16" />
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="16" Grid.Column="2" />
+
+                            </Grid>
+                        </ItemsControl>
+                    </Border>
+                </ScrollViewer>
+
+
+                <Label HorizontalAlignment="Center"  Content="Izaberite lekara ili unesite drugi datum " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="20" Grid.Column="10" Grid.ColumnSpan="20" Grid.RowSpan="3"/>
+
+                <Button Content="Potvrdi" Grid.Row="21" Grid.Column="17" Grid.ColumnSpan="5" Grid.RowSpan="5"/>
+
+
+                <Label HorizontalAlignment="Center"  Content="Zelite automatsku prepororuku termina?" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="25" Grid.Column="8" Grid.ColumnSpan="16" Grid.RowSpan="3"/>
+                <Button Content="Preporuka termina" Grid.Row="25" Grid.Column="23" Grid.ColumnSpan="5" Grid.RowSpan="5"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+            </Grid>
         </StackPanel>
     </Grid>
 </UserControl>
