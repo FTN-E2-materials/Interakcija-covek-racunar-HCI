@@ -64,7 +64,13 @@
                         <DataGridTemplateColumn  Header="Radni kalendar">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button>Prikazi/Otvori</Button>
+                                    <StackPanel>
+                                        <Button
+                                            Command="{Binding Path=DataContext.RadniKalendarCommand,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGrid}}}"
+                                            >
+                                            Prikazi/Otvori
+                                        </Button>
+                                    </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

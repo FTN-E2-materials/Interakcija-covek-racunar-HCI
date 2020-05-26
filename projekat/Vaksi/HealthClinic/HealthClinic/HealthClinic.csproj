@@ -117,6 +117,15 @@
     <Compile Include="Dialogs\IzmeniZaposlenogDijalog.xaml.cs">
       <DependentUpon>IzmeniZaposlenogDijalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\RadniKalendarDijalog.xaml.cs">
+      <DependentUpon>RadniKalendarDijalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SpisakOpremeDijalog.xaml.cs">
+      <DependentUpon>SpisakOpremeDijalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ZauzetostAktivnostDijalog.xaml.cs">
+      <DependentUpon>ZauzetostAktivnostDijalog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Lek.cs" />
     <Compile Include="Models\Prostorija.cs" />
     <Compile Include="Models\Zaposlen.cs" />
@@ -195,6 +204,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dialogs\IzmeniZaposlenogDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\RadniKalendarDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\SpisakOpremeDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\ZauzetostAktivnostDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

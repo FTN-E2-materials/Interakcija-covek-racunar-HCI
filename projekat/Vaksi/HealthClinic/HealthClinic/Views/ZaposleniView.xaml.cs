@@ -16,6 +16,7 @@ using LiveCharts;                               // biblioteka za cartove
 using LiveCharts.Wpf;                           // uz dodatak na WPF
 using System.Collections.ObjectModel;           // za kolekciju lekova
 using HealthClinic.Models;                      // ubacivanje paketa modela
+using HealthClinic.Dialogs;
 
 namespace HealthClinic.Views
 {

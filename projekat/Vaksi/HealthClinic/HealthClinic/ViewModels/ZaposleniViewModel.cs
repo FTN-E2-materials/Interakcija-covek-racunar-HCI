@@ -22,7 +22,9 @@ namespace HealthClinic.ViewModels
             DodajZaposlenogCommand = new RelayCommand(PrikaziDijalogDodavanjaZaposlenog);
             IzmeniZaposlenogCommand = new RelayCommand(PrikaziDijalogIzmeneZaposlenog);
             GenerisiIzvestajZaposlenogCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
-            //SelektovaniZaposleni.
+            RadniKalendarCommand = new RelayCommand(PrikaziRadniKalendar);
+
+
         }
 
         #region Selektovani zaposlen
@@ -43,6 +45,15 @@ namespace HealthClinic.ViewModels
         #endregion
 
         #region Komande
+
+        public RelayCommand RadniKalendarCommand { get; private set; }
+
+        public void PrikaziRadniKalendar(object obj)
+        {
+            var dijalog = new RadniKalendarDijalog();
+            dijalog.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
+            dijalog.ShowDialog();
+        }
 
         public RelayCommand GenerisiIzvestajZaposlenogCommand { get; private set; }
 

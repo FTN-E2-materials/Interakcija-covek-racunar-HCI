@@ -23,7 +23,8 @@ namespace HealthClinic.ViewModels
             DodajProstorijuCommand = new RelayCommand(PrikaziDijalogDodavanjaProstorije);
             IzmeniProstorijuCommand = new RelayCommand(PrikaziDijalogIzmeneProstorije);
             GenerisiIzvestajProstorijaCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
-            
+            SpisakOpremeCommand = new RelayCommand(PrikaziSpisakOpreme);
+            ZauzetostAktivnostCommand = new RelayCommand(PrikaziZauzetostAktivnost);
         }
 
         private int _indeksTipaProstorije;
@@ -70,6 +71,24 @@ namespace HealthClinic.ViewModels
         #endregion
 
         #region Komande
+
+        public RelayCommand ZauzetostAktivnostCommand { get; private set; }
+
+        public void PrikaziZauzetostAktivnost(object obj)
+        {
+            var dijalog = new ZauzetostAktivnostDijalog();
+            dijalog.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
+            dijalog.ShowDialog();
+        }
+
+        public RelayCommand SpisakOpremeCommand { get; private set; }
+
+        public void PrikaziSpisakOpreme(object obj)
+        {
+            var dijalog = new SpisakOpremeDijalog();
+            dijalog.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
+            dijalog.ShowDialog();
+        }
 
         public RelayCommand GenerisiIzvestajProstorijaCommand { get; private set; }
         public void PrikaziDijalogGenerisanjaIzvestaja(object obj)
