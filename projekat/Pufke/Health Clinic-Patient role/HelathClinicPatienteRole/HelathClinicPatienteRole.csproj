@@ -67,6 +67,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dialogs\AnketaPregledaDialog.xaml.cs">
+      <DependentUpon>AnketaPregledaDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\IzmenaPregledaDialog.xaml.cs">
       <DependentUpon>IzmenaPregledaDialog.xaml</DependentUpon>
     </Compile>
@@ -142,6 +145,10 @@
     <Compile Include="View\ZakaziPregledPatientView.xaml.cs">
       <DependentUpon>ZakaziPregledPatientView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Dialogs\AnketaPregledaDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dialogs\IzmenaPregledaDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

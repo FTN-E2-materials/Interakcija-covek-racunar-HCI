@@ -15,8 +15,21 @@ namespace HelathClinicPatienteRole.ViewModel
         {
             PirkaziIzmeniPregledDialogCommand = new RelayCommand(PirkaziIzmeniPregledDialog);
             PirkaziOtkaziPregledDialogCommand = new RelayCommand(PirkaziOtkaziPregledDialog);
-            PirkaziOtkaziPregledDialogCommand = new RelayCommand(PirkaziPropisanuTerapijuView);
+            PirkaziAnketaLekaraDialogCommand = new RelayCommand(PirkaziAnketaLekaraDialog);
         }
+
+        #region Anketa lekara 
+
+        public RelayCommand PirkaziAnketaLekaraDialogCommand { get; private set; }
+
+        public void PirkaziAnketaLekaraDialog(object obj)
+        {
+            var s = new AnketaPregledaDialog();
+            s.ShowDialog();
+
+        }
+
+        #endregion
 
         #region Izmeni pregled Dialog 
 
@@ -45,16 +58,5 @@ namespace HelathClinicPatienteRole.ViewModel
 
         #endregion
 
-        #region Otkazi pregled Dialog 
-
-        public RelayCommand PirkaziPropisanuTerapijuViewCommand { get; private set; }
-
-        public void PirkaziPropisanuTerapijuView(object obj)
-        {
-           
-
-        }
-
-        #endregion
     }
 }

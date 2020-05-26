@@ -45,9 +45,8 @@
                                 <Label  Content="Naziv pregleda 2 - Termin pregleda" Foreground="#FF148DF0" FontSize="20"  Grid.Row="2" />
                                 <Button HorizontalAlignment="Right"  Height="27" Content="Otkaži pregled" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"  Command="{Binding PirkaziOtkaziPregledDialogCommand}"/>
                                 <Button HorizontalAlignment="Right"  Height="27" Content="Izmeni pregled" Grid.Row="3"   Command="{Binding PirkaziIzmeniPregledDialogCommand}"/>
-                                <Label  Content="Naziv pregleda 3 - Termin pregleda" Foreground="#FF148DF0" FontSize="20"   Grid.Row="4"/>
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Otkaži pregled" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"  Command="{Binding PirkaziOtkaziPregledDialogCommand}"/>
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Izmeni pregled" Grid.Row="5"  Command="{Binding PirkaziIzmeniPregledDialogCommand}"  />
+                                <Label  Content="Naziv pregleda 3 - Pregled obavljen" Foreground="#FF148DF0" FontSize="20"   Grid.Row="4"/>
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Anketa pregleda" Grid.Row="5"  Command="{Binding PirkaziAnketaLekaraDialogCommand}" />
                                 <Label  Content="Naziv pregleda 4 - Termin pregleda" Foreground="#FF148DF0" FontSize="20"  Grid.Row="6" />
                                 <Button HorizontalAlignment="Right"  Height="27" Content="Otkaži pregled" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"  Command="{Binding PirkaziOtkaziPregledDialogCommand}"/>
                                 <Button HorizontalAlignment="Right"  Height="27" Content="Izmeni pregled" Grid.Row="7"   Command="{Binding PirkaziIzmeniPregledDialogCommand}" />
