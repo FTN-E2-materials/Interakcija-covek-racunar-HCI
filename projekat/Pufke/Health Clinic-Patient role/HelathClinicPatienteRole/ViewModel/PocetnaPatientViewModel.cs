@@ -12,14 +12,14 @@ namespace HelathClinicPatienteRole.ViewModel
     {
         public PocetnaPatientViewModel()
         {
-            PrikaziDialogCommand = new IzmeniPregledCommand(PirkaziDialog);
+            PrikaziDialogCommand = new RelayCommand(PirkaziDialog);
         }
 
         #region Dialog 
 
-        public IzmeniPregledCommand PrikaziDialogCommand { get; private set; }
+        public RelayCommand PrikaziDialogCommand { get; private set; }
 
-        public void PirkaziDialog(string dialog)
+        public void PirkaziDialog(object obj)
         {
             var s = new IzmenaPregledaDialog();
             s.ShowDialog();

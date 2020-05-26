@@ -80,7 +80,7 @@
     </Compile>
     <Compile Include="ViewModel\BlogPatientViewModel.cs" />
     <Compile Include="ViewModel\BlogViewModel.cs" />
-    <Compile Include="ViewModel\Commands\IzmeniPregledCommand.cs" />
+    <Compile Include="ViewModel\Commands\RelayCommand.cs" />
     <Compile Include="ViewModel\KartonPatientViewModel.cs" />
     <Compile Include="ViewModel\KontaktPatientViewModel.cs" />
     <Compile Include="ViewModel\KontaktViewModel.cs" />
