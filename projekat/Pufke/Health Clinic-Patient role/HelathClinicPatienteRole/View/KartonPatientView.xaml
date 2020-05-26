@@ -11,30 +11,81 @@
             <Grid Height="700"  DataContext="{Binding MedicinskiKarton}">
 
 
-                <TextBlock Foreground="#FF148DF0" FontSize="40"  HorizontalAlignment="Right" Text="Lekarski karton " Grid.Column="4" Grid.Row="1"  Grid.ColumnSpan="5" Grid.RowSpan="2" />
-                <TextBlock Foreground="#FF148DF0" FontSize="40"  Text="{Binding FirstAndLastName}"  Grid.Column="9" Grid.Row="1"  Grid.ColumnSpan="6" Grid.RowSpan="2" />
+                <TextBlock Foreground="#FF148DF0" FontSize="40"  HorizontalAlignment="Right" Text="Lekarski karton " Grid.Column="9" Grid.Row="1"  Grid.ColumnSpan="7" Grid.RowSpan="2" />
+                <TextBlock Foreground="#FF148DF0" FontSize="40"  Text="{Binding FirstAndLastName}"  Grid.Column="16" Grid.Row="1"  Grid.ColumnSpan="8" Grid.RowSpan="2" />
 
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Ime jednog roditelja: " Grid.Column="1" Grid.Row="7"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding ParentName}"  Grid.Column="6" Grid.Row="7"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="Ime jednog roditelja: " Grid.Column="1" Grid.Row="7"  Grid.ColumnSpan="7" Grid.RowSpan="3" />
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding ParentName}"  Grid.Column="8" Grid.Row="7"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
 
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Datum rođenja: " Grid.Column="1" Grid.Row="9"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding DateOfBirth}"  Grid.Column="6" Grid.Row="9"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="Datum rođenja: " Grid.Column="1" Grid.Row="9"  Grid.ColumnSpan="5" Grid.RowSpan="3" />
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding DateOfBirth}"  Grid.Column="6" Grid.Row="9"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
 
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="JMBG: " Grid.Column="1" Grid.Row="11"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding Jmbg}"  Grid.Column="6" Grid.Row="11"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="JMBG:   " Grid.Column="1" Grid.Row="11"  Grid.ColumnSpan="6" Grid.RowSpan="3"  />
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding Jmbg}"  Grid.Column="3" Grid.Row="11"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
 
 
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Adresa: " Grid.Column="1" Grid.Row="13"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding Address}"  Grid.Column="6" Grid.Row="13"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
-               
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Broj telefona: " Grid.Column="1" Grid.Row="15"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding PhoneNumber}"  Grid.Column="6" Grid.Row="15"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="Adresa: " Grid.Column="1" Grid.Row="13"  Grid.ColumnSpan="5" Grid.RowSpan="3"  />
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding Address}"  Grid.Column="4" Grid.Row="13"  Grid.ColumnSpan="15" Grid.RowSpan="3"  />
 
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Broj zdravstvenog: " Grid.Column="1" Grid.Row="17"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding HealthInsuranceNumber}"  Grid.Column="6" Grid.Row="17"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
-                
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Nosilac zdravstvenog: " Grid.Column="1" Grid.Row="19"  Grid.ColumnSpan="5" Grid.RowSpan="3" RenderTransformOrigin="0.466,-0.146" />
-                <TextBlock Foreground="#FF148DF0" FontSize="30"  Text="{Binding HealthInsuranceCarrier}"  Grid.Column="6" Grid.Row="19"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="Broj telefona: " Grid.Column="1" Grid.Row="15"  Grid.ColumnSpan="5" Grid.RowSpan="3" />
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding PhoneNumber}"  Grid.Column="6" Grid.Row="15"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="Broj zdravstvenog: " Grid.Column="1" Grid.Row="17"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding HealthInsuranceNumber}"  Grid.Column="7" Grid.Row="17"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="Nosilac zdravstvenog: " Grid.Column="1" Grid.Row="19"  Grid.ColumnSpan="7" Grid.RowSpan="3" />
+                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding HealthInsuranceCarrier}"  Grid.Column="8" Grid.Row="19"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+
+                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Lista obaveljenih pregleda: " Grid.Column="15" Grid.Row="4"  Grid.ColumnSpan="13" Grid.RowSpan="2" />
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="17" Grid.Row="6" Grid.ColumnSpan="14" Grid.RowSpan="18" Margin="0,0,33,0">
+                    <Border BorderThickness="1,1,1,1" BorderBrush="#FF148DF0" >
+                        <ItemsControl  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="6" Grid.RowSpan="10">
+                            <Grid  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="6" Grid.RowSpan="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label  Content= "Naziv pregleda 1 - Termin pregleda , Lekar"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="20" Grid.Row="0" Grid.ColumnSpan="3" />
+                                <Label  Content= "Anamneza:"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="20" Grid.Row="1" Grid.ColumnSpan="3" />
+                                <TextBlock Foreground="#FF148DF0" FontSize="15" Grid.Row="2"  Grid.ColumnSpan="3"  HorizontalAlignment="Center" Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, &#x0a; sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &#x0a; Ut enim ad minim veniam, &#x0a; quis nostrud exercitation ullamco laboris nisi ut aliquip ex  &#x0a; ea commodo consequat.&#x0a; Duis aute irure dolor  in reprehenderit in voluptate velit esse &#x0a; cillum dolore eu fugiat nulla pariatur.&#x0a; Excepteur sint occaecat cupidatat non proident,&#x0a; sunt in culpa qui officia deserunt mollit anim id est laborum." />
+
+                                <Label  Content= "Naziv pregleda 2 - Termin pregleda , Lekar"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="20" Grid.Row="3" Grid.ColumnSpan="3" />
+                                <Label  Content= "Anamneza:"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="20" Grid.Row="4" Grid.ColumnSpan="3" />
+                                <TextBlock Foreground="#FF148DF0" FontSize="15"  HorizontalAlignment="Center" Grid.Row="5"  Grid.ColumnSpan="3" Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, &#x0a; sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &#x0a; Ut enim ad minim veniam, &#x0a; quis nostrud exercitation ullamco laboris nisi ut aliquip ex  &#x0a; ea commodo consequat.&#x0a; Duis aute irure dolor  in reprehenderit in voluptate velit esse &#x0a; cillum dolore eu fugiat nulla pariatur.&#x0a; Excepteur sint occaecat cupidatat non proident,&#x0a; sunt in culpa qui officia deserunt mollit anim id est laborum." />
+
+
+                                <Label  Content= "Naziv pregleda 3 - Termin pregleda , Lekar"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="20" Grid.Row="6" Grid.ColumnSpan="3" />
+                                <Label  Content= "Anamneza:"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="20" Grid.Row="7" Grid.ColumnSpan="3" />
+                                <TextBlock Foreground="#FF148DF0" FontSize="15"  HorizontalAlignment="Center" Grid.Row="8"  Grid.ColumnSpan="3" Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, &#x0a; sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &#x0a; Ut enim ad minim veniam, &#x0a; quis nostrud exercitation ullamco laboris nisi ut aliquip ex  &#x0a; ea commodo consequat.&#x0a; Duis aute irure dolor  in reprehenderit in voluptate velit esse &#x0a; cillum dolore eu fugiat nulla pariatur.&#x0a; Excepteur sint occaecat cupidatat non proident,&#x0a; sunt in culpa qui officia deserunt mollit anim id est laborum." />
+
+                            </Grid>
+                        </ItemsControl>
+                    </Border>
+                </ScrollViewer>
+
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -52,6 +103,21 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
