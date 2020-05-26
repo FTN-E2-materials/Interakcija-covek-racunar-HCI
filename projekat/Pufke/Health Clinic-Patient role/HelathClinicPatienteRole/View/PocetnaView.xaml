@@ -5,48 +5,103 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HelathClinicPatienteRole.View"
              mc:Ignorable="d" 
-             d:DesignHeight="700" d:DesignWidth="1000">
-    <StackPanel Background="White">
-        <Grid>
+             d:DesignHeight="700" d:DesignWidth="1300">
+    <Grid>
+        <StackPanel Background="White">
+            <Grid Height="700">
 
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="570" />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Label  Grid.Column="0" HorizontalAlignment="Center"  Content="Zdravo klinika" Foreground="#FF148DF0" Height="493" VerticalAlignment="Top" FontSize="40" Margin="165,40,153,0"/>
-            <MediaElement Name="VideoControl" 
-              Source="C:\WPF.mp4" Margin="70,17,48,167" >
-            </MediaElement>
-            <Label  Grid.Column="0" HorizontalAlignment="Center"  Content="Možete pogledati još jedan novi video koji smo &#10;      izdvojili za vas iz naše bogate biblioteke" Foreground="#FF148DF0" Height="69" VerticalAlignment="Top" FontSize="20" Margin="88,422,48,0" Width="436"/>
 
-            <Label HorizontalAlignment="Center"  Content="Koristiš softver kao?" Foreground="#FF148DF0" Height="75" VerticalAlignment="Top" FontSize="32" Margin="98,49,-78,0" Width="400" Grid.Column="1"/>
-            <Separator HorizontalAlignment="Left" Height="58" Margin="386,276,0,0" VerticalAlignment="Top" Width="438" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
-                <Separator.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="90"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Separator.RenderTransform>
-            </Separator>
+                <Label  Grid.Column="3" Grid.ColumnSpan="6" Grid.RowSpan="3" Grid.Row="3" HorizontalAlignment="Center"  Content="Zdravo klinika" Foreground="#FF148DF0" FontSize="40"/>
+                <MediaElement Name="VideoControl"  Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="12" Grid.RowSpan="14" 
+                    Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\WPF.mp4"  >
+                </MediaElement>
+                <StackPanel Orientation="Horizontal" Width="1" Background="#FF148DF0" Grid.Column="12" Grid.Row="4" Grid.RowSpan="21"></StackPanel>
 
-            <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\doctorIcon.png" Margin="94,58,238,385" RenderTransformOrigin="1.542,0.417" Grid.Column="1" />
-            <Label HorizontalAlignment="Center"  Content="Lekar" Foreground="#FF148DF0" Height="46" VerticalAlignment="Top" FontSize="25" Margin="205,165,129,0" Width="94" Grid.Column="1"/>
+                <Label Grid.Column="2" Grid.ColumnSpan="8" Grid.RowSpan="3" Grid.Row="22" HorizontalAlignment="Center"  Content="Možete pogledati još jedan novi video koji smo &#10;      izdvojili za vas iz naše bogate biblioteke" Foreground="#FF148DF0" FontSize="20" />
 
-            <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Patient.png" Margin="94,252,238,337" RenderTransformOrigin="1.542,0.417" Grid.Column="1"  />
-            <Label HorizontalAlignment="Center"  Content="Pacijent" Foreground="#FF148DF0" Height="47" VerticalAlignment="Top" FontSize="25" Margin="205,294,80,0" Width="143" Grid.Column="1"/>
-
-            <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Secretary.png" Margin="94,360,238,219" RenderTransformOrigin="1.542,0.417" Grid.Column="1" />
-            <Label HorizontalAlignment="Center"  Content="Upravnik" Foreground="#FF148DF0" Height="48" VerticalAlignment="Top" FontSize="25" Margin="205,528,80,0" Width="143" Grid.Column="1"/>
+                <Label HorizontalAlignment="Center"  Content="Koristiš softver kao?" Foreground="#FF148DF0" FontSize="36" Grid.Row="3" Grid.RowSpan="3" Grid.ColumnSpan="10" Grid.Column="13"/>
 
 
-            <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Upravnik.png" Margin="94,502,238,112" RenderTransformOrigin="1.542,0.417" Grid.Column="1" />
-            <Label HorizontalAlignment="Center"  Content="Sekretar" Foreground="#FF148DF0" Height="47" VerticalAlignment="Top" FontSize="25" Margin="205,417,80,0" Width="143" Grid.Column="1"/>
-            <Button Content="Login" Grid.Column="1" HorizontalAlignment="Left" Margin="246,339,0,0" VerticalAlignment="Top" Width="75" Click="Login_Click"/>
+
+                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\doctorIcon.png" Grid.Row="7" Grid.RowSpan="4" Grid.ColumnSpan="3" Grid.Column="14" />
+                <Label HorizontalAlignment="Left"  Content="Lekar" Foreground="#FF148DF0"  FontSize="32"  Grid.Row="8" Grid.RowSpan="3" Grid.ColumnSpan="10" Grid.Column="17"/>
+
+                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Patient.png"  Grid.Row="12" Grid.RowSpan="4" Grid.ColumnSpan="3" Grid.Column="14" />
+                <Label HorizontalAlignment="Left"  Content="Pacijent" Foreground="#FF148DF0" FontSize="32"  Grid.Row="13" Grid.RowSpan="3" Grid.ColumnSpan="10" Grid.Column="17"/>
+
+                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Secretary.png" Grid.Row="17" Grid.RowSpan="4" Grid.ColumnSpan="3" Grid.Column="14" />
+                <Label HorizontalAlignment="Left"  Content="Upravnik" Foreground="#FF148DF0"  FontSize="32"  Grid.Row="18" Grid.RowSpan="3" Grid.ColumnSpan="10" Grid.Column="17"/>
 
 
-        </Grid>
-    </StackPanel>
+                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Upravnik.png"  Grid.Row="22" Grid.RowSpan="4" Grid.ColumnSpan="3" Grid.Column="14" />
+                <Label HorizontalAlignment="Left"  Content="Sekretar" Foreground="#FF148DF0"   FontSize="32"  Grid.Row="23" Grid.RowSpan="3" Grid.ColumnSpan="10" Grid.Column="17"/>
+
+                <Button Content="Login" VerticalAlignment="Top" Width="75" Click="Login_Click"  Grid.Row="14" Grid.RowSpan="3" Grid.ColumnSpan="10" Grid.Column="17"/>
+
+                <Grid.ColumnDefinitions>
+                    <!--16 columns-->
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="*"/>
+                    <RowDefinition  Height="*"/>
+                    <RowDefinition  Height="*"/>
+                    <RowDefinition  Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+            </Grid>
+        </StackPanel>
+    </Grid>
 </UserControl>

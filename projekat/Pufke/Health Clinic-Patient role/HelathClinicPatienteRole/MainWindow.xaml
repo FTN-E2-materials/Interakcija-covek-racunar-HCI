@@ -6,9 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:view="clr-namespace:HelathClinicPatienteRole.View"
         xmlns:viewModel="clr-namespace:HelathClinicPatienteRole.ViewModel"
-        Title="Zdravo Klinika" Height="700" Width="1005">
-
-
+        Title="Zdravo Klinika" Height="700" Width="1300">
 
     <StackPanel Background="White">
 

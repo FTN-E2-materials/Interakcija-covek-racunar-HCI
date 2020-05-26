@@ -10,11 +10,12 @@
         <StackPanel Background="White">
             <Grid Height="700"  DataContext="{Binding Users}">
 
-                <TextBlock Foreground="#FF148DF0" FontSize="50"  HorizontalAlignment="Center" Text="О klinici" Grid.Column="6" Grid.Row="1"  Grid.ColumnSpan="4" Grid.RowSpan="3" />
+                <TextBlock Foreground="#FF148DF0" FontSize="60"  HorizontalAlignment="Center" Text="О klinici" Grid.Column="6" Grid.Row="1"  Grid.ColumnSpan="4" Grid.RowSpan="3" />
 
-                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\OkliniciPhoto.jpg"  Grid.Column="1" Grid.Row="4" Grid.RowSpan="12" Grid.ColumnSpan="7" />
+                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\OkliniciPhoto.jpg"  Grid.Column="1" Grid.Row="5" Grid.RowSpan="12" Grid.ColumnSpan="7" />
 
-                <Label  Content="    Lekare čine specijalisti i subspecijalisti iz oblasti   &#10;    ginekologije (ginekolog-onkolog, subspecijalista &#10;    za fertilnost, subspecijalista adolescentne &#10;    ginekologije, akušer), interne medicine &#10;    (konzilijarno lečenje hormonskih disbalanasa), &#10;    embriologije, radiologije" Foreground="#FF148DF0" FontSize="25"  Grid.Column="8" Grid.Row="5"  Grid.ColumnSpan="8" Grid.RowSpan="10" />
+                <Label  Content="    Lekare čine specijalisti i subspecijalisti iz oblasti   &#10;    ginekologije (ginekolog-onkolog, subspecijalista &#10;    za fertilnost, subspecijalista adolescentne &#10;    ginekologije, akušer), interne medicine &#10;    (konzilijarno lečenje hormonskih disbalanasa), &#10;    embriologije, radiologije (dijagnostika patologije  &#10;    dojke uz program preventivnih pregleda dojke žene,  &#10;    ultrazvučno i mamografski, te ultrazvučni pregledi  &#10;    organskih sistema uz doppler dijagnostiku), urologije  &#10;   " Foreground="#FF148DF0" FontSize="25"  Grid.Column="8" Grid.Row="5"  Grid.ColumnSpan="8" Grid.RowSpan="14" />
+                <Label  Content="   (dijagnostika i lečenje muškog uzroka steriliteta uz lečenje infekcija i patologije muškog reproduktivnog trakta),  &#10;   anesteziologije, plastične hirurgije(korektivni zahvati spoljnih genitalija), dermatovenerologije (konzilijarno lečenje &#10;   veneričnih oboljenja, hormonalno uzrokovanih dermatoloških oboljenja, sistemskih sindroma sa dermatološkim &#10;   manifestacijama) i pedijatrije (praćenje razvoja deteta od neonatusa do školoskog uzrasta)." Foreground="#FF148DF0" FontSize="25"  Grid.Column="0" Grid.Row="18"  Grid.ColumnSpan="16" Grid.RowSpan="14" />
                 <Grid.ColumnDefinitions>
                     <!--16 columns-->
                     <ColumnDefinition Width="*"/>
