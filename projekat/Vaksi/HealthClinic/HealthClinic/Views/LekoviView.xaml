@@ -30,8 +30,6 @@
                 Text="Trenutno stanje lekova"
                 Margin="60, 20, 0, 0"
                 Foreground="#FF2196F3">
-
-
             </TextBlock>
             <!-- Kraj teksta iznad tabele -->
 

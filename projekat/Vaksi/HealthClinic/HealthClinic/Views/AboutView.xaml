@@ -44,6 +44,7 @@
                 <!-- Pocetak dela sa video promocijom. -->
                 <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
 
+        
                     <!-- Video promocija-->
                     <ContentControl Height="300" Width="500" Content="{Binding MediaElementObject}">
                         

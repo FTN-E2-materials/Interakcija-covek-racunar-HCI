@@ -26,7 +26,7 @@ namespace HealthClinic.ViewModels
              */
             MediaElementObject = new MediaElement();                // instanciranje video klipa
             MediaElementObject.Source = videoLink;
-
+            
             
             
             // Omogucenje promene value slajdera vremena videa nakon nekoliko milisekundi klipa.

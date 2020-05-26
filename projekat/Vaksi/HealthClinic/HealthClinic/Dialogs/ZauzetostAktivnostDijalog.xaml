@@ -7,22 +7,216 @@
         xmlns:local="clr-namespace:HealthClinic.Dialogs"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Zauzetost/Aktivnost" Height="450" Width="400"
+        Title="Zauzetost/Aktivnost" Height="450" Width="600"
         MaxHeight="450" MinHeight="450"
-        MaxWidth="400" MinWidth="400">
+        MaxWidth="400" MinWidth="800">
     <Grid Background="#cdfbf4">
 
-        <!-- Text iznad aktivnosti-->
-        <TextBlock 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Stek za kalendar-->
+        <StackPanel>
+            <!-- Text iznad kalendara -->
+            <TextBlock 
                 HorizontalAlignment="Left"
                 FontFamily="Times New Roman" 
                 FontSize="22" 
                 FontStyle="Italic"
-                Text="Trenutna zauzetost i aktivnost prostorije"
-                Margin="20, 20, 0, 0"
+                Text="Zauzeti/slobodni termini"
+                Margin="60, 10, 0, 0"
                 Foreground="#FF2196F3">
-        </TextBlock>
-        <!-- Kraj teksta iznad aktivnosti -->
+            </TextBlock>
+            <!-- Kraj teksta iznad kalendara  -->
 
+            <!-- 
+                Imam informaciju kada je prostorija zauzeta
+                a i kada je slobodna.
+                Zauzeta - onemogucen izbor tog datuma
+                Slobodna - omogucen
+            -->
+            <!-- Kalendar-->
+            <Viewbox 
+                Stretch="Fill"
+                Height="340"
+                Width="280"
+                Grid.Column="0"
+                Margin="0, 10, 0, 0"
+            >
+                <ContentControl Content="{Binding KalendarObject}">
+
+                </ContentControl>
+            </Viewbox>
+            <!-- Kraj kalendara -->
+        </StackPanel>
+        <!-- Kraj steka za kalendar -->
+        
+        <!-- Manipulacija prostorijom-->
+        <StackPanel Grid.Column="1">
+
+            <!-- Podaci -->
+            <StackPanel >
+
+
+                <Label
+                    Margin="40,10 ,0, 0"
+                    FontFamily="Times New Roman" 
+                    FontSize="18" 
+                    Content="Izaberi zeljenu manipulaciju"
+                    Foreground="#FF2196F3"/>
+                <!-- Radio buttons-->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="80,10,0,0">
+                    <RadioButton 
+                        Width="200" 
+                        Content="Renoviranje" 
+                        IsChecked="{Binding Renoviranje, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <RadioButton 
+                        Width="200" 
+                        Content="Spajanje s drugom prostorijom"
+                        IsChecked="{Binding Spajanje, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <RadioButton 
+                        Width="200" 
+                        Content="Deljenje trenutne prostorije"
+                        IsChecked="{Binding Deljenje, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+                <!-- Kraj radio buttons-->
+  
+                <!-- Tip renoviranja -->
+                <ComboBox
+                    Visibility="{Binding PrikazTipaRenoviranja, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Background="WhiteSmoke"
+                    FontWeight="DemiBold"
+                    Width="320"
+                    Height="40"
+                    Margin="10"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    x:Name="TipRenoviranja"
+                    materialDesign:HintAssist.Hint="Izaberite tip renoviranja"
+                    materialDesign:HintAssist.HelperText="Tip renoviranja"
+                >
+                    <ComboBoxItem>
+                        popravka klime
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        popravka namestaja
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        poprava interijera
+                    </ComboBoxItem>
+
+                </ComboBox>
+                <!-- Kraj tipa renoviranja -->
+
+                <!-- Izbor prostorije s kojom vrsimo spajanje -->
+                <ComboBox
+                    Visibility="{Binding PrikazSobeSaKojomSpajamo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Background="WhiteSmoke"
+                    FontWeight="DemiBold"
+                    Width="320"
+                    Height="40"
+                    Margin="10"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    x:Name="ProstorijaSaKojomSpajam"
+                    materialDesign:HintAssist.Hint="Izaberite prostoriju s kojom vrsite spajanje"
+                    materialDesign:HintAssist.HelperText="Tip renoviranja"
+                >
+                    <ComboBoxItem>
+                        soba 3
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        soba 4
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        soba 5
+                    </ComboBoxItem>
+
+                </ComboBox>
+                <!-- Kraj izbora prostorije s kojom vrsimo spajanje -->
+
+                <!-- Naziv nove prostorije -->
+                <TextBox
+                    TextWrapping="Wrap"
+                    Visibility="{Binding PrikazNoveProstorije, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Background="WhiteSmoke"
+                    FontWeight="DemiBold"
+                    Width="320"
+                    Height="40"
+                    Margin="10"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    x:Name="NazivNoveProstorije"
+                    materialDesign:HintAssist.Hint="Ovde unesite naziv nove prostorije"
+                    materialDesign:HintAssist.HelperText="Naziv nove prostorije">
+                </TextBox>
+                <!-- Kraj naziva nove prostorije -->
+
+                <!-- Naziv druge nove prostorije -->
+                <TextBox
+                    TextWrapping="Wrap"
+                    Visibility="{Binding PrikazDrugeNoveProstorije, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Background="WhiteSmoke"
+                    FontWeight="DemiBold"
+                    Width="320"
+                    Height="40"
+                    Margin="10"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    x:Name="NazivDrugeNoveProstorije"
+                    materialDesign:HintAssist.Hint="Ovde unesite naziv druge nove prostorije"
+                    materialDesign:HintAssist.HelperText="Naziv druge nove prostorije">
+                </TextBox>
+                <!-- Kraj naziva nove prostorije -->
+                
+                <!-- Poruka obavestenja -->
+                <TextBox
+                    TextWrapping="Wrap"
+                    Visibility="Visible"
+                    Background="WhiteSmoke"
+                    FontWeight="DemiBold"
+                    Width="320"
+                    Height="80"
+                    Margin="10"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    x:Name="PorukaObavestenja"
+                    materialDesign:HintAssist.Hint="Ovde unesite poruku obavestenja"
+                    materialDesign:HintAssist.HelperText="Poruka obavestenja">
+                </TextBox>
+                <!-- Kraj poruke obavestenja -->
+                
+
+            </StackPanel>
+            <!-- Kraj dela sa podacima -->
+
+
+            <!-- Dugmad -->
+            <StackPanel Margin="0, 20, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <Button 
+                Height="40"
+                Width="100"
+                Margin="10"
+                >
+                    Potvrdi
+                </Button>
+
+                <Button 
+                Height="40"
+                Width="100"
+                Margin="10"
+                >
+                    Odustani
+                </Button>
+
+            </StackPanel>
+            <!-- Kraj dugmad dela-->
+        </StackPanel>
+        <!-- Kraj manipulacije prostorijom-->
+        
+        
     </Grid>
 </Window>

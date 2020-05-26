@@ -9,9 +9,14 @@
         WindowStartupLocation="CenterScreen"
         Title="Radni kalendar" Height="450" Width="400">
     <Grid Background="#cdfbf4">
-        <Calendar             
+
+        <Viewbox     
             Width="280"
             Height="350">
-        </Calendar>
+            <Calendar>
+                
+            </Calendar>
+        </Viewbox>
+        
     </Grid>
 </Window>
