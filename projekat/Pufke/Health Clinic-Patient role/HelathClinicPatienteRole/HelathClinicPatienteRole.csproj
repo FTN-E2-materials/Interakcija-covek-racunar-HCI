@@ -70,6 +70,9 @@
     <Compile Include="Dialogs\IzmenaPregledaDialog.xaml.cs">
       <DependentUpon>IzmenaPregledaDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\OtkaziPregledDialog.xaml.cs">
+      <DependentUpon>OtkaziPregledDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginPacijent.xaml.cs">
       <DependentUpon>LoginPacijent.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,10 @@
       <DependentUpon>ZakaziPregledPatientView.xaml</DependentUpon>
     </Compile>
     <Page Include="Dialogs\IzmenaPregledaDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\OtkaziPregledDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,78 @@
+﻿<Window x:Class="HelathClinicPatienteRole.Dialogs.OtkaziPregled"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelathClinicPatienteRole.Dialogs"
+        mc:Ignorable="d"
+        Title="OtkaziPregled" Height="250" Width="400">
+    <Grid>
+        <StackPanel Background="White" >
+            <Grid Height="220" >
+
+                <Label HorizontalAlignment="Center"  Content="Da li ste sigurni " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="20" Grid.RowSpan="6"/>
+                <Label HorizontalAlignment="Center"  Content="da želite da otkažete pregled?" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="20" Grid.RowSpan="6"/>
+
+                <Button Content="Potvrdi" Grid.Row="18" Grid.Column="4" Grid.ColumnSpan="6" Grid.RowSpan="5"/>
+                <Button Content="Odustani" Grid.Row="18" Grid.Column="12" Grid.ColumnSpan="6" Grid.RowSpan="5"/>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
