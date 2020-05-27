@@ -27,7 +27,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Naziv"
-                Text="{Binding SelektovaniLek.NazivLeka}"
+                Text="{Binding SelektovaniLek.NazivLeka , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 materialDesign:HintAssist.Hint="Ovde unesite naziv leka"
                 materialDesign:HintAssist.HelperText="Naziv leka">
 
@@ -44,7 +44,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Kolicina"
-                Text="{Binding SelektovaniLek.Kolicina}"
+                Text="{Binding SelektovaniLek.Kolicina , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 materialDesign:HintAssist.Hint="Ovde unesite kolicinu leka"
                 materialDesign:HintAssist.HelperText="Kolicina leka">
 

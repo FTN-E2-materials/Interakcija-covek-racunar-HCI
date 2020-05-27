@@ -75,7 +75,15 @@ namespace HealthClinic.ViewModels
         #endregion
 
         #region Tabela
-        public ObservableCollection<Lek> Lekovi { get; set; }
+        
+        private ObservableCollection<Lek> _lek;
+
+        public ObservableCollection<Lek> Lekovi
+        {
+            get { return _lek; }
+            set { _lek = value; }
+        }
+
 
         private void ucitavanjeLekova()
         {
