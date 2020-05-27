@@ -45,7 +45,7 @@
                 <DataGrid x:Name="dataGridLekovi"
                     ItemsSource="{Binding Path=Prostorije}"
                     SelectedItem="{Binding Path=SelektovanaProstorija, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                    AutoGenerateColumns="True" 
+                    AutoGenerateColumns="False" 
                     SelectionMode="Single" 
                     IsReadOnly="True" 
                           
@@ -55,8 +55,13 @@
                     Width="602" 
                     Background="#FF226397"
                     >
-
+                    
+                    <!-- Custom kolone tabele-->
                     <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Odeljenje}" Header="Odeljenje"/>
+                        <DataGridTextColumn Binding="{Binding BrojSobe}" Header="Broj sobe"/>
+                        <DataGridTextColumn Binding="{Binding Namena}" Header="Namena"/>
+                        <!-- Dugmad u tabeli -->
                         <DataGridTemplateColumn>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -64,28 +69,29 @@
                                         <Button
                                             Command="{Binding Path=DataContext.SpisakOpremeCommand,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGrid}}}"
                                             >
-                                            Prikazi/Otvori
+                                            spisak opreme
                                         </Button>
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         
-                        <DataGridTemplateColumn  Header="Aktivnost">
+                        <DataGridTemplateColumn>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
                                         <Button
                                             Command="{Binding Path=DataContext.ZauzetostAktivnostCommand,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGrid}}}"
                                             >
-                                            Prikazi/Otvori
+                                            aktivnost
                                         </Button>
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
+                        <!-- Kraj dugmadi u tabeli -->
                     </DataGrid.Columns>
-
+                    <!-- Kraj custom kolona u tabeli -->
                 </DataGrid>
                 <!-- Kraj tabele lekova. -->
 
