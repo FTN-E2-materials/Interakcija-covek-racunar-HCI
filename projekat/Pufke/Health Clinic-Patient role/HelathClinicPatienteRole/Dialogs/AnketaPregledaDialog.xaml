@@ -18,22 +18,20 @@
 
         <Label HorizontalAlignment="Left"  Content="Vaše mišljenje: " Foreground="#FF148DF0"  FontSize="20" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="11" Grid.RowSpan="4"/>
 
-
         <StackPanel  Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="12" Grid.RowSpan="8" HorizontalAlignment="Left" Width="262" >
-
-            <TextBox Foreground="Black"
-    Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
-    VerticalAlignment="Top"
-    Height="94"
-    AcceptsReturn="True"
-    TextWrapping="Wrap"
-    VerticalScrollBarVisibility="Auto"
-    
-      materialDesign:HintAssist.HelperText="Klikni iznad"
-    IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextFieldTextBoxEnabledComboBox}" />
+            <TextBox Foreground="#FF148DF0"
+                 Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                 FontSize="15"
+                 VerticalAlignment="Top"
+                 Height="94"
+                 AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto"
+                 materialDesign:HintAssist.HelperText="Klikni iznad"
+                 IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextFieldTextBoxEnabledComboBox}" />
         </StackPanel>
 
-        <Button Content="Posalji anketu" Grid.Row="24" Grid.Column="8" Grid.ColumnSpan="5" Grid.RowSpan="2"/>
+        <Button Content="Posalji anketu" Grid.Row="23" Grid.Column="8" Grid.ColumnSpan="6" Grid.RowSpan="3"/>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>

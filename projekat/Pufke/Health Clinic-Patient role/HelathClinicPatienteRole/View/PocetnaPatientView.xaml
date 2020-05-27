@@ -8,18 +8,40 @@
              d:DesignHeight="700" d:DesignWidth="1300">
     <Grid>
         <StackPanel Background="White" >
-            <Grid Height="653" >
+            <Grid Height="697">
                 <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\logo.png" Grid.ColumnSpan="2" Grid.RowSpan="6" />
-                <Label HorizontalAlignment="Center"  Content="Zakazani pregledi" Foreground="#FF148DF0" FontSize="40"  Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="5" Grid.RowSpan="3"/>
+                <Label HorizontalAlignment="Center"  Content="Zakazani pregledi" Foreground="#FF148DF0" FontSize="40"  Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="4" Grid.RowSpan="3"/>
 
                 <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Patient.png"   Grid.Row="1" Grid.Column="13" Grid.ColumnSpan="2" Grid.RowSpan="4" Margin="48,0,38,0" />
                 <Label HorizontalAlignment="Center"  Content="Marko Marković" Foreground="#FF148DF0" FontSize="30"  Grid.Column="10" Grid.ColumnSpan="4" Grid.Row="2" Grid.RowSpan="3"/>
 
-                <Label HorizontalAlignment="Center"  Content="Poslednji članak sa bloga" Foreground="#FF148DF0" FontSize="40"  Grid.Column="9" Grid.ColumnSpan="6" Grid.Row="5" Grid.RowSpan="3"/>
-                
+                <Label HorizontalAlignment="Center"  Content="Poslednji članak sa bloga" Foreground="#FF148DF0" FontSize="40"  Grid.Column="8" Grid.ColumnSpan="6" Grid.Row="4" Grid.RowSpan="3"/>
+
                 <StackPanel Orientation="Horizontal" Width="1" Background="#FF148DF0" Grid.Column="7" Grid.Row="4" Grid.RowSpan="16"></StackPanel>
 
-                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="6" Grid.RowSpan="8" Margin="0,0,33,0">
+                <Border Grid.Column="8" Grid.Row="7" Grid.RowSpan="13" Grid.ColumnSpan="7"
+                    BorderThickness="2"
+                    BorderBrush="#FF148DF0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Width="535"
+                    Height="280" >
+
+                    <Canvas >
+
+                        <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\BlogPhoto.jpg"  Width="400" Height="216" Canvas.Left="74" Canvas.Top="10"  />
+                        <TextBlock Foreground="#FF148DF0" FontSize="20" Canvas.Top="236" Canvas.Left="38">Novi aparati stigli u kliniku!</TextBlock>
+                        <Button Grid.Column="8" Grid.Row="19" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="25" Content="Procitaj vise" Canvas.Left="300" Canvas.Top="238" />
+                    </Canvas>
+                </Border>
+
+                <Button Grid.Column="8" Grid.Row="19" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Blog" />
+                <Button Grid.Column="8" Grid.Row="21" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Kontakt" />
+                <Button Grid.Column="8" Grid.Row="23" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="O klinici" />
+
+                <Button Grid.Column="12" Grid.Row="23" Grid.RowSpan="3" Grid.ColumnSpan="3" Height="35" Content="Odjavi se" Margin="49,18,37.5,19" />
+
+                <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="6" Grid.RowSpan="11" Margin="0,0,33,0">
                     <Border BorderThickness="1,1,1,1" BorderBrush="#FF148DF0" >
                         <ItemsControl  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="6" Grid.RowSpan="10">
                             <Grid  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="6" Grid.RowSpan="10">
@@ -35,7 +57,10 @@
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/> 
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Label  Content="Naziv pregleda 1 - Termin pregleda" Foreground="#FF148DF0" FontSize="20" Grid.Row="0" />
@@ -50,6 +75,8 @@
                                 <Label  Content="Naziv pregleda 4 - Termin pregleda" Foreground="#FF148DF0" FontSize="20"  Grid.Row="6" />
                                 <Button HorizontalAlignment="Right"  Height="27" Content="Otkaži pregled" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"  Command="{Binding PirkaziOtkaziPregledDialogCommand}"/>
                                 <Button HorizontalAlignment="Right"  Height="27" Content="Izmeni pregled" Grid.Row="7"   Command="{Binding PirkaziIzmeniPregledDialogCommand}" />
+                                <Label  Content="Naziv pregleda 5 - Pregled obavljen" Foreground="#FF148DF0" FontSize="20"   Grid.Row="9"/>
+                                <Button HorizontalAlignment="Right"  Height="27" Content="Anketa pregleda" Grid.Row="10"  Command="{Binding PirkaziAnketaLekaraDialogCommand}" />
 
 
                             </Grid>
@@ -57,9 +84,9 @@
                     </Border>
                 </ScrollViewer>
 
-                <Button Grid.Column="1" Grid.Row="18" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Propisana terapija" />
-                <Button Grid.Column="1" Grid.Row="20" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Zakaži pregled" />
-                <Button Grid.Column="1" Grid.Row="22" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Karton" />
+                <Button Grid.Column="1" Grid.Row="19" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Propisana terapija" />
+                <Button Grid.Column="1" Grid.Row="21" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Zakaži pregled" />
+                <Button Grid.Column="1" Grid.Row="23" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="35" Content="Karton" />
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -79,6 +106,9 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition  Height="*"/>
+                    <RowDefinition  Height="*"/>
+                    <RowDefinition  Height="*"/>
                     <RowDefinition  Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
