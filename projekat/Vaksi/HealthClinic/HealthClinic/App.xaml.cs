@@ -13,5 +13,6 @@ namespace HealthClinic
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

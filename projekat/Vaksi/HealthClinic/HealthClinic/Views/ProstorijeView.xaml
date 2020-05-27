@@ -28,8 +28,6 @@
                 Text="Prostorije s kojima raspolaze nasa klinika"
                 Margin="60, 20, 0, 0"
                 Foreground="#FF2196F3">
-
-
             </TextBlock>
             <!-- Kraj teksta iznad tabele -->
 
@@ -59,7 +57,7 @@
                     >
 
                     <DataGrid.Columns>
-                        <DataGridTemplateColumn  Header="Spiska opreme">
+                        <DataGridTemplateColumn>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -73,7 +71,7 @@
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         
-                        <DataGridTemplateColumn  Header="Zauzetost/Aktivnost">
+                        <DataGridTemplateColumn  Header="Aktivnost">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
