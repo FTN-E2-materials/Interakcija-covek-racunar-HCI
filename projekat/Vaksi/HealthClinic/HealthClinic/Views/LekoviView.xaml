@@ -70,37 +70,47 @@
             <StackPanel 
                 Orientation="Horizontal" 
                 Height="100" 
-                Width="400"
+                Width="435"
                 HorizontalAlignment="Right"
                 Margin="0, 0, 50, 0">
                 
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    Width="100"
+                    Width="120"
                     ToolTip="Resource name: MaterialDesignRaisedButton"
-                    Content="Dodaj lek"
+                    
                     Command="{Binding DodajLekCommand}"
-                    Margin="60, 0, 0, 0">
+                    Margin="0, 0, 20, 0">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="FlaskPlusOutline" Margin="0, 0, 10, 0" />
+                        <TextBlock Text="Dodaj lek"/>
+                    </StackPanel>
 
                 </Button>
-
+                
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    Width="100"
+                    Width="130"
                     ToolTip="Resource name: MaterialDesignRaisedButton"
-                    Content="Izmeni lek"
+                    
                     Command="{Binding IzmeniLekCommand}"
                     Margin="10">
-
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="PenPlus" Margin="0, 0, 10, 0" />
+                        <TextBlock Text="Izmeni lek"/>
+                    </StackPanel>
                 </Button>
 
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
-                    Width="100"
+                    Width="130"
                     ToolTip="Resource name: MaterialDesignRaisedButton"
-                    Content="Ukloni lek"
+                    
                     Margin="10">
-
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="DeleteEmpty" Margin="0, 0, 10, 0" />
+                        <TextBlock Text="Ukloni lek"/>
+                    </StackPanel>
                 </Button>
 
             </StackPanel>
@@ -159,9 +169,13 @@
                             materialDesign:ButtonProgressAssist.Value="-1"
                             materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
                             materialDesign:ButtonProgressAssist.IsIndeterminate="True"
-                            Content="Generisi izvestaj"
+                            
                             Command="{Binding GenerisiIzvestajLekaCommand}"
                             Margin="2,0"/>
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Download" Foreground="White" Margin="0, 0, 10, 0"/>
+                            <TextBlock Foreground="White" Text="Generisi izvestaj"/>
+                        </StackPanel>
                     </Grid>
                     <!-- Kraj dugmeta za generisanje izvestaja. -->
 
