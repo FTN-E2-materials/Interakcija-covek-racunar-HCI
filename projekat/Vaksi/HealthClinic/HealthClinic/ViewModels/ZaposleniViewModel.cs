@@ -9,6 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows;
 
 namespace HealthClinic.ViewModels
 {
@@ -100,6 +105,24 @@ namespace HealthClinic.ViewModels
 
         public void PrikaziDijalogGenerisanjaIzvestaja(object obj)
         {
+            using (PdfDocument document = new PdfDocument())
+            {
+                //Add a page to the document
+                PdfPage page = document.Pages.Add();
+
+                //Create PDF graphics for a page
+                PdfGraphics graphics = page.Graphics;
+
+                //Set the standard font
+                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+
+                //Draw the text
+                graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
+
+                //Save the document
+                document.Save("C:\\Users\\Vaxi\\Desktop\\6-semestar\\HCI\\projekat\\Vaksi\\HealthClinic\\IzvestajZaposlenih.pdf");
+            }
+
             var dijalog = new GenerisiIzvestajZaposlenihDijalog();
             dijalog.ShowDialog();
         }
