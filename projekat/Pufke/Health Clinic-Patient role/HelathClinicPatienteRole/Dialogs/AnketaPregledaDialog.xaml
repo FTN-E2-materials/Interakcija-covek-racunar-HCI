@@ -19,15 +19,17 @@
         <Label HorizontalAlignment="Left"  Content="Vaše mišljenje: " Foreground="#FF148DF0"  FontSize="20" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="11" Grid.RowSpan="4"/>
 
         <StackPanel  Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="12" Grid.RowSpan="8" HorizontalAlignment="Left" Width="262" >
-            <TextBox Foreground="#FF148DF0"
+            <TextBox Foreground="Black"
                  Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                  FontSize="15"
                  VerticalAlignment="Top"
+                     Background="SkyBlue"
                  Height="94"
                  AcceptsReturn="True"
                  TextWrapping="Wrap"
                  VerticalScrollBarVisibility="Auto"
                  materialDesign:HintAssist.HelperText="Klikni iznad"
+                  materialDesign:HintAssist.HintOpacity="1"
                  IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextFieldTextBoxEnabledComboBox}" />
         </StackPanel>
 
