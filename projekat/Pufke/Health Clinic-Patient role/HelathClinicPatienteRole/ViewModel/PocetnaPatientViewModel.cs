@@ -16,7 +16,10 @@ namespace HelathClinicPatienteRole.ViewModel
             PirkaziIzmeniPregledDialogCommand = new RelayCommand(PirkaziIzmeniPregledDialog);
             PirkaziOtkaziPregledDialogCommand = new RelayCommand(PirkaziOtkaziPregledDialog);
             PirkaziAnketaLekaraDialogCommand = new RelayCommand(PirkaziAnketaLekaraDialog);
+         
         }
+
+
 
         #region Anketa lekara 
 
