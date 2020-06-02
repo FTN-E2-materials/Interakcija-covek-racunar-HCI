@@ -79,6 +79,9 @@
     <Compile Include="Dialogs\PreporukaTerminaDialog.xaml.cs">
       <DependentUpon>PreporukaTerminaDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\ProcitajVise.xaml.cs">
+      <DependentUpon>ProcitajVise.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginPacijent.xaml.cs">
       <DependentUpon>LoginPacijent.xaml</DependentUpon>
     </Compile>
@@ -161,6 +164,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dialogs\PreporukaTerminaDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\ProcitajVise.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

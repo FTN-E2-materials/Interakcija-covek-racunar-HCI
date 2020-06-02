@@ -31,7 +31,7 @@
 
                         <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\BlogPhoto.jpg"  Width="400" Height="216" Canvas.Left="74" Canvas.Top="10"  />
                         <TextBlock Foreground="#FF148DF0" FontSize="20" Canvas.Top="236" Canvas.Left="38">Novi aparati stigli u kliniku!</TextBlock>
-                        <Button Grid.Column="8" Grid.Row="19" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="25" Content="Procitaj vise" Canvas.Left="300" Canvas.Top="238" />
+                        <Button Grid.Column="8" Grid.Row="19" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="25" Content="Procitaj vise" Canvas.Left="300" Canvas.Top="238" Command="{Binding ProcitajViseDialogCommand}"/>
                     </Canvas>
                 </Border>
 

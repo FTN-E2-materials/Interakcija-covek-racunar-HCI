@@ -1,21 +1,19 @@
-﻿<UserControl x:Class="HelathClinicPatienteRole.View.BlogPatientView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:HelathClinicPatienteRole.View"
-             mc:Ignorable="d" 
-            d:DesignHeight="700" d:DesignWidth="1300">
+﻿<Window x:Class="HelathClinicPatienteRole.Dialogs.ProcitajVise"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelathClinicPatienteRole.Dialogs"
+        mc:Ignorable="d"
+        Title="ProcitajVise" Height="700" Width="1200">
     <Grid>
         <StackPanel Background="White">
-            <Grid Height="700">
+            <Grid Height="700"  DataContext="{Binding Users}">
 
-                <TextBlock Foreground="#FF148DF0" FontSize="60"  HorizontalAlignment="Center" Text="BLOG" Grid.Column="6" Grid.Row="0"  Grid.ColumnSpan="4" Grid.RowSpan="3" />
-
-                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="14" Grid.RowSpan="23">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="19" Grid.RowSpan="28">
                     <Border BorderThickness="1,1,1,1" BorderBrush="#FF148DF0" >
                         <ItemsControl  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="6" Grid.RowSpan="10">
-                            <Grid  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="6" Grid.RowSpan="10">
+                            <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
@@ -56,21 +54,11 @@
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-
-                                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\BlogPhoto.jpg"  Width="400" Height="300" Grid.Column="0" Margin="62,23,63,17"  />
-                                <TextBlock Foreground="#FF148DF0" FontSize="30" Grid.ColumnSpan="6" Margin="530,23,66,277" Grid.RowSpan="6"><Run Text="Novi aparati stigli u kliniku!"/><LineBreak/><Run/></TextBlock>
-                                <TextBlock Foreground="#FF148DF0" FontSize="18"  Grid.ColumnSpan="10"  HorizontalAlignment="Center" Margin="526,75,0,10" Width="706" ><Run Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, &#xA; sed do eiusmod tempor incididunt u"/><Run Text="t labore et dolore magna aliqua. &#xA; Ut enim ad minim veniam, &#xA; quis nostrud exercitation ullamco laboris nisi ut aliquip ex  &#xA; ea commodo consequat.&#xA; Duis aute irure dolor  in reprehenderit in voluptate velit esse &#xA; cillum dolore eu fugiat nulla pariatur.&#xA; Excepteur sint occaecat cupidatat non proident,&#xA; sunt in culpa qui officia deserunt mollit anim id est laborum."/></TextBlock>
-                                <Button Grid.Column="5"  Height="30" Content="Pročitaj više" Canvas.Left="300" Canvas.Top="238" Margin="10,298,0,17" RenderTransformOrigin="1.104,1.38" Command="{Binding ProcitajViseDialogCommand}"/>
-
-                                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\BlogPhoto.jpg"  Width="400" Height="300" Grid.Row="3" Grid.Column="0" Margin="62,23,63,17"  />
-                                <TextBlock Foreground="#FF148DF0" FontSize="30" Grid.ColumnSpan="6" Margin="530,23,66,277" Grid.RowSpan="6" Grid.Row="3"><Run Text="Novi aparati stigli u kliniku!"/><LineBreak/><Run/></TextBlock>
-                                <TextBlock Foreground="#FF148DF0" FontSize="18"  Grid.Row="3" Grid.ColumnSpan="10"  HorizontalAlignment="Center" Margin="526,75,0,10" Width="706" ><Run Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, &#xA; sed do eiusmod tempor incididunt u"/><Run Text="t labore et dolore magna aliqua. &#xA; Ut enim ad minim veniam, &#xA; quis nostrud exercitation ullamco laboris nisi ut aliquip ex  &#xA; ea commodo consequat.&#xA; Duis aute irure dolor  in reprehenderit in voluptate velit esse &#xA; cillum dolore eu fugiat nulla pariatur.&#xA; Excepteur sint occaecat cupidatat non proident,&#xA; sunt in culpa qui officia deserunt mollit anim id est laborum."/></TextBlock>
-                                <Button Grid.Column="5" Grid.Row="3"  Height="30" Content="Pročitaj više" Canvas.Left="300" Canvas.Top="238" Margin="10,298,0,17" RenderTransformOrigin="1.104,1.38" Command="{Binding ProcitajViseDialogCommand}"/>
-
-                                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\BlogPhoto.jpg"  Width="400" Height="300" Grid.Row="6" Grid.Column="0" Margin="62,23,63,17"  />
-                                <TextBlock Foreground="#FF148DF0" FontSize="30" Grid.ColumnSpan="6" Margin="530,23,66,277" Grid.RowSpan="6" Grid.Row="6"><Run Text="Novi aparati stigli u kliniku!"/><LineBreak/><Run/></TextBlock>
-                                <TextBlock Foreground="#FF148DF0" FontSize="18"  Grid.Row="6" Grid.ColumnSpan="10"  HorizontalAlignment="Center" Margin="526,75,0,10" Width="706" ><Run Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, &#xA; sed do eiusmod tempor incididunt u"/><Run Text="t labore et dolore magna aliqua. &#xA; Ut enim ad minim veniam, &#xA; quis nostrud exercitation ullamco laboris nisi ut aliquip ex  &#xA; ea commodo consequat.&#xA; Duis aute irure dolor  in reprehenderit in voluptate velit esse &#xA; cillum dolore eu fugiat nulla pariatur.&#xA; Excepteur sint occaecat cupidatat non proident,&#xA; sunt in culpa qui officia deserunt mollit anim id est laborum."/></TextBlock>
-                                <Button Grid.Column="5" Grid.Row="6"  Height="30" Content="Pročitaj više" Canvas.Left="300" Canvas.Top="238" Margin="10,298,0,17" RenderTransformOrigin="1.104,1.38" Command="{Binding ProcitajViseDialogCommand}" />
+                                <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Center" Margin="107,34,245,10" Width="744"><Run Text="Poptpuno novi aparati stigli u kliniku!"/></TextBlock>
+                                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\BlogPhoto.jpg"  Width="400" Height="300" Grid.Column="0" Margin="103,82,586,78"  />
+                                <TextBlock Foreground="#FF148DF0" FontSize="18"  Grid.ColumnSpan="14"  HorizontalAlignment="Center" Margin="530,104,-58,278" Width="706" Grid.RowSpan="2" ><Run Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, &#xA; sed do eiusmod tempor incididunt u"/><Run Text="t labore et dolore magna aliqua. &#xA; Ut enim ad minim veniam, &#xA; quis nostrud exercitation ullamco laboris nisi ut aliquip ex  &#xA; ea commodo consequat.&#xA; Duis aute irure dolor  in reprehenderit in voluptate velit esse &#xA; cillum dolore eu fugiat nulla pariatur.&#xA; Excepteur sint occaecat cupidatat non proident,&#xA; sunt in culpa qui officia deserunt mollit anim id est laborum."/></TextBlock>
+                                <TextBlock Foreground="#FF148DF0" FontSize="18"  HorizontalAlignment="Center" Margin="87,382,72.643,107" Width="898" Grid.RowSpan="2" ><Run Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, &#xA; sed do eiusmod tempor incididunt u"/><Run Text="t labore et dolore magna aliqua. Ut enim ad minim veniam, &#xA; quis nostrud exercitation ullamco laboris nisi ut aliquip ex  &#xA; ea commodo consequat.&#xA; Duis aute irure dolor  in reprehenderit in voluptate velit esse  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sed do eiusmod tempor incididunt u"/><Run Text="t labore et dolore magna aliqua. &#xA; Ut enim ad minim veniam, &#xA; quis nostrud exercitation ullamco laboris nisi ut aliquip ex  &#xA; ea commodo consequat.&#xA; Duis aute irure dolor  in reprehenderit in voluptate velit esse &#xA; cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,&#xA; sunt in culpa qui officia deserunt mollit anim id est laborum."/></TextBlock>
+                                <TextBlock Foreground="#FF148DF0" FontSize="18" Grid.Row="1"  HorizontalAlignment="Center" Margin="110,224,92,139" Width="900" Grid.RowSpan="2" ><Run Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u"/><Run Text="t labore et dolore magna aliqua. &#xA; Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex  ea commodo consequat.&#xA; Duis aute irure dolor  in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&#xA; Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, &#xA; sed do eiusmod tempor incididunt u"/><Run Text="t labore et dolore magna aliqua. &#xA; Ut enim ad minim veniam, &#xA; quis nostrud exercitation ullamco laboris nisi ut aliquip ex  ea commodo consequat.&#xA; Duis aute irure dolor  in reprehenderit in voluptate velit esse  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,&#xA; sunt in culpa qui officia deserunt mollit anim id est laborum."/></TextBlock>
                             </Grid>
                         </ItemsControl>
                     </Border>
@@ -131,7 +119,6 @@
 
 
             </Grid>
-
         </StackPanel>
     </Grid>
-</UserControl>
+</Window>
