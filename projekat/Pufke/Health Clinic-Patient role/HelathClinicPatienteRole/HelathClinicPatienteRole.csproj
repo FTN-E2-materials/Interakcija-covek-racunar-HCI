@@ -86,6 +86,7 @@
       <DependentUpon>LoginPacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\MedicinskiKarton.cs" />
+    <Compile Include="Model\Pregled.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="PatientMainWindow.xaml.cs">
       <DependentUpon>PatientMainWindow.xaml</DependentUpon>

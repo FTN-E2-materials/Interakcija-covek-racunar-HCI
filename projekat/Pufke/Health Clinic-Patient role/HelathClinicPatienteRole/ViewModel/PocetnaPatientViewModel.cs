@@ -1,4 +1,5 @@
 ﻿using HelathClinicPatienteRole.Dialogs;
+using HelathClinicPatienteRole.Model;
 using HelathClinicPatienteRole.ViewModel.Commands;
 using System;
 using System.Collections.Generic;
@@ -6,20 +7,68 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace HelathClinicPatienteRole.ViewModel
 {
     class PocetnaPatientViewModel 
     {
+        private IList<Pregled> _PregledList;
+
         public PocetnaPatientViewModel()
         {
             PirkaziIzmeniPregledDialogCommand = new RelayCommand(PirkaziIzmeniPregledDialog);
             PirkaziOtkaziPregledDialogCommand = new RelayCommand(PirkaziOtkaziPregledDialog);
             PirkaziAnketaLekaraDialogCommand = new RelayCommand(PirkaziAnketaLekaraDialog);
             ProcitajViseDialogCommand = new RelayCommand(ProcitajViseDialog);
+            _PregledList = new List<Pregled>
+            {
+                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h"},
+                new Pregled{NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h"},
+                new Pregled{NazivPregleda = "Očni pregled",TerminPregleda = "28.06.2020  8:00h"},
+                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h"}
+            };
         }
 
+        public IList<Pregled> Pregledi
+        {
+            get { return _PregledList; }
+            set { _PregledList = value; }
+        }
 
+        private ICommand mUpdater;
+        public ICommand UpdateCommand
+        {
+            get
+            {
+                if (mUpdater == null)
+                    mUpdater = new Updater();
+                return mUpdater;
+            }
+            set
+            {
+                mUpdater = value;
+            }
+        }
+
+        private class Updater : ICommand
+        {
+            #region ICommand Members  
+
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+            public void Execute(object parameter)
+            {
+
+            }
+
+            #endregion
+        }
         #region Procitaj vise dialog
 
         public RelayCommand ProcitajViseDialogCommand { get; private set; }
