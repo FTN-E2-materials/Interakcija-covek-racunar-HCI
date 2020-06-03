@@ -20,7 +20,7 @@
                 Text="{Binding SelektovaniPregled.TerminPregleda}"
                 materialDesign:HintAssist.Hint="Unesite datum u formatu dd.mm.gggg"
                 materialDesign:HintAssist.HelperText="Datum" Grid.ColumnSpan="14" Grid.RowSpan="3" Grid.Column="4" Grid.Row="3"/>
-                <Label HorizontalAlignment="Center"  Content="Izmenite datum pregleda" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="15" Grid.RowSpan="2" Margin="10,1,5,0"/>
+                <Label HorizontalAlignment="Center"  Content="Izmenite datum pregleda" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="15" Grid.RowSpan="2" Margin="11,1,0,0" Width="290"/>
 
                 <Label HorizontalAlignment="Center"  Content="Lista slobodnih lekara opste " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="16" Grid.RowSpan="3"/>
                 <Label HorizontalAlignment="Center"  Content=" prakse za taj datum " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="16" Grid.RowSpan="3"/>

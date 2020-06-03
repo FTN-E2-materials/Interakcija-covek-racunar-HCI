@@ -45,13 +45,12 @@
                 <Button Grid.Column="12" Grid.Row="23" Grid.RowSpan="3" Grid.ColumnSpan="3" Height="35" Content="Odjavi se" Margin="49,18,37.5,19" />
 
 
-                <DataGrid x:Name="dataGridLekovi"
+                <DataGrid x:Name="dataGridPregledi"
                     SelectedItem="{Binding Path=SelektovaniPregled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     ItemsSource="{Binding Path=Pregledi}"
                     AutoGenerateColumns="True" 
                     SelectionMode="Single" 
                     IsReadOnly="True" 
-                     
                     Margin="33,10,86.625,20" 
                     HorizontalAlignment="Center"
                     Width="576" 
