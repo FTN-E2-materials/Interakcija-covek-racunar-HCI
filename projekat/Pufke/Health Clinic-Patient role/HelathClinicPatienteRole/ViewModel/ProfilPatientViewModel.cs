@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace HelathClinicPatienteRole.ViewModel
 {
-    class ProfilPatientViewModel
+    class ProfilPatientViewModel 
     {
         private IList<User> _UsersList;
       

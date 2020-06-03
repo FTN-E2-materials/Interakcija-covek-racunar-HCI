@@ -3,6 +3,7 @@ using HelathClinicPatienteRole.Model;
 using HelathClinicPatienteRole.ViewModel.Commands;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,10 @@ using System.Windows.Input;
 
 namespace HelathClinicPatienteRole.ViewModel
 {
-    class PocetnaPatientViewModel 
+    class PocetnaPatientViewModel : INotifyPropertyChanged
     {
         private IList<Pregled> _PregledList;
+      
 
         public PocetnaPatientViewModel()
         {
@@ -23,16 +25,21 @@ namespace HelathClinicPatienteRole.ViewModel
             ProcitajViseDialogCommand = new RelayCommand(ProcitajViseDialog);
             _PregledList = new List<Pregled>
             {
-                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h"},
-                new Pregled{NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h"},
-                new Pregled{NazivPregleda = "Očni pregled",TerminPregleda = "28.06.2020  8:00h"},
-                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h"}
+                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan"},
+                new Pregled{NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h",StatusPregleda="Obavljen"},
+                new Pregled{NazivPregleda = "Očni pregled",TerminPregleda = "28.06.2020  8:00h",StatusPregleda="Zakazan"},
+                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h",StatusPregleda="Obavljen"},
+                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h",StatusPregleda="Obavljen"},
+                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan"},
+                new Pregled{NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h",StatusPregleda="Obavljen"},
+                new Pregled{NazivPregleda = "Očni pregled",TerminPregleda = "28.06.2020  8:00h",StatusPregleda="Zakazan"},
             };
         }
 
         public IList<Pregled> Pregledi
         {
-            get { return _PregledList; }
+            get {  return _PregledList;
+            }
             set { _PregledList = value; }
         }
 
@@ -102,7 +109,8 @@ namespace HelathClinicPatienteRole.ViewModel
         public void PirkaziIzmeniPregledDialog(object obj)
         {
             var s = new IzmenaPregledaDialog();
-            s.ShowDialog();
+             s.DataContext = this;             // kako bi prebacio podatke iz ovog prozora u dijalog
+             s.ShowDialog();
 
         }
 
@@ -122,5 +130,28 @@ namespace HelathClinicPatienteRole.ViewModel
 
         #endregion
 
+   
+
+        #region Selektovani pregled
+
+        private Pregled _selektovaniPregled;
+
+        public Pregled SelektovaniPregled
+        {
+            get { return _selektovaniPregled; }
+            set { _selektovaniPregled = value; OnPropertyChanged("SelektovaniPregled"); }
+        }
+
+        #endregion
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
     }
 }

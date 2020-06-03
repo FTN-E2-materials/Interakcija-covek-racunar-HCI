@@ -89,7 +89,7 @@
 
                 <Label HorizontalAlignment="Center"  Content="Izaberite lekara ili unesite drugi datum " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="20" Grid.Column="10" Grid.ColumnSpan="20" Grid.RowSpan="3"/>
 
-                <Button Content="Potvrdi" Grid.Row="21" Grid.Column="17" Grid.ColumnSpan="5" Grid.RowSpan="5"/>
+                <Button Content="Potvrdi" Grid.Row="22" Grid.Column="18" Grid.ColumnSpan="6" Grid.RowSpan="2" Margin="10,10,24,0" Click="PotvrdiButton_Click"/>
 
 
                 <Label HorizontalAlignment="Center"  Content="Zelite automatsku prepororuku termina?" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="25" Grid.Column="8" Grid.ColumnSpan="16" Grid.RowSpan="3"/>
