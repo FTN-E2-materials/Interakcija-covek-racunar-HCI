@@ -100,6 +100,12 @@
     <Compile Include="Views\Dialogs\Brisanje\ObrisiLekDijalog.xaml.cs">
       <DependentUpon>ObrisiLekDijalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dialogs\Brisanje\ObrisiProstorijuDijalog.xaml.cs">
+      <DependentUpon>ObrisiProstorijuDijalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\Brisanje\ObrisiZaposlenogDijalog.xaml.cs">
+      <DependentUpon>ObrisiZaposlenogDijalog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dialogs\Dodavanje\DodajLekDijalog.xaml.cs">
       <DependentUpon>DodajLekDijalog.xaml</DependentUpon>
     </Compile>
@@ -181,6 +187,14 @@
       <DependentUpon>ZaposleniView.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\Dialogs\Brisanje\ObrisiLekDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\Brisanje\ObrisiProstorijuDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\Brisanje\ObrisiZaposlenogDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

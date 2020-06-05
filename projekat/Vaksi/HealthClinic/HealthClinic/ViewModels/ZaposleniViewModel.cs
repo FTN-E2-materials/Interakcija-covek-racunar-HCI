@@ -14,6 +14,7 @@ using Syncfusion.Pdf.Graphics;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows;
+using HealthClinic.Views.Dialogs.Brisanje;
 
 namespace HealthClinic.ViewModels
 {
@@ -29,6 +30,7 @@ namespace HealthClinic.ViewModels
             IzmeniZaposlenogCommand = new RelayCommand(IzmeniZaposlenog);
             GenerisiIzvestajZaposlenogCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
             RadniKalendarCommand = new RelayCommand(PrikaziRadniKalendar);
+            IzbrisiZaposlenogCommand = new RelayCommand(IzbrisiZaposlenog);
 
             PocetniDatum = DateTime.Now.Date;
             KrajnjiDatum = DateTime.Now.Date;
@@ -38,6 +40,9 @@ namespace HealthClinic.ViewModels
 
             // potvrdjujem dodavanje podataka
             PotvrdaDodavanjaPodatakaCommand = new RelayCommand(PotvrdaDodavanjaPodataka);
+
+            // potvrdjujem brisanje podataka
+            PotvrdaBrisanjaPodatakaCommand = new RelayCommand(PotvrdaBrisanjaPodataka);
 
         }
 
@@ -123,6 +128,27 @@ namespace HealthClinic.ViewModels
         #endregion
 
         #region Komande
+
+        public RelayCommand PotvrdaBrisanjaPodatakaCommand { get; private set; }
+
+        public void PotvrdaBrisanjaPodataka(object obj)
+        {
+            // sprecavam kada niko nije selektovan da ne dodje do erroa
+            if (SelektovaniZaposleni is null)
+                return;
+
+            foreach (Zaposlen trenutniZaposleni in Zaposleni)
+            {
+                if(trenutniZaposleni.Ime == SelektovaniZaposleni.Ime)
+                {
+                    MessageBox.Show("Uspesno ste izbrisali radnika sa imenom " + trenutniZaposleni.Ime);
+                    Zaposleni.Remove(trenutniZaposleni);
+
+                    break;
+                }
+            }
+        }
+
 
         public RelayCommand PotvrdaDodavanjaPodatakaCommand { get; private set; }
 
@@ -212,6 +238,16 @@ namespace HealthClinic.ViewModels
             var dijalog = new IzmeniZaposlenogDijalog();
             dijalog.DataContext = this;             // kako bi prebacio podatke iz ovog prozora u dijalog
             dijalog.ShowDialog();                   // podesavam da i dijalog moze upravljati istim podacima
+        }
+
+        public RelayCommand IzbrisiZaposlenogCommand { get; private set; }
+
+        public void IzbrisiZaposlenog(object obj)
+        {
+            // TODO: Mozda dodati nekad da pise tacno kog zaposlenog brisemo ali u nekim buducim verzijama
+            var dijalog = new ObrisiZaposlenogDijalog();
+            dijalog.DataContext = this;
+            dijalog.ShowDialog();
         }
 
         #endregion

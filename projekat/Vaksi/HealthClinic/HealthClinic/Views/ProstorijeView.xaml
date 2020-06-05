@@ -139,6 +139,7 @@
                     Width="170"
                     ToolTip="Resource name: MaterialDesignRaisedButton"
                     
+                    Command="{Binding IzbrisiProstorijuCommand}"
                     Margin="10">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="DeleteEmpty" Margin="0, 0, 10, 0" />

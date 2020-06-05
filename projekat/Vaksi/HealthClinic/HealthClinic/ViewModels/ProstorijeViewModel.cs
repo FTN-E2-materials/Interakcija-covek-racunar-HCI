@@ -15,6 +15,7 @@ using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using System.ComponentModel;
 using System.Drawing;
+using HealthClinic.Views.Dialogs.Brisanje;
 
 namespace HealthClinic.ViewModels
 {
@@ -29,6 +30,8 @@ namespace HealthClinic.ViewModels
             
             DodajProstorijuCommand = new RelayCommand(DodajProstoriju);
             IzmeniProstorijuCommand = new RelayCommand(IzmeniProstoriju);
+            IzbrisiProstorijuCommand = new RelayCommand(IzbrisiProstoriju);
+
             GenerisiIzvestajProstorijaCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
             SpisakOpremeCommand = new RelayCommand(PrikaziSpisakOpreme);
             ZauzetostAktivnostCommand = new RelayCommand(PrikaziZauzetostAktivnost);
@@ -44,7 +47,9 @@ namespace HealthClinic.ViewModels
 
             // potvrdjujem dodavanje podataka
             PotvrdaDodavanjaPodatakaCommand = new RelayCommand(PotvrdaDodavanjaPodataka);
-            
+
+            // potvrdjujem brisanje podataka
+            PotvrdaBrisanjaPodatakaCommand = new RelayCommand(PotvrdaBrisanjaPodataka);
         }
         #region Prostorija koja sluzi za dodavanje u listu prostorija
 
@@ -227,6 +232,26 @@ namespace HealthClinic.ViewModels
 
         #region Komande
 
+
+        public RelayCommand PotvrdaBrisanjaPodatakaCommand { get; private set; }
+
+        public void PotvrdaBrisanjaPodataka(object obj)
+        {
+            if (SelektovanaProstorija is null)
+                return;
+            foreach (Prostorija trenutnaProstorija in Prostorije)
+            {
+                if(trenutnaProstorija.BrojSobe == SelektovanaProstorija.BrojSobe)
+                {
+                    MessageBox.Show("Uspesno ste izbrisali sobu broj " + trenutnaProstorija.BrojSobe);
+                    Prostorije.Remove(trenutnaProstorija);
+
+                    break;
+                }
+            }
+        }
+
+
         public RelayCommand PotvrdaDodavanjaPodatakaCommand { get; private set; }
 
         public void PotvrdaDodavanjaPodataka(object ojb)
@@ -314,6 +339,15 @@ namespace HealthClinic.ViewModels
             dijalog.ShowDialog();
         }
 
+        public RelayCommand IzbrisiProstorijuCommand { get; private set; }
+
+        public void IzbrisiProstoriju(object obj)
+        {
+            // TODO: Mozda dodati nekad da pise tacno koju prostoriju brisemo ali u nekim buducim verzijama
+            var dijalog = new ObrisiProstorijuDijalog();
+            dijalog.DataContext = this;
+            dijalog.ShowDialog();
+        }
 
         #endregion 
 

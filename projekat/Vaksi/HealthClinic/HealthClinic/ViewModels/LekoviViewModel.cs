@@ -89,6 +89,9 @@ namespace HealthClinic.ViewModels
 
         public void PotvrdaBrisanjaPodataka(object obj)
         {
+            // sprecavam kada nije selektovan lek da ne pukne program
+            if (SelektovaniLek is null)
+                return;
             foreach (Lek trenutniLek in Lekovi)
             {
                 if (trenutniLek.NazivLeka == SelektovaniLek.NazivLeka)
