@@ -58,7 +58,6 @@ namespace HealthClinic.ViewModels
 
         #endregion
 
-
         #region Radio buttoni u dijalogu dugmeta tabele
 
         private bool _renoviranje;

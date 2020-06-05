@@ -25,7 +25,7 @@ namespace HealthClinic.ViewModels
 
             ucitavanjePodatakaUTabelu();
 
-            DodajZaposlenogCommand = new RelayCommand(PrikaziDijalogDodavanjaZaposlenog);
+            DodajZaposlenogCommand = new RelayCommand(DodajZaposlenog);
             IzmeniZaposlenogCommand = new RelayCommand(IzmeniZaposlenog);
             GenerisiIzvestajZaposlenogCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
             RadniKalendarCommand = new RelayCommand(PrikaziRadniKalendar);
@@ -35,6 +35,9 @@ namespace HealthClinic.ViewModels
 
             // potvrdjujem izmenjene podatke
             PotvrdaIzmenePodatakaCommand = new RelayCommand(PotvrdaIzmenePodataka);
+
+            // potvrdjujem dodavanje podataka
+            PotvrdaDodavanjaPodatakaCommand = new RelayCommand(PotvrdaDodavanjaPodataka);
 
         }
 
@@ -106,7 +109,28 @@ namespace HealthClinic.ViewModels
 
         #endregion
 
+        #region Zaposleni za dodavanje
+
+        private Zaposlen _zaposleniZaDodavanje;
+
+        public Zaposlen ZaposleniZaDodavanje
+        {
+            get { return _zaposleniZaDodavanje; }
+            set { _zaposleniZaDodavanje = value; OnPropertyChanged("ZaposleniZaDodavanje"); }
+        }
+
+
+        #endregion
+
         #region Komande
+
+        public RelayCommand PotvrdaDodavanjaPodatakaCommand { get; private set; }
+
+        public void PotvrdaDodavanjaPodataka(object ojb)
+        {
+            // dodajem zaposlenog ukoliko je odgovor bio potvrdan
+            Zaposleni.Add(ZaposleniZaDodavanje);
+        }
 
         public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
 
@@ -158,9 +182,14 @@ namespace HealthClinic.ViewModels
 
         public RelayCommand DodajZaposlenogCommand { get; private set; }
 
-        public void PrikaziDijalogDodavanjaZaposlenog(object obj)
+        public void DodajZaposlenog(object obj)
         {
+            // kreiram novog zaposlenog da u slucaju potvrde mogu da ga dodam u listu zaposlenih
+            ZaposleniZaDodavanje = new Zaposlen();
+
+            // prikaz dijaloga za dodavanje
             var dijalog = new DodajZaposlenogDijalog();
+            dijalog.DataContext = this;
             dijalog.ShowDialog();
         }
 
@@ -203,7 +232,15 @@ namespace HealthClinic.ViewModels
             Zaposleni.Add(new Zaposlen() { Ime = "Boban", Prezime = "Jokic", Struka = "Pedijatar", Sifra = "*****", RadniKalendar = "slobodan", BrojOperacijaOveNedelje = "9" });
             Zaposleni.Add(new Zaposlen() { Ime = "Nikola", Prezime = "Marjanovic", Struka = "Doktor opste prakse", Sifra = "*****", RadniKalendar = "popunjen", BrojOperacijaOveNedelje = "12" });
         }
-        public ObservableCollection<Zaposlen> Zaposleni { get; set; }
+
+        private ObservableCollection<Zaposlen> _zaposleni;
+
+        public ObservableCollection<Zaposlen> Zaposleni
+        {
+            get { return _zaposleni; }
+            set { _zaposleni = value; OnPropertyChanged("Zaposleni"); }
+        }
+
 
         #endregion
 

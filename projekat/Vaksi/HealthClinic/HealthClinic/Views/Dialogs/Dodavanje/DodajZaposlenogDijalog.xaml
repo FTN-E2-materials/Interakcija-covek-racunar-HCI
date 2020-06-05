@@ -19,6 +19,7 @@
 
             <!-- Ime zaposlenog -->
             <TextBox
+                Text="{Binding ZaposleniZaDodavanje.Ime}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -35,6 +36,7 @@
 
             <!-- Prezime -->
             <TextBox
+                Text="{Binding ZaposleniZaDodavanje.Prezime}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -137,6 +139,7 @@
         <StackPanel Margin="0, 40, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
 
             <Button 
+                Command="{Binding PotvrdaDodavanjaPodatakaCommand}"
                 Height="40"
                 Width="100"
                 Margin="10"

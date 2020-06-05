@@ -20,6 +20,7 @@
 
             <!-- Naziv leka -->
             <TextBox
+                Text="{Binding LekZaDodavanje.NazivLeka}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -36,6 +37,7 @@
 
             <!-- Kolicina -->
             <TextBox
+                Text="{Binding LekZaDodavanje.Kolicina}"
                 FontWeight="DemiBold"
                 Background="WhiteSmoke"
                 Width="320"
@@ -118,6 +120,7 @@
         <StackPanel Margin="0, 40, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
 
             <Button 
+                Command="{Binding PotvrdaDodavanjaPodatakaCommand}"
                 Height="40"
                 Width="100"
                 Margin="10"

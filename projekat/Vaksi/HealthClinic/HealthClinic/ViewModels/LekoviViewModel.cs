@@ -23,14 +23,15 @@ namespace HealthClinic.ViewModels
             ucitavanjeLekova();
             PieChart();
 
-            DodajLekCommand = new RelayCommand(PrikaziDijalogDodavanjaLeka);
+            DodajLekCommand = new RelayCommand(DodajLek);
             IzmeniLekCommand = new RelayCommand(IzmeniLek);
             GenerisiIzvestajLekaCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
 
 
             // potvrdjujem izmenjene podatke
             PotvrdaIzmenePodatakaCommand = new RelayCommand(PotvrdaIzmenePodataka);
-
+            // potvrdjujem dodavanje podataka
+            PotvrdaDodavanjaPodatakaCommand = new RelayCommand(PotvrdaDodavanjaPodataka);
         }
 
         
@@ -65,8 +66,28 @@ namespace HealthClinic.ViewModels
 
         #endregion
 
+        #region Lek za dodavanje
+
+        private Lek _lekZaDodavanje;
+
+        public Lek LekZaDodavanje
+        {
+            get { return _lekZaDodavanje; }
+            set { _lekZaDodavanje = value; OnPropertyChanged("LekZaDodavanje"); }
+        }
+
+
+        #endregion
 
         #region Komande
+
+        public RelayCommand PotvrdaDodavanjaPodatakaCommand { get; private set; }
+
+        public void PotvrdaDodavanjaPodataka(object ojb)
+        {
+            // dodajem lek u listu lekova
+            Lekovi.Add(LekZaDodavanje);
+        }
 
         public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
 
@@ -105,9 +126,14 @@ namespace HealthClinic.ViewModels
 
         public RelayCommand DodajLekCommand { get; private set; }
 
-        public void PrikaziDijalogDodavanjaLeka(object obj)
+        public void DodajLek(object obj)
         {
+            // ako bude potvrda za dodavanje ovaj lek cu dodati
+            LekZaDodavanje = new Lek();
+
+            // prikaz dijaloga dodavanja leka
             var dijalog = new DodajLekDijalog();
+            dijalog.DataContext = this;
             dijalog.ShowDialog();
         }
 
@@ -134,7 +160,7 @@ namespace HealthClinic.ViewModels
         public ObservableCollection<Lek> Lekovi
         {
             get { return _lek; }
-            set { _lek = value; }
+            set { _lek = value; OnPropertyChanged("Lekovi"); }
         }
 
 
