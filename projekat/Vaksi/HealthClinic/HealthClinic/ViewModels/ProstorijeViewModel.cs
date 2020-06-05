@@ -28,7 +28,7 @@ namespace HealthClinic.ViewModels
 
             
             DodajProstorijuCommand = new RelayCommand(PrikaziDijalogDodavanjaProstorije);
-            IzmeniProstorijuCommand = new RelayCommand(PrikaziDijalogIzmeneProstorije);
+            IzmeniProstorijuCommand = new RelayCommand(IzmeniProstoriju);
             GenerisiIzvestajProstorijaCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
             SpisakOpremeCommand = new RelayCommand(PrikaziSpisakOpreme);
             ZauzetostAktivnostCommand = new RelayCommand(PrikaziZauzetostAktivnost);
@@ -37,9 +37,25 @@ namespace HealthClinic.ViewModels
             PodesavanjeZauzetihDatumaIzabraneProstorije();
 
             // Zelim da renoviranje bude prvo selektovano u radio button grupi
-            Renoviranje = true;                            
+            Renoviranje = true;
+
+            // potvrdjujem izmenjene podatke
+            PotvrdaIzmenePodatakaCommand = new RelayCommand(PotvrdaIzmenePodataka);
+
+
             
         }
+        #region Prostorija koja sluzi za dodavanje u listu prostorija
+
+        private Prostorija _prostorijaZaDodavanje;
+
+        public Prostorija ProstorijaZaDodavanje
+        {
+            get { return _prostorijaZaDodavanje; }
+            set { _prostorijaZaDodavanje = value; OnPropertyChanged("ProstorijaZaDodavanje"); }
+        }
+
+        #endregion
 
 
         #region Radio buttoni u dijalogu dugmeta tabele
@@ -169,18 +185,6 @@ namespace HealthClinic.ViewModels
 
         #endregion
 
-        #region Indeks tipa prostorije
-
-        private int _indeksTipaProstorije;
-
-        public int IndeksTipaProstorije
-        {
-            get { return _indeksTipaProstorije; }
-            set { _indeksTipaProstorije = value; }
-        }
-
-        #endregion
-
         #region Selektovana prostorija
 
         private Prostorija _selektovanaProstorija;
@@ -196,18 +200,6 @@ namespace HealthClinic.ViewModels
             set 
             { 
                 _selektovanaProstorija = value;
-                if(_selektovanaProstorija.Namena.Equals("soba za preglede"))
-                {
-                    IndeksTipaProstorije = 0;
-                }else if (_selektovanaProstorija.Namena.Equals("soba za pacijente"))
-                {
-                    IndeksTipaProstorije = 1;
-                }
-                else if (_selektovanaProstorija.Namena == "operaciona sala")
-                {
-                    IndeksTipaProstorije = 2;
-                }
-
                 OnPropertyChanged("SelektovanaProstorija");
             }
         }
@@ -215,7 +207,36 @@ namespace HealthClinic.ViewModels
 
         #endregion
 
+        #region Prostorija za izmene
+
+
+
+        private Prostorija _prostorijaZaIzmenu;
+        /// <summary>
+        /// Algoritam izmene prostorije: http://prntscr.com/sul6bj
+        /// </summary>
+        public Prostorija ProstorijaZaIzmenu
+        {
+            get { return _prostorijaZaIzmenu; }
+            set { _prostorijaZaIzmenu = value; OnPropertyChanged("ProstorijaZaIzmenu"); }
+        }
+
+
+
+        #endregion
+
         #region Komande
+
+        public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
+
+        public void PotvrdaIzmenePodataka(object obj)
+        {
+            // selektovani objekat prima vrednosti od menjanog objekta
+            SelektovanaProstorija.BrojSobe = ProstorijaZaIzmenu.BrojSobe;
+            SelektovanaProstorija.Namena = ProstorijaZaIzmenu.Namena;
+            SelektovanaProstorija.Odeljenje = ProstorijaZaIzmenu.Odeljenje;
+
+        }
 
         public RelayCommand ZauzetostAktivnostCommand { get; private set; }
 
@@ -263,13 +284,19 @@ namespace HealthClinic.ViewModels
         public void PrikaziDijalogDodavanjaProstorije(object obj)
         {
             var dijalog = new DodajProstorijuDijalog();
+            dijalog.DataContext = this;
             dijalog.ShowDialog();
         }
 
         public RelayCommand IzmeniProstorijuCommand { get; private set; }
 
-        public void PrikaziDijalogIzmeneProstorije(object obj)
+        public void IzmeniProstoriju(object obj)
         {
+            // Prostorija za izmenu/stimanje preuzima podatke od selktovane prostorije
+            if(!(SelektovanaProstorija is null))
+                ProstorijaZaIzmenu = new Prostorija() { Odeljenje = SelektovanaProstorija.Odeljenje, BrojSobe = SelektovanaProstorija.BrojSobe, Namena = SelektovanaProstorija.Namena };
+
+            // podesavanje prikaza dijaloga izmene
             var dijalog = new IzmeniProstorijuDijalog();
             dijalog.DataContext = this;
             dijalog.ShowDialog();

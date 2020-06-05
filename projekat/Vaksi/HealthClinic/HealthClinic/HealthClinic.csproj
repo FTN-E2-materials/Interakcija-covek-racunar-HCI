@@ -97,34 +97,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Views\Dialogs\DodajLekDijalog.xaml.cs">
+    <Compile Include="Views\Dialogs\Dodavanje\DodajLekDijalog.xaml.cs">
       <DependentUpon>DodajLekDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dialogs\DodajProstorijuDijalog.xaml.cs">
+    <Compile Include="Views\Dialogs\Dodavanje\DodajProstorijuDijalog.xaml.cs">
       <DependentUpon>DodajProstorijuDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dialogs\DodajZaposlenogDijalog.xaml.cs">
+    <Compile Include="Views\Dialogs\Dodavanje\DodajZaposlenogDijalog.xaml.cs">
       <DependentUpon>DodajZaposlenogDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dialogs\GenerisiIzvestajLekovaDijalog.xaml.cs">
+    <Compile Include="Views\Dialogs\GenerisanjeIzvestaja\GenerisiIzvestajLekovaDijalog.xaml.cs">
       <DependentUpon>GenerisiIzvestajLekovaDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dialogs\GenerisiIzvestajProstorijaDijalog.xaml.cs">
+    <Compile Include="Views\Dialogs\GenerisanjeIzvestaja\GenerisiIzvestajProstorijaDijalog.xaml.cs">
       <DependentUpon>GenerisiIzvestajProstorijaDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dialogs\GenerisiIzvestajZaposlenihDijalog.xaml.cs">
+    <Compile Include="Views\Dialogs\GenerisanjeIzvestaja\GenerisiIzvestajZaposlenihDijalog.xaml.cs">
       <DependentUpon>GenerisiIzvestajZaposlenihDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dialogs\IzmenaLekaDijalog.xaml.cs">
+    <Compile Include="Views\Dialogs\Izmena\IzmenaLekaDijalog.xaml.cs">
       <DependentUpon>IzmenaLekaDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dialogs\IzmenaProfilaDijalog.xaml.cs">
+    <Compile Include="Views\Dialogs\Izmena\IzmenaProfilaDijalog.xaml.cs">
       <DependentUpon>IzmenaProfilaDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dialogs\IzmeniProstorijuDijalog.xaml.cs">
+    <Compile Include="Views\Dialogs\Izmena\IzmeniProstorijuDijalog.xaml.cs">
       <DependentUpon>IzmeniProstorijuDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dialogs\IzmeniZaposlenogDijalog.xaml.cs">
+    <Compile Include="Views\Dialogs\Izmena\IzmeniZaposlenogDijalog.xaml.cs">
       <DependentUpon>IzmeniZaposlenogDijalog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Dialogs\RadniKalendarDijalog.xaml.cs">
@@ -177,43 +177,43 @@
     <Compile Include="Views\ZaposleniView.xaml.cs">
       <DependentUpon>ZaposleniView.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\Dialogs\DodajLekDijalog.xaml">
+    <Page Include="Views\Dialogs\Dodavanje\DodajLekDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Dialogs\DodajProstorijuDijalog.xaml">
+    <Page Include="Views\Dialogs\Dodavanje\DodajProstorijuDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Dialogs\DodajZaposlenogDijalog.xaml">
+    <Page Include="Views\Dialogs\Dodavanje\DodajZaposlenogDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Dialogs\GenerisiIzvestajLekovaDijalog.xaml">
+    <Page Include="Views\Dialogs\GenerisanjeIzvestaja\GenerisiIzvestajLekovaDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Dialogs\GenerisiIzvestajProstorijaDijalog.xaml">
+    <Page Include="Views\Dialogs\GenerisanjeIzvestaja\GenerisiIzvestajProstorijaDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Dialogs\GenerisiIzvestajZaposlenihDijalog.xaml">
+    <Page Include="Views\Dialogs\GenerisanjeIzvestaja\GenerisiIzvestajZaposlenihDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Dialogs\IzmenaLekaDijalog.xaml">
+    <Page Include="Views\Dialogs\Izmena\IzmenaLekaDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Dialogs\IzmenaProfilaDijalog.xaml">
+    <Page Include="Views\Dialogs\Izmena\IzmenaProfilaDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Dialogs\IzmeniProstorijuDijalog.xaml">
+    <Page Include="Views\Dialogs\Izmena\IzmeniProstorijuDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Dialogs\IzmeniZaposlenogDijalog.xaml">
+    <Page Include="Views\Dialogs\Izmena\IzmeniZaposlenogDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -27,7 +27,7 @@
                 VerticalContentAlignment="Center"
                 x:Name="NazivOdeljenja"
                 
-                Text="{Binding SelektovanaProstorija.Odeljenje}"
+                Text="{Binding ProstorijaZaIzmenu.Odeljenje}"
                 materialDesign:HintAssist.Hint="Ovde unesite naziv odeljenja"
                 materialDesign:HintAssist.HelperText="Naziv odeljenja">
 
@@ -44,7 +44,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="BrojProstorije"
-                Text="{Binding SelektovanaProstorija.BrojSobe}"
+                Text="{Binding ProstorijaZaIzmenu.BrojSobe}"
                 materialDesign:HintAssist.Hint="Ovde unesite broj prostorije"
                 materialDesign:HintAssist.HelperText="Broj prostorije">
 
@@ -61,7 +61,6 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="TipProstorije"
-                SelectedIndex="{Binding IndeksTipaProstorije}"
                 materialDesign:HintAssist.Hint="Izaberite tip prostorije"
                 materialDesign:HintAssist.HelperText="Tip prostorije"
                 >
@@ -113,6 +112,7 @@
         <StackPanel Margin="0, 40, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
 
             <Button 
+                Command="{Binding PotvrdaIzmenePodatakaCommand}"
                 Height="40"
                 Width="100"
                 Margin="10"
