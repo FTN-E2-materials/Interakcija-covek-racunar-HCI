@@ -27,7 +27,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Naziv"
-                Text="{Binding SelektovaniLek.NazivLeka , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding LekZaIzmenu.NazivLeka}"
                 materialDesign:HintAssist.Hint="Ovde unesite naziv leka"
                 materialDesign:HintAssist.HelperText="Naziv leka">
 
@@ -44,7 +44,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Kolicina"
-                Text="{Binding SelektovaniLek.Kolicina , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding LekZaIzmenu.Kolicina}"
                 materialDesign:HintAssist.Hint="Ovde unesite kolicinu leka"
                 materialDesign:HintAssist.HelperText="Kolicina leka">
 
@@ -119,6 +119,7 @@
         <StackPanel Margin="0, 40, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
 
             <Button 
+                Command="{Binding PotvrdaIzmenePodatakaCommand}"
                 Height="40"
                 Width="100"
                 Margin="10"

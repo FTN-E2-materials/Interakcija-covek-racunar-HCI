@@ -26,7 +26,11 @@ namespace HealthClinic.ViewModels
             DodajLekCommand = new RelayCommand(PrikaziDijalogDodavanjaLeka);
             IzmeniLekCommand = new RelayCommand(PrikaziDijalogIzmeneLeka);
             GenerisiIzvestajLekaCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
-            
+
+
+            // potvrdjujem izmenjene podatke
+            PotvrdaIzmenePodatakaCommand = new RelayCommand(PotvrdaIzmenePodataka);
+
         }
 
         
@@ -49,7 +53,30 @@ namespace HealthClinic.ViewModels
 
         #endregion
 
+        #region Lek za izmenu
+
+        private Lek _lekZaIzmenu;
+
+        public Lek LekZaIzmenu
+        {
+            get { return _lekZaIzmenu; }
+            set { _lekZaIzmenu = value; OnPropertyChanged("LekZaIzmenu"); }
+        }
+
+        #endregion
+
+
         #region Komande
+
+        public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
+
+        public void PotvrdaIzmenePodataka(object obj)
+        {
+            // selektovani objekat prima vrednosti od menjanog objekta
+            SelektovaniLek.Kolicina = LekZaIzmenu.Kolicina;
+            SelektovaniLek.NazivLeka = LekZaIzmenu.NazivLeka;
+
+        }
 
         public RelayCommand GenerisiIzvestajLekaCommand { get; private set; }
 
@@ -88,6 +115,11 @@ namespace HealthClinic.ViewModels
 
         public void PrikaziDijalogIzmeneLeka(object obj)
         {
+            // Lek za izmenu/stimanje preuzima podatke od selektovanog leka
+            if (!(SelektovaniLek is null))
+                LekZaIzmenu = new Lek() { NazivLeka = SelektovaniLek.NazivLeka, Kolicina = SelektovaniLek.Kolicina, SifraLeka = SelektovaniLek.SifraLeka };
+
+            // podesavanje prikaza dijaloga izmene
             var dijalog = new IzmenaLekaDijalog();
             dijalog.DataContext = this;             // kako bi prebacio podatke iz ovog prozora u dijalog
             dijalog.ShowDialog();                   // podesavam da i dijalog moze upravljati istim podacima

@@ -292,7 +292,7 @@ namespace HealthClinic.ViewModels
 
         public void IzmeniProstoriju(object obj)
         {
-            // Prostorija za izmenu/stimanje preuzima podatke od selktovane prostorije
+            // Prostorija za izmenu/stimanje preuzima podatke od selektovane prostorije
             if(!(SelektovanaProstorija is null))
                 ProstorijaZaIzmenu = new Prostorija() { Odeljenje = SelektovanaProstorija.Odeljenje, BrojSobe = SelektovanaProstorija.BrojSobe, Namena = SelektovanaProstorija.Namena };
 

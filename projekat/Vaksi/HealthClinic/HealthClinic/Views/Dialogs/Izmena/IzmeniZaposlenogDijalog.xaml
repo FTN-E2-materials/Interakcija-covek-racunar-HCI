@@ -27,7 +27,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Ime"
-                Text="{Binding SelektovaniZaposleni.Ime}"
+                Text="{Binding ZaposleniZaIzmenu.Ime}"
                 materialDesign:HintAssist.Hint="Ovde unesite ime"
                 materialDesign:HintAssist.HelperText="Ime zaposlenog">
 
@@ -44,7 +44,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Prezime"
-                Text="{Binding SelektovaniZaposleni.Prezime}"
+                Text="{Binding ZaposleniZaIzmenu.Prezime}"
                 materialDesign:HintAssist.Hint="Ovde unesite prezime"
                 materialDesign:HintAssist.HelperText="Prezime zaposlenog">
 
@@ -77,7 +77,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Lozinka"
-                Text="{Binding SelektovaniZaposleni.Sifra}"
+                Text="{Binding ZaposleniZaIzmenu.Sifra}"
                 materialDesign:HintAssist.Hint="Ovde unesite lozinku"
                 materialDesign:HintAssist.HelperText="Lozinka zaposlenog">
 
@@ -140,6 +140,7 @@
         <StackPanel Margin="0, 40, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
 
             <Button 
+                Command="{Binding PotvrdaIzmenePodatakaCommand}"
                 Height="40"
                 Width="100"
                 Margin="10"

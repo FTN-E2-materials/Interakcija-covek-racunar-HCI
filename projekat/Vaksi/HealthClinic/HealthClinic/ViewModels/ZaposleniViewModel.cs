@@ -33,6 +33,9 @@ namespace HealthClinic.ViewModels
             PocetniDatum = DateTime.Now.Date;
             KrajnjiDatum = DateTime.Now.Date;
 
+            // potvrdjujem izmenjene podatke
+            PotvrdaIzmenePodatakaCommand = new RelayCommand(PotvrdaIzmenePodataka);
+
         }
 
         #region Radno vreme zaposlenih
@@ -90,7 +93,33 @@ namespace HealthClinic.ViewModels
 
         #endregion
 
+        #region Zaposleni za izmenu
+
+        private Zaposlen _zaposleniZaIzmenu;
+
+        public Zaposlen ZaposleniZaIzmenu
+        {
+            get { return _zaposleniZaIzmenu; }
+            set { _zaposleniZaIzmenu = value; OnPropertyChanged("ZaposleniZaIzmenu"); }
+        }
+
+
+        #endregion
+
         #region Komande
+
+        public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
+
+        public void PotvrdaIzmenePodataka(object obj)
+        {
+            // selektovani objekat prima vrednosti od menjanog objekta
+            SelektovaniZaposleni.Ime = ZaposleniZaIzmenu.Ime;
+            SelektovaniZaposleni.Prezime = ZaposleniZaIzmenu.Prezime;
+            SelektovaniZaposleni.Struka = ZaposleniZaIzmenu.Struka;
+            SelektovaniZaposleni.Sifra = ZaposleniZaIzmenu.Sifra;
+            SelektovaniZaposleni.BrojOperacijaOveNedelje = ZaposleniZaIzmenu.BrojOperacijaOveNedelje;
+
+        }
 
         public RelayCommand RadniKalendarCommand { get; private set; }
 
@@ -139,6 +168,18 @@ namespace HealthClinic.ViewModels
 
         public void PrikaziDijalogIzmeneZaposlenog(object obj)
         {
+            // Zaposleni za izmenu/stimanje preuzima podatke od selektovanog zaposlenog
+            if (!(SelektovaniZaposleni is null))
+                ZaposleniZaIzmenu = new Zaposlen() {
+                    BrojOperacijaOveNedelje = SelektovaniZaposleni.BrojOperacijaOveNedelje,
+                    Ime = SelektovaniZaposleni.Ime,
+                    Prezime = SelektovaniZaposleni.Prezime,
+                    Sifra = SelektovaniZaposleni.Sifra,
+                    Struka = SelektovaniZaposleni.Struka,
+                };
+
+
+            // podesavanje prikaza dijaloga izmene
             var dijalog = new IzmeniZaposlenogDijalog();
             dijalog.DataContext = this;             // kako bi prebacio podatke iz ovog prozora u dijalog
             dijalog.ShowDialog();                   // podesavam da i dijalog moze upravljati istim podacima
