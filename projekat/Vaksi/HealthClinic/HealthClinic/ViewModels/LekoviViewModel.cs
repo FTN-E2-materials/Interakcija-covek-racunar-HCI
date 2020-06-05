@@ -12,6 +12,8 @@ using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using System.ComponentModel;
 using System.Drawing;
+using HealthClinic.Views.Dialogs.Brisanje;
+using System.Windows;
 
 namespace HealthClinic.ViewModels
 {
@@ -26,12 +28,14 @@ namespace HealthClinic.ViewModels
             DodajLekCommand = new RelayCommand(DodajLek);
             IzmeniLekCommand = new RelayCommand(IzmeniLek);
             GenerisiIzvestajLekaCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
-
+            IzbrisiLekCommand = new RelayCommand(IzbrisiLek);
 
             // potvrdjujem izmenjene podatke
             PotvrdaIzmenePodatakaCommand = new RelayCommand(PotvrdaIzmenePodataka);
             // potvrdjujem dodavanje podataka
             PotvrdaDodavanjaPodatakaCommand = new RelayCommand(PotvrdaDodavanjaPodataka);
+            // potvrdjujem brisanje podataka
+            PotvrdaBrisanjaPodatakaCommand = new RelayCommand(PotvrdaBrisanjaPodataka);
         }
 
         
@@ -80,6 +84,22 @@ namespace HealthClinic.ViewModels
         #endregion
 
         #region Komande
+
+        public RelayCommand PotvrdaBrisanjaPodatakaCommand { get; private set; }
+
+        public void PotvrdaBrisanjaPodataka(object obj)
+        {
+            foreach (Lek trenutniLek in Lekovi)
+            {
+                if (trenutniLek.NazivLeka == SelektovaniLek.NazivLeka)
+                {
+                    MessageBox.Show("Uspesno ste izbrisali lek " + trenutniLek.NazivLeka);
+                    Lekovi.Remove(trenutniLek);
+                    
+                    break;
+                }
+            }
+        }
 
         public RelayCommand PotvrdaDodavanjaPodatakaCommand { get; private set; }
 
@@ -149,6 +169,16 @@ namespace HealthClinic.ViewModels
             var dijalog = new IzmenaLekaDijalog();
             dijalog.DataContext = this;             // kako bi prebacio podatke iz ovog prozora u dijalog
             dijalog.ShowDialog();                   // podesavam da i dijalog moze upravljati istim podacima
+        }
+
+        public RelayCommand IzbrisiLekCommand { get; private set; }
+
+        public void IzbrisiLek(object obj)
+        {
+            // TODO: Mozda dodati nekad da pise tacno koji lek se brise ali u nekim buducim verzijama
+            var dijalog = new ObrisiLekDijalog();
+            dijalog.DataContext = this;
+            dijalog.ShowDialog();
         }
 
         #endregion
