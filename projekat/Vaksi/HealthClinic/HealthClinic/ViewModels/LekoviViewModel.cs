@@ -24,7 +24,7 @@ namespace HealthClinic.ViewModels
             PieChart();
 
             DodajLekCommand = new RelayCommand(PrikaziDijalogDodavanjaLeka);
-            IzmeniLekCommand = new RelayCommand(PrikaziDijalogIzmeneLeka);
+            IzmeniLekCommand = new RelayCommand(IzmeniLek);
             GenerisiIzvestajLekaCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
 
 
@@ -113,7 +113,7 @@ namespace HealthClinic.ViewModels
 
         public RelayCommand IzmeniLekCommand { get; private set; }
 
-        public void PrikaziDijalogIzmeneLeka(object obj)
+        public void IzmeniLek(object obj)
         {
             // Lek za izmenu/stimanje preuzima podatke od selektovanog leka
             if (!(SelektovaniLek is null))

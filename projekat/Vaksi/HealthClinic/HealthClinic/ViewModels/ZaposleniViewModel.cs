@@ -26,7 +26,7 @@ namespace HealthClinic.ViewModels
             ucitavanjePodatakaUTabelu();
 
             DodajZaposlenogCommand = new RelayCommand(PrikaziDijalogDodavanjaZaposlenog);
-            IzmeniZaposlenogCommand = new RelayCommand(PrikaziDijalogIzmeneZaposlenog);
+            IzmeniZaposlenogCommand = new RelayCommand(IzmeniZaposlenog);
             GenerisiIzvestajZaposlenogCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
             RadniKalendarCommand = new RelayCommand(PrikaziRadniKalendar);
 
@@ -166,7 +166,7 @@ namespace HealthClinic.ViewModels
 
         public RelayCommand IzmeniZaposlenogCommand { get; private set; }
 
-        public void PrikaziDijalogIzmeneZaposlenog(object obj)
+        public void IzmeniZaposlenog(object obj)
         {
             // Zaposleni za izmenu/stimanje preuzima podatke od selektovanog zaposlenog
             if (!(SelektovaniZaposleni is null))

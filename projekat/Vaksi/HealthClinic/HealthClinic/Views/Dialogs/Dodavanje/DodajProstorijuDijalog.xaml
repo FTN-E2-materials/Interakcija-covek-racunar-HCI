@@ -18,7 +18,7 @@
 
             <!-- Naziv odeljenja -->
             <TextBox
-                Text="{Binding ProstorijaZaDodavanje.Odeljenje , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding ProstorijaZaDodavanje.Odeljenje}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -35,7 +35,7 @@
 
             <!-- Broj prostorije-->
             <TextBox
-                Text="{Binding ProstorijaZaDodavanje.BrojSobe, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding ProstorijaZaDodavanje.BrojSobe}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -114,7 +114,7 @@
                 Height="40"
                 Width="100"
                 Margin="10"
-                Command="{Binding GenerisiIzvestajProstorijaCommand}"
+                Command="{Binding PotvrdaDodavanjaPodatakaCommand}"
                 >
                 Potvrdi
             </Button>

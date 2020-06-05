@@ -27,7 +27,7 @@ namespace HealthClinic.ViewModels
             ucitavanjeProstorija();
 
             
-            DodajProstorijuCommand = new RelayCommand(PrikaziDijalogDodavanjaProstorije);
+            DodajProstorijuCommand = new RelayCommand(DodajProstoriju);
             IzmeniProstorijuCommand = new RelayCommand(IzmeniProstoriju);
             GenerisiIzvestajProstorijaCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
             SpisakOpremeCommand = new RelayCommand(PrikaziSpisakOpreme);
@@ -42,7 +42,8 @@ namespace HealthClinic.ViewModels
             // potvrdjujem izmenjene podatke
             PotvrdaIzmenePodatakaCommand = new RelayCommand(PotvrdaIzmenePodataka);
 
-
+            // potvrdjujem dodavanje podataka
+            PotvrdaDodavanjaPodatakaCommand = new RelayCommand(PotvrdaDodavanjaPodataka);
             
         }
         #region Prostorija koja sluzi za dodavanje u listu prostorija
@@ -227,6 +228,14 @@ namespace HealthClinic.ViewModels
 
         #region Komande
 
+        public RelayCommand PotvrdaDodavanjaPodatakaCommand { get; private set; }
+
+        public void PotvrdaDodavanjaPodataka(object ojb)
+        {
+            // dodajem prostoriju za dodavanje ukoliko je odgovor bio potvrdan
+            Prostorije.Add(ProstorijaZaDodavanje);
+        }
+
         public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
 
         public void PotvrdaIzmenePodataka(object obj)
@@ -281,8 +290,12 @@ namespace HealthClinic.ViewModels
         }
         public RelayCommand DodajProstorijuCommand { get; private set; }
 
-        public void PrikaziDijalogDodavanjaProstorije(object obj)
+        public void DodajProstoriju(object obj)
         {
+            // kreiramo novi objekat koji cemo kasnije u slucaju potvrde dodavanja dodati u listu prostorija
+            ProstorijaZaDodavanje = new Prostorija();
+
+            // prikaz dijaloga za dodavanje
             var dijalog = new DodajProstorijuDijalog();
             dijalog.DataContext = this;
             dijalog.ShowDialog();
@@ -318,7 +331,15 @@ namespace HealthClinic.ViewModels
             Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "7", Namena = "operaciona sala", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
         }
 
-        public ObservableCollection<Prostorija> Prostorije { get; set; }
+
+        private ObservableCollection<Prostorija> _prostorije;
+
+        public ObservableCollection<Prostorija> Prostorije
+        {
+            get { return _prostorije; }
+            set { _prostorije = value; OnPropertyChanged("Prostorije"); }
+        }
+
 
         #endregion
 
