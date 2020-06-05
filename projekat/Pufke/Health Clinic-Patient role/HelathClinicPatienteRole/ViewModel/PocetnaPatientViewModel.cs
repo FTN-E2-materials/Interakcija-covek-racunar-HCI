@@ -25,14 +25,14 @@ namespace HelathClinicPatienteRole.ViewModel
             ProcitajViseDialogCommand = new RelayCommand(ProcitajViseDialog);
             _PregledList = new List<Pregled>
             {
-                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan"},
-                new Pregled{NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h",StatusPregleda="Obavljen"},
-                new Pregled{NazivPregleda = "Očni pregled",TerminPregleda = "28.06.2020  8:00h",StatusPregleda="Zakazan"},
-                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h",StatusPregleda="Obavljen"},
-                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h",StatusPregleda="Obavljen"},
-                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan"},
-                new Pregled{NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h",StatusPregleda="Obavljen"},
-                new Pregled{NazivPregleda = "Očni pregled",TerminPregleda = "28.06.2020  8:00h",StatusPregleda="Zakazan"},
+                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan",Lekar="Pera Perić"},
+                new Pregled{NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h",StatusPregleda="Obavljen",Lekar="Mika Mikić"},
+                new Pregled{NazivPregleda = "Očni pregled",TerminPregleda = "28.06.2020  8:00h",StatusPregleda="Zakazan",Lekar="Miodrag Milić"},
+                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h",StatusPregleda="Obavljen",Lekar="Miodrag Mitrović"},
+                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h",StatusPregleda="Obavljen",Lekar="Jovan Jovanović"},
+                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan",Lekar="Milomir Mirković"},
+                new Pregled{NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h",StatusPregleda="Obavljen",Lekar="Stevan Jovanić"},
+                new Pregled{NazivPregleda = "Očni pregled",TerminPregleda = "28.06.2020  8:00h",StatusPregleda="Zakazan",Lekar="Mirko Mikić"}
             };
         }
 
@@ -96,6 +96,7 @@ namespace HelathClinicPatienteRole.ViewModel
         public void PirkaziAnketaLekaraDialog(object obj)
         {
             var s = new AnketaPregledaDialog();
+            s.DataContext = this;
             s.ShowDialog();
 
         }
@@ -145,6 +146,7 @@ namespace HelathClinicPatienteRole.ViewModel
         #endregion
 
 
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)
         {
@@ -153,5 +155,7 @@ namespace HelathClinicPatienteRole.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
+
+
     }
 }

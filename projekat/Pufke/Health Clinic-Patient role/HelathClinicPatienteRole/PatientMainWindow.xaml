@@ -8,7 +8,7 @@
         xmlns:view="clr-namespace:HelathClinicPatienteRole.View"
         xmlns:viewModel="clr-namespace:HelathClinicPatienteRole.ViewModel"
         mc:Ignorable="d"
-        Title="Pacijent APP"  Height="900" Width="1300">
+        Title="Pacijent APP"  Height="750" Width="1300">
     <Grid>
         <StackPanel>
 

@@ -6,19 +6,20 @@
         xmlns:local="clr-namespace:HelathClinicPatienteRole.Dialogs"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="AnketaPregledaDialog" Height="400" Width="500">
+        Title="AnketaPregledaDialog" Height="450" Width="500">
     <Grid>
         <Label HorizontalAlignment="Center"  Content="ANKETA" Foreground="#FF148DF0"  FontSize="30" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="15" Grid.RowSpan="4"/>
-        <Label HorizontalAlignment="Left"  Content="Ime i Prezime LEKARA" Foreground="#FF148DF0"  FontSize="20" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="10" Grid.RowSpan="4"/>
-        <Label HorizontalAlignment="Left"  Content="Ocena za lekara i osoblje: " Foreground="#FF148DF0"  FontSize="20" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="11" Grid.RowSpan="4"/>
-        <materialDesign:RatingBar Grid.Row="8" Grid.Column="11" Grid.ColumnSpan="11" Grid.RowSpan="4"
+        <Label HorizontalAlignment="Left"  Content="Lekar:" Foreground="#FF148DF0" Background="WhiteSmoke" FontSize="20" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="0,0,0,7"/>
+        <Label HorizontalAlignment="Left"  Content="{Binding SelektovaniPregled.Lekar}" Background="WhiteSmoke" Foreground="#FF148DF0"  FontSize="20" Grid.Row="5" Grid.Column="3" Grid.RowSpan="3" Margin="15,0,0,7" Grid.ColumnSpan="9" Width="187"/>
+        <Label HorizontalAlignment="Left"  Content="Ocena za lekara i osoblje: " Background="WhiteSmoke" Foreground="#FF148DF0"  FontSize="20" Grid.Row="9" Grid.ColumnSpan="11" Grid.RowSpan="3" Margin="1,0,0,5" Grid.Column="1"/>
+        <materialDesign:RatingBar Grid.Row="9" Grid.Column="11" Grid.ColumnSpan="11" Grid.RowSpan="3"
             Value="3"
-            x:Name="BasicRatingBar" Margin="10,10,-10,4" />
+            x:Name="BasicRatingBar" Margin="17,9,-17,5" RenderTransformOrigin="0.504,0.655" />
         <!--    ValueChanged="BasicRatingBar_ValueChanged" /> -->
 
-        <Label HorizontalAlignment="Left"  Content="Vaše mišljenje: " Foreground="#FF148DF0"  FontSize="20" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="11" Grid.RowSpan="4"/>
+        <Label Background="WhiteSmoke" HorizontalAlignment="Left"  Content="Vaše mišljenje: " Foreground="#FF148DF0"  FontSize="20" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="7" Grid.RowSpan="3" Margin="0,10,0,0"/>
 
-        <StackPanel  Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="12" Grid.RowSpan="8" HorizontalAlignment="Left" Width="262" >
+        <StackPanel  Grid.Row="16" Grid.Column="1" Grid.ColumnSpan="12" Grid.RowSpan="8" HorizontalAlignment="Left" Width="262" >
             <TextBox Foreground="Black"
                  Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                  FontSize="15"
@@ -30,10 +31,10 @@
                  VerticalScrollBarVisibility="Auto"
                  materialDesign:HintAssist.HelperText="Klikni iznad"
                   materialDesign:HintAssist.HintOpacity="1"
-                 IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextFieldTextBoxEnabledComboBox}" />
+                 IsEnabled="{Binding IsChecked, ElementName=MaterialDesignOutlinedTextFieldTextBoxEnabledComboBox}" RenderTransformOrigin="0.487,0.773" />
         </StackPanel>
 
-        <Button Content="Posalji anketu" Grid.Row="23" Grid.Column="8" Grid.ColumnSpan="6" Grid.RowSpan="3"/>
+        <Button Content="Posalji anketu" Grid.Row="23" Grid.Column="8" Grid.ColumnSpan="6" Grid.RowSpan="3" Margin="0,14,0,0"/>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>

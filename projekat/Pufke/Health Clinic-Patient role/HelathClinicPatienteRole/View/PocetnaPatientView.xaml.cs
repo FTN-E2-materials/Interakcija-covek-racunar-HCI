@@ -26,47 +26,51 @@ namespace HelathClinicPatienteRole.View
         public PocetnaPatientView()
         {
             InitializeComponent();
-            btnOtkaziPregledDa.Visibility = Visibility.Hidden;
-            btnOtkaziPregledNe.Visibility = Visibility.Hidden;
-            txtOtkaziPregled.Visibility = Visibility.Hidden;
+     
         }
 
         private void OtkaziPregledButton_Click(object sender, RoutedEventArgs e)
         {
-            if (btnOtkaziPregledDa.Visibility == Visibility.Hidden)
-            {
-                btnOtkaziPregledDa.Visibility = Visibility.Visible;
-                btnOtkaziPregledNe.Visibility = Visibility.Visible;
-                txtOtkaziPregled.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                btnOtkaziPregledDa.Visibility = Visibility.Hidden;
-                btnOtkaziPregledNe.Visibility = Visibility.Hidden;
-                txtOtkaziPregled.Visibility = Visibility.Hidden;
-            }
+            
            
         }
 
         private void btnOtkaziPregledDa_Click(object sender, RoutedEventArgs e)
         {
             //  preglediLV.Items.RemoveAt(preglediLV.Items.IndexOf(preglediLV.SelectedItem));
+            // dataGridPregledi.Items.Add(new Pregled { NazivPregleda = "Specijalisticki pregled", TerminPregleda = "22.06.2020  19:00h", StatusPregleda = "Zakazan" });
+            //  DataContext
             // preglediLV.SelectedItem = null;
+            /*          IList<Pregled> _PregledList = PatientMainWindow.ObjectpocetnaPatientViewModel.Pregledi;
 
-          
+                      Pregled pregledZaBrisanje = null;
+                      foreach (Pregled pregled in _PregledList)
+                      {
+                          if (dataGridPregledi.SelectedItem.Equals(pregled))
+                          {
+                              Console.WriteLine(dataGridPregledi.SelectedItem);
+                              pregledZaBrisanje = pregled;
+                          }
+                      }
+          */
+          //  PatientMainWindow.ObjectpocetnaPatientViewModel.Pregledi.Clear();
+
+
+
+         //   PatientMainWindow.ObjectpocetnaPatientViewModel.Pregledi = _PregledList;
             //   Console.WriteLine(preglediLV.SelectedItem);
- /*             Pregled pregledZaBrisanje = null;
+            /*             Pregled pregledZaBrisanje = null;
 
-            foreach (Pregled pregled in PocetnaPatientViewModel._PregledList)
-            {
-                if (preglediLV.SelectedItem.Equals(pregled))
-                {
-                    Console.WriteLine(preglediLV.SelectedItem);
-                    pregledZaBrisanje = pregled;
-                }
-            }
-            PocetnaPatientViewModel._PregledList.Remove(pregledZaBrisanje);*/
-         //   preglediLV.Items.RemoveAt(preglediLV.Items.IndexOf(preglediLV.SelectedItem));
+                       foreach (Pregled pregled in PocetnaPatientViewModel._PregledList)
+                       {
+                           if (preglediLV.SelectedItem.Equals(pregled))
+                           {
+                               Console.WriteLine(preglediLV.SelectedItem);
+                               pregledZaBrisanje = pregled;
+                           }
+                       }
+                       PocetnaPatientViewModel._PregledList.Remove(pregledZaBrisanje);*/
+            //   preglediLV.Items.RemoveAt(preglediLV.Items.IndexOf(preglediLV.SelectedItem));
             //PocetnaPatientViewModel._PregledList.Add(new Pregled { NazivPregleda = "Specijalisticki pregled", TerminPregleda = "22.06.2020  19:00h", StatusPregleda = "Zakazan" });
         }
     }

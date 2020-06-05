@@ -12,6 +12,15 @@ namespace HelathClinicPatienteRole.Model
         private string nazivPregleda;
         private string terminPregleda;
         private string statusPregleda;
+        private string lekar;
+
+        public string Lekar
+        {
+            get { return lekar; }
+            set { lekar = value;
+                OnPropertyChanged("Lekar");
+            }
+        }
 
         public string StatusPregleda
         {

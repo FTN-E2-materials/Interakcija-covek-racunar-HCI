@@ -20,10 +20,16 @@ namespace HelathClinicPatienteRole
     /// </summary>
     public partial class PatientMainWindow : Window
     {
+        private static PocetnaPatientViewModel objectpocetnaPatientViewModel;
+
+        internal static PocetnaPatientViewModel ObjectpocetnaPatientViewModel { get => objectpocetnaPatientViewModel; set => objectpocetnaPatientViewModel = value; }
+
         public PatientMainWindow()
         {
             InitializeComponent();
-            DataContext = new PocetnaPatientViewModel();
+
+            ObjectpocetnaPatientViewModel = new PocetnaPatientViewModel();
+            DataContext = ObjectpocetnaPatientViewModel;
         }
 
         private void PocetnaButton_Click(object sender, RoutedEventArgs e)

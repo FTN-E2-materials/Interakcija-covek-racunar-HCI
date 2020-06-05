@@ -10,31 +10,36 @@
         <StackPanel Background="White">
             <Grid Height="700"  DataContext="{Binding MedicinskiKarton}">
 
-
+                <Canvas Background="#FF148DF0" Grid.ColumnSpan="15" Grid.RowSpan="15" HorizontalAlignment="Left" Width="556" Margin="29,11,0,0" Grid.Row="6"/>
+                <Border Margin="29,11,20,23" Background="#FF148DF0" Grid.ColumnSpan="15" Grid.RowSpan="16" Grid.Row="6" >
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15"></DropShadowEffect>
+                    </Border.Effect>
+                </Border>
                 <TextBlock Foreground="#FF148DF0" FontSize="40"  HorizontalAlignment="Right" Text="Lekarski karton " Grid.Column="9" Grid.Row="1"  Grid.ColumnSpan="7" Grid.RowSpan="2" />
                 <TextBlock Foreground="#FF148DF0" FontSize="40"  Text="{Binding FirstAndLastName}"  Grid.Column="16" Grid.Row="1"  Grid.ColumnSpan="8" Grid.RowSpan="2" />
 
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="Ime jednog roditelja: " Grid.Column="1" Grid.Row="7"  Grid.ColumnSpan="7" Grid.RowSpan="3" />
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding ParentName}"  Grid.Column="8" Grid.Row="7"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+                <TextBlock Foreground="White" FontSize="28"  HorizontalAlignment="Left" Text="Ime jednog roditelja: " Grid.Column="1" Grid.Row="7"  Grid.ColumnSpan="7" Grid.RowSpan="3" />
+                <TextBlock Foreground="White" FontSize="28"  Text="{Binding ParentName}"  Grid.Column="8" Grid.Row="7"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
 
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="Datum rođenja: " Grid.Column="1" Grid.Row="9"  Grid.ColumnSpan="5" Grid.RowSpan="3" />
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding DateOfBirth}"  Grid.Column="6" Grid.Row="9"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+                <TextBlock Foreground="White" FontSize="28"  HorizontalAlignment="Left" Text="Datum rođenja: " Grid.Column="1" Grid.Row="9"  Grid.ColumnSpan="5" Grid.RowSpan="3" />
+                <TextBlock Foreground="White" FontSize="28"  Text="{Binding DateOfBirth}"  Grid.Column="6" Grid.Row="9"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
 
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="JMBG:   " Grid.Column="1" Grid.Row="11"  Grid.ColumnSpan="6" Grid.RowSpan="3"  />
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding Jmbg}"  Grid.Column="3" Grid.Row="11"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+                <TextBlock Foreground="White" FontSize="28"  HorizontalAlignment="Left" Text="JMBG:   " Grid.Column="1" Grid.Row="11"  Grid.ColumnSpan="6" Grid.RowSpan="3"  />
+                <TextBlock Foreground="White" FontSize="28"  Text="{Binding Jmbg}"  Grid.Column="3" Grid.Row="11"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
 
 
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="Adresa: " Grid.Column="1" Grid.Row="13"  Grid.ColumnSpan="5" Grid.RowSpan="3"  />
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding Address}"  Grid.Column="4" Grid.Row="13"  Grid.ColumnSpan="15" Grid.RowSpan="3"  />
+                <TextBlock Foreground="White" FontSize="28"  HorizontalAlignment="Left" Text="Adresa: " Grid.Column="1" Grid.Row="13"  Grid.ColumnSpan="5" Grid.RowSpan="3"  />
+                <TextBlock Foreground="White" FontSize="28"  Text="{Binding Address}"  Grid.Column="4" Grid.Row="13"  Grid.ColumnSpan="15" Grid.RowSpan="3"  />
 
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="Broj telefona: " Grid.Column="1" Grid.Row="15"  Grid.ColumnSpan="5" Grid.RowSpan="3" />
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding PhoneNumber}"  Grid.Column="6" Grid.Row="15"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+                <TextBlock Foreground="White" FontSize="28"  HorizontalAlignment="Left" Text="Broj telefona: " Grid.Column="1" Grid.Row="15"  Grid.ColumnSpan="5" Grid.RowSpan="3" />
+                <TextBlock Foreground="White" FontSize="28"  Text="{Binding PhoneNumber}"  Grid.Column="6" Grid.Row="15"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
 
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="Broj zdravstvenog: " Grid.Column="1" Grid.Row="17"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding HealthInsuranceNumber}"  Grid.Column="7" Grid.Row="17"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+                <TextBlock Foreground="White" FontSize="28"  HorizontalAlignment="Left" Text="Broj zdravstvenog: " Grid.Column="1" Grid.Row="17"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+                <TextBlock Foreground="White" FontSize="28"  Text="{Binding HealthInsuranceNumber}"  Grid.Column="7" Grid.Row="17"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
 
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  HorizontalAlignment="Left" Text="Nosilac zdravstvenog: " Grid.Column="1" Grid.Row="19"  Grid.ColumnSpan="7" Grid.RowSpan="3" />
-                <TextBlock Foreground="#FF148DF0" FontSize="28"  Text="{Binding HealthInsuranceCarrier}"  Grid.Column="8" Grid.Row="19"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
+                <TextBlock Foreground="White" FontSize="28"  HorizontalAlignment="Left" Text="Nosilac zdravstvenog: " Grid.Column="1" Grid.Row="19"  Grid.ColumnSpan="7" Grid.RowSpan="3" />
+                <TextBlock Foreground="White" FontSize="28"  Text="{Binding HealthInsuranceCarrier}"  Grid.Column="8" Grid.Row="19"  Grid.ColumnSpan="7" Grid.RowSpan="3"  />
 
                 <TextBlock Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Text="Lista obaveljenih pregleda: " Grid.Column="15" Grid.Row="4"  Grid.ColumnSpan="13" Grid.RowSpan="2" />
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="17" Grid.Row="6" Grid.ColumnSpan="14" Grid.RowSpan="18" Margin="0,0,33,0">
