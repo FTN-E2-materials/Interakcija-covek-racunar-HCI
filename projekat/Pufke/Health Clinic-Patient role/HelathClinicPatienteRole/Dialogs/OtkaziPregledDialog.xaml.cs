@@ -23,5 +23,10 @@ namespace HelathClinicPatienteRole.Dialogs
         {
             InitializeComponent();
         }
+
+        private void PotvrdiButton_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
     }
 }

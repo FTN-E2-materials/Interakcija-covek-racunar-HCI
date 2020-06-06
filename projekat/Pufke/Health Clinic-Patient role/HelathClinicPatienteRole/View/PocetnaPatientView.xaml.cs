@@ -29,12 +29,6 @@ namespace HelathClinicPatienteRole.View
      
         }
 
-        private void OtkaziPregledButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-           
-        }
-
         private void btnOtkaziPregledDa_Click(object sender, RoutedEventArgs e)
         {
             //  preglediLV.Items.RemoveAt(preglediLV.Items.IndexOf(preglediLV.SelectedItem));
@@ -53,11 +47,11 @@ namespace HelathClinicPatienteRole.View
                           }
                       }
           */
-          //  PatientMainWindow.ObjectpocetnaPatientViewModel.Pregledi.Clear();
+            //  PatientMainWindow.ObjectpocetnaPatientViewModel.Pregledi.Clear();
+        //    dataGridPregledi.Items.RemoveAt(preglediLV.Items.IndexOf(preglediLV.SelectedItem));
 
 
-
-         //   PatientMainWindow.ObjectpocetnaPatientViewModel.Pregledi = _PregledList;
+            //   PatientMainWindow.ObjectpocetnaPatientViewModel.Pregledi = _PregledList;
             //   Console.WriteLine(preglediLV.SelectedItem);
             /*             Pregled pregledZaBrisanje = null;
 

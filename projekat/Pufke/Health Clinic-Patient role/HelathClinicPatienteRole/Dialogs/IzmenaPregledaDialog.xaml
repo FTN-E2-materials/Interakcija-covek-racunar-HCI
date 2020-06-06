@@ -25,7 +25,7 @@
                 <Label HorizontalAlignment="Center"  Content="Lista slobodnih lekara opste " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="16" Grid.RowSpan="3"/>
                 <Label HorizontalAlignment="Center"  Content=" prakse za taj datum " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="16" Grid.RowSpan="3"/>
 
-                <Button Content="Potvrdi" Grid.Row="14" Grid.Column="7" Grid.ColumnSpan="6" Grid.RowSpan="2" Margin="10,10,10,1" />
+                <Button Content="Potvrdi" Grid.Row="14" Grid.Column="7" Grid.ColumnSpan="6" Grid.RowSpan="2" Margin="10,10,10,1" Click="OkButton_Click"/>
 
                 <ComboBox Text="{Binding SelektovaniPregled.Lekar, UpdateSourceTrigger=PropertyChanged}"
                      FontSize="25" IsEditable="True" Grid.ColumnSpan="12" Height="43" Margin="19,10,10,10" Grid.RowSpan="3" Grid.Column="4" Grid.Row="10"  Background="WhiteSmoke"  >
