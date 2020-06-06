@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,12 @@ namespace HelathClinicPatienteRole.Dialogs
 
         private void PotvrdiButton_Click(object sender, RoutedEventArgs e)
         {
-           
+            this.Close();
+        }
+
+        private void OtkaziButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

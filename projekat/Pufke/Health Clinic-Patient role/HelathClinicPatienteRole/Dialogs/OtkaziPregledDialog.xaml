@@ -14,8 +14,8 @@
                 <Label HorizontalAlignment="Center"  Content="Da li ste sigurni " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="20" Grid.RowSpan="6"/>
                 <Label HorizontalAlignment="Center"  Content="da želite da otkažete pregled?" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="20" Grid.RowSpan="6"/>
 
-                <Button  Content="Potvrdi" Grid.Row="18" Grid.Column="4" Grid.ColumnSpan="6" Grid.RowSpan="5" Click="PotvrdiButton_Click"/>
-                <Button Content="Odustani" Grid.Row="18" Grid.Column="12" Grid.ColumnSpan="6" Grid.RowSpan="5"/>
+                <Button  Content="Potvrdi" Grid.Row="18" Grid.Column="4" Grid.ColumnSpan="6" Grid.RowSpan="5" Click="PotvrdiButton_Click" Command="{Binding ObrisiPregledPotvrdiButtonCommand}"/>
+                <Button Content="Odustani" Grid.Row="18" Grid.Column="12" Grid.ColumnSpan="6" Grid.RowSpan="5" Click="OtkaziButton_Click"/>
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>

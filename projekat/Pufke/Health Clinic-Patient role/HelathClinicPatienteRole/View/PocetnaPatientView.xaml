@@ -61,29 +61,28 @@
                     />
                 -->
                 <DataGrid  x:Name="dataGridPregledi" ItemsSource="{Binding Pregledi}"
-                 SelectedItem="{Binding Path=SelektovaniPregled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  IsReadOnly="True"  CanUserAddRows="false"  SelectedItem="{Binding Path=SelektovaniPregled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 AutoGenerateColumns="False" Grid.ColumnSpan="8" Margin="10,10,43,10" Grid.RowSpan="12" Grid.Row="7" Background="#FF148DF0">
+
                     <DataGrid.RowStyle>
                         <Style TargetType="DataGridRow">
                           <Setter Property="IsHitTestVisible" Value="True" ></Setter>
                            <Style.Triggers>
+                                
                                 <DataTrigger Binding="{Binding StatusPregleda}" Value="Zakazan">
-                                    <Setter  Property="Background" Value="#FF148DF0">
-                                    </Setter>
-                                    </DataTrigger>
-                                   <DataTrigger Binding="{Binding StatusPregleda}" Value="Otkazan">
-                                    <Setter Property="Background" Value="Red">
-                                        </Setter>
-                                       </DataTrigger>
+                                   <Setter  Property="Background" Value="#FF148DF0"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding StatusPregleda}" Value="Otkazan">
+                                   <Setter Property="Background" Value="Red"></Setter>
+                                </DataTrigger>
                                 <DataTrigger Binding="{Binding StatusPregleda}" Value="Obavljen">
-                                    <Setter Property="Background" Value="Green">
-                                             </Setter>
-                                            </DataTrigger>
-                              
+                                    <Setter Property="Background" Value="Green"></Setter>
+                                </DataTrigger>
                             </Style.Triggers>
-                            </Style>
+                         </Style>
                     </DataGrid.RowStyle>
-
+                    
+                    
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Status"
                             Binding="{Binding StatusPregleda}"/>
@@ -93,22 +92,13 @@
                             Binding="{Binding NazivPregleda}"/>
                         <DataGridTextColumn Header="Lekar"
                             Binding="{Binding Lekar}"/>
-
-                        <DataGridTemplateColumn Header="Obriši">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button Content="Delete"
-                            Command="Delete"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
-                    
+      
                 </DataGrid>
 
                 <Button HorizontalAlignment="Right"  Height="Auto" Content="Anketa pregleda" Grid.Row="19"  Command="{Binding PirkaziAnketaLekaraDialogCommand}" Margin="0,14,10,10" Grid.RowSpan="3" Grid.ColumnSpan="2" Grid.Column="5" Width="144" />
 
-                <Button HorizontalAlignment="Right"  Height="Auto" Content="Otkaži pregled" Grid.Row="19" Command="{Binding PirkaziOtkaziPregledDialogCommand}" Grid.ColumnSpan="3"   Margin="0,14,59,10" Grid.RowSpan="3" Width="130"/>
+                <Button HorizontalAlignment="Right"  Height="Auto" Content="Otkaži pregled" Grid.Row="19" Command="{Binding PirkaziOtkaziPregledDialogCommand}" Grid.ColumnSpan="3"   Margin="0,14,59,10" Grid.RowSpan="3" Width="130" />
                 <Button HorizontalAlignment="Right"  Height="Auto" Content="Izmeni pregled" Grid.Row="19" Command="{Binding PirkaziIzmeniPregledDialogCommand}"   Grid.ColumnSpan="2" Grid.Column="3" Margin="0,15,32,10" Grid.RowSpan="3" Width="142" />
                 <Border Grid.Column="8" Grid.Row="7" Grid.RowSpan="12" Grid.ColumnSpan="7"
                     BorderThickness="2"

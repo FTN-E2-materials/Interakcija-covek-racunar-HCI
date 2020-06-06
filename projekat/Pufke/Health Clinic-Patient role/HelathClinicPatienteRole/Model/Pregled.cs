@@ -9,6 +9,7 @@ namespace HelathClinicPatienteRole.Model
 {
     class Pregled : INotifyPropertyChanged
     {
+        private int idPregleda;
         private string nazivPregleda;
         private string terminPregleda;
         private string statusPregleda;
@@ -19,6 +20,19 @@ namespace HelathClinicPatienteRole.Model
             get { return lekar; }
             set { lekar = value;
                 OnPropertyChanged("Lekar");
+            }
+        }
+
+        public int IdPregleda
+        {
+            get
+            {
+                return idPregleda;
+            }
+            set
+            {
+                idPregleda = value;
+                OnPropertyChanged("IdPregleda");
             }
         }
 

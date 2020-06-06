@@ -38,6 +38,11 @@ namespace HelathClinicPatienteRole.Model
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+        public static implicit operator string(Lekar v)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

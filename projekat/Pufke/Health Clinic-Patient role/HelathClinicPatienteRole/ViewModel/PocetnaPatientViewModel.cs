@@ -15,7 +15,7 @@ namespace HelathClinicPatienteRole.ViewModel
     class PocetnaPatientViewModel : INotifyPropertyChanged
     {
         private IList<Pregled> _PregledList;
-      
+
 
         public PocetnaPatientViewModel()
         {
@@ -23,28 +23,23 @@ namespace HelathClinicPatienteRole.ViewModel
             PirkaziOtkaziPregledDialogCommand = new RelayCommand(PirkaziOtkaziPregledDialog);
             PirkaziAnketaLekaraDialogCommand = new RelayCommand(PirkaziAnketaLekaraDialog);
             ProcitajViseDialogCommand = new RelayCommand(ProcitajViseDialog);
-        
+            ObrisiPregledPotvrdiButtonCommand = new RelayCommand(ObrisiPregledPotvrdiButton);
+          
 
             _PregledList = new List<Pregled>
             {
-                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan",Lekar="Pera Perić"},
-                new Pregled{NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h",StatusPregleda="Obavljen",Lekar="Mika Mikić"},
-                new Pregled{NazivPregleda = "Očni pregled",TerminPregleda = "28.06.2020  8:00h",StatusPregleda="Zakazan",Lekar="Miodrag Milić"},
-                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h",StatusPregleda="Obavljen",Lekar="Miodrag Mitrović"},
-                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h",StatusPregleda="Otkazan",Lekar="Jovan Jovanović"},
-                new Pregled{NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan",Lekar="Milomir Mirković"},
-                new Pregled{NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h",StatusPregleda="Obavljen",Lekar="Stevan Jovanić"},
-                new Pregled{NazivPregleda = "Očni pregled",TerminPregleda = "28.06.2020  8:00h",StatusPregleda="Zakazan",Lekar="Mirko Mikić"}
+                new Pregled{IdPregleda=1, NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan",Lekar="Pera Perić"},
+                new Pregled{IdPregleda=2,NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h",StatusPregleda="Obavljen",Lekar="Mika Mikić"},
+                new Pregled{IdPregleda=3,NazivPregleda = "Očni pregled",TerminPregleda = "28.06.2020  8:00h",StatusPregleda="Zakazan",Lekar="Miodrag Milić"},
+                new Pregled{IdPregleda=4,NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h",StatusPregleda="Obavljen",Lekar="Miodrag Mitrović"},
+                new Pregled{IdPregleda=5,NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h",StatusPregleda="Otkazan",Lekar="Jovan Jovanović"},
+                new Pregled{IdPregleda=6,NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan",Lekar="Milomir Mirković"},
+                new Pregled{IdPregleda=7,NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h",StatusPregleda="Obavljen",Lekar="Stevan Jovanić"},
+                new Pregled{IdPregleda=8,NazivPregleda = "Očni pregled",TerminPregleda = "28.06.2020  8:00h",StatusPregleda="Zakazan",Lekar="Mirko Mikić"}
             };
         }
 
-        public IList<Pregled> Pregledi
-        {
-            get {  return _PregledList;
-            }
-            set { _PregledList = value; }
-        }
-
+        # region ICommand
         private ICommand mUpdater;
         public ICommand UpdateCommand
         {
@@ -78,7 +73,37 @@ namespace HelathClinicPatienteRole.ViewModel
 
             #endregion
         }
- 
+        #endregion
+
+    
+        #region Obrisi pregled command
+
+        public RelayCommand ObrisiPregledPotvrdiButtonCommand { get; private set; }
+
+        public void ObrisiPregledPotvrdiButton(object obj)
+        {
+     
+            if (SelektovaniPregled is null)
+            {
+                MessageBox.Show("Niste selektovali ni jedan pregled u tabeli!");
+                return;
+            }
+               
+            foreach (Pregled pregled in Pregledi)
+            {
+                if (pregled.IdPregleda == SelektovaniPregled.IdPregleda)
+                {
+                    pregled.StatusPregleda = "Otkazan";
+                    MessageBox.Show("Uspesno ste otkazali " + pregled.NazivPregleda);
+                    //Pregledi.Remove(pregled); Ovo je komanda za brisanje 
+                    break;
+                }
+            }
+
+        }
+
+        #endregion
+
         #region Procitaj vise dialog
 
         public RelayCommand ProcitajViseDialogCommand { get; private set; }
@@ -98,6 +123,11 @@ namespace HelathClinicPatienteRole.ViewModel
 
         public void PirkaziAnketaLekaraDialog(object obj)
         {
+            if (SelektovaniPregled is null)
+            {
+                MessageBox.Show("Niste selektovali ni jedan pregled u tabeli!");
+                return;
+            }
             var s = new AnketaPregledaDialog();
             s.DataContext = this;
             s.ShowDialog();
@@ -112,6 +142,11 @@ namespace HelathClinicPatienteRole.ViewModel
 
         public void PirkaziIzmeniPregledDialog(object obj)
         {
+            if (SelektovaniPregled is null)
+            {
+                MessageBox.Show("Niste selektovali ni jedan pregled u tabeli!");
+                return;
+            }
             var s = new IzmenaPregledaDialog();
              s.DataContext = this;             
              s.ShowDialog();
@@ -120,13 +155,17 @@ namespace HelathClinicPatienteRole.ViewModel
 
         #endregion
 
-
         #region Otkazi pregled Dialog 
-
+     
         public RelayCommand PirkaziOtkaziPregledDialogCommand { get; private set; }
 
         public void PirkaziOtkaziPregledDialog(object obj)
         {
+            if (SelektovaniPregled is null)
+            {
+                MessageBox.Show("Niste selektovali ni jedan pregled u tabeli!");
+                return;
+            }
             var s = new OtkaziPregled();
             s.DataContext = this;
             s.ShowDialog();
@@ -135,7 +174,7 @@ namespace HelathClinicPatienteRole.ViewModel
 
         #endregion
 
-   
+      
 
         #region Selektovani pregled
 
@@ -146,10 +185,15 @@ namespace HelathClinicPatienteRole.ViewModel
             get { return _selektovaniPregled; }
             set { _selektovaniPregled = value; OnPropertyChanged("SelektovaniPregled"); }
         }
-
         #endregion
-
-
+        public IList<Pregled> Pregledi
+        {
+            get
+            {
+                return _PregledList;
+            }
+            set { _PregledList = value; }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)
