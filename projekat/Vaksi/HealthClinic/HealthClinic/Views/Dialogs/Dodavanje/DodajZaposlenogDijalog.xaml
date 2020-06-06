@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:HealthClinic.Dialogs"
+        xmlns:validations ="clr-namespace:HealthClinic.Utilities.Validations"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Dodaj zaposlenog" Height="510" Width="400">
@@ -16,10 +17,8 @@
 
         <!-- Podaci -->
         <StackPanel Grid.Row="0">
-
             <!-- Ime zaposlenog -->
             <TextBox
-                Text="{Binding ZaposleniZaDodavanje.Ime}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -30,13 +29,26 @@
                 x:Name="Ime"
                 materialDesign:HintAssist.Hint="Ovde unesite ime"
                 materialDesign:HintAssist.HelperText="Ime zaposlenog">
-
+                <TextBox.Text>
+                    <!-- Bajndovanje imena zaposlenog + validacija-->
+                    <Binding 
+                        Path="ZaposleniZaDodavanje.Ime"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                        <Binding.ValidationRules>
+                            <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                            <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                            <validations:WordRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                    <!-- Kraj bajndovanje imena zaposlenog + validacija-->
+                </TextBox.Text>
             </TextBox>
             <!-- Kraj imena -->
 
             <!-- Prezime -->
             <TextBox
-                Text="{Binding ZaposleniZaDodavanje.Prezime}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -47,7 +59,21 @@
                 x:Name="Prezime"
                 materialDesign:HintAssist.Hint="Ovde unesite prezime"
                 materialDesign:HintAssist.HelperText="Prezime zaposlenog">
-
+                <TextBox.Text>
+                    <!-- Bajndovanje prezimena zaposlenog + validacija-->
+                    <Binding 
+                        Path="ZaposleniZaDodavanje.Prezime"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                        <Binding.ValidationRules>
+                            <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                            <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                            <validations:WordRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                    <!-- Kraj bajndovanje prezimena zaposlenog + validacija-->
+                </TextBox.Text>
             </TextBox>
             <!-- Kraj prezimena -->
 

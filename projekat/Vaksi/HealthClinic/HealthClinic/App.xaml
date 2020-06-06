@@ -4,7 +4,9 @@
              xmlns:local="clr-namespace:HealthClinic"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        
         <ResourceDictionary>
+            <!-- Podesavanje Matterial design-a -->
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
@@ -15,6 +17,25 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Flipper.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Popupbox.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <!-- Kraj podesavanja Matterial desgina-a -->
+            
+            <!-- Podesavanja custom error template-a -->
+            <ControlTemplate x:Key="errorTemplate">
+                <Border BorderBrush="OrangeRed" BorderThickness="2">
+                    <Grid>
+                        <AdornedElementPlaceholder/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="OrangeRed"
+                               VerticalAlignment="Center" HorizontalAlignment="Right"
+                               Margin="0,0,4,0"/>
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+            <!-- Kraj podesavanja custom error template-a-->
+
         </ResourceDictionary>
+        
+
+        
+
     </Application.Resources>
 </Application>

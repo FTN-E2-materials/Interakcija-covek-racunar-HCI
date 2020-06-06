@@ -11,11 +11,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PrimerCas4.Layouts;
-using PrimerCas4.Binding;
+
 using PrimerCas4.Validation;
-using PrimerCas4.Table;
-using PrimerCas4._2DG;
+
 
 namespace PrimerCas4
 {

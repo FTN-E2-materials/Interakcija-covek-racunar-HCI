@@ -253,6 +253,15 @@ namespace HealthClinic.ViewModels
         #endregion
 
         #region Tabela
+
+        private ObservableCollection<Zaposlen> _zaposleni;
+
+        public ObservableCollection<Zaposlen> Zaposleni
+        {
+            get { return _zaposleni; }
+            set { _zaposleni = value; OnPropertyChanged("Zaposleni"); }
+        }
+
         private void ucitavanjePodatakaUTabelu()
         {
             //Tabela - popunjavanje
@@ -267,14 +276,6 @@ namespace HealthClinic.ViewModels
             Zaposleni.Add(new Zaposlen() { Ime = "Marko", Prezime = "Bogdanovic", Struka = "Kardio hirurg", Sifra = "*****", RadniKalendar = "slobodan", BrojOperacijaOveNedelje = "18" });
             Zaposleni.Add(new Zaposlen() { Ime = "Boban", Prezime = "Jokic", Struka = "Pedijatar", Sifra = "*****", RadniKalendar = "slobodan", BrojOperacijaOveNedelje = "9" });
             Zaposleni.Add(new Zaposlen() { Ime = "Nikola", Prezime = "Marjanovic", Struka = "Doktor opste prakse", Sifra = "*****", RadniKalendar = "popunjen", BrojOperacijaOveNedelje = "12" });
-        }
-
-        private ObservableCollection<Zaposlen> _zaposleni;
-
-        public ObservableCollection<Zaposlen> Zaposleni
-        {
-            get { return _zaposleni; }
-            set { _zaposleni = value; OnPropertyChanged("Zaposleni"); }
         }
 
 
