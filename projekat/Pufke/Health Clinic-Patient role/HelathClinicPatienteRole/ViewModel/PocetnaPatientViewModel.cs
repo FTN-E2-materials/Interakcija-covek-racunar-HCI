@@ -29,9 +29,9 @@ namespace HelathClinicPatienteRole.ViewModel
             _PregledList = new List<Pregled>
             {
                 new Pregled{IdPregleda=1, NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan",Lekar="Pera Perić"},
-                new Pregled{IdPregleda=2,NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h",StatusPregleda="Obavljen",Lekar="Mika Mikić"},
+                new Pregled{IdPregleda=2,NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.04.2020  9:00h",StatusPregleda="Obavljen",Lekar="Mika Mikić"},
                 new Pregled{IdPregleda=3,NazivPregleda = "Očni pregled",TerminPregleda = "28.06.2020  8:00h",StatusPregleda="Zakazan",Lekar="Miodrag Milić"},
-                new Pregled{IdPregleda=4,NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h",StatusPregleda="Obavljen",Lekar="Miodrag Mitrović"},
+                new Pregled{IdPregleda=4,NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.05.2020  11:00h",StatusPregleda="Obavljen",Lekar="Miodrag Mitrović"},
                 new Pregled{IdPregleda=5,NazivPregleda = "Specijalisticki pregled",TerminPregleda ="30.06.2020  11:00h",StatusPregleda="Otkazan",Lekar="Jovan Jovanović"},
                 new Pregled{IdPregleda=6,NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan",Lekar="Milomir Mirković"},
                 new Pregled{IdPregleda=7,NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.06.2020  9:00h",StatusPregleda="Obavljen",Lekar="Stevan Jovanić"},

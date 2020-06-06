@@ -9,14 +9,14 @@
             
               d:DesignHeight="700" d:DesignWidth="1300">
     <Grid>
-        <StackPanel Background="White" >
+        <StackPanel Background="White" Margin="0,10,0,-10" >
             <Grid Height="653" >
 
 
-                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Patient.png"   Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="4" Grid.RowSpan="6" Margin="48,0,38,0" />
+                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Patient.png" Grid.Column="6" Grid.ColumnSpan="4" Grid.RowSpan="7" Margin="46,15,39,10" />
 
 
-                <Grid x:Name="Korisnici" Grid.Row="10" Grid.Column="3" Grid.ColumnSpan="8" Grid.RowSpan="14"  DataContext="{Binding Users}">
+                <Grid x:Name="Korisnici" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="8" Grid.RowSpan="18"  DataContext="{Binding Users}" Margin="0,10,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -31,20 +31,21 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Text="Ime:" Margin="0,0,24,0" />
-                    <TextBox  Grid.Column="1" Grid.Row="0"  Foreground="#FF148DF0" HorizontalAlignment="Left" FontSize="30"   Text="{Binding FirstName}" />
+                    <TextBox   BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke" Grid.Column="1" Grid.Row="0"  Foreground="#FF148DF0" HorizontalAlignment="Left" FontSize="30"   Text="{Binding FirstName}" Width="337" Margin="0,10" />
 
                     <TextBlock Foreground="#FF148DF0" Grid.Row="1" FontSize="35"  HorizontalAlignment="Right" Text="Prezime:" Margin="0,0,24,0"/>
-                    <TextBox   Grid.Column="1" Grid.Row="1"  Foreground="#FF148DF0" HorizontalAlignment="Left" FontSize="30"   Text="{Binding LastName}" />
+                    <TextBox   BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke" Grid.Column="1" Grid.Row="1"  Foreground="#FF148DF0" HorizontalAlignment="Left" FontSize="30"   Text="{Binding LastName}" Width="337" Margin="0,10" />
 
                     <TextBlock Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Text="JMBG:" Grid.Row="2" Margin="0,0,24,0"/>
-                    <TextBox  HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="2"  Foreground="#FF148DF0" FontSize="30" Text="{Binding Jmbg}" />
+                    <TextBox  BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke"   HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="2"  Foreground="#FF148DF0" FontSize="30" Text="{Binding Jmbg}" Width="337" Margin="0,10" />
 
                     <TextBlock Text="Broj Telefona:"  Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Grid.Row="3" Margin="0,0,24,0"/>
-                    <TextBox  HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="3"   Foreground="#FF148DF0" FontSize="30" Text="{Binding PhoneNumber}" />
+                    <TextBox BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke"  HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="3"   Foreground="#FF148DF0" FontSize="30" Text="{Binding PhoneNumber}" Width="337" Margin="0,10" />
 
-                    <TextBlock Text="E-Mail:" Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Grid.Row="4" Margin="0,0,24,0"/>
-                    <TextBox  HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="4"  Foreground="#FF148DF0" FontSize="30" Text="{Binding Email}" />
+                    <TextBlock Text="E-Mail:" Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Grid.Row="4" Margin="0,5,24,5"/>
+                    <TextBox  BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke" HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="4"  Foreground="#FF148DF0" FontSize="30" Text="{Binding Email}" Width="337" Margin="0,10,0,5" />
 
+                    <TextBlock Text="Klikni i edituj polja iznad" Foreground="#FF148DF0" FontSize="10"  HorizontalAlignment="Right" Grid.Row="5" Margin="0,0,10,10" Grid.Column="1"/>
                     <Button Content="Update" Grid.Row="7" HorizontalAlignment="Left"  Name="btnUpdatee"   
                       VerticalAlignment="Top" Width="140"  
                       Command="{Binding Path=UpdateCommad}" Grid.Column="1"  />

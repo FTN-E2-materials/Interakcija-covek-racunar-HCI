@@ -102,6 +102,8 @@
     <Compile Include="ViewModel\KartonPatientViewModel.cs" />
     <Compile Include="ViewModel\KontaktPatientViewModel.cs" />
     <Compile Include="ViewModel\KontaktViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="MinimumCharacterRule.cs" />
     <Compile Include="ViewModel\OkliniciPatientViewModel.cs" />
     <Compile Include="ViewModel\OKliniciViewModel.cs" />
     <Compile Include="ViewModel\PocetnaPatientViewModel.cs" />
@@ -281,6 +283,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="ViewModel\ObservableObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

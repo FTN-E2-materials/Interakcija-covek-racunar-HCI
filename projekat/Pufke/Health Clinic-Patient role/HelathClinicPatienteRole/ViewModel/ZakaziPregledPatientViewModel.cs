@@ -93,7 +93,8 @@ namespace HelathClinicPatienteRole.ViewModel
             set { _selektovaniLekar = value; OnPropertyChanged("SelektovaniLekar"); }
         }
         #endregion
-        #region Zalazi pregled command
+
+        #region Zakazi pregled command
 
         public RelayCommand ZakaziPregledCommand { get; private set; }
 
@@ -105,8 +106,9 @@ namespace HelathClinicPatienteRole.ViewModel
                 MessageBox.Show("Niste selektovali ni jednog lekara!!!");
                 return;
             }
+            
 
-            MessageBox.Show("Usepsno ste zakazali pregled kod " + SelektovaniLekar.FirstAndLastName  + "!!!");
+            MessageBox.Show("Usepsno ste zakazali pregled kod " + SelektovaniLekar.FirstAndLastName  + "!!!" + SelektovaniDatum);
            // Pregled pregled = new Pregled { IdPregleda = 9, NazivPregleda = "Novo zakazan pregled", TerminPregleda = "22.06.2020  19:00h", StatusPregleda = "Zakazan", Lekar = SelektovaniLekar };
            // Pregledi.Add(pregled);
 
@@ -114,6 +116,17 @@ namespace HelathClinicPatienteRole.ViewModel
 
         }
 
+        #endregion
+
+        #region Selektovani Datum
+
+        private DateTime _selektovaniDatum = DateTime.Now;
+
+        public DateTime SelektovaniDatum
+        {
+            get { return _selektovaniDatum; }
+            set { _selektovaniDatum = value; OnPropertyChanged("SelektovaniDatum"); }
+        }
         #endregion
 
         public IList<Lekar> Lekari

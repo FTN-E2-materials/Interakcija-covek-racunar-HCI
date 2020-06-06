@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelathClinicPatienteRole"
+        xmlns:ViewModel="clr-namespace:HelathClinicPatienteRole.ViewModel"
         mc:Ignorable="d"
         Title="Login" Height="353" Width="490">
     <Grid Margin="0,0,2,-21">
@@ -12,12 +13,29 @@
             <ColumnDefinition Width="133*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Height="41" HorizontalAlignment="Left" Margin="171,23,0,0" x:Name="LoginHeading" VerticalAlignment="Top" FontSize="25" FontStretch="ExtraCondensed" Text="Ulogujete se:" Width="172" Grid.ColumnSpan="2"/>
-        <TextBlock Height="24" HorizontalAlignment="Left" Margin="101,84,0,0" Name="textBlock1" Text="Email:" VerticalAlignment="Top" Width="67" FontSize="15" />
+        <TextBlock Height="24" HorizontalAlignment="Left" Margin="101,84,0,0" Name="textBlock1" Text="JMBG" VerticalAlignment="Top" Width="67" FontSize="15" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="101,153,0,0" Name="textBlock2" Text="Password:" VerticalAlignment="Top" Width="77"  FontSize="15"/>
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="101,113,0,0" Name="textBoxEmail" VerticalAlignment="Top" Width="247" Text="YourEmail@email.com" Grid.ColumnSpan="2"  />
+
+
+        <TextBox Validation.ErrorTemplate="{StaticResource errorTemplate}" Grid.ColumnSpan="2" Margin="101,108,137,190">
+            <TextBox.Text>
+                <Binding Path="Username" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:MinimumCharacterRule MinimumCharacters="13"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+
+
         <PasswordBox Height="23" HorizontalAlignment="Left" Margin="101,181,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="247" Password="12345" Grid.ColumnSpan="2" />
         <Button Content="Login" Height="28" HorizontalAlignment="Left" Margin="191,225,0,0" Name="button1" VerticalAlignment="Top" Width="104" Grid.ColumnSpan="2" Click="Login_Click"  />
         <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="errormessage" VerticalAlignment="Top" Width="247" Margin="118,253,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C" Grid.ColumnSpan="2"  />
     </Grid>
+
+    <Window.DataContext>
+        <ViewModel:LoginViewModel/>
+    </Window.DataContext>
 </Window>
 
