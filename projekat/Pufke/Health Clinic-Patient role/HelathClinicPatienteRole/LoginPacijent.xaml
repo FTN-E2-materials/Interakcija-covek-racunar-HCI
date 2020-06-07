@@ -17,7 +17,7 @@
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="79,153,0,0" Name="textBlock2" Text="Password:" VerticalAlignment="Top" Width="77"  FontSize="15"/>
 
 
-        <TextBox Background="WhiteSmoke" Validation.ErrorTemplate="{StaticResource errorTemplate}" Grid.ColumnSpan="2" Margin="79,108,99,190">
+        <TextBox BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke" Validation.ErrorTemplate="{StaticResource errorTemplate}" Grid.ColumnSpan="2" Margin="79,108,99,190">
             <TextBox.Text>
                 <Binding Path="Username" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
@@ -27,7 +27,7 @@
             </TextBox.Text>
         </TextBox>
 
-        <TextBox Background="WhiteSmoke" Validation.ErrorTemplate="{StaticResource errorTemplate}" Grid.ColumnSpan="2" Margin="79,175,99,123">
+        <TextBox BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke" Validation.ErrorTemplate="{StaticResource errorTemplate}" Grid.ColumnSpan="2" Margin="79,175,99,123">
             <TextBox.Text>
                 <Binding Path="Password" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
@@ -40,8 +40,8 @@
 
 
 
-       
-        <Button Content="Login" Height="28" HorizontalAlignment="Left" Margin="180,234,0,0" Name="button1" VerticalAlignment="Top" Width="104" Grid.ColumnSpan="2" Click="Login_Click"  />
+
+        <Button Content="Login" Height="28" HorizontalAlignment="Left" Margin="180,234,0,0" Name="button1" VerticalAlignment="Top" Width="104" Grid.ColumnSpan="2"  Command="{Binding LoginCommand}"/>
         <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="errormessage" VerticalAlignment="Top" Width="247" Margin="118,253,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C" Grid.ColumnSpan="2"  />
     </Grid>
 

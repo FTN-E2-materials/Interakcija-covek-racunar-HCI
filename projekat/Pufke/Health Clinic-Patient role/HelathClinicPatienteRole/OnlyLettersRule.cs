@@ -9,22 +9,25 @@ using System.Windows.Controls;
 
 namespace HelathClinicPatienteRole
 {
-    class PasswordCheckRule : ValidationRule
+    class OnlyLettersRule : ValidationRule
     {
         public int MinimumCharacters { get; set; }
-   
+       
 
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             string charString = value as string;
 
-        
-            if (charString.Length < MinimumCharacters)
-                return new ValidationResult(false, $"Minimun {MinimumCharacters} karaktera!.");
+            if (!Regex.IsMatch(charString, @"^[a-zA-Z]+$"))
+            {
+                return new ValidationResult(false, $"Dozvoljena su samo slova!");
+            }
+           
 
             return new ValidationResult(true, null);
         }
 
-
+ 
     }
 }
+

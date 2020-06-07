@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HelathClinicPatienteRole.View"
              xmlns:ViewModel="clr-namespace:HelathClinicPatienteRole.ViewModel"
+             xmlns:local1="clr-namespace:HelathClinicPatienteRole"
              mc:Ignorable="d" 
             
               d:DesignHeight="700" d:DesignWidth="1300">
@@ -13,10 +14,10 @@
             <Grid Height="653" >
 
 
-                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Patient.png" Grid.Column="6" Grid.ColumnSpan="4" Grid.RowSpan="7" Margin="46,15,39,10" />
+                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Patient.png" Grid.Column="6" Grid.ColumnSpan="4" Grid.RowSpan="7" Margin="36,15,49,10" Grid.Row="1" />
 
 
-                <Grid x:Name="Korisnici" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="8" Grid.RowSpan="18"  DataContext="{Binding Users}" Margin="0,10,0,0">
+                <Grid x:Name="Korisnici" Grid.Row="8" Grid.ColumnSpan="11" Grid.RowSpan="18"  DataContext="{Binding Users}" Margin="48,12,0,-2">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -27,28 +28,63 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="411*"/>
+                        <ColumnDefinition Width="43*"/>
+                        <ColumnDefinition Width="453*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Text="Ime:" Margin="0,0,24,0" />
-                    <TextBox   BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke" Grid.Column="1" Grid.Row="0"  Foreground="#FF148DF0" HorizontalAlignment="Left" FontSize="30"   Text="{Binding FirstName}" Width="337" Margin="0,10" />
+                    <TextBlock Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Text="Ime:" Margin="0,0,23,0" Grid.ColumnSpan="2" />
 
-                    <TextBlock Foreground="#FF148DF0" Grid.Row="1" FontSize="35"  HorizontalAlignment="Right" Text="Prezime:" Margin="0,0,24,0"/>
-                    <TextBox   BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke" Grid.Column="1" Grid.Row="1"  Foreground="#FF148DF0" HorizontalAlignment="Left" FontSize="30"   Text="{Binding LastName}" Width="337" Margin="0,10" />
+                    <TextBox   Validation.ErrorTemplate="{StaticResource errorTemplate}" BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke" Grid.Column="2" Grid.Row="0"  Foreground="#FF148DF0" HorizontalAlignment="Left" FontSize="30"  Width="417" Margin="0,10" >
+                        <TextBox.Text>
+                            <Binding Path="FirstName" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <local1:OnlyLettersRule MinimumCharacters="13"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
 
-                    <TextBlock Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Text="JMBG:" Grid.Row="2" Margin="0,0,24,0"/>
-                    <TextBox  BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke"   HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="2"  Foreground="#FF148DF0" FontSize="30" Text="{Binding Jmbg}" Width="337" Margin="0,10" />
+                    <TextBlock Foreground="#FF148DF0" Grid.Row="1" FontSize="35"  HorizontalAlignment="Right" Text="Prezime:" Margin="0,0,23,0" Grid.ColumnSpan="2"/>
+                    <TextBox   Validation.ErrorTemplate="{StaticResource errorTemplate}" BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke" Grid.Column="2" Grid.Row="1"  Foreground="#FF148DF0" HorizontalAlignment="Left" FontSize="30"   Width="417" Margin="0,10" >
+                        <TextBox.Text>
+                            <Binding Path="LastName" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <local1:OnlyLettersRule MinimumCharacters="13"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    
+                    <TextBlock Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Text="JMBG:" Grid.Row="2" Margin="0,0,24,0" Grid.ColumnSpan="2"/>
+                    
+                    <TextBox   Validation.ErrorTemplate="{StaticResource errorTemplate}"  BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke"   HorizontalAlignment="Left"  Grid.Column="2" Grid.Row="2"  Foreground="#FF148DF0" FontSize="30"  Width="417" Margin="0,10" >
+                        <TextBox.Text>
+                            <Binding Path="Jmbg" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <local1:MinimumCharacterRule MinimumCharacters="13"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    
+                    <TextBlock Text="Broj Telefona:"  Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Grid.Row="3" Margin="0,0,23,0" Grid.ColumnSpan="2"/>
+                    <TextBox Validation.ErrorTemplate="{StaticResource errorTemplate}" BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke"  HorizontalAlignment="Left"  Grid.Column="2" Grid.Row="3"   Foreground="#FF148DF0" FontSize="30"  Width="417" Margin="0,10" >
+                        <TextBox.Text>
+                            <Binding Path="PhoneNumber" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <local1:OnlyNumbers MinimumCharacters="13"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
 
-                    <TextBlock Text="Broj Telefona:"  Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Grid.Row="3" Margin="0,0,24,0"/>
-                    <TextBox BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke"  HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="3"   Foreground="#FF148DF0" FontSize="30" Text="{Binding PhoneNumber}" Width="337" Margin="0,10" />
+                    <TextBlock Text="E-Mail:" Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Grid.Row="4" Margin="0,5,23,5" Grid.ColumnSpan="2"/>
+                    <TextBox  BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke" HorizontalAlignment="Left"  Grid.Column="2" Grid.Row="4"  Foreground="#FF148DF0" FontSize="30" Text="{Binding Email}" Width="417" Margin="0,10,0,5" />
 
-                    <TextBlock Text="E-Mail:" Foreground="#FF148DF0" FontSize="35"  HorizontalAlignment="Right" Grid.Row="4" Margin="0,5,24,5"/>
-                    <TextBox  BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke" HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="4"  Foreground="#FF148DF0" FontSize="30" Text="{Binding Email}" Width="337" Margin="0,10,0,5" />
-
-                    <TextBlock Text="Klikni i edituj polja iznad" Foreground="#FF148DF0" FontSize="10"  HorizontalAlignment="Right" Grid.Row="5" Margin="0,0,10,10" Grid.Column="1"/>
-                    <Button Content="Update" Grid.Row="7" HorizontalAlignment="Left"  Name="btnUpdatee"   
+                    <TextBlock Text="Klikni i edituj polja iznad" Foreground="#FF148DF0" FontSize="10"  HorizontalAlignment="Right" Grid.Row="5" Margin="0,0,9,10" Grid.Column="2"/>
+                    <Button Content="Update" Grid.Row="5" HorizontalAlignment="Left"  Name="btnUpdatee"   
                       VerticalAlignment="Top" Width="140"  
-                      Command="{Binding Path=UpdateCommad}" Grid.Column="1"  />
+                      Command="{Binding Path=UpdateCommad}" Grid.Column="2" Margin="148,42,0,0" Grid.RowSpan="2"  />
                 </Grid>
 
 

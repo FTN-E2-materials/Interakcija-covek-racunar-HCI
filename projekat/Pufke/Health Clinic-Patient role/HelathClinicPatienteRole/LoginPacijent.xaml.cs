@@ -27,11 +27,6 @@ namespace HelathClinicPatienteRole
             InitializeComponent();
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
-        {
-            PatientMainWindow patientMainWindow = new PatientMainWindow();
-            this.Visibility = Visibility.Hidden;
-            patientMainWindow.Show();
-        }
+ 
     }
 }
