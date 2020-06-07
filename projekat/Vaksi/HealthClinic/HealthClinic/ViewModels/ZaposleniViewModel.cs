@@ -139,9 +139,9 @@ namespace HealthClinic.ViewModels
 
             foreach (Zaposlen trenutniZaposleni in Zaposleni)
             {
-                if(trenutniZaposleni.Ime == SelektovaniZaposleni.Ime)
+                if(trenutniZaposleni.KorisnickoIme == SelektovaniZaposleni.KorisnickoIme)
                 {
-                    MessageBox.Show("Uspesno ste izbrisali radnika sa imenom " + trenutniZaposleni.Ime);
+                    MessageBox.Show("Uspesno ste izbrisali radnika sa korisnickim imenom " + trenutniZaposleni.KorisnickoIme);
                     Zaposleni.Remove(trenutniZaposleni);
 
                     break;
@@ -167,7 +167,7 @@ namespace HealthClinic.ViewModels
             SelektovaniZaposleni.Prezime = ZaposleniZaIzmenu.Prezime;
             SelektovaniZaposleni.Struka = ZaposleniZaIzmenu.Struka;
             SelektovaniZaposleni.Sifra = ZaposleniZaIzmenu.Sifra;
-            SelektovaniZaposleni.BrojOperacijaOveNedelje = ZaposleniZaIzmenu.BrojOperacijaOveNedelje;
+            SelektovaniZaposleni.KorisnickoIme = ZaposleniZaIzmenu.KorisnickoIme;
 
         }
 
@@ -226,11 +226,11 @@ namespace HealthClinic.ViewModels
             // Zaposleni za izmenu/stimanje preuzima podatke od selektovanog zaposlenog
             if (!(SelektovaniZaposleni is null))
                 ZaposleniZaIzmenu = new Zaposlen() {
-                    BrojOperacijaOveNedelje = SelektovaniZaposleni.BrojOperacijaOveNedelje,
                     Ime = SelektovaniZaposleni.Ime,
                     Prezime = SelektovaniZaposleni.Prezime,
                     Sifra = SelektovaniZaposleni.Sifra,
                     Struka = SelektovaniZaposleni.Struka,
+                    KorisnickoIme = SelektovaniZaposleni.KorisnickoIme
                 };
 
 
@@ -266,16 +266,16 @@ namespace HealthClinic.ViewModels
         {
             //Tabela - popunjavanje
             Zaposleni = new ObservableCollection<Zaposlen>();
-            Zaposleni.Add(new Zaposlen() { Ime = "Zika", Prezime = "Vojvodic", Struka = "Otorinolaringolog", Sifra = "*****", RadniKalendar = "popunjen", BrojOperacijaOveNedelje = "10" });
-            Zaposleni.Add(new Zaposlen() { Ime = "Nikola", Prezime = "Zigic", Struka = "Oftamolog", Sifra = "*****", RadniKalendar = "popunjen", BrojOperacijaOveNedelje = "8" });
-            Zaposleni.Add(new Zaposlen() { Ime = "Marko", Prezime = "Bogdanovic", Struka = "Kardio hirurg", Sifra = "*****", RadniKalendar = "slobodan", BrojOperacijaOveNedelje = "18" });
-            Zaposleni.Add(new Zaposlen() { Ime = "Boban", Prezime = "Jokic", Struka = "Pedijatar", Sifra = "*****", RadniKalendar = "slobodan", BrojOperacijaOveNedelje = "9" });
-            Zaposleni.Add(new Zaposlen() { Ime = "Nikola", Prezime = "Marjanovic", Struka = "Doktor opste prakse", Sifra = "*****", RadniKalendar = "popunjen", BrojOperacijaOveNedelje = "12" });
-            Zaposleni.Add(new Zaposlen() { Ime = "Zika", Prezime = "Vojvodic", Struka = "Otorinolaringolog", Sifra = "*****", RadniKalendar = "popunjen", BrojOperacijaOveNedelje = "10" });
-            Zaposleni.Add(new Zaposlen() { Ime = "Nikola", Prezime = "Zigic", Struka = "Oftamolog", Sifra = "*****", RadniKalendar = "popunjen", BrojOperacijaOveNedelje = "8" });
-            Zaposleni.Add(new Zaposlen() { Ime = "Marko", Prezime = "Bogdanovic", Struka = "Kardio hirurg", Sifra = "*****", RadniKalendar = "slobodan", BrojOperacijaOveNedelje = "18" });
-            Zaposleni.Add(new Zaposlen() { Ime = "Boban", Prezime = "Jokic", Struka = "Pedijatar", Sifra = "*****", RadniKalendar = "slobodan", BrojOperacijaOveNedelje = "9" });
-            Zaposleni.Add(new Zaposlen() { Ime = "Nikola", Prezime = "Marjanovic", Struka = "Doktor opste prakse", Sifra = "*****", RadniKalendar = "popunjen", BrojOperacijaOveNedelje = "12" });
+            Zaposleni.Add(new Zaposlen() { KorisnickoIme="zikaa", Ime = "Zika", Prezime = "Vojvodic", Struka = "Otorinolaringolog", Sifra = "*****"});
+            Zaposleni.Add(new Zaposlen() { KorisnickoIme="dzoni", Ime = "Nikola", Prezime = "Zigic", Struka = "Oftamolog", Sifra = "*****"});
+            Zaposleni.Add(new Zaposlen() { KorisnickoIme="markoni", Ime = "Marko", Prezime = "Bogdanovic", Struka = "Kardio hirurg", Sifra = "*****"});
+            Zaposleni.Add(new Zaposlen() { KorisnickoIme="bobi", Ime = "Boban", Prezime = "Jokic", Struka = "Pedijatar", Sifra = "*****" });
+            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "niki", Ime = "Nikola", Prezime = "Marjanovic", Struka = "Doktor opste prakse", Sifra = "*****" });
+            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "zare", Ime = "Zika", Prezime = "Vojvodic", Struka = "Otorinolaringolog", Sifra = "*****"});
+            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "nidroni", Ime = "Nikola", Prezime = "Zigic", Struka = "Oftamolog", Sifra = "*****"});
+            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "maron", Ime = "Marko", Prezime = "Bogdanovic", Struka = "Kardio hirurg", Sifra = "*****"});
+            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "bobi2", Ime = "Boban", Prezime = "Jokic", Struka = "Pedijatar", Sifra = "*****"});
+            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "dzoni2", Ime = "Nikola", Prezime = "Marjanovic", Struka = "Doktor opste prakse", Sifra = "*****"});
         }
 
 

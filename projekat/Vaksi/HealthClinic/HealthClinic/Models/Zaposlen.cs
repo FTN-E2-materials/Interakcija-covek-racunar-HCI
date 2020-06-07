@@ -12,11 +12,22 @@ namespace HealthClinic.Models
         private string _ime;
         private string _prezime;
         private string _struka;
-        private string _sifra;
-        private string _radniKalendar;          
-        private string _brojOperacijaOveNedelje;
+        private string _sifra;  
+        private string _korisnickoIme;
 
-       
+        public string KorisnickoIme
+        {
+            get { return _korisnickoIme; }
+            set 
+            { 
+                if( value != _korisnickoIme)
+                {
+                    _korisnickoIme = value;
+                    OnPropertyChanged("KorisnickoIme");
+                }
+                
+            }
+        }
 
         public string Ime
         {
@@ -78,38 +89,6 @@ namespace HealthClinic.Models
                 {
                     _sifra = value;
                     OnPropertyChanged("Sifra");
-                }
-            }
-        }
-
-        public string RadniKalendar
-        {
-            get
-            {
-                return _radniKalendar;
-            }
-            set
-            {
-                if (value != _radniKalendar)
-                {
-                    _radniKalendar = value;
-                    OnPropertyChanged("RadniKalendar");
-                }
-            }
-        }
-
-        public string BrojOperacijaOveNedelje
-        {
-            get
-            {
-                return _brojOperacijaOveNedelje;
-            }
-            set
-            {
-                if (value != _brojOperacijaOveNedelje)
-                {
-                    _brojOperacijaOveNedelje = value;
-                    OnPropertyChanged("BrojOperacijaOveNedelje");
                 }
             }
         }

@@ -90,7 +90,21 @@
                 x:Name="KorisnickoIme"
                 materialDesign:HintAssist.Hint="Ovde unesite korisnicko ime"
                 materialDesign:HintAssist.HelperText="Korisnicko ime zaposlenog">
-
+                <TextBox.Text>
+                    <!-- Bajndovanje korisnickog imena zaposlenog + validacija-->
+                    <Binding 
+                        Path="ZaposleniZaIzmenu.KorisnickoIme"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                        <Binding.ValidationRules>
+                            <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                            <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                            <validations:UsernameRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                    <!-- Kraj bajndovanje korisnickog imena zaposlenog + validacija-->
+                </TextBox.Text>
             </TextBox>
             <!-- Kraj korisnickog imena -->
 

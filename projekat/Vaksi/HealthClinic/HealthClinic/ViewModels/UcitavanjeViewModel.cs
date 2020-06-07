@@ -14,9 +14,7 @@ namespace HealthClinic.ViewModels
             Ime = "Vlado",
             Prezime = "Maksimovic",
             Struka = "Dr.",
-            Sifra = "1234",
-            RadniKalendar = "slobodan",
-            BrojOperacijaOveNedelje = "100"
+            Sifra = "1234"
         };
 
     }
