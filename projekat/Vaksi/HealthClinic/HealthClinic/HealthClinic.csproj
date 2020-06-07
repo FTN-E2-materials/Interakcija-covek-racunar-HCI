@@ -99,6 +99,7 @@
     </ApplicationDefinition>
     <Compile Include="Utilities\Validations\MaximumCharacterRule.cs" />
     <Compile Include="Utilities\Validations\MinimumCharacterRule.cs" />
+    <Compile Include="Utilities\Validations\PasswordRule.cs" />
     <Compile Include="Utilities\Validations\UsernameRule.cs" />
     <Compile Include="Utilities\Validations\WordRule.cs" />
     <Compile Include="Views\Dialogs\Brisanje\ObrisiLekDijalog.xaml.cs">

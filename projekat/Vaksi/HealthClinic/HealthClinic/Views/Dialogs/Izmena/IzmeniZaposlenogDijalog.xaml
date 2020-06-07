@@ -118,10 +118,23 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Lozinka"
-                Text="{Binding ZaposleniZaIzmenu.Sifra}"
                 materialDesign:HintAssist.Hint="Ovde unesite lozinku"
                 materialDesign:HintAssist.HelperText="Lozinka zaposlenog">
-
+                <TextBox.Text>
+                    <!-- Bajndovanje sifre zaposlenog + validacija-->
+                    <Binding 
+                        Path="ZaposleniZaIzmenu.Sifra"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                        <Binding.ValidationRules>
+                            <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                            <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                            <validations:PasswordRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                    <!-- Kraj bajndovanje sifre zaposlenog + validacija-->
+                </TextBox.Text>
             </TextBox>
             <!-- Kraj lozinke -->
 
