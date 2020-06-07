@@ -179,14 +179,11 @@
                     VerticalAlignment="Top" 
                     LegendLocation="Bottom"
                     >
-
                         <!-- Parcad u grafikonu.-->
                         <Wpf:PieChart.Series>
-                            <Wpf:PieSeries Title="Ostava" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                            <Wpf:PieSeries Title="Kancelarije" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                            <Wpf:PieSeries Title="Sobe" Values="45" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                            <Wpf:PieSeries Title="Opercione sale" Values="25" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                            <Wpf:PieSeries Title="Pregled sobe" Values="25" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                            <Wpf:PieSeries Title="Sobe za pregled" Values="{Binding UkupnoSobaZaPreglede }" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                            <Wpf:PieSeries Title="Opercione sale" Values="{Binding UkupnoOperacionihSala }" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                            <Wpf:PieSeries Title="Sobe za pacijente" Values="{Binding UkupnoSobaZaPacijente }" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
                         </Wpf:PieChart.Series>
                         <!-- Kraj parcadi u grafikonu -->
 

@@ -295,13 +295,6 @@ namespace HealthClinic.ViewModels
             }
         }
 
-
-        /*
-         * Izmena ce ici tako sto:
-         * prvo -- onog sto sam 'obrisa' tj sto sam ga promenio
-         * a onda dodam onog sto sam 'dodao'
-         */
-
         #endregion
 
         #region Brojaci odredjene vrste lekova

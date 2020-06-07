@@ -50,6 +50,9 @@ namespace HealthClinic.ViewModels
 
             // potvrdjujem brisanje podataka
             PotvrdaBrisanjaPodatakaCommand = new RelayCommand(PotvrdaBrisanjaPodataka);
+
+            odredjivanjeMogucihTipovaProstorije();
+
         }
         #region Prostorija koja sluzi za dodavanje u listu prostorija
 
@@ -261,6 +264,7 @@ namespace HealthClinic.ViewModels
                 if(trenutnaProstorija.BrojSobe == SelektovanaProstorija.BrojSobe)
                 {
                     MessageBox.Show("Uspesno ste izbrisali sobu broj " + trenutnaProstorija.BrojSobe);
+                    podesiBrojOdredjenihProstorija(trenutnaProstorija, -1);
                     Prostorije.Remove(trenutnaProstorija);
 
                     break;
@@ -277,6 +281,7 @@ namespace HealthClinic.ViewModels
         {
             // dodajem prostoriju za dodavanje ukoliko je odgovor bio potvrdan
             Prostorije.Add(ProstorijaZaDodavanje);
+            podesiBrojOdredjenihProstorija(ProstorijaZaDodavanje, 1);
             this.TrenutniProzor.Close();
         }
 
@@ -284,6 +289,12 @@ namespace HealthClinic.ViewModels
 
         public void PotvrdaIzmenePodataka(object obj)
         {
+            // regulisem da prvo povecam kolicinu novo izmenjenog tipa prostorije
+            podesiBrojOdredjenihProstorija(ProstorijaZaIzmenu, 1);
+
+            //podesiBrojOdredjenihLekova(SelektovaniLek, -1);
+            podesiBrojOdredjenihProstorija(SelektovanaProstorija, -1);
+
             // selektovani objekat prima vrednosti od menjanog objekta
             SelektovanaProstorija.BrojSobe = ProstorijaZaIzmenu.BrojSobe;
             SelektovanaProstorija.Namena = ProstorijaZaIzmenu.Namena;
@@ -372,6 +383,15 @@ namespace HealthClinic.ViewModels
         #endregion 
 
         #region Tabela
+
+        private ObservableCollection<Prostorija> _prostorije;
+
+        public ObservableCollection<Prostorija> Prostorije
+        {
+            get { return _prostorije; }
+            set { _prostorije = value; OnPropertyChanged("Prostorije"); }
+        }
+
         private void ucitavanjeProstorija()
         {
             Prostorije = new ObservableCollection<Prostorija>();
@@ -382,27 +402,142 @@ namespace HealthClinic.ViewModels
             Prostorije.Add(new Prostorija() { Odeljenje = "decije", BrojSobe = "10", Namena = "operaciona sala", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
             Prostorije.Add(new Prostorija() { Odeljenje = "otorinolaringologija", BrojSobe = "2", Namena = "soba za preglede", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
             Prostorije.Add(new Prostorija() { Odeljenje = "interno", BrojSobe = "7", Namena = "operaciona sala", UvidZauzetosti = "otvori uvid", SpisakOpreme = "prikazi spisak" });
+
+            foreach (Prostorija prostorija in Prostorije)
+            {
+                podesiBrojOdredjenihProstorija(prostorija, 1);
+            }
         }
 
 
-        private ObservableCollection<Prostorija> _prostorije;
-
-        public ObservableCollection<Prostorija> Prostorije
-        {
-            get { return _prostorije; }
-            set { _prostorije = value; OnPropertyChanged("Prostorije"); }
-        }
+        
 
 
         #endregion
 
-        #region Grafikon
+        #region Podesavanje broja odredjenog tipa prostorije
+
+        /// <summary>
+        /// Podesavam trenutni broj odredjenog tipa prostorije.
+        /// </summary>
+        /// <param name="prostorija"></param>
+        /// <param name="koeficijentPravca"> Prosledjuje se broj koji govori koliko povecavam/smanjujem broj odredjenih prostorija</param>
+        private void podesiBrojOdredjenihProstorija(Prostorija prostorija, int koeficijentPravca)
+        {
+            if (prostorija.Namena == "soba za preglede")
+            {
+                if (this.UkupnoSobaZaPreglede is null)
+                    BrojacSobaZaPreglede = 1;
+                else
+                    BrojacSobaZaPreglede += koeficijentPravca;
+                this.UkupnoSobaZaPreglede = new ChartValues<int>() { BrojacSobaZaPreglede };
+
+            }
+            else if (prostorija.Namena == "soba za pacijente")
+            {
+                if (this.UkupnoSobaZaPacijente is null)
+                    BrojacSobaZaPacijente = 1;
+                else
+                    BrojacSobaZaPacijente += koeficijentPravca;
+                this.UkupnoSobaZaPacijente = new ChartValues<int>() { BrojacSobaZaPacijente };
+            }
+            else if (prostorija.Namena == "operaciona sala")
+            {
+                if (this.UkupnoOperacionihSala is null)
+                    BrojacOperacionihSala = 1;
+                else
+                    BrojacOperacionihSala += koeficijentPravca;
+                this.UkupnoOperacionihSala = new ChartValues<int>() { BrojacOperacionihSala };
+            }
+        }
+
+        #endregion
+
+        #region Deo vezan za grafikon
+
+        private ChartValues<int> _ukupnoSobaZaPacijente;
+        private ChartValues<int> _ukupnoSobaZaPreglede;
+        private ChartValues<int> _ukupnoOperacionihSala;
+
+
+        public ChartValues<int> UkupnoSobaZaPacijente
+        {
+            get { return _ukupnoSobaZaPacijente; }
+            set { _ukupnoSobaZaPacijente = value; OnPropertyChanged("UkupnoSobaZaPacijente"); }
+        }
+
+        public ChartValues<int> UkupnoSobaZaPreglede
+        {
+            get { return _ukupnoSobaZaPreglede; }
+            set { _ukupnoSobaZaPreglede = value; OnPropertyChanged("UkupnoSobaZaPreglede"); }
+        }
+
+        public ChartValues<int> UkupnoOperacionihSala
+        {
+            get { return _ukupnoOperacionihSala; }
+            set { _ukupnoOperacionihSala = value; OnPropertyChanged("UkupnoOperacionihSala"); }
+        }
+
+
         public Func<ChartPoint, string> PointLabel { get; set; }
 
         private void PieChart()
         {
             PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
         }
+
+        #endregion
+
+        #region Moguci tipovi prostorija
+
+        private ObservableCollection<string> _moguciTipoviProstorije;
+
+        public ObservableCollection<string> MoguciTipoviProstorije
+        {
+            get { return _moguciTipoviProstorije; }
+            set { _moguciTipoviProstorije = value; OnPropertyChanged("MoguciTipoviProstorije"); }
+        }
+
+        private void odredjivanjeMogucihTipovaProstorije()
+        {
+            MoguciTipoviProstorije = new ObservableCollection<string>();
+            MoguciTipoviProstorije.Add("soba za pacijente");
+            MoguciTipoviProstorije.Add("soba za preglede");
+            MoguciTipoviProstorije.Add("operaciona sala");
+            
+        }
+
+        #endregion
+
+        #region Brojaci odredjenog tipa prostorije
+
+        /// <summary>
+        /// Potreban mi je i brojac koji ce se upisivati u cart,
+        /// ne moze direktno i samo brojac da bude ali ni cart.
+        /// </summary>
+        private int _brojacSobaZaPreglede;
+        private int _brojacSobaZaPacijente;
+        private int _brojacOperacionihSala;
+
+
+        public int BrojacSobaZaPreglede
+        {
+            get { return _brojacSobaZaPreglede; }
+            set { _brojacSobaZaPreglede = value; OnPropertyChanged("BrojacSobaZaPreglede"); }
+        }
+
+        public int BrojacSobaZaPacijente
+        {
+            get { return _brojacSobaZaPacijente; }
+            set { _brojacSobaZaPacijente = value; OnPropertyChanged("BrojacSobaZaPacijente"); }
+        }
+
+        public int BrojacOperacionihSala
+        {
+            get { return _brojacOperacionihSala; }
+            set { _brojacOperacionihSala = value; OnPropertyChanged("BrojacOperacionihSala"); }
+        }
+
 
         #endregion
     }

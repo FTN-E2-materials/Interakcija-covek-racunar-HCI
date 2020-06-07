@@ -78,6 +78,7 @@
 
             <!-- Tip prostorije -->
             <ComboBox
+                ItemsSource="{Binding MoguciTipoviProstorije}"
                 SelectedItem="{Binding ProstorijaZaDodavanje.Namena}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
@@ -90,15 +91,6 @@
                 materialDesign:HintAssist.Hint="Izaberite tip prostorije"
                 materialDesign:HintAssist.HelperText="Tip prostorije"
                 >
-                <ComboBoxItem>
-                    Operaciona sala
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Soba za preglede
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Soba za pacijente
-                </ComboBoxItem>
 
             </ComboBox>
             <!-- Kraj tipa prostorije -->
