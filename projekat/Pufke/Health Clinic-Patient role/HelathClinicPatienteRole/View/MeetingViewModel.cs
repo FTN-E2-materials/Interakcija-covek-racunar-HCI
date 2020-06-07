@@ -1,34 +1,31 @@
-﻿using C_Validation_ByCustom;
-using HelathClinicPatienteRole.ViewModel.Commands;
+﻿using HelathClinicPatienteRole.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Syncfusion.Pdf;
-using Syncfusion.Pdf.Graphics;
-using System.ComponentModel;
 using System.Windows;
 using System.Windows.Media;
-using HelathClinicPatienteRole.Model;
 
-namespace HelathClinicPatienteRole.ViewModel
+namespace HelathClinicPatienteRole.View
 {
-    class PropisanaTerapijaPatientViewModel : ObservableObject
+    class MeetingViewModel
     {
         public ObservableCollection<Meeting> Meetings { get; set; }
         List<string> eventNameCollection;
         List<Brush> colorCollection;
-        public PropisanaTerapijaPatientViewModel()
+        public MeetingViewModel()
         {
-            GenerisiIzvestajCommand = new RelayCommand(GenerisiIzvestaj);
             Meetings = new ObservableCollection<Meeting>();
             CreateEventNameCollection();
             CreateColorCollection();
             CreateAppointments();
         }
 
+        /// <summary>
+        /// Creates meetings and stores in a collection.  
+        /// </summary>
         private void CreateAppointments()
         {
             Random randomTime = new Random();
@@ -38,7 +35,6 @@ namespace HelathClinicPatienteRole.ViewModel
             DateTime DateTo = DateTime.Now.AddDays(10);
             DateTime dataRangeStart = DateTime.Now.AddDays(-3);
             DateTime dataRangeEnd = DateTime.Now.AddDays(3);
-
 
             for (date = DateFrom; date < DateTo; date = date.AddDays(1))
             {
@@ -75,16 +71,16 @@ namespace HelathClinicPatienteRole.ViewModel
         private void CreateEventNameCollection()
         {
             eventNameCollection = new List<string>();
-            eventNameCollection.Add("Lek za pritisak");
-            eventNameCollection.Add("Lek za krvne sudove");
-            eventNameCollection.Add("Brufen");
-            eventNameCollection.Add("Lek za pritisak");
-            eventNameCollection.Add("Masaza");
-            eventNameCollection.Add("Panadol");
-            eventNameCollection.Add("Lek za imunitet");
-            eventNameCollection.Add("Vitamin C");
-            eventNameCollection.Add("Lek za pritisak");
-            eventNameCollection.Add("Lek za pritisak");
+            eventNameCollection.Add("General Meeting");
+            eventNameCollection.Add("Plan Execution");
+            eventNameCollection.Add("Project Plan");
+            eventNameCollection.Add("Consulting");
+            eventNameCollection.Add("Performance Check");
+            eventNameCollection.Add("Yoga Therapy");
+            eventNameCollection.Add("Plan Execution");
+            eventNameCollection.Add("Project Plan");
+            eventNameCollection.Add("Consulting");
+            eventNameCollection.Add("Performance Check");
         }
 
         /// <summary>  
@@ -117,33 +113,5 @@ namespace HelathClinicPatienteRole.ViewModel
             randomTimeCollection.Add(new Point(15, 17));
             return randomTimeCollection;
         }
-
-
-
-        public RelayCommand GenerisiIzvestajCommand { get; private set; }
-
-        public void GenerisiIzvestaj(object obj)
-        {
-            using (PdfDocument document = new PdfDocument())
-            {
-          
-                PdfPage page = document.Pages.Add();
-
-                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
-                page.Graphics.DrawString("Izvestaj o uzimanju terapije!", font, PdfBrushes.Black, new System.Drawing.PointF(0, 0));
-                page.Graphics.DrawString("Ponedeljak 18h lek za pritisak", font, PdfBrushes.Black, new System.Drawing.PointF(0, 40));
-                page.Graphics.DrawString("Utorak 18h lek za pritisak", font, PdfBrushes.Black, new System.Drawing.PointF(0, 80));
-                page.Graphics.DrawString("Cetvrtak 18h lek za pritisak", font, PdfBrushes.Black, new System.Drawing.PointF(0, 120));
-                page.Graphics.DrawString("Petak 18h lek za pritisak", font, PdfBrushes.Black, new System.Drawing.PointF(0, 160));
-                page.Graphics.DrawString("Terapiju uzimati u trajanju od tri nedelje", font, PdfBrushes.Black, new System.Drawing.PointF(0, 200));
-
-                document.Save("C:\\Users\\Pufke\\Desktop\\Izvestaj.pdf");
-                MessageBox.Show("Izvestaj je izgenerisan da Desktop vaseg racunara");
-            }
-            
-        }
     }
-
-
-   
 }

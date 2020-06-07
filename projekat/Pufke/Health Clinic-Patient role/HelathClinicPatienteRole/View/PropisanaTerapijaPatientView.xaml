@@ -5,14 +5,37 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:schedule="http://schemas.syncfusion.com/wpf"
              xmlns:local="clr-namespace:HelathClinicPatienteRole.View"
+             xmlns:syncfusion="clr-namespace:Syncfusion.UI.Xaml.Schedule;assembly=Syncfusion.SfSchedule.WPF"
+             xmlns:local1="clr-namespace:HelathClinicPatienteRole.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="1300">
     <Grid>
         <StackPanel Background="White" >
             <Grid Height="700" >
-                <Grid x:Name="LayoutRoot" Grid.Column="2" Grid.ColumnSpan="12" Grid.RowSpan="26">
-                    <schedule:SfSchedule ScheduleType="Month"/>
+                <Grid x:Name="LayoutRoot" Grid.Column="2" Grid.ColumnSpan="12" Grid.RowSpan="21" Margin="0,0,32,9.846">
+
+
+                    <syncfusion:SfSchedule ItemsSource = "{Binding Meetings}" ScheduleType="Month" x:Name="schedule">
+                        <syncfusion:SfSchedule.AppointmentMapping>
+                            <syncfusion:ScheduleAppointmentMapping
+			                AppointmentBackgroundMapping="#FF148DF0"
+			                EndTimeMapping="To"
+			                StartTimeMapping="From"
+			                SubjectMapping="EventName" 
+			                AllDayMapping="AllDay"/>
+                        </syncfusion:SfSchedule.AppointmentMapping>
+                        <syncfusion:SfSchedule.DataContext>
+                            <local1:PropisanaTerapijaPatientViewModel/>
+                        </syncfusion:SfSchedule.DataContext>
+                    </syncfusion:SfSchedule>
+
                 </Grid>
+
+                <TextBlock Text="Generši PDF izveštaj o uzimanju terapije "  Foreground="#FF148DF0" FontSize="30"  HorizontalAlignment="Right" Margin="0,7.154,69,9.846" Width="651" Grid.RowSpan="3" Grid.ColumnSpan="9" Grid.Column="3" Grid.Row="22"/>
+
+                <Button  Content="Generiši" Grid.Row="22" HorizontalAlignment="Left"  Name="generisiButton"   
+                      VerticalAlignment="Top" Width="140"  
+                      Command="{Binding GenerisiIzvestajCommand}" Grid.Column="10" Margin="0,10.154,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2" RenderTransformOrigin="0.318,1.422" Height="34"  />
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -60,8 +83,8 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-
             </Grid>
+
         </StackPanel>
     </Grid>
 </UserControl>

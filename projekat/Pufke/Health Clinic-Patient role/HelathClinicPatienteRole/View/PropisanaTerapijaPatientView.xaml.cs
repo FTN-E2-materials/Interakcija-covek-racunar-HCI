@@ -23,6 +23,7 @@ namespace HelathClinicPatienteRole.View
         public PropisanaTerapijaPatientView()
         {
             InitializeComponent();
+
         }
     }
 }
