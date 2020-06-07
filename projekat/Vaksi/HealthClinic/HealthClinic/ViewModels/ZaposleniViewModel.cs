@@ -29,7 +29,7 @@ namespace HealthClinic.ViewModels
             DodajZaposlenogCommand = new RelayCommand(DodajZaposlenog);
             
             IzmeniZaposlenogCommand = new RelayCommand(IzmeniZaposlenog);
-            GenerisiIzvestajZaposlenogCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
+            GenerisiIzvestajZaposlenogCommand = new RelayCommand(GenerisiIzvestaj);
             RadniKalendarCommand = new RelayCommand(PrikaziRadniKalendar);
             IzbrisiZaposlenogCommand = new RelayCommand(IzbrisiZaposlenog);
 
@@ -152,6 +152,17 @@ namespace HealthClinic.ViewModels
         #region Komande
 
         public RelayCommand PotvrdaBrisanjaPodatakaCommand { get; private set; }
+        public RelayCommand PotvrdaDodavanjaPodatakaCommand { get; private set; }
+        public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
+        public RelayCommand RadniKalendarCommand { get; private set; }
+        public RelayCommand GenerisiIzvestajZaposlenogCommand { get; private set; }
+        public RelayCommand DodajZaposlenogCommand { get; private set; }
+        public RelayCommand IzmeniZaposlenogCommand { get; private set; }
+        public RelayCommand IzbrisiZaposlenogCommand { get; private set; }
+
+        #endregion
+
+        #region Funkcije koje komande koriste
 
         public void PotvrdaBrisanjaPodataka(object obj)
         {
@@ -175,9 +186,6 @@ namespace HealthClinic.ViewModels
             this.TrenutniProzor.Close();
         }
 
-
-        public RelayCommand PotvrdaDodavanjaPodatakaCommand { get; private set; }
-
         public void PotvrdaDodavanjaPodataka(object ojb)
         {
             // dodajem zaposlenog ukoliko je odgovor bio potvrdan
@@ -185,8 +193,6 @@ namespace HealthClinic.ViewModels
             podesiBrojOdredjenihZaposlenih(ZaposleniZaDodavanje, 1);
             this.TrenutniProzor.Close();
         }
-
-        public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
 
         public void PotvrdaIzmenePodataka(object obj)
         {
@@ -206,8 +212,6 @@ namespace HealthClinic.ViewModels
             this.TrenutniProzor.Close();
         }
 
-        public RelayCommand RadniKalendarCommand { get; private set; }
-
         public void PrikaziRadniKalendar(object obj)
         {
             var dijalog = new RadniKalendarDijalog();
@@ -215,9 +219,7 @@ namespace HealthClinic.ViewModels
             dijalog.ShowDialog();
         }
 
-        public RelayCommand GenerisiIzvestajZaposlenogCommand { get; private set; }
-
-        public void PrikaziDijalogGenerisanjaIzvestaja(object obj)
+        public void GenerisiIzvestaj(object obj)
         {
             using (PdfDocument document = new PdfDocument())
             {
@@ -241,8 +243,6 @@ namespace HealthClinic.ViewModels
             dijalog.ShowDialog();
         }
 
-        public RelayCommand DodajZaposlenogCommand { get; private set; }
-
         public void DodajZaposlenog(object obj)
         {
             // kreiram novog zaposlenog da u slucaju potvrde mogu da ga dodam u listu zaposlenih
@@ -253,8 +253,6 @@ namespace HealthClinic.ViewModels
             TrenutniProzor.DataContext = this;
             TrenutniProzor.ShowDialog();
         }
-
-        public RelayCommand IzmeniZaposlenogCommand { get; private set; }
 
         public void IzmeniZaposlenog(object obj)
         {
@@ -274,8 +272,6 @@ namespace HealthClinic.ViewModels
             TrenutniProzor.DataContext = this;             // kako bi prebacio podatke iz ovog prozora u dijalog
             TrenutniProzor.ShowDialog();                   // podesavam da i dijalog moze upravljati istim podacima
         }
-
-        public RelayCommand IzbrisiZaposlenogCommand { get; private set; }
 
         public void IzbrisiZaposlenog(object obj)
         {

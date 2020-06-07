@@ -27,7 +27,7 @@ namespace HealthClinic.ViewModels
 
             DodajLekCommand = new RelayCommand(DodajLek);
             IzmeniLekCommand = new RelayCommand(IzmeniLek);
-            GenerisiIzvestajLekaCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
+            GenerisiIzvestajLekaCommand = new RelayCommand(GenerisiIzvestaj);
             IzbrisiLekCommand = new RelayCommand(IzbrisiLek);
 
             // potvrdjujem izmenjene podatke
@@ -107,7 +107,16 @@ namespace HealthClinic.ViewModels
         #region Komande
 
         public RelayCommand PotvrdaBrisanjaPodatakaCommand { get; private set; }
+        public RelayCommand PotvrdaDodavanjaPodatakaCommand { get; private set; }
+        public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
+        public RelayCommand GenerisiIzvestajLekaCommand { get; private set; }
+        public RelayCommand DodajLekCommand { get; private set; }
+        public RelayCommand IzmeniLekCommand { get; private set; }
+        public RelayCommand IzbrisiLekCommand { get; private set; }
 
+        #endregion
+
+        #region Funkcije koje komande koriste
         public void PotvrdaBrisanjaPodataka(object obj)
         {
             // sprecavam kada nije selektovan lek da ne pukne program
@@ -127,8 +136,6 @@ namespace HealthClinic.ViewModels
             this.TrenutniProzor.Close();
         }
 
-        public RelayCommand PotvrdaDodavanjaPodatakaCommand { get; private set; }
-
         public void PotvrdaDodavanjaPodataka(object ojb)
         {
             // dodajem lek u listu lekova
@@ -136,8 +143,6 @@ namespace HealthClinic.ViewModels
             podesiBrojOdredjenihLekova(LekZaDodavanje,1);
             this.TrenutniProzor.Close();            // gasenje trenutnog prozora
         }
-
-        public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
 
         public void PotvrdaIzmenePodataka(object obj)
         {
@@ -155,9 +160,7 @@ namespace HealthClinic.ViewModels
             this.TrenutniProzor.Close();            // gasenje trenutnog prozora
         }
 
-        public RelayCommand GenerisiIzvestajLekaCommand { get; private set; }
-
-        public void PrikaziDijalogGenerisanjaIzvestaja(object obj)
+        public void GenerisiIzvestaj(object obj)
         {
             using (PdfDocument document = new PdfDocument())
             {
@@ -180,8 +183,6 @@ namespace HealthClinic.ViewModels
             dijalog.ShowDialog();
         }
 
-        public RelayCommand DodajLekCommand { get; private set; }
-
         public void DodajLek(object obj)
         {
             // ako bude potvrda za dodavanje ovaj lek cu dodati
@@ -193,8 +194,6 @@ namespace HealthClinic.ViewModels
             TrenutniProzor.ShowDialog();
 
         }
-
-        public RelayCommand IzmeniLekCommand { get; private set; }
 
         public void IzmeniLek(object obj)
         {
@@ -215,8 +214,6 @@ namespace HealthClinic.ViewModels
             TrenutniProzor.DataContext = this;             // kako bi prebacio podatke iz ovog prozora u dijalog
             TrenutniProzor.ShowDialog();                   // podesavam da i dijalog moze upravljati istim podacima
         }
-
-        public RelayCommand IzbrisiLekCommand { get; private set; }
 
         public void IzbrisiLek(object obj)
         {

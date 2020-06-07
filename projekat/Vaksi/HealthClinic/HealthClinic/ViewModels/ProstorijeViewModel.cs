@@ -32,7 +32,7 @@ namespace HealthClinic.ViewModels
             IzmeniProstorijuCommand = new RelayCommand(IzmeniProstoriju);
             IzbrisiProstorijuCommand = new RelayCommand(IzbrisiProstoriju);
 
-            GenerisiIzvestajProstorijaCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
+            GenerisiIzvestajProstorijaCommand = new RelayCommand(GenerisiIzvestaj);
             SpisakOpremeCommand = new RelayCommand(PrikaziSpisakOpreme);
             ZauzetostAktivnostCommand = new RelayCommand(PrikaziZauzetostAktivnost);
 
@@ -259,6 +259,18 @@ namespace HealthClinic.ViewModels
         #region Komande
 
         public RelayCommand PotvrdaBrisanjaPodatakaCommand { get; private set; }
+        public RelayCommand PotvrdaDodavanjaPodatakaCommand { get; private set; }
+        public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
+        public RelayCommand ZauzetostAktivnostCommand { get; private set; }
+        public RelayCommand SpisakOpremeCommand { get; private set; }
+        public RelayCommand GenerisiIzvestajProstorijaCommand { get; private set; }
+        public RelayCommand DodajProstorijuCommand { get; private set; }
+        public RelayCommand IzmeniProstorijuCommand { get; private set; }
+        public RelayCommand IzbrisiProstorijuCommand { get; private set; }
+
+        #endregion
+
+        #region Funkcije koje komande koriste
 
         public void PotvrdaBrisanjaPodataka(object obj)
         {
@@ -279,9 +291,6 @@ namespace HealthClinic.ViewModels
             this.TrenutniProzor.Close();
         }
 
-
-        public RelayCommand PotvrdaDodavanjaPodatakaCommand { get; private set; }
-
         public void PotvrdaDodavanjaPodataka(object ojb)
         {
             // dodajem prostoriju za dodavanje ukoliko je odgovor bio potvrdan
@@ -289,8 +298,6 @@ namespace HealthClinic.ViewModels
             podesiBrojOdredjenihProstorija(ProstorijaZaDodavanje, 1);
             this.TrenutniProzor.Close();
         }
-
-        public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
 
         public void PotvrdaIzmenePodataka(object obj)
         {
@@ -307,16 +314,12 @@ namespace HealthClinic.ViewModels
             this.TrenutniProzor.Close();
         }
 
-        public RelayCommand ZauzetostAktivnostCommand { get; private set; }
-
         public void PrikaziZauzetostAktivnost(object obj)
         {
             var dijalog = new ZauzetostAktivnostDijalog();
             dijalog.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
             dijalog.ShowDialog();
         }
-
-        public RelayCommand SpisakOpremeCommand { get; private set; }
 
         public void PrikaziSpisakOpreme(object obj)
         {
@@ -325,8 +328,7 @@ namespace HealthClinic.ViewModels
             dijalog.ShowDialog();
         }
 
-        public RelayCommand GenerisiIzvestajProstorijaCommand { get; private set; }
-        public void PrikaziDijalogGenerisanjaIzvestaja(object obj)
+        public void GenerisiIzvestaj(object obj)
         {
             using (PdfDocument document = new PdfDocument())
             {
@@ -348,7 +350,6 @@ namespace HealthClinic.ViewModels
             var dijalog = new GenerisiIzvestajProstorijaDijalog();
             dijalog.ShowDialog();
         }
-        public RelayCommand DodajProstorijuCommand { get; private set; }
 
         public void DodajProstoriju(object obj)
         {
@@ -362,8 +363,6 @@ namespace HealthClinic.ViewModels
 
         }
 
-        public RelayCommand IzmeniProstorijuCommand { get; private set; }
-
         public void IzmeniProstoriju(object obj)
         {
             // Prostorija za izmenu/stimanje preuzima podatke od selektovane prostorije
@@ -376,7 +375,6 @@ namespace HealthClinic.ViewModels
             TrenutniProzor.ShowDialog();
         }
 
-        public RelayCommand IzbrisiProstorijuCommand { get; private set; }
 
         public void IzbrisiProstoriju(object obj)
         {
