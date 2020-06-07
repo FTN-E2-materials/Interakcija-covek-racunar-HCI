@@ -8,8 +8,9 @@
         mc:Ignorable="d"
         
         WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
         
-        Title="Obrisi lek" Height="210" Width="400">
+        Title="Obrisi lek" Height="150" Width="400">
     <Grid Background="#cdfbf4">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -17,14 +18,21 @@
         </Grid.RowDefinitions>
 
         <!-- Podaci -->
-        <StackPanel Grid.Row="0">
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <materialDesign:PackIcon 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="30"
+                Height="30"
+                Margin="30, 20, 10, 0"
+                Kind="ProgressAlert" />
             <TextBlock 
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontWeight="Bold"
-                Margin="15"
-                Width="350"
-                FontSize="22"
+                FontWeight="Medium"
+                Margin="10, 20, 0, 0"
+                Width="300"
+                FontSize="18"
                 Text="Da li ste sigurni da zelite obrisati izabrani lek ?"
                 TextWrapping="Wrap">
                 
@@ -36,11 +44,11 @@
 
 
         <!-- Dugmad -->
-        <StackPanel Margin="0, 0, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Margin="0, 10, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
 
             <Button 
                 Command="{Binding PotvrdaBrisanjaPodatakaCommand}"
-                Height="40"
+                Height="30"
                 Width="100"
                 Margin="10"
                 >
@@ -49,7 +57,7 @@
 
             <Button
                 IsCancel="True"
-                Height="40"
+                Height="30"
                 Width="100"
                 Margin="10"
                 >
