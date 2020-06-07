@@ -132,6 +132,7 @@ namespace HealthClinic.ViewModels
         {
             // dodajem lek u listu lekova
             Lekovi.Add(LekZaDodavanje);
+            podesiBrojOdredjenihLekova(LekZaDodavanje);
             this.TrenutniProzor.Close();            // gasenje trenutnog prozora
         }
 
@@ -224,42 +225,10 @@ namespace HealthClinic.ViewModels
         
         private ObservableCollection<Lek> _lek;
 
-        /// <summary>
-        /// Vrsta-kategorija leka
-        /// </summary>
-        private ObservableCollection<Lek> _antibiotici;
-        private ObservableCollection<Lek> _analgetici;
-        private ObservableCollection<Lek> _kardioVaskularni;
-        private ObservableCollection<Lek> _anestetici;
-
         public ObservableCollection<Lek> Lekovi
         {
             get { return _lek; }
             set { _lek = value; OnPropertyChanged("Lekovi"); }
-        }
-
-        public ObservableCollection<Lek> Antibiotici
-        {
-            get { return _antibiotici; }
-            set { _antibiotici = value; OnPropertyChanged("Antibiotici"); }
-        }
-
-        public ObservableCollection<Lek> Analgetici
-        {
-            get { return _analgetici; }
-            set { _analgetici = value; OnPropertyChanged("Analgetici"); }
-        }
-        
-        public ObservableCollection<Lek> KardioVaskularni
-        {
-            get { return _kardioVaskularni; }
-            set { _kardioVaskularni = value; OnPropertyChanged("KardioVaskularni"); }
-        }
-
-        public ObservableCollection<Lek> Anestetici
-        {
-            get { return _anestetici; }
-            set { _anestetici = value; OnPropertyChanged("Anestetici"); }
         }
 
         private void ucitavanjeLekova()
@@ -269,45 +238,50 @@ namespace HealthClinic.ViewModels
             Lekovi.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11", VrstaLeka = "analgetik" });
             Lekovi.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12", VrstaLeka = "kardio vaskularni" });
             Lekovi.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13", VrstaLeka = "anestetik" });
-
             
-            Antibiotici = new ObservableCollection<Lek>();
-            Antibiotici.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
-            Antibiotici.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
-            Antibiotici.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
-            Antibiotici.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
+            // Odredjivanje koliko imamo kog leka
+            foreach (Lek lek in Lekovi)
+            {
+                podesiBrojOdredjenihLekova(lek);
+            }
 
-            Analgetici = new ObservableCollection<Lek>();
-            Analgetici.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
-            Analgetici.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
-            Analgetici.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
-            Analgetici.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
+        }
 
-            KardioVaskularni = new ObservableCollection<Lek>();
-            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
-            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
-            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
-            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
-            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
-            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
-            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
-            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
+        private void podesiBrojOdredjenihLekova(Lek lek)
+        {
+            if (lek.VrstaLeka == "antibiotik")
+            {
+                if (this.UkupnoAntibiotika is null)
+                    BrojacAntibiotika = 1;
+                else
+                    BrojacAntibiotika += 1;
+                this.UkupnoAntibiotika = new ChartValues<int>() { BrojacAntibiotika };
 
-            Anestetici = new ObservableCollection<Lek>();
-            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
-            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
-            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
-            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
-            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
-            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
-            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
-            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
-
-
-            this.UkupnoAntibiotika = new ChartValues<int>() { Antibiotici.Count};
-            this.UkupnoAnalgetika = new ChartValues<int>() { Analgetici.Count };
-            this.UkupnoKardioVaskularnih = new ChartValues<int>() { KardioVaskularni.Count };
-            this.UkupnoAnestetika = new ChartValues<int>() { Anestetici.Count };
+            }
+            else if (lek.VrstaLeka == "analgetik")
+            {
+                if (this.UkupnoAnalgetika is null)
+                    BrojacAnalgetika = 1;
+                else
+                    BrojacAnalgetika += 1;
+                this.UkupnoAnalgetika = new ChartValues<int>() { BrojacAnalgetika };
+            }
+            else if (lek.VrstaLeka == "kardio vaskularni")
+            {
+                if (this.UkupnoKardioVaskularnih is null)
+                    BrojacKardioVaskularnih = 1;
+                else
+                    BrojacKardioVaskularnih += 1;
+                this.UkupnoKardioVaskularnih = new ChartValues<int>() { BrojacKardioVaskularnih };
+            }
+            else if (lek.VrstaLeka == "anestetik")
+            {
+                if (this.UkupnoAnestetika is null)
+                    BrojacAnestetika = 1;
+                else
+                    BrojacAnestetika += 1;
+                this.UkupnoAnestetika = new ChartValues<int>() { BrojacAnestetika };
+            }
         }
 
 
@@ -315,6 +289,43 @@ namespace HealthClinic.ViewModels
 
         #endregion
 
+        #region Brojaci odredjene vrste lekova
+
+        /// <summary>
+        /// Potreban mi je i brojac koji ce se upisivati u cart,
+        /// ne moze direktno i samo brojac da bude ali ni cart.
+        /// </summary>
+        private int _brojacAnalgetika;
+        private int _brojacAnestetika;
+        private int _brojacKardioVaskularnih;
+        private int _brojacAntibiotika;
+
+
+        public int BrojacAnalgetika
+        {
+            get { return _brojacAnalgetika; }
+            set { _brojacAnalgetika = value; OnPropertyChanged("BrojacAnalgetika"); }
+        }
+
+        public int BrojacAnestetika
+        {
+            get { return _brojacAnestetika; }
+            set { _brojacAnestetika = value; OnPropertyChanged("BrojacAnestetika"); }
+        }
+
+        public int BrojacKardioVaskularnih
+        {
+            get { return _brojacKardioVaskularnih; }
+            set { _brojacKardioVaskularnih = value; OnPropertyChanged("BrojacKardioVaskularnih"); }
+        }
+
+        public int BrojacAntibiotika
+        {
+            get { return _brojacAntibiotika; }
+            set { _brojacAntibiotika = value; OnPropertyChanged("BrojacAntibiotika"); }
+        }
+
+        #endregion
 
         #region Deo vezan za grafikon
 
