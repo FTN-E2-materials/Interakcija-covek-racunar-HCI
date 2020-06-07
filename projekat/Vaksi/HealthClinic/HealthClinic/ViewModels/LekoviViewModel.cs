@@ -36,9 +36,13 @@ namespace HealthClinic.ViewModels
             PotvrdaDodavanjaPodatakaCommand = new RelayCommand(PotvrdaDodavanjaPodataka);
             // potvrdjujem brisanje podataka
             PotvrdaBrisanjaPodatakaCommand = new RelayCommand(PotvrdaBrisanjaPodataka);
+
+            odredjivanjeMogucihVrstaLekova();
         }
 
         
+
+
 
         #region Selektovani lek
 
@@ -138,6 +142,8 @@ namespace HealthClinic.ViewModels
             // selektovani objekat prima vrednosti od menjanog objekta
             SelektovaniLek.Kolicina = LekZaIzmenu.Kolicina;
             SelektovaniLek.NazivLeka = LekZaIzmenu.NazivLeka;
+            SelektovaniLek.VrstaLeka = LekZaIzmenu.VrstaLeka;
+
             this.TrenutniProzor.Close();            // gasenje trenutnog prozora
         }
 
@@ -177,6 +183,7 @@ namespace HealthClinic.ViewModels
             TrenutniProzor = new DodajLekDijalog();
             TrenutniProzor.DataContext = this;
             TrenutniProzor.ShowDialog();
+
         }
 
         public RelayCommand IzmeniLekCommand { get; private set; }
@@ -185,7 +192,13 @@ namespace HealthClinic.ViewModels
         {
             // Lek za izmenu/stimanje preuzima podatke od selektovanog leka
             if (!(SelektovaniLek is null))
-                LekZaIzmenu = new Lek() { NazivLeka = SelektovaniLek.NazivLeka, Kolicina = SelektovaniLek.Kolicina, SifraLeka = SelektovaniLek.SifraLeka };
+                LekZaIzmenu = new Lek() 
+                { 
+                    NazivLeka = SelektovaniLek.NazivLeka,
+                    Kolicina = SelektovaniLek.Kolicina,
+                    SifraLeka = SelektovaniLek.SifraLeka,
+                    VrstaLeka = SelektovaniLek.VrstaLeka
+                };
 
 
 
@@ -207,9 +220,17 @@ namespace HealthClinic.ViewModels
 
         #endregion
 
-        #region Tabela
+        #region Tabela & vrste lekova
         
         private ObservableCollection<Lek> _lek;
+
+        /// <summary>
+        /// Vrsta-kategorija leka
+        /// </summary>
+        private ObservableCollection<Lek> _antibiotici;
+        private ObservableCollection<Lek> _analgetici;
+        private ObservableCollection<Lek> _kardioVaskularni;
+        private ObservableCollection<Lek> _anestetici;
 
         public ObservableCollection<Lek> Lekovi
         {
@@ -217,29 +238,144 @@ namespace HealthClinic.ViewModels
             set { _lek = value; OnPropertyChanged("Lekovi"); }
         }
 
+        public ObservableCollection<Lek> Antibiotici
+        {
+            get { return _antibiotici; }
+            set { _antibiotici = value; OnPropertyChanged("Antibiotici"); }
+        }
+
+        public ObservableCollection<Lek> Analgetici
+        {
+            get { return _analgetici; }
+            set { _analgetici = value; OnPropertyChanged("Analgetici"); }
+        }
+        
+        public ObservableCollection<Lek> KardioVaskularni
+        {
+            get { return _kardioVaskularni; }
+            set { _kardioVaskularni = value; OnPropertyChanged("KardioVaskularni"); }
+        }
+
+        public ObservableCollection<Lek> Anestetici
+        {
+            get { return _anestetici; }
+            set { _anestetici = value; OnPropertyChanged("Anestetici"); }
+        }
 
         private void ucitavanjeLekova()
         {
             Lekovi = new ObservableCollection<Lek>();
-            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
-            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
-            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
-            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
-            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
-            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
-            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
-            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
+            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" , VrstaLeka="antibiotik"});
+            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11", VrstaLeka = "analgetik" });
+            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12", VrstaLeka = "kardio vaskularni" });
+            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13", VrstaLeka = "anestetik" });
+
+            
+            Antibiotici = new ObservableCollection<Lek>();
+            Antibiotici.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
+            Antibiotici.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
+            Antibiotici.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
+            Antibiotici.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
+
+            Analgetici = new ObservableCollection<Lek>();
+            Analgetici.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
+            Analgetici.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
+            Analgetici.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
+            Analgetici.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
+
+            KardioVaskularni = new ObservableCollection<Lek>();
+            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
+            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
+            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
+            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
+            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
+            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
+            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
+            KardioVaskularni.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
+
+            Anestetici = new ObservableCollection<Lek>();
+            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
+            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
+            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
+            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
+            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" });
+            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11" });
+            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12" });
+            Anestetici.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13" });
+
+
+            this.UkupnoAntibiotika = new ChartValues<int>() { Antibiotici.Count};
+            this.UkupnoAnalgetika = new ChartValues<int>() { Analgetici.Count };
+            this.UkupnoKardioVaskularnih = new ChartValues<int>() { KardioVaskularni.Count };
+            this.UkupnoAnestetika = new ChartValues<int>() { Anestetici.Count };
+        }
+
+
+
+
+        #endregion
+
+
+        #region Deo vezan za grafikon
+
+        private ChartValues<int> _ukupnoAntibiotika;
+        private ChartValues<int> _ukupnoAnalgetika;
+        private ChartValues<int> _ukupnoKardioVaskularnih;
+        private ChartValues<int> _ukupnoAnestetika;
+
+       
+        public ChartValues<int> UkupnoAntibiotika
+        {
+            get { return _ukupnoAntibiotika; }
+            set { _ukupnoAntibiotika = value; OnPropertyChanged("UkupnoAntibiotika"); }
+        }
+
+        public ChartValues<int> UkupnoAnalgetika
+        {
+            get { return _ukupnoAnalgetika; }
+            set { _ukupnoAnalgetika = value; OnPropertyChanged("UkupnoAnalgetika"); }
+        }
+
+        public ChartValues<int> UkupnoKardioVaskularnih
+        {
+            get { return _ukupnoKardioVaskularnih; }
+            set { _ukupnoKardioVaskularnih = value; OnPropertyChanged("UkupnoKardioVaskularnih"); }
+        }
+        
+        public ChartValues<int> UkupnoAnestetika
+        {
+            get { return _ukupnoAnestetika; }
+            set { _ukupnoAnestetika = value; OnPropertyChanged("UkupnoAnestetika"); }
+        }
+
+
+        public Func<ChartPoint, string> LabelPoint { get; set; }
+
+        private void PieChart()
+        {
+            LabelPoint = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
+
         }
 
         #endregion
 
-        #region Grafikon
-        public Func<ChartPoint, string> PointLabel { get; set; }
+        #region Moguce vrste lekova 
 
-        private void PieChart()
+        private ObservableCollection<string> _moguceVrsteLekova;
+
+        public ObservableCollection<string> MoguceVrsteLekova
         {
-            PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
+            get { return _moguceVrsteLekova; }
+            set { _moguceVrsteLekova = value; OnPropertyChanged("MoguceVrsteLekova"); }
+        }
 
+        private void odredjivanjeMogucihVrstaLekova()
+        {
+            MoguceVrsteLekova = new ObservableCollection<string>();
+            MoguceVrsteLekova.Add("analgetik");
+            MoguceVrsteLekova.Add("antibiotik");
+            MoguceVrsteLekova.Add("kardio vaskularni");
+            MoguceVrsteLekova.Add("anestetik");
         }
 
         #endregion

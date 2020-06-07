@@ -112,7 +112,7 @@
             </TextBox>
             <!-- Kraj alergije -->
 
-            <!-- Tip leka -->
+            <!-- Vrsta leka -->
             <ComboBox
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
@@ -122,21 +122,15 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="TipLeka"
-                materialDesign:HintAssist.Hint="Izaberite tip leka"
-                materialDesign:HintAssist.HelperText="Tip leka"
+                materialDesign:HintAssist.Hint="Izaberite vrsu leka"
+                materialDesign:HintAssist.HelperText="Vrsta leka"
+                ItemsSource="{Binding MoguceVrsteLekova}"
+                SelectedValue="{Binding LekZaIzmenu.VrstaLeka }"
                 >
-                <ComboBoxItem>
-                    Tableta
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Sirup
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Septoleta
-                </ComboBoxItem>
+                
 
             </ComboBox>
-            <!-- Kraj tipa leka -->
+            <!-- Kraj vrste leka -->
 
         </StackPanel>
         <!-- Kraj dela sa podacima -->

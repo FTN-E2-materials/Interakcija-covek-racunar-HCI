@@ -13,6 +13,10 @@ namespace HealthClinic.Models
         private string _nazivLeka;
         private string _sifraLeka;
         private string _kolicina;
+        private string _vrstaLeka;
+
+        
+
 
         public string NazivLeka
         {
@@ -25,7 +29,7 @@ namespace HealthClinic.Models
                 if(value != _nazivLeka)
                 {
                     _nazivLeka = value;
-                    OnPropertyChanged("Naziv Leka");
+                    OnPropertyChanged("NazivLeka");
                 }
             }
         }
@@ -41,7 +45,7 @@ namespace HealthClinic.Models
                 if (value != _sifraLeka)
                 {
                     _sifraLeka = value;
-                    OnPropertyChanged("Sifra Leka");
+                    OnPropertyChanged("SifraLeka");
                 }
             }
         }
@@ -59,6 +63,20 @@ namespace HealthClinic.Models
                     _kolicina = value;
                     OnPropertyChanged("Kolicina");
                 }
+            }
+        }
+
+        public string VrstaLeka
+        {
+            get { return _vrstaLeka; }
+            set
+            {
+                if (value != _vrstaLeka)
+                {
+                    _vrstaLeka = value;
+                    OnPropertyChanged("VrstaLeka");
+                }
+
             }
         }
 
