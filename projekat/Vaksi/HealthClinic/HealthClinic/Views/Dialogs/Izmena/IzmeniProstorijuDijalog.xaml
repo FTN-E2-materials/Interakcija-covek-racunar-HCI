@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HealthClinic.Dialogs"
+        xmlns:validations ="clr-namespace:HealthClinic.Utilities.Validations"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Izmeni prostoriju" Height="400" Width="400" WindowStartupLocation="CenterScreen">
@@ -26,11 +27,23 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="NazivOdeljenja"
-                
-                Text="{Binding ProstorijaZaIzmenu.Odeljenje}"
                 materialDesign:HintAssist.Hint="Ovde unesite naziv odeljenja"
                 materialDesign:HintAssist.HelperText="Naziv odeljenja">
-
+                <TextBox.Text>
+                    <!-- Bajndovanje naziva odeljenja + validacija-->
+                    <Binding 
+                        Path="ProstorijaZaIzmenu.Odeljenje"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                        <Binding.ValidationRules>
+                            <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                            <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                            <validations:WordRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                    <!-- Kraj bajndovanje naziva odeljenja + validacija-->
+                </TextBox.Text>
             </TextBox>
             <!-- Kraj naziva odeljenja -->
 
@@ -44,10 +57,22 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="BrojProstorije"
-                Text="{Binding ProstorijaZaIzmenu.BrojSobe}"
                 materialDesign:HintAssist.Hint="Ovde unesite broj prostorije"
                 materialDesign:HintAssist.HelperText="Broj prostorije">
-
+                <TextBox.Text>
+                    <!-- Bajndovanje broja prostorije + validacija-->
+                    <Binding 
+                        Path="ProstorijaZaIzmenu.BrojSobe"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                        <Binding.ValidationRules>
+                            <validations:MinimumCharacterRule MinimumCharacters="1"/>
+                            <validations:MaximumCharacterRule MaximumCharacters="6"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                    <!-- Kraj bajndovanje broja prostorije + validacija-->
+                </TextBox.Text>
             </TextBox>
             <!-- Kraj broja prostorije-->
 

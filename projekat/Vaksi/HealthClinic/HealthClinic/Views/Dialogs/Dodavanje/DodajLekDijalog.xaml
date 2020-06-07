@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:HealthClinic.Dialogs"
+        xmlns:validations ="clr-namespace:HealthClinic.Utilities.Validations"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         
@@ -20,7 +21,6 @@
 
             <!-- Naziv leka -->
             <TextBox
-                Text="{Binding LekZaDodavanje.NazivLeka}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -31,13 +31,26 @@
                 x:Name="Naziv"
                 materialDesign:HintAssist.Hint="Ovde unesite naziv"
                 materialDesign:HintAssist.HelperText="Naziv leka">
-
+                <TextBox.Text>
+                    <!-- Bajndovanje naziva leka + validacija-->
+                    <Binding 
+                        Path="LekZaDodavanje.NazivLeka"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                        <Binding.ValidationRules>
+                            <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                            <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                            <validations:WordRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                    <!-- Kraj bajndovanje naziva leka + validacija-->
+                </TextBox.Text>
             </TextBox>
             <!-- Kraj naziva -->
 
             <!-- Kolicina -->
             <TextBox
-                Text="{Binding LekZaDodavanje.Kolicina}"
                 FontWeight="DemiBold"
                 Background="WhiteSmoke"
                 Width="320"
@@ -48,7 +61,21 @@
                 x:Name="Kolicina"
                 materialDesign:HintAssist.Hint="Ovde unesite kolicinu leka"
                 materialDesign:HintAssist.HelperText="Kolicina leka">
-
+                <TextBox.Text>
+                    <!-- Bajndovanje kolicine leka + validacija-->
+                    <Binding 
+                        Path="LekZaDodavanje.Kolicina"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                        <Binding.ValidationRules>
+                            <validations:MinimumCharacterRule MinimumCharacters="1"/>
+                            <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                            <validations:NumberRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                    <!-- Kraj bajndovanje kolicine leka + validacija-->
+                </TextBox.Text>
             </TextBox>
             <!-- Kraj kolicine -->
 
