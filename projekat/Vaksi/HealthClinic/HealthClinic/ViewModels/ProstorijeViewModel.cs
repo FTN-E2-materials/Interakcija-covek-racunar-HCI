@@ -230,6 +230,23 @@ namespace HealthClinic.ViewModels
 
         #endregion
 
+        #region Trenutno aktivni prozor
+
+        /// <summary>
+        /// Promenljiva u kojoj cuvam trenutno otvoreni prozor
+        /// kako bih kasnije u komandama u zavisnosti od komande
+        /// recimo zatvorio trenutni prozor
+        /// </summary>
+        private Window _trenutniProzor;
+
+        public Window TrenutniProzor
+        {
+            get { return _trenutniProzor; }
+            set { _trenutniProzor = value; }
+        }
+
+        #endregion
+
         #region Komande
 
 
@@ -249,6 +266,8 @@ namespace HealthClinic.ViewModels
                     break;
                 }
             }
+
+            this.TrenutniProzor.Close();
         }
 
 
@@ -258,6 +277,7 @@ namespace HealthClinic.ViewModels
         {
             // dodajem prostoriju za dodavanje ukoliko je odgovor bio potvrdan
             Prostorije.Add(ProstorijaZaDodavanje);
+            this.TrenutniProzor.Close();
         }
 
         public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
@@ -268,7 +288,7 @@ namespace HealthClinic.ViewModels
             SelektovanaProstorija.BrojSobe = ProstorijaZaIzmenu.BrojSobe;
             SelektovanaProstorija.Namena = ProstorijaZaIzmenu.Namena;
             SelektovanaProstorija.Odeljenje = ProstorijaZaIzmenu.Odeljenje;
-
+            this.TrenutniProzor.Close();
         }
 
         public RelayCommand ZauzetostAktivnostCommand { get; private set; }
@@ -320,9 +340,9 @@ namespace HealthClinic.ViewModels
             ProstorijaZaDodavanje = new Prostorija();
 
             // prikaz dijaloga za dodavanje
-            var dijalog = new DodajProstorijuDijalog();
-            dijalog.DataContext = this;
-            dijalog.ShowDialog();
+            TrenutniProzor = new DodajProstorijuDijalog();
+            TrenutniProzor.DataContext = this;
+            TrenutniProzor.ShowDialog();
         }
 
         public RelayCommand IzmeniProstorijuCommand { get; private set; }
@@ -334,9 +354,9 @@ namespace HealthClinic.ViewModels
                 ProstorijaZaIzmenu = new Prostorija() { Odeljenje = SelektovanaProstorija.Odeljenje, BrojSobe = SelektovanaProstorija.BrojSobe, Namena = SelektovanaProstorija.Namena };
 
             // podesavanje prikaza dijaloga izmene
-            var dijalog = new IzmeniProstorijuDijalog();
-            dijalog.DataContext = this;
-            dijalog.ShowDialog();
+            TrenutniProzor = new IzmeniProstorijuDijalog();
+            TrenutniProzor.DataContext = this;
+            TrenutniProzor.ShowDialog();
         }
 
         public RelayCommand IzbrisiProstorijuCommand { get; private set; }
@@ -344,9 +364,9 @@ namespace HealthClinic.ViewModels
         public void IzbrisiProstoriju(object obj)
         {
             // TODO: Mozda dodati nekad da pise tacno koju prostoriju brisemo ali u nekim buducim verzijama
-            var dijalog = new ObrisiProstorijuDijalog();
-            dijalog.DataContext = this;
-            dijalog.ShowDialog();
+            TrenutniProzor = new ObrisiProstorijuDijalog();
+            TrenutniProzor.DataContext = this;
+            TrenutniProzor.ShowDialog();
         }
 
         #endregion 

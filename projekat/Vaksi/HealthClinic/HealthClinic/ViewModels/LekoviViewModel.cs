@@ -83,6 +83,23 @@ namespace HealthClinic.ViewModels
 
         #endregion
 
+        #region Trenutno aktivni prozor
+
+        /// <summary>
+        /// Promenljiva u kojoj cuvam trenutno otvoreni prozor
+        /// kako bih kasnije u komandama u zavisnosti od komande
+        /// recimo zatvorio trenutni prozor
+        /// </summary>
+        private Window _trenutniProzor;
+
+        public Window TrenutniProzor
+        {
+            get { return _trenutniProzor; }
+            set { _trenutniProzor = value; }
+        }
+
+        #endregion
+
         #region Komande
 
         public RelayCommand PotvrdaBrisanjaPodatakaCommand { get; private set; }
@@ -102,6 +119,7 @@ namespace HealthClinic.ViewModels
                     break;
                 }
             }
+            this.TrenutniProzor.Close();
         }
 
         public RelayCommand PotvrdaDodavanjaPodatakaCommand { get; private set; }
@@ -110,6 +128,7 @@ namespace HealthClinic.ViewModels
         {
             // dodajem lek u listu lekova
             Lekovi.Add(LekZaDodavanje);
+            this.TrenutniProzor.Close();            // gasenje trenutnog prozora
         }
 
         public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
@@ -119,7 +138,7 @@ namespace HealthClinic.ViewModels
             // selektovani objekat prima vrednosti od menjanog objekta
             SelektovaniLek.Kolicina = LekZaIzmenu.Kolicina;
             SelektovaniLek.NazivLeka = LekZaIzmenu.NazivLeka;
-
+            this.TrenutniProzor.Close();            // gasenje trenutnog prozora
         }
 
         public RelayCommand GenerisiIzvestajLekaCommand { get; private set; }
@@ -155,9 +174,9 @@ namespace HealthClinic.ViewModels
             LekZaDodavanje = new Lek();
 
             // prikaz dijaloga dodavanja leka
-            var dijalog = new DodajLekDijalog();
-            dijalog.DataContext = this;
-            dijalog.ShowDialog();
+            TrenutniProzor = new DodajLekDijalog();
+            TrenutniProzor.DataContext = this;
+            TrenutniProzor.ShowDialog();
         }
 
         public RelayCommand IzmeniLekCommand { get; private set; }
@@ -168,10 +187,12 @@ namespace HealthClinic.ViewModels
             if (!(SelektovaniLek is null))
                 LekZaIzmenu = new Lek() { NazivLeka = SelektovaniLek.NazivLeka, Kolicina = SelektovaniLek.Kolicina, SifraLeka = SelektovaniLek.SifraLeka };
 
+
+
             // podesavanje prikaza dijaloga izmene
-            var dijalog = new IzmenaLekaDijalog();
-            dijalog.DataContext = this;             // kako bi prebacio podatke iz ovog prozora u dijalog
-            dijalog.ShowDialog();                   // podesavam da i dijalog moze upravljati istim podacima
+            TrenutniProzor = new IzmenaLekaDijalog();
+            TrenutniProzor.DataContext = this;             // kako bi prebacio podatke iz ovog prozora u dijalog
+            TrenutniProzor.ShowDialog();                   // podesavam da i dijalog moze upravljati istim podacima
         }
 
         public RelayCommand IzbrisiLekCommand { get; private set; }
@@ -179,9 +200,9 @@ namespace HealthClinic.ViewModels
         public void IzbrisiLek(object obj)
         {
             // TODO: Mozda dodati nekad da pise tacno koji lek se brise ali u nekim buducim verzijama
-            var dijalog = new ObrisiLekDijalog();
-            dijalog.DataContext = this;
-            dijalog.ShowDialog();
+            TrenutniProzor = new ObrisiLekDijalog();
+            TrenutniProzor.DataContext = this;
+            TrenutniProzor.ShowDialog();
         }
 
         #endregion

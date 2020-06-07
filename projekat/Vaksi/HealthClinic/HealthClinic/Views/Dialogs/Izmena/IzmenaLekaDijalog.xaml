@@ -145,7 +145,7 @@
         <!-- Dugmad -->
         <StackPanel Margin="0, 40, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
 
-            <Button 
+            <Button
                 Command="{Binding PotvrdaIzmenePodatakaCommand}"
                 Height="40"
                 Width="100"

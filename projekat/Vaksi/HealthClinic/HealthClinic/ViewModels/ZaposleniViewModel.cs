@@ -127,6 +127,23 @@ namespace HealthClinic.ViewModels
 
         #endregion
 
+        #region Trenutno aktivni prozor
+
+        /// <summary>
+        /// Promenljiva u kojoj cuvam trenutno otvoreni prozor
+        /// kako bih kasnije u komandama u zavisnosti od komande
+        /// recimo zatvorio trenutni prozor
+        /// </summary>
+        private Window _trenutniProzor;
+
+        public Window TrenutniProzor
+        {
+            get { return _trenutniProzor; }
+            set { _trenutniProzor = value; }
+        }
+
+        #endregion
+
         #region Komande
 
         public RelayCommand PotvrdaBrisanjaPodatakaCommand { get; private set; }
@@ -136,6 +153,7 @@ namespace HealthClinic.ViewModels
             // sprecavam kada niko nije selektovan da ne dodje do erroa
             if (SelektovaniZaposleni is null)
                 return;
+
 
             foreach (Zaposlen trenutniZaposleni in Zaposleni)
             {
@@ -147,6 +165,8 @@ namespace HealthClinic.ViewModels
                     break;
                 }
             }
+
+            this.TrenutniProzor.Close();
         }
 
 
@@ -156,6 +176,7 @@ namespace HealthClinic.ViewModels
         {
             // dodajem zaposlenog ukoliko je odgovor bio potvrdan
             Zaposleni.Add(ZaposleniZaDodavanje);
+            this.TrenutniProzor.Close();
         }
 
         public RelayCommand PotvrdaIzmenePodatakaCommand { get; private set; }
@@ -169,6 +190,7 @@ namespace HealthClinic.ViewModels
             SelektovaniZaposleni.Sifra = ZaposleniZaIzmenu.Sifra;
             SelektovaniZaposleni.KorisnickoIme = ZaposleniZaIzmenu.KorisnickoIme;
 
+            this.TrenutniProzor.Close();
         }
 
         public RelayCommand RadniKalendarCommand { get; private set; }
@@ -214,9 +236,9 @@ namespace HealthClinic.ViewModels
             ZaposleniZaDodavanje = new Zaposlen();
 
             // prikaz dijaloga za dodavanje
-            var dijalog = new DodajZaposlenogDijalog();
-            dijalog.DataContext = this;
-            dijalog.ShowDialog();
+            TrenutniProzor = new DodajZaposlenogDijalog();
+            TrenutniProzor.DataContext = this;
+            TrenutniProzor.ShowDialog();
         }
 
         public RelayCommand IzmeniZaposlenogCommand { get; private set; }
@@ -235,9 +257,9 @@ namespace HealthClinic.ViewModels
 
 
             // podesavanje prikaza dijaloga izmene
-            var dijalog = new IzmeniZaposlenogDijalog();
-            dijalog.DataContext = this;             // kako bi prebacio podatke iz ovog prozora u dijalog
-            dijalog.ShowDialog();                   // podesavam da i dijalog moze upravljati istim podacima
+            TrenutniProzor = new IzmeniZaposlenogDijalog();
+            TrenutniProzor.DataContext = this;             // kako bi prebacio podatke iz ovog prozora u dijalog
+            TrenutniProzor.ShowDialog();                   // podesavam da i dijalog moze upravljati istim podacima
         }
 
         public RelayCommand IzbrisiZaposlenogCommand { get; private set; }
@@ -245,9 +267,9 @@ namespace HealthClinic.ViewModels
         public void IzbrisiZaposlenog(object obj)
         {
             // TODO: Mozda dodati nekad da pise tacno kog zaposlenog brisemo ali u nekim buducim verzijama
-            var dijalog = new ObrisiZaposlenogDijalog();
-            dijalog.DataContext = this;
-            dijalog.ShowDialog();
+            TrenutniProzor = new ObrisiZaposlenogDijalog();
+            TrenutniProzor.DataContext = this;
+            TrenutniProzor.ShowDialog();
         }
 
         #endregion
