@@ -143,7 +143,6 @@
     <Compile Include="View\KontaktView.xaml.cs">
       <DependentUpon>KontaktView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MeetingViewModel.cs" />
     <Compile Include="View\OkliniciPatientView.xaml.cs">
       <DependentUpon>OkliniciPatientView.xaml</DependentUpon>
     </Compile>
