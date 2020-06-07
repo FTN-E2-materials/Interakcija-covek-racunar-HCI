@@ -53,7 +53,9 @@ namespace HealthClinic.ViewModels
 
             odredjivanjeMogucihTipovaProstorije();
 
+
         }
+        
         #region Prostorija koja sluzi za dodavanje u listu prostorija
 
         private Prostorija _prostorijaZaDodavanje;
@@ -69,6 +71,8 @@ namespace HealthClinic.ViewModels
         #region Radio buttoni u dijalogu dugmeta tabele
 
         private bool _renoviranje;
+        private bool _spajanje;
+        private bool _deljenje;
 
         public bool Renoviranje
         {
@@ -78,16 +82,19 @@ namespace HealthClinic.ViewModels
                 _renoviranje = value;
                 if (_renoviranje == true)
                 {
-                    PrikazTipaRenoviranja = Visibility.Visible;
-                    PrikazNoveProstorije = Visibility.Collapsed;
-                    PrikazDrugeNoveProstorije = Visibility.Collapsed;
-                    PrikazSobeSaKojomSpajamo = Visibility.Collapsed;
+                    podesiPropertije();
                 }
                 OnPropertyChanged("Renoviranje");
             }
         }
 
-        private bool _spajanje;
+        private void podesiPropertije()
+        {
+            PrikazTipaRenoviranja = Visibility.Visible;
+            PrikazNoveProstorije = Visibility.Collapsed;
+            PrikazDrugeNoveProstorije = Visibility.Collapsed;
+            PrikazSobeSaKojomSpajamo = Visibility.Collapsed;
+        }
 
         public bool Spajanje
         {
@@ -106,8 +113,6 @@ namespace HealthClinic.ViewModels
             }
         }
 
-        private bool _deljenje;
-
         public bool Deljenje
         {
             get { return _deljenje; }
@@ -124,6 +129,7 @@ namespace HealthClinic.ViewModels
                 OnPropertyChanged("Deljenje");
             }
         }
+        
         #endregion
 
         #region Prikazi odredjenih fildova
@@ -252,7 +258,6 @@ namespace HealthClinic.ViewModels
 
         #region Komande
 
-
         public RelayCommand PotvrdaBrisanjaPodatakaCommand { get; private set; }
 
         public void PotvrdaBrisanjaPodataka(object obj)
@@ -354,6 +359,7 @@ namespace HealthClinic.ViewModels
             TrenutniProzor = new DodajProstorijuDijalog();
             TrenutniProzor.DataContext = this;
             TrenutniProzor.ShowDialog();
+
         }
 
         public RelayCommand IzmeniProstorijuCommand { get; private set; }

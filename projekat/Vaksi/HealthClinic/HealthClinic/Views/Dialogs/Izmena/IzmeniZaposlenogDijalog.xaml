@@ -140,6 +140,8 @@
 
             <!-- Tip zaposlenog -->
             <ComboBox
+                ItemsSource="{Binding MoguciTipoviZaposlenih}"
+                SelectedItem="{Binding ZaposleniZaIzmenu.Struka}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -151,12 +153,6 @@
                 materialDesign:HintAssist.Hint="Izaberite tip zaposlenog"
                 materialDesign:HintAssist.HelperText="Tip zaposlenog"
                 >
-                <ComboBoxItem>
-                    Lekar
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Sekretar
-                </ComboBoxItem>
 
             </ComboBox>
             <!-- Tip zaposlenog -->

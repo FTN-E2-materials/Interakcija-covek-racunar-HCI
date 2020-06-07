@@ -44,6 +44,8 @@ namespace HealthClinic.ViewModels
             // potvrdjujem brisanje podataka
             PotvrdaBrisanjaPodatakaCommand = new RelayCommand(PotvrdaBrisanjaPodataka);
 
+            odredjivanjeMogucihTipovaZaposlenih();
+
         }
 
         #region Radno vreme zaposlenih
@@ -160,6 +162,7 @@ namespace HealthClinic.ViewModels
                 if(trenutniZaposleni.KorisnickoIme == SelektovaniZaposleni.KorisnickoIme)
                 {
                     MessageBox.Show("Uspesno ste izbrisali radnika sa korisnickim imenom " + trenutniZaposleni.KorisnickoIme);
+                    podesiBrojOdredjenihZaposlenih(trenutniZaposleni, -1);
                     Zaposleni.Remove(trenutniZaposleni);
 
                     break;
@@ -176,6 +179,7 @@ namespace HealthClinic.ViewModels
         {
             // dodajem zaposlenog ukoliko je odgovor bio potvrdan
             Zaposleni.Add(ZaposleniZaDodavanje);
+            podesiBrojOdredjenihZaposlenih(ZaposleniZaDodavanje, 1);
             this.TrenutniProzor.Close();
         }
 
@@ -183,6 +187,12 @@ namespace HealthClinic.ViewModels
 
         public void PotvrdaIzmenePodataka(object obj)
         {
+            // regulisem da prvo povecam kolicinu novo izmenjenog broja odredjenog tipa zaposlenih
+            podesiBrojOdredjenihZaposlenih(ZaposleniZaIzmenu, 1);
+
+            //podesiBrojOdredjenihLekova(SelektovaniLek, -1);
+            podesiBrojOdredjenihZaposlenih(SelektovaniZaposleni, -1);
+
             // selektovani objekat prima vrednosti od menjanog objekta
             SelektovaniZaposleni.Ime = ZaposleniZaIzmenu.Ime;
             SelektovaniZaposleni.Prezime = ZaposleniZaIzmenu.Prezime;
@@ -292,18 +302,86 @@ namespace HealthClinic.ViewModels
             Zaposleni.Add(new Zaposlen() { KorisnickoIme="dzoni", Ime = "Nikola", Prezime = "Zigic", Struka = "Oftamolog", Sifra = "*****"});
             Zaposleni.Add(new Zaposlen() { KorisnickoIme="markoni", Ime = "Marko", Prezime = "Bogdanovic", Struka = "Kardio hirurg", Sifra = "*****"});
             Zaposleni.Add(new Zaposlen() { KorisnickoIme="bobi", Ime = "Boban", Prezime = "Jokic", Struka = "Pedijatar", Sifra = "*****" });
-            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "niki", Ime = "Nikola", Prezime = "Marjanovic", Struka = "Doktor opste prakse", Sifra = "*****" });
+            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "niki", Ime = "Nikola", Prezime = "Marjanovic", Struka = "Lekar opste prakse", Sifra = "*****" });
             Zaposleni.Add(new Zaposlen() { KorisnickoIme = "zare", Ime = "Zika", Prezime = "Vojvodic", Struka = "Otorinolaringolog", Sifra = "*****"});
-            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "nidroni", Ime = "Nikola", Prezime = "Zigic", Struka = "Oftamolog", Sifra = "*****"});
+            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "nidroni", Ime = "Nikola", Prezime = "Zigic", Struka = "Sekretar", Sifra = "*****"});
             Zaposleni.Add(new Zaposlen() { KorisnickoIme = "maron", Ime = "Marko", Prezime = "Bogdanovic", Struka = "Kardio hirurg", Sifra = "*****"});
             Zaposleni.Add(new Zaposlen() { KorisnickoIme = "bobi2", Ime = "Boban", Prezime = "Jokic", Struka = "Pedijatar", Sifra = "*****"});
-            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "dzoni2", Ime = "Nikola", Prezime = "Marjanovic", Struka = "Doktor opste prakse", Sifra = "*****"});
+            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "dzoni2", Ime = "Nikola", Prezime = "Marjanovic", Struka = "Lekar opste prakse", Sifra = "*****"});
+
+            foreach (Zaposlen zaposlen in Zaposleni)
+            {
+                podesiBrojOdredjenihZaposlenih(zaposlen, 1);
+            }
         }
 
 
         #endregion
 
+        #region Podesavanje broja odredjenog tipa zaposlenih
+
+        /// <summary>
+        /// Podesavam trenutni broj odredjenog tipa zaposlenih
+        /// </summary>
+        /// <param name="zaposlen"></param>
+        /// <param name="koeficijentPravca"> Prosledjuje se broj koji govori koliko povecavam/smanjujem broj odredjenih zaposlenih </param>
+        private void podesiBrojOdredjenihZaposlenih(Zaposlen zaposlen, int koeficijentPravca)
+        {
+            if (zaposlen.Struka == "Lekar opste prakse")
+            {
+                if (this.UkupnoLekaraOpstePrakse is null)
+                    BrojacLekaraOpstePrakse = 1;
+                else
+                    BrojacLekaraOpstePrakse += koeficijentPravca;
+                this.UkupnoLekaraOpstePrakse = new ChartValues<int>() { BrojacLekaraOpstePrakse };
+
+            }
+            else if (zaposlen.Struka == "Stomatolog" || zaposlen.Struka == "Kardio hirurg" || zaposlen.Struka == "Pedijatar" || zaposlen.Struka == "Otorinolaringolog" || zaposlen.Struka == "Oftamolog")
+            {
+                if (this.UkupnoLekaraSpecijalista is null)
+                    BrojacLekaraSpecijalista = 1;
+                else
+                    BrojacLekaraSpecijalista += koeficijentPravca;
+                this.UkupnoLekaraSpecijalista = new ChartValues<int>() { BrojacLekaraSpecijalista };
+            }
+            else if (zaposlen.Struka == "Sekretar")
+            {
+                if (this.UkupnoOstalihZaposlenih is null)
+                    BrojacOstalihZaposlenih = 1;
+                else
+                    BrojacOstalihZaposlenih += koeficijentPravca;
+                this.UkupnoOstalihZaposlenih = new ChartValues<int>() { BrojacOstalihZaposlenih };
+            }
+        }
+
+        #endregion
+
         #region Grafikon
+
+
+        private ChartValues<int> _ukupnoLekaraOpstePrakse;
+        private ChartValues<int> _ukupnoLekaraSpecijalista;
+        private ChartValues<int> _ukupnoOstalihZaposlenih;
+
+
+        public ChartValues<int> UkupnoLekaraOpstePrakse
+        {
+            get { return _ukupnoLekaraOpstePrakse; }
+            set { _ukupnoLekaraOpstePrakse = value; OnPropertyChanged("UkupnoLekaraOpstePrakse"); }
+        }
+
+        public ChartValues<int> UkupnoLekaraSpecijalista
+        {
+            get { return _ukupnoLekaraSpecijalista; }
+            set { _ukupnoLekaraSpecijalista = value; OnPropertyChanged("UkupnoLekaraSpecijalista"); }
+        }
+
+        public ChartValues<int> UkupnoOstalihZaposlenih
+        {
+            get { return _ukupnoOstalihZaposlenih; }
+            set { _ukupnoOstalihZaposlenih = value; OnPropertyChanged("UkupnoOstalihZaposlenih"); }
+        }
+
         public Func<ChartPoint, string> PointLabel { get; set; }
 
         public void PieChart()
@@ -314,5 +392,60 @@ namespace HealthClinic.ViewModels
         }
         #endregion
 
+        #region Moguci tipovi zaposlenih
+
+        private ObservableCollection<string> _moguciTipoviZaposlenih;
+
+        public ObservableCollection<string> MoguciTipoviZaposlenih
+        {
+            get { return _moguciTipoviZaposlenih; }
+            set { _moguciTipoviZaposlenih = value; OnPropertyChanged("MoguciTipoviZaposlenih"); }
+        }
+
+        private void odredjivanjeMogucihTipovaZaposlenih()
+        {
+            MoguciTipoviZaposlenih = new ObservableCollection<string>();
+            MoguciTipoviZaposlenih.Add("Sekretar");
+            MoguciTipoviZaposlenih.Add("Lekar opste prakse");
+            MoguciTipoviZaposlenih.Add("Stomatolog");
+            MoguciTipoviZaposlenih.Add("Kardio hirurg");
+            MoguciTipoviZaposlenih.Add("Otorinolaringolog");
+            MoguciTipoviZaposlenih.Add("Oftamolog");
+            MoguciTipoviZaposlenih.Add("Pedijatar");
+        }
+
+        #endregion
+
+        #region Brojaci odredjene kategorije zaposlenog
+        // Brojim lekare opste i specijaliste kao i ostale zaposlene
+
+        /// <summary>
+        /// Potreban mi je i brojac koji ce se upisivati u cart,
+        /// ne moze direktno i samo brojac da bude ali ni cart.
+        /// </summary>
+        private int _brojacLekaraOpstePrakse;
+        private int _brojacLekaraSpecijalista;
+        private int _brojacOstalihZaposlenih;
+
+
+        public int BrojacLekaraOpstePrakse
+        {
+            get { return _brojacLekaraOpstePrakse; }
+            set { _brojacLekaraOpstePrakse = value; OnPropertyChanged("BrojacLekaraOpstePrakse"); }
+        }
+
+        public int BrojacLekaraSpecijalista
+        {
+            get { return _brojacLekaraSpecijalista; }
+            set { _brojacLekaraSpecijalista = value; OnPropertyChanged("BrojacLekaraSpecijalista"); }
+        }
+
+        public int BrojacOstalihZaposlenih
+        {
+            get { return _brojacOstalihZaposlenih; }
+            set { _brojacOstalihZaposlenih = value; OnPropertyChanged("BrojacOstalihZaposlenih"); }
+        }
+
+        #endregion
     }
 }
