@@ -118,6 +118,7 @@ namespace HealthClinic.ViewModels
                 if (trenutniLek.NazivLeka == SelektovaniLek.NazivLeka)
                 {
                     MessageBox.Show("Uspesno ste izbrisali lek " + trenutniLek.NazivLeka);
+                    podesiBrojOdredjenihLekova(trenutniLek, -1);        // -1 da bih mu smanjio kolicinu vrste ovog leka
                     Lekovi.Remove(trenutniLek);
                     
                     break;
@@ -132,7 +133,7 @@ namespace HealthClinic.ViewModels
         {
             // dodajem lek u listu lekova
             Lekovi.Add(LekZaDodavanje);
-            podesiBrojOdredjenihLekova(LekZaDodavanje);
+            podesiBrojOdredjenihLekova(LekZaDodavanje,1);
             this.TrenutniProzor.Close();            // gasenje trenutnog prozora
         }
 
@@ -140,6 +141,12 @@ namespace HealthClinic.ViewModels
 
         public void PotvrdaIzmenePodataka(object obj)
         {
+            // regulisem da prvo povecam kolicinu novo izmenjene vrste leka
+            podesiBrojOdredjenihLekova(LekZaIzmenu, 1);
+
+            // a onda i smanjim od stare vrste
+            podesiBrojOdredjenihLekova(SelektovaniLek, -1);
+
             // selektovani objekat prima vrednosti od menjanog objekta
             SelektovaniLek.Kolicina = LekZaIzmenu.Kolicina;
             SelektovaniLek.NazivLeka = LekZaIzmenu.NazivLeka;
@@ -242,19 +249,23 @@ namespace HealthClinic.ViewModels
             // Odredjivanje koliko imamo kog leka
             foreach (Lek lek in Lekovi)
             {
-                podesiBrojOdredjenihLekova(lek);
+                podesiBrojOdredjenihLekova(lek,1);
             }
 
         }
-
-        private void podesiBrojOdredjenihLekova(Lek lek)
+        /// <summary>
+        /// Podesavam trenutnu kolicinu odredjene GRUPE LEKOVA
+        /// </summary>
+        /// <param name="lek"></param>
+        /// <param name="koeficijentPravca"> Prosledjuje se broj koji govori koliko povecavam/smanjujem odredjenog leka</param>
+        private void podesiBrojOdredjenihLekova(Lek lek, int koeficijentPravca)
         {
             if (lek.VrstaLeka == "antibiotik")
             {
                 if (this.UkupnoAntibiotika is null)
                     BrojacAntibiotika = 1;
                 else
-                    BrojacAntibiotika += 1;
+                    BrojacAntibiotika += koeficijentPravca;
                 this.UkupnoAntibiotika = new ChartValues<int>() { BrojacAntibiotika };
 
             }
@@ -263,7 +274,7 @@ namespace HealthClinic.ViewModels
                 if (this.UkupnoAnalgetika is null)
                     BrojacAnalgetika = 1;
                 else
-                    BrojacAnalgetika += 1;
+                    BrojacAnalgetika += koeficijentPravca;
                 this.UkupnoAnalgetika = new ChartValues<int>() { BrojacAnalgetika };
             }
             else if (lek.VrstaLeka == "kardio vaskularni")
@@ -271,7 +282,7 @@ namespace HealthClinic.ViewModels
                 if (this.UkupnoKardioVaskularnih is null)
                     BrojacKardioVaskularnih = 1;
                 else
-                    BrojacKardioVaskularnih += 1;
+                    BrojacKardioVaskularnih += koeficijentPravca;
                 this.UkupnoKardioVaskularnih = new ChartValues<int>() { BrojacKardioVaskularnih };
             }
             else if (lek.VrstaLeka == "anestetik")
@@ -279,13 +290,17 @@ namespace HealthClinic.ViewModels
                 if (this.UkupnoAnestetika is null)
                     BrojacAnestetika = 1;
                 else
-                    BrojacAnestetika += 1;
+                    BrojacAnestetika += koeficijentPravca;
                 this.UkupnoAnestetika = new ChartValues<int>() { BrojacAnestetika };
             }
         }
 
 
-
+        /*
+         * Izmena ce ici tako sto:
+         * prvo -- onog sto sam 'obrisa' tj sto sam ga promenio
+         * a onda dodam onog sto sam 'dodao'
+         */
 
         #endregion
 
