@@ -14,6 +14,8 @@ using System.ComponentModel;
 using System.Drawing;
 using HealthClinic.Views.Dialogs.Brisanje;
 using System.Windows;
+using Syncfusion.Pdf.Tables;
+using System.Data;
 
 namespace HealthClinic.ViewModels
 {
@@ -162,22 +164,39 @@ namespace HealthClinic.ViewModels
 
         public void GenerisiIzvestaj(object obj)
         {
-            using (PdfDocument document = new PdfDocument())
+            using (PdfDocument doc = new PdfDocument())
             {
                 //Add a page to the document
-                PdfPage page = document.Pages.Add();
+                PdfPage page = doc.Pages.Add();
 
-                //Create PDF graphics for a page
-                PdfGraphics graphics = page.Graphics;
+                // Create a PdfLightTable.
+                PdfLightTable pdfLightTable = new PdfLightTable();
 
-                //Set the standard font
-                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+                // Initialize DataTable to assign as DateSource to the light table.
+                DataTable table = new DataTable();
 
-                //Draw the text
-                graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
+                //Include columns to the DataTable.
+                table.Columns.Add("Naziv");
+
+                table.Columns.Add("Kolicina");
+
+                //Include rows to the DataTable.
+                foreach (Lek lek in Lekovi)
+                {
+                    table.Rows.Add(new string[] { lek.NazivLeka, lek.Kolicina });
+                }
+
+
+                //Assign data source.
+                pdfLightTable.DataSource = table;
+
+                //Draw PdfLightTable.
+                pdfLightTable.Draw(page, new PointF(0, 0));
 
                 //Save the document
-                document.Save("C:\\Users\\Vaxi\\Desktop\\6-semestar\\HCI\\projekat\\Vaksi\\HealthClinic\\IzvestajLekova.pdf");
+                doc.Save("C:\\Users\\Vaxi\\Desktop\\6-semestar\\HCI\\projekat\\Vaksi\\HealthClinic\\IzvestajLekova.pdf");
+
+                doc.Close();
             }
             var dijalog = new GenerisiIzvestajLekovaDijalog();
             dijalog.ShowDialog();

@@ -16,6 +16,8 @@ using System.Drawing;
 using System.Windows;
 using HealthClinic.Views.Dialogs.Brisanje;
 using System.Windows.Input;
+using Syncfusion.Pdf.Tables;
+using System.Data;
 
 namespace HealthClinic.ViewModels
 {
@@ -221,22 +223,46 @@ namespace HealthClinic.ViewModels
 
         public void GenerisiIzvestaj(object obj)
         {
-            using (PdfDocument document = new PdfDocument())
+            using (PdfDocument doc = new PdfDocument())
             {
-                //Add a page to the document
-                PdfPage page = document.Pages.Add();
+                //Create a new PDF document.
+                //PdfDocument doc = new PdfDocument();
 
-                //Create PDF graphics for a page
-                PdfGraphics graphics = page.Graphics;
+                //Add a page.
+                PdfPage page = doc.Pages.Add();
 
-                //Set the standard font
-                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+                // Create a PdfLightTable.
+                PdfLightTable pdfLightTable = new PdfLightTable();
 
-                //Draw the text
-                graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
+                // Initialize DataTable to assign as DateSource to the light table.
+                DataTable table = new DataTable();
+
+                //Include columns to the DataTable.
+                table.Columns.Add("Ime");
+
+                table.Columns.Add("Prezime");
+
+                table.Columns.Add("Struka");
+
+                //Include rows to the DataTable.
+                foreach (Zaposlen zaposlen in Zaposleni)
+                {
+                    table.Rows.Add(new string[] { zaposlen.Ime, zaposlen.Prezime, zaposlen.Struka });
+                }
+
+
+                //Assign data source.
+                pdfLightTable.DataSource = table;
+
+                //Draw PdfLightTable.
+                pdfLightTable.Draw(page, new PointF(0, 0));
 
                 //Save the document
-                document.Save("C:\\Users\\Vaxi\\Desktop\\6-semestar\\HCI\\projekat\\Vaksi\\HealthClinic\\IzvestajZaposlenih.pdf");
+                doc.Save("C:\\Users\\Vaxi\\Desktop\\6-semestar\\HCI\\projekat\\Vaksi\\HealthClinic\\IzvestajZaposlenih.pdf");
+
+                //Close the document
+
+                doc.Close(true);
             }
 
             var dijalog = new GenerisiIzvestajZaposlenihDijalog();
