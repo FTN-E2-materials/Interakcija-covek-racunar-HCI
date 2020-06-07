@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:HealthClinic.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:cmd="clr-namespace:HealthClinic.Utilities"
              
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="1080">
@@ -33,18 +34,18 @@
                 Foreground="#FF2196F3">
                 </TextBlock>
                 <!-- Kraj teksta iznad tabele -->
-                
+                <!--  -->
                 <!-- Podesavanje radnog vremena zaposlenih -->
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="280"
-                    ToolTip="Podesi radno vreme zaposlenih"
+                    ToolTip="Sledeci put ovome mozes brze pristupiti: Alt+P"
                    
                     Command="{Binding RadniKalendarCommand}"
                     Margin="85, 20, 0, 0">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Clock" Margin="0, 0, 10, 0" />
-                        <TextBlock Text="Podesi radno vreme zaposlenih"/>
+                        <AccessText>_Podesi radno vreme radnika</AccessText>
                     </StackPanel>
                 </Button>
                 <!-- Kraj podesavanja radnog vremena zaposlenih -->
@@ -93,26 +94,30 @@
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="150"
-                    ToolTip="Dodaj novo zaposlenog u nasu kliniku"
+                    ToolTip="Sledeci put ovome mozes brze pristupiti: Alt+D"
+                    
                     
                     Command="{Binding DodajZaposlenogCommand}"
                     Margin="35, 0, 0, 0">
                     <StackPanel Orientation="Horizontal">
+                        
                         <materialDesign:PackIcon Kind="AccountPlus" Margin="0, 0, 10, 0"/>
-                        <TextBlock Text="Dodaj radnika"/>
+                        <AccessText>_Dodaj radnika</AccessText>
                     </StackPanel>
+
+
                 </Button>
 
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="170"
-                    ToolTip="Izmeni informacije o postojecem zaposlenom"
+                    ToolTip="Sledeci put ovome mozes brze pristupiti: Alt+I"
                     
                     Command="{Binding IzmeniZaposlenogCommand}"
                     Margin="10, 0, 0, 0">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="PenPlus" Margin="0, 0, 10, 0" />
-                        <TextBlock Text="Izmeni radnika"/>
+                        <AccessText>_Izmeni radnika</AccessText>
                     </StackPanel>
 
                 </Button>
@@ -120,17 +125,16 @@
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="170"
-                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    ToolTip="Sledeci put ovome mozes brze pristupiti: Alt+U"
                     
                     Command="{Binding IzbrisiZaposlenogCommand}"
                     Margin="10">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="DeleteEmpty" Margin="0, 0, 10, 0" />
-                        <TextBlock Text="Ukloni radnika"/>
+                        <AccessText>_Ukloni radnika</AccessText>
                     </StackPanel>
-                    
-                </Button>
 
+                </Button>
             </StackPanel>
             <!-- Kraj CRUD dugmadi. -->
 
@@ -177,23 +181,21 @@
                     <!-- Kraj grafikona.-->
 
                     <!-- Dugme za generisanje izvestaja-->
-                    <Grid
-                      Margin="0, 40, 0, 0"
-                      Width="144">
-                        <Button
-                            Style="{StaticResource MaterialDesignRaisedButton}"
-                            materialDesign:ButtonProgressAssist.Value="-1"
-                            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-                            materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                    <Button
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        materialDesign:ButtonProgressAssist.Value="-1"
+                        materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                        materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                        ToolTip="Sledeci put ovome mozes brze pristupiti: Alt+G"
                             
-                            Command="{Binding GenerisiIzvestajZaposlenogCommand}"
-                            Margin="2,0"/>
-
+                        Command="{Binding GenerisiIzvestajZaposlenogCommand}"
+                        Width="160"
+                        Margin="20">
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Download" Foreground="White" Margin="0, 0, 10, 0"/>
-                            <TextBlock Foreground="White" Text="Generisi izvestaj"/>
+                            <AccessText Foreground="White">_Generisi izvestaj</AccessText>
                         </StackPanel>
-                    </Grid>
+                    </Button>
                     <!-- Kraj dugmeta za generisanje izvestaja. -->
 
                 </StackPanel>

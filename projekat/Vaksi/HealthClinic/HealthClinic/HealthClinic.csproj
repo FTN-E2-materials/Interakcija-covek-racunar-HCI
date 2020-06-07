@@ -98,6 +98,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Utilities\RoutedCommands.cs" />
     <Compile Include="Utilities\Validations\MaximumCharacterRule.cs" />
     <Compile Include="Utilities\Validations\MinimumCharacterRule.cs" />
     <Compile Include="Utilities\Validations\NumberRule.cs" />

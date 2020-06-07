@@ -15,18 +15,19 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows;
 using HealthClinic.Views.Dialogs.Brisanje;
+using System.Windows.Input;
 
 namespace HealthClinic.ViewModels
 {
-    public class ZaposleniViewModel:ObservableObject
+    public class ZaposleniViewModel : ObservableObject
     {   
         public ZaposleniViewModel()
         {
             PieChart();                // init piecharta
 
             ucitavanjePodatakaUTabelu();
-
             DodajZaposlenogCommand = new RelayCommand(DodajZaposlenog);
+            
             IzmeniZaposlenogCommand = new RelayCommand(IzmeniZaposlenog);
             GenerisiIzvestajZaposlenogCommand = new RelayCommand(PrikaziDijalogGenerisanjaIzvestaja);
             RadniKalendarCommand = new RelayCommand(PrikaziRadniKalendar);
@@ -45,6 +46,8 @@ namespace HealthClinic.ViewModels
             PotvrdaBrisanjaPodatakaCommand = new RelayCommand(PotvrdaBrisanjaPodataka);
 
             odredjivanjeMogucihTipovaZaposlenih();
+
+            
 
         }
 

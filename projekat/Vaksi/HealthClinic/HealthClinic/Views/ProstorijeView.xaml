@@ -110,26 +110,25 @@
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="170"
-                    ToolTip="Dodaj novu prostoriju nasoj klinici"
-                    
+                    ToolTip="Sledeci put ovome mozes brze pristupiti: Alt+D"
                     Command="{Binding DodajProstorijuCommand}"
                     Margin="40, 0, 20, 0">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="BankPlus" Margin="0, 0, 10, 0" />
-                        <TextBlock Text="Dodaj prostoriju"/>
+                        <AccessText>_Dodaj prostoriju</AccessText>
                     </StackPanel>
                 </Button>
 
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="170"
-                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    ToolTip="Sledeci put ovome mozes brze pristupiti: Alt+I"
                     
                     Command="{Binding IzmeniProstorijuCommand}"
                     Margin="10">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="PenPlus" Margin="0, 0, 10, 0" />
-                        <TextBlock Text="Izmeni prostoriju"/>
+                        <AccessText>_Izmeni prostoriju</AccessText>
                     </StackPanel>
 
                 </Button>
@@ -137,13 +136,13 @@
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="170"
-                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    ToolTip="Sledeci put ovome mozes brze pristupiti: Alt+U"
                     
                     Command="{Binding IzbrisiProstorijuCommand}"
                     Margin="10">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="DeleteEmpty" Margin="0, 0, 10, 0" />
-                        <TextBlock Text="Ukloni prostoriju"/>
+                        <AccessText>_Ukloni prostoriju </AccessText>
                     </StackPanel>
 
                 </Button>
@@ -191,23 +190,21 @@
                     <!-- Kraj grafikona.-->
 
                     <!-- Dugme za generisanje izvestaja-->
-                    <Grid
-                      Margin="0, 40, 0, 0"
-                      Width="144">
-                        <Button
-                            Style="{StaticResource MaterialDesignRaisedButton}"
-                            materialDesign:ButtonProgressAssist.Value="-1"
-                            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-                            materialDesign:ButtonProgressAssist.IsIndeterminate="True"
-                            
-                            Margin="2,0"
-                            Command="{Binding GenerisiIzvestajProstorijaCommand}"
-                            />
+                    <Button
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        materialDesign:ButtonProgressAssist.Value="-1"
+                        materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                        materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                        ToolTip="Sledeci put ovome mozes brze pristupiti: Alt+G"
+                        Command="{Binding GenerisiIzvestajProstorijaCommand}"
+                        Width="160"
+                        Margin="20">
+
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Download" Foreground="White" Margin="0, 0, 10, 0"/>
-                            <TextBlock Foreground="White" Text="Generisi izvestaj"/>
+                            <AccessText Foreground="White">_Generisi izvestaj</AccessText>
                         </StackPanel>
-                    </Grid>
+                    </Button>
                     <!-- Kraj dugmeta za generisanje izvestaja. -->
 
                 </StackPanel>
