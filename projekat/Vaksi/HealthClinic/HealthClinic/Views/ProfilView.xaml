@@ -237,6 +237,7 @@
                             <TextBox
                                 IsEnabled="{Binding IzmenaProfila}"
                                 x:Name="Biografija"
+                                TextWrapping="Wrap"
                                 Background="WhiteSmoke"
                                 FontWeight="DemiBold"
                                 Width="230"

@@ -9,13 +9,13 @@ namespace HealthClinic.Models
     public class BusinessHours:ObservableObject
     {
 
-		private string _fromDate;
-		private string _toDate;
-        private string _fromHour;
-        private string _toHour;
+		private DateTime _fromDate;
+		private DateTime _toDate;
+        private DateTime _fromHour;
+        private DateTime _toHour;
 
        
-        public string FromDate
+        public DateTime FromDate
 		{
 			get { return _fromDate; }
 			set
@@ -27,7 +27,7 @@ namespace HealthClinic.Models
                 }
             }
         }
-        public string ToDate
+        public DateTime ToDate
         {
             get { return _toDate; }
             set
@@ -39,7 +39,7 @@ namespace HealthClinic.Models
                 }
             }
         }
-        public string FromHour
+        public DateTime FromHour
         {
             get { return _fromHour; }
             set
@@ -51,7 +51,7 @@ namespace HealthClinic.Models
                 }
             }
         }
-        public string ToHour
+        public DateTime ToHour
         {
             get { return _toHour; }
             set

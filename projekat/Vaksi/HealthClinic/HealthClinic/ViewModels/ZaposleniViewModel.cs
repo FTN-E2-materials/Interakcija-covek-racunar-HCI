@@ -52,6 +52,12 @@ namespace HealthClinic.ViewModels
             // prikazivanje radnog kalendara selekovanog zaposlenog
             PrikazRadnogKalendaraCommand = new RelayCommand(PrikaziRadniKalendarZaposlenog);
 
+
+            // potvrdujem odredjivanje radnog vremena zaposlenih
+            PotvrdaOdredjivanjaRadnogVremenaCommand = new RelayCommand(OdrediRadnoVremeZaposlenih);
+
+            PrikaziSlobodneLekareCommand = new RelayCommand(PrikaziSlobodneLekare);
+
         }
 
         #region Radno vreme zaposlenih
@@ -163,6 +169,9 @@ namespace HealthClinic.ViewModels
         public RelayCommand IzmeniZaposlenogCommand { get; private set; }
         public RelayCommand IzbrisiZaposlenogCommand { get; private set; }
         public RelayCommand PrikazRadnogKalendaraCommand { get; private set; }
+        public RelayCommand PotvrdaOdredjivanjaRadnogVremenaCommand { get; private set; }
+        public RelayCommand PrikaziSlobodneLekareCommand { get; private set; }
+
 
         #endregion
 
@@ -224,9 +233,14 @@ namespace HealthClinic.ViewModels
 
         public void PodesavanjeRadnihKalendaraZaposlenih(object obj)
         {
-            var dijalog = new RadniKalendarDijalog();
-            dijalog.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
-            dijalog.ShowDialog();
+            IzabraniLekari = new ObservableCollection<Zaposlen>();
+            IzabraniLekar = new Zaposlen();
+            IzabraniLekarZaUklanjanje = new Zaposlen();
+            SlobodniLekari = new ObservableCollection<Zaposlen>();
+
+            TrenutniProzor = new RadniKalendarDijalog();
+            TrenutniProzor.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
+            TrenutniProzor.ShowDialog();
         }
 
         public void GenerisiIzvestaj(object obj)
@@ -322,12 +336,110 @@ namespace HealthClinic.ViewModels
 
         public void PrikaziRadniKalendarZaposlenog(object obj)
         {
+            // prikazivanje bez vremena, samo datum ovako dobijam
+            string odDatuma = SelektovaniZaposleni.RadniKalendar.FromDate.ToShortDateString();
+            string doDatuma = SelektovaniZaposleni.RadniKalendar.ToDate.ToShortDateString();
+
+            string odVremena = SelektovaniZaposleni.RadniKalendar.FromHour.ToShortTimeString();
+            string doVremena = SelektovaniZaposleni.RadniKalendar.ToHour.ToShortTimeString();
             MessageBox.Show( "U narednom periodu, gospodin " + SelektovaniZaposleni.Prezime + " " + SelektovaniZaposleni.Ime + " radi" + 
-                "\nOd: " + SelektovaniZaposleni.RadniKalendar.FromDate +
-                "\tDo: " + SelektovaniZaposleni.RadniKalendar.ToDate + 
-                "\n\nU smeni od: " + SelektovaniZaposleni.RadniKalendar.FromHour+ "\t do: " + SelektovaniZaposleni.RadniKalendar.ToHour + " casova" 
+                "\nOd: " + odDatuma +
+                "\tDo: " + doDatuma + 
+                "\n\nU smeni od: " + odVremena + "\t do: " + doVremena + " casova" 
                 );
         }
+        
+        public void OdrediRadnoVremeZaposlenih(object ojb)
+        {
+            // dodajem sve izabrane lekare
+            foreach (Zaposlen lekar in IzabraniLekari)
+            {
+                lekar.RadniKalendar.FromDate = PocetniDatum;
+                lekar.RadniKalendar.ToDate = KrajnjiDatum;
+                lekar.RadniKalendar.FromHour = PocetniSat;
+                lekar.RadniKalendar.ToHour = KrajnjiSat;
+
+            }
+            this.TrenutniProzor.Close();
+        }
+        
+        public void PrikaziSlobodneLekare(object obj)
+        {
+            SlobodniLekari = dobaviSlobodneLekare();
+        }
+
+        #endregion
+
+        #region Slobodni lekari u tom opsegu
+        private ObservableCollection<Zaposlen> _slobodniLekari;
+
+        public ObservableCollection<Zaposlen> SlobodniLekari
+        {
+            get { return _slobodniLekari; }
+            set { _slobodniLekari = value; OnPropertyChanged("SlobodniLekari"); }
+        }
+
+
+        #endregion
+
+        #region Izabrani lekari kojima je potrebno promeniti radno vreme
+
+        private ObservableCollection<Zaposlen> _izabraniLekari;
+
+        public ObservableCollection<Zaposlen> IzabraniLekari
+        {
+            get { return _izabraniLekari; }
+            set { _izabraniLekari = value; OnPropertyChanged("IzabraniLekari"); }
+        }
+
+        // izabrani lekar u odredjenom trenutku
+        private Zaposlen _izabraniLekar;
+
+        public Zaposlen IzabraniLekar
+        {
+            get { return _izabraniLekar; }
+            set
+            {
+                _izabraniLekar = value;
+                // da ne bih prazne dodavao
+                if(!(IzabraniLekar is null) && !(IzabraniLekari.Contains(IzabraniLekar)))
+                    IzabraniLekari.Add(IzabraniLekar);
+                
+
+                OnPropertyChanged("IzabraniLekar");
+            }
+        }
+
+        // izabrani lekar za uklanjanje
+
+        private Zaposlen _izabraniLekarZaUklanjanje;
+
+        public Zaposlen IzabraniLekarZaUklanjanje
+        {
+            get { return _izabraniLekarZaUklanjanje; }
+            set
+            {
+                if (_izabraniLekarZaUklanjanje != value)
+                {
+                    _izabraniLekarZaUklanjanje = value;
+
+                    foreach (Zaposlen lekar in IzabraniLekari)
+                    {
+                        if (IzabraniLekarZaUklanjanje is null)
+                            break;
+
+                        if (lekar.KorisnickoIme == IzabraniLekarZaUklanjanje.KorisnickoIme)
+                        {
+                            IzabraniLekari.Remove(lekar);
+                            break;
+                        }
+                    }
+                    OnPropertyChanged("IzabraniLekarZaUklanjanje");
+                }
+            }
+        }
+
+
         #endregion
 
         #region Ucitavanje podataka zaposlenih
@@ -344,7 +456,7 @@ namespace HealthClinic.ViewModels
         {
             //Tabela - popunjavanje
             Zaposleni = new ObservableCollection<Zaposlen>();
-            BusinessHours bs = new BusinessHours() { FromDate = "01.01.2020", ToDate = "30.12.2020", FromHour="09:00", ToHour="17:00" };
+            BusinessHours bs = new BusinessHours() { FromDate = new DateTime(2020,1,1), ToDate = new DateTime(2020, 2,1), FromHour= new DateTime(2020,1,1,9,30,30), ToHour= new DateTime(2020, 2, 1, 17, 30, 30) };
             Zaposleni.Add(new Zaposlen()
             {
                 KorisnickoIme = "zikaa",
@@ -699,6 +811,26 @@ namespace HealthClinic.ViewModels
                 }
             }
         }
+        #endregion
+
+        #region Dobavljanje slobodnih lekara
+        private ObservableCollection<Zaposlen> dobaviSlobodneLekare()
+        {
+            ObservableCollection<Zaposlen> slobodniLekari = new ObservableCollection<Zaposlen>();
+
+            foreach (Zaposlen lekar in Zaposleni)
+            {
+                if (lekar.RadniKalendar.ToDate < PocetniDatum)
+                    slobodniLekari.Add(lekar);
+            }
+
+            // foreach zaposlenog
+            // if zadovoljava business hours
+            // dodam ga u povratnu vrednost
+            return slobodniLekari;
+
+        }
+
         #endregion
     }
 }
