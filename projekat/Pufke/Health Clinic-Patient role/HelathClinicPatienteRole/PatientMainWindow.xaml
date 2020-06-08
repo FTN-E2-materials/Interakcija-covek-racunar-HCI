@@ -9,6 +9,12 @@
         xmlns:viewModel="clr-namespace:HelathClinicPatienteRole.ViewModel"
         mc:Ignorable="d"
         Title="Pacijent APP"  Height="750" Width="1300">
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding GenerisiIzvestajCommand}" Gesture="CTRL+G"/>
+        <KeyBinding Command="{Binding PirkaziIzmeniPregledDialogCommand}" Gesture="CTRL+I"/>
+        <KeyBinding Command="{Binding PirkaziOtkaziPregledDialogCommand}" Gesture="CTRL+O"/>
+        <KeyBinding Command="{Binding PirkaziAnketaLekaraDialogCommand}" Gesture="CTRL+Q"/>
+    </Window.InputBindings>
     <Grid>
         <StackPanel>
 

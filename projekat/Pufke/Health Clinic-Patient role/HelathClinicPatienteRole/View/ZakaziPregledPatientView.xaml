@@ -7,6 +7,7 @@
              xmlns:local="clr-namespace:HelathClinicPatienteRole.View"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1300">
+    
     <Grid>
         <StackPanel Background="White" >
             <Grid Height="580" >
@@ -15,7 +16,7 @@
 
                 <DatePicker Background="WhiteSmoke" SelectedDate="{Binding Path=SelektovaniDatum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="21"  Foreground="#FF148DF0" Grid.Row ="3" Grid.Column="16" Grid.ColumnSpan="10" Grid.RowSpan="4" materialDesign:HintAssist.Hint="Izaberite datum" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="10,21,10,18"  />
 
-                <Label HorizontalAlignment="Center"  Content="Lista slobodnih lekara opste prakse " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="9" Grid.Column="16" Grid.ColumnSpan="10" Grid.RowSpan="3" Margin="1,13,10,0"/>
+                <Label HorizontalAlignment="Center"  Content="Lista slobodnih lekara opste prakse " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="9" Grid.Column="16" Grid.ColumnSpan="10" Grid.RowSpan="3" Margin="2,13,0,0" Width="325"/>
 
 
                 <DataGrid  x:Name="dataGridLekari" ItemsSource="{Binding Lekari}"
@@ -31,8 +32,7 @@
                 </DataGrid>
 
 
-
-                <Label HorizontalAlignment="Center"  Content="Izaberite lekara " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="7" Grid.Column="18" Grid.ColumnSpan="6" Grid.RowSpan="3" Margin="10,10,11,0"/>
+                <Label HorizontalAlignment="Center"  Content="Izaberite lekara " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="7" Grid.Column="18" Grid.ColumnSpan="6" Grid.RowSpan="3" Margin="11,10,0,0" Width="186"/>
 
                 <Button Content="Potvrdi" Grid.Row="22" Grid.Column="18" Grid.ColumnSpan="6" Grid.RowSpan="2" Margin="10,10,24,0" Command="{Binding ZakaziPregledCommand}"/>
 
