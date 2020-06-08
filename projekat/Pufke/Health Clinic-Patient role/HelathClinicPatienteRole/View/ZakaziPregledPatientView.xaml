@@ -21,11 +21,20 @@
 
                 <DataGrid  x:Name="dataGridLekari" ItemsSource="{Binding Lekari}"
                   IsReadOnly="True"  CanUserAddRows="false"  SelectedItem="{Binding Path=SelektovaniLekar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                AutoGenerateColumns="False" Grid.ColumnSpan="12" Margin="18,10,21,18" Grid.RowSpan="11" Grid.Row="11" Background="#FF148DF0" Grid.Column="15">
+                AutoGenerateColumns="False" SelectionMode="Single" Grid.ColumnSpan="12" Margin="18,10,21,18" Grid.RowSpan="11" Grid.Row="11" Background="#FF148DF0" Grid.Column="15">
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Ime i prezime lekara"
-                            Binding="{Binding FirstAndLastName}"/>
+                        <DataGridTextColumn Header="          Ime i prezime lekara"
+                            Binding="{Binding FirstAndLastName}">
+                            <DataGridColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="DarkGray"/>
+                                
+                                    <Setter Property="FontSize" Value="24"/>
+                                    <Setter Property="VerticalAlignment" Value="Stretch"/>
+                                </Style>
+                            </DataGridColumn.HeaderStyle>
+                        </DataGridTextColumn>
 
                     </DataGrid.Columns>
 

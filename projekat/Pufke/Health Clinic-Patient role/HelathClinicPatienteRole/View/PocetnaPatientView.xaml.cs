@@ -28,6 +28,7 @@ namespace HelathClinicPatienteRole.View
         public PocetnaPatientView()
         {
             InitializeComponent();
+        
         }
 
         private void OdjaviSeButton_Click(object sender, RoutedEventArgs e)

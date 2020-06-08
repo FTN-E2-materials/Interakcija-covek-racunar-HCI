@@ -30,6 +30,7 @@ namespace HelathClinicPatienteRole
 
             ObjectpocetnaPatientViewModel = new PocetnaPatientViewModel();
             DataContext = ObjectpocetnaPatientViewModel;
+           
         }
 
         private void PocetnaButton_Click(object sender, RoutedEventArgs e)

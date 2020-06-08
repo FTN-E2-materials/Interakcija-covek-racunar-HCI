@@ -45,6 +45,9 @@ namespace HelathClinicPatienteRole.ViewModel
             this.Visibility = Visibility.Hidden;
             patientMainWindow.Show();
 
+            var win = new WizardWindow();
+            win.ShowDialog();
+
 
         }
 
