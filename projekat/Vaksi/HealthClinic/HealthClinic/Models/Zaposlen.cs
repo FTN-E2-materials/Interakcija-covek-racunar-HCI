@@ -14,6 +14,23 @@ namespace HealthClinic.Models
         private string _struka;
         private string _sifra;  
         private string _korisnickoIme;
+        private BusinessHours _businessHours;
+
+        public BusinessHours RadniKalendar
+        {
+            get { return _businessHours; }
+            set
+            {
+                if (!(value.Equals(_businessHours)))
+                {
+                    _businessHours = value;
+                    OnPropertyChanged("RadniKalendar");
+                }
+
+            }
+        }
+
+
 
         public string KorisnickoIme
         {

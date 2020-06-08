@@ -32,7 +32,7 @@ namespace HealthClinic.ViewModels
             
             IzmeniZaposlenogCommand = new RelayCommand(IzmeniZaposlenog);
             GenerisiIzvestajZaposlenogCommand = new RelayCommand(GenerisiIzvestaj);
-            RadniKalendarCommand = new RelayCommand(PrikaziRadniKalendar);
+            RadniKalendarCommand = new RelayCommand(PodesavanjeRadnihKalendaraZaposlenih);
             IzbrisiZaposlenogCommand = new RelayCommand(IzbrisiZaposlenog);
 
             PocetniDatum = DateTime.Now.Date;
@@ -49,7 +49,8 @@ namespace HealthClinic.ViewModels
 
             odredjivanjeMogucihTipovaZaposlenih();
 
-            
+            // prikazivanje radnog kalendara selekovanog zaposlenog
+            PrikazRadnogKalendaraCommand = new RelayCommand(PrikaziRadniKalendarZaposlenog);
 
         }
 
@@ -161,6 +162,7 @@ namespace HealthClinic.ViewModels
         public RelayCommand DodajZaposlenogCommand { get; private set; }
         public RelayCommand IzmeniZaposlenogCommand { get; private set; }
         public RelayCommand IzbrisiZaposlenogCommand { get; private set; }
+        public RelayCommand PrikazRadnogKalendaraCommand { get; private set; }
 
         #endregion
 
@@ -220,7 +222,7 @@ namespace HealthClinic.ViewModels
             this.TrenutniProzor.Close();
         }
 
-        public void PrikaziRadniKalendar(object obj)
+        public void PodesavanjeRadnihKalendaraZaposlenih(object obj)
         {
             var dijalog = new RadniKalendarDijalog();
             dijalog.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
@@ -318,9 +320,17 @@ namespace HealthClinic.ViewModels
             TrenutniProzor.ShowDialog();
         }
 
+        public void PrikaziRadniKalendarZaposlenog(object obj)
+        {
+            MessageBox.Show( "U narednom periodu, gospodin " + SelektovaniZaposleni.Prezime + " " + SelektovaniZaposleni.Ime + " radi" + 
+                "\nOd: " + SelektovaniZaposleni.RadniKalendar.FromDate +
+                "\tDo: " + SelektovaniZaposleni.RadniKalendar.ToDate + 
+                "\n\nU smeni od: " + SelektovaniZaposleni.RadniKalendar.FromHour+ "\t do: " + SelektovaniZaposleni.RadniKalendar.ToHour + " casova" 
+                );
+        }
         #endregion
 
-        #region Tabela
+        #region Ucitavanje podataka zaposlenih
 
         private ObservableCollection<Zaposlen> _zaposleni;
 
@@ -334,16 +344,167 @@ namespace HealthClinic.ViewModels
         {
             //Tabela - popunjavanje
             Zaposleni = new ObservableCollection<Zaposlen>();
-            Zaposleni.Add(new Zaposlen() { KorisnickoIme="zikaa", Ime = "Zika", Prezime = "Vojvodic", Struka = "Otorinolaringolog", Sifra = "*****"});
-            Zaposleni.Add(new Zaposlen() { KorisnickoIme="dzoni", Ime = "Nikola", Prezime = "Zigic", Struka = "Oftamolog", Sifra = "*****"});
-            Zaposleni.Add(new Zaposlen() { KorisnickoIme="markoni", Ime = "Marko", Prezime = "Bogdanovic", Struka = "Kardio hirurg", Sifra = "*****"});
-            Zaposleni.Add(new Zaposlen() { KorisnickoIme="bobi", Ime = "Boban", Prezime = "Jokic", Struka = "Pedijatar", Sifra = "*****" });
-            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "niki", Ime = "Nikola", Prezime = "Marjanovic", Struka = "Lekar opste prakse", Sifra = "*****" });
-            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "zare", Ime = "Zika", Prezime = "Vojvodic", Struka = "Otorinolaringolog", Sifra = "*****"});
-            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "nidroni", Ime = "Nikola", Prezime = "Zigic", Struka = "Sekretar", Sifra = "*****"});
-            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "maron", Ime = "Marko", Prezime = "Bogdanovic", Struka = "Kardio hirurg", Sifra = "*****"});
-            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "bobi2", Ime = "Boban", Prezime = "Jokic", Struka = "Pedijatar", Sifra = "*****"});
-            Zaposleni.Add(new Zaposlen() { KorisnickoIme = "dzoni2", Ime = "Nikola", Prezime = "Marjanovic", Struka = "Lekar opste prakse", Sifra = "*****"});
+            BusinessHours bs = new BusinessHours() { FromDate = "01.01.2020", ToDate = "30.12.2020", FromHour="09:00", ToHour="17:00" };
+            Zaposleni.Add(new Zaposlen()
+            {
+                KorisnickoIme = "zikaa",
+                Ime = "Zika",
+                Prezime = "Vojvodic",
+                Struka = "Otorinolaringolog",
+                Sifra = "*****",
+                RadniKalendar = new BusinessHours()
+                {
+                    FromDate = bs.FromDate,
+                    ToDate = bs.ToDate,
+                    FromHour = bs.FromHour,
+                    ToHour = bs.ToHour
+
+                }
+            });
+            Zaposleni.Add(new Zaposlen()
+            {
+                KorisnickoIme = "dzoni",
+                Ime = "Nikola",
+                Prezime = "Zigic",
+                Struka = "Oftamolog",
+                Sifra = "*****",
+                RadniKalendar = new BusinessHours()
+                {
+                    FromDate = bs.FromDate,
+                    ToDate = bs.ToDate,
+                    FromHour = bs.FromHour,
+                    ToHour = bs.ToHour
+
+                }
+            });
+            Zaposleni.Add(new Zaposlen()
+            {
+                KorisnickoIme = "markoni",
+                Ime = "Marko",
+                Prezime = "Bogdanovic",
+                Struka = "Kardio hirurg",
+                Sifra = "*****",
+                RadniKalendar = new BusinessHours()
+                {
+                    FromDate = bs.FromDate,
+                    ToDate = bs.ToDate,
+                    FromHour = bs.FromHour,
+                    ToHour = bs.ToHour
+
+                }
+            });
+            Zaposleni.Add(new Zaposlen()
+            {
+                KorisnickoIme = "bobi",
+                Ime = "Boban",
+                Prezime = "Jokic",
+                Struka = "Pedijatar",
+                Sifra = "*****",
+                RadniKalendar = new BusinessHours()
+                {
+                    FromDate = bs.FromDate,
+                    ToDate = bs.ToDate,
+                    FromHour = bs.FromHour,
+                    ToHour = bs.ToHour
+
+                }
+            });
+            Zaposleni.Add(new Zaposlen()
+            {
+                KorisnickoIme = "niki",
+                Ime = "Nikola",
+                Prezime = "Marjanovic",
+                Struka = "Lekar opste prakse",
+                Sifra = "*****",
+                RadniKalendar = new BusinessHours()
+                {
+                    FromDate = bs.FromDate,
+                    ToDate = bs.ToDate,
+                    FromHour = bs.FromHour,
+                    ToHour = bs.ToHour
+
+                }
+            });
+            Zaposleni.Add(new Zaposlen()
+            {
+                KorisnickoIme = "zare",
+                Ime = "Zika",
+                Prezime = "Vojvodic",
+                Struka = "Otorinolaringolog",
+                Sifra = "*****",
+                RadniKalendar = new BusinessHours()
+                {
+                    FromDate = bs.FromDate,
+                    ToDate = bs.ToDate,
+                    FromHour = bs.FromHour,
+                    ToHour = bs.ToHour
+
+                }
+            });
+            Zaposleni.Add(new Zaposlen()
+            {
+                KorisnickoIme = "nidroni",
+                Ime = "Nikola",
+                Prezime = "Zigic",
+                Struka = "Sekretar",
+                Sifra = "*****",
+                RadniKalendar = new BusinessHours()
+                {
+                    FromDate = bs.FromDate,
+                    ToDate = bs.ToDate,
+                    FromHour = bs.FromHour,
+                    ToHour = bs.ToHour
+
+                }
+            });
+            Zaposleni.Add(new Zaposlen()
+            {
+                KorisnickoIme = "maron",
+                Ime = "Marko",
+                Prezime = "Bogdanovic",
+                Struka = "Kardio hirurg",
+                Sifra = "*****",
+                RadniKalendar = new BusinessHours()
+                {
+                    FromDate = bs.FromDate,
+                    ToDate = bs.ToDate,
+                    FromHour = bs.FromHour,
+                    ToHour = bs.ToHour
+
+                }
+            });
+            Zaposleni.Add(new Zaposlen()
+            {
+                KorisnickoIme = "bobi2",
+                Ime = "Boban",
+                Prezime = "Jokic",
+                Struka = "Pedijatar",
+                Sifra = "*****",
+                RadniKalendar = new BusinessHours()
+                {
+                    FromDate = bs.FromDate,
+                    ToDate = bs.ToDate,
+                    FromHour = bs.FromHour,
+                    ToHour = bs.ToHour
+
+                }
+            });
+            Zaposleni.Add(new Zaposlen()
+            {
+                KorisnickoIme = "dzoni2",
+                Ime = "Nikola",
+                Prezime = "Marjanovic",
+                Struka = "Lekar opste prakse",
+                Sifra = "*****",
+                RadniKalendar = new BusinessHours()
+                {
+                    FromDate = bs.FromDate,
+                    ToDate = bs.ToDate,
+                    FromHour = bs.FromHour,
+                    ToHour = bs.ToHour
+
+                }
+            });
 
             foreach (Zaposlen zaposlen in Zaposleni)
             {

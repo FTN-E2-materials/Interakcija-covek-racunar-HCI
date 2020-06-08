@@ -66,7 +66,7 @@
                 <DataGrid x:Name="dataGridLekovi"
                     SelectedItem="{Binding Path=SelektovaniZaposleni, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     ItemsSource="{Binding Path=Zaposleni}"
-                    AutoGenerateColumns="True" 
+                    AutoGenerateColumns="False" 
                     SelectionMode="Single" 
                     IsReadOnly="True" 
                      
@@ -76,6 +76,27 @@
                     Width="602" 
                     Background="#FF226397"
                     >
+                    <!-- Custom kolone tabele-->
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Ime}" Header="Ime"/>
+                        <DataGridTextColumn Binding="{Binding Prezime}" Header="Prezime"/>
+                        <DataGridTextColumn Binding="{Binding Struka}" Header="Struka"/>
+
+                        <!-- Dugme u tabeli -->
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Button
+                                            Command="{Binding Path=DataContext.PrikazRadnogKalendaraCommand,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGrid}}}"
+                                            >
+                                            radno vreme
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
                 </DataGrid>
                 <!-- Kraj tabele lekova. -->
 
