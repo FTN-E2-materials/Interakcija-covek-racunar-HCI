@@ -278,6 +278,7 @@ namespace HealthClinic.ViewModels
         {
             if (SelektovanaProstorija is null)
                 return;
+
             foreach (Prostorija trenutnaProstorija in Prostorije)
             {
                 if(trenutnaProstorija.BrojSobe == SelektovanaProstorija.BrojSobe)
@@ -295,6 +296,9 @@ namespace HealthClinic.ViewModels
 
         public void PotvrdaDodavanjaPodataka(object ojb)
         {
+            if (!validnaProstorija(ProstorijaZaDodavanje))
+                return;
+
             // dodajem prostoriju za dodavanje ukoliko je odgovor bio potvrdan
             Prostorije.Add(ProstorijaZaDodavanje);
             podesiBrojOdredjenihProstorija(ProstorijaZaDodavanje, 1);
@@ -308,6 +312,9 @@ namespace HealthClinic.ViewModels
 
             //podesiBrojOdredjenihLekova(SelektovaniLek, -1);
             podesiBrojOdredjenihProstorija(SelektovanaProstorija, -1);
+
+            if (!validnaProstorija(ProstorijaZaIzmenu))
+                return;
 
             // selektovani objekat prima vrednosti od menjanog objekta
             SelektovanaProstorija.BrojSobe = ProstorijaZaIzmenu.BrojSobe;
@@ -387,18 +394,25 @@ namespace HealthClinic.ViewModels
         public void IzmeniProstoriju(object obj)
         {
             // Prostorija za izmenu/stimanje preuzima podatke od selektovane prostorije
-            if(!(SelektovanaProstorija is null))
+            if (!(SelektovanaProstorija is null))
+            {
                 ProstorijaZaIzmenu = new Prostorija() { Odeljenje = SelektovanaProstorija.Odeljenje, BrojSobe = SelektovanaProstorija.BrojSobe, Namena = SelektovanaProstorija.Namena };
-
+            }
+            else
+            {
+                return;
+            }
             // podesavanje prikaza dijaloga izmene
             TrenutniProzor = new IzmeniProstorijuDijalog();
             TrenutniProzor.DataContext = this;
             TrenutniProzor.ShowDialog();
         }
 
-
         public void IzbrisiProstoriju(object obj)
         {
+            if (SelektovanaProstorija is null)
+                return;
+
             // TODO: Mozda dodati nekad da pise tacno koju prostoriju brisemo ali u nekim buducim verzijama
             TrenutniProzor = new ObrisiProstorijuDijalog();
             TrenutniProzor.DataContext = this;
@@ -563,6 +577,35 @@ namespace HealthClinic.ViewModels
             set { _brojacOperacionihSala = value; OnPropertyChanged("BrojacOperacionihSala"); }
         }
 
+
+        #endregion
+
+        #region Validiranje prostorije
+
+        private bool validnaProstorija(Prostorija prostorija)
+        {
+            if(prostorija.BrojSobe is null)
+            {
+                MessageBox.Show("Niste popunili polje za broj sobe");
+                return false;
+            }
+
+            if (prostorija.Namena is null)
+            {
+                MessageBox.Show("Niste popunili namenu sobe(tip prostorije)");
+                return false;
+            }
+
+            if (prostorija.Odeljenje is null)
+            {
+                MessageBox.Show("Niste popunili polje za odeljenje na kojem se nalazi soba");
+                return false;
+            }
+
+            // TODO: Kada saznas kako dobiti koje trenutno validacione probleme ima app, ovde to mogu hendlovati
+
+            return true;
+        }
 
         #endregion
     }

@@ -16,6 +16,7 @@ using HealthClinic.Views.Dialogs.Brisanje;
 using System.Windows;
 using Syncfusion.Pdf.Tables;
 using System.Data;
+using HealthClinic.Utilities.Validations;
 
 namespace HealthClinic.ViewModels
 {
@@ -140,9 +141,14 @@ namespace HealthClinic.ViewModels
 
         public void PotvrdaDodavanjaPodataka(object ojb)
         {
+
+            if (!validanLek(LekZaDodavanje))
+                return;
+
             // dodajem lek u listu lekova
             Lekovi.Add(LekZaDodavanje);
             podesiBrojOdredjenihLekova(LekZaDodavanje,1);
+
             this.TrenutniProzor.Close();            // gasenje trenutnog prozora
         }
 
@@ -153,6 +159,10 @@ namespace HealthClinic.ViewModels
 
             // a onda i smanjim od stare vrste
             podesiBrojOdredjenihLekova(SelektovaniLek, -1);
+
+            // provera leka koji je korisnik menjao
+            if (!validanLek(LekZaIzmenu))
+                return;
 
             // selektovani objekat prima vrednosti od menjanog objekta
             SelektovaniLek.Kolicina = LekZaIzmenu.Kolicina;
@@ -218,13 +228,20 @@ namespace HealthClinic.ViewModels
         {
             // Lek za izmenu/stimanje preuzima podatke od selektovanog leka
             if (!(SelektovaniLek is null))
-                LekZaIzmenu = new Lek() 
-                { 
+            {
+                LekZaIzmenu = new Lek()
+                {
                     NazivLeka = SelektovaniLek.NazivLeka,
                     Kolicina = SelektovaniLek.Kolicina,
                     SifraLeka = SelektovaniLek.SifraLeka,
                     VrstaLeka = SelektovaniLek.VrstaLeka
                 };
+            }
+            else
+            {
+                return;
+            }
+                
 
 
 
@@ -236,6 +253,9 @@ namespace HealthClinic.ViewModels
 
         public void IzbrisiLek(object obj)
         {
+            if (SelektovaniLek is null)
+                return;
+
             // TODO: Mozda dodati nekad da pise tacno koji lek se brise ali u nekim buducim verzijama
             TrenutniProzor = new ObrisiLekDijalog();
             TrenutniProzor.DataContext = this;
@@ -411,6 +431,36 @@ namespace HealthClinic.ViewModels
             MoguceVrsteLekova.Add("antibiotik");
             MoguceVrsteLekova.Add("kardio vaskularni");
             MoguceVrsteLekova.Add("anestetik");
+        }
+
+        #endregion
+
+
+        #region Validiranje lekova
+        private bool validanLek(Lek lek)
+        {
+            if (lek.Kolicina is null)
+            {
+                MessageBox.Show("Niste uneli kolicinu leka");
+                return false;
+            }
+
+            if (lek.NazivLeka is null)
+            {
+                MessageBox.Show("Niste uneli naziv leka");
+                return false;
+            }
+
+            if (lek.VrstaLeka is null)
+            {
+                MessageBox.Show("Niste uneli vrstu leka");
+                return false;
+            }
+            
+            // TODO: Kako da proverim da li nasa aplikacija ima ErrorContenta da bih bacio poruku greske ovde neku
+
+
+            return true;
         }
 
         #endregion

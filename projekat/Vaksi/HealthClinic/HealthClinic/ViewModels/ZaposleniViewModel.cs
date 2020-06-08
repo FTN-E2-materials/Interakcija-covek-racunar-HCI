@@ -190,6 +190,9 @@ namespace HealthClinic.ViewModels
 
         public void PotvrdaDodavanjaPodataka(object ojb)
         {
+            if (!validanZaposleni(ZaposleniZaDodavanje))
+                return;
+
             // dodajem zaposlenog ukoliko je odgovor bio potvrdan
             Zaposleni.Add(ZaposleniZaDodavanje);
             podesiBrojOdredjenihZaposlenih(ZaposleniZaDodavanje, 1);
@@ -203,6 +206,9 @@ namespace HealthClinic.ViewModels
 
             //podesiBrojOdredjenihLekova(SelektovaniLek, -1);
             podesiBrojOdredjenihZaposlenih(SelektovaniZaposleni, -1);
+
+            if (!validanZaposleni(ZaposleniZaIzmenu))
+                return;
 
             // selektovani objekat prima vrednosti od menjanog objekta
             SelektovaniZaposleni.Ime = ZaposleniZaIzmenu.Ime;
@@ -282,15 +288,18 @@ namespace HealthClinic.ViewModels
 
         public void IzmeniZaposlenog(object obj)
         {
+            
+            if (SelektovaniZaposleni is null)
+                return;
+
             // Zaposleni za izmenu/stimanje preuzima podatke od selektovanog zaposlenog
-            if (!(SelektovaniZaposleni is null))
-                ZaposleniZaIzmenu = new Zaposlen() {
-                    Ime = SelektovaniZaposleni.Ime,
-                    Prezime = SelektovaniZaposleni.Prezime,
-                    Sifra = SelektovaniZaposleni.Sifra,
-                    Struka = SelektovaniZaposleni.Struka,
-                    KorisnickoIme = SelektovaniZaposleni.KorisnickoIme
-                };
+            ZaposleniZaIzmenu = new Zaposlen() {
+                Ime = SelektovaniZaposleni.Ime,
+                Prezime = SelektovaniZaposleni.Prezime,
+                Sifra = SelektovaniZaposleni.Sifra,
+                Struka = SelektovaniZaposleni.Struka,
+                KorisnickoIme = SelektovaniZaposleni.KorisnickoIme
+            };
 
 
             // podesavanje prikaza dijaloga izmene
@@ -301,6 +310,9 @@ namespace HealthClinic.ViewModels
 
         public void IzbrisiZaposlenog(object obj)
         {
+            if (SelektovaniZaposleni is null)
+                return;
+
             // TODO: Mozda dodati nekad da pise tacno kog zaposlenog brisemo ali u nekim buducim verzijama
             TrenutniProzor = new ObrisiZaposlenogDijalog();
             TrenutniProzor.DataContext = this;
@@ -469,6 +481,41 @@ namespace HealthClinic.ViewModels
         {
             get { return _brojacOstalihZaposlenih; }
             set { _brojacOstalihZaposlenih = value; OnPropertyChanged("BrojacOstalihZaposlenih"); }
+        }
+
+        #endregion
+
+        #region Validacija zaposlenog
+
+        private bool validanZaposleni(Zaposlen zaposlen)
+        {
+            if(zaposlen.Ime is null)
+            {
+                MessageBox.Show("Niste uneli ime zaposlenog");
+                return false;
+            }
+
+            if (zaposlen.Prezime is null)
+            {
+                MessageBox.Show("Niste uneli prezime zaposlenog");
+                return false;
+            }
+
+            if (zaposlen.Struka is null)
+            {
+                MessageBox.Show("Niste uneli zanimanje/struku zaposlenog");
+                return false;
+            }
+
+            if (zaposlen.KorisnickoIme is null)
+            {
+                MessageBox.Show("Niste uneli korisnicko ime zaposlenog");
+                return false;
+            }
+
+            // TODO: Kada saznas kako dobiti koje trenutno validacione probleme ima app, ovde to mogu hendlovati
+
+            return true;
         }
 
         #endregion

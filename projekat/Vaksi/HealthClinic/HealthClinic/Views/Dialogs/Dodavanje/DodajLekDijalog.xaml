@@ -146,6 +146,7 @@
                 Height="40"
                 Width="100"
                 Margin="10"
+                IsDefault="True"
                 >
                 Potvrdi
             </Button>
