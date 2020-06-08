@@ -34,7 +34,7 @@ namespace HelathClinicPatienteRole
 
         private void PocetnaButton_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new PocetnaPatientViewModel();
+            DataContext = PocetnaPatientViewModel.Instance;
         }
         private void BlogButton_Click(object sender, RoutedEventArgs e)
         {
@@ -50,7 +50,7 @@ namespace HelathClinicPatienteRole
         }
         private void ZakaziPregledButton_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new ZakaziPregledPatientViewModel();
+            DataContext = ZakaziPregledPatientViewModel.Instance;
         }
         private void KartonButton_Click(object sender, RoutedEventArgs e)
         {
@@ -66,7 +66,8 @@ namespace HelathClinicPatienteRole
         }
         private void RecenzijaButton_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new RecenzijaAppPatientViewModel();
+      
+            DataContext = RecenzijaAppPatientViewModel.Instance;
         }
         private void PomocButton_Click(object sender, RoutedEventArgs e)
         {

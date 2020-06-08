@@ -204,6 +204,26 @@ namespace HelathClinicPatienteRole.ViewModel
             }
         }
 
+        #region Singlton
+        private static PocetnaPatientViewModel instance = null;
+        private static readonly object padlock = new object();
+
+
+        public static PocetnaPatientViewModel Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new PocetnaPatientViewModel();
+                    }
+                    return instance;
+                }
+            }
+        }
+        #endregion
 
     }
 }

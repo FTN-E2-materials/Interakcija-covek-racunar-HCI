@@ -39,10 +39,7 @@ namespace HelathClinicPatienteRole.Model
             }
         }
 
-        public static implicit operator string(Lekar v)
-        {
-            throw new NotImplementedException();
-        }
+ 
         #endregion
     }
 }

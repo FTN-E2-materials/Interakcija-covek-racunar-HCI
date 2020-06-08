@@ -31,10 +31,16 @@ namespace HelathClinicPatienteRole.ViewModel
 
         #region Ostavi recenziju
 
+        private bool recenzijaOstavljena;
         public RelayCommand OstaviRecenzijuCommand { get; private set; }
 
         public void OstaviRecenziju(object obj)
         {
+            if (recenzijaOstavljena)
+            {
+                MessageBox.Show("Već ste ostavili vašu recenziju!");
+                return;
+            }
             if (NoviKomentar == null)
             {
                 MessageBox.Show("Morate uneti vaš komentar! ");
@@ -47,8 +53,8 @@ namespace HelathClinicPatienteRole.ViewModel
 
             
             Recenzije.Add(novaRecenzija);
-           
 
+            recenzijaOstavljena = true;
             MessageBox.Show("Uspesno ste ostavili recenziju ");
 
         }
@@ -129,6 +135,27 @@ namespace HelathClinicPatienteRole.ViewModel
             set { _selektovanaRecenzija = value; OnPropertyChanged("SelektovanaRecenzija"); }
         }
 
+        #endregion
+
+        #region Singlton
+        private static RecenzijaAppPatientViewModel instance = null;
+        private static readonly object padlock = new object();
+
+
+        public static RecenzijaAppPatientViewModel Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new RecenzijaAppPatientViewModel();
+                    }
+                    return instance;
+                }
+            }
+        }
         #endregion
 
     }

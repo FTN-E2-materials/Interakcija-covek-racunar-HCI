@@ -10,26 +10,6 @@
     <Grid>
         <StackPanel Background="White" >
             <Grid Height="700" >
-                <Label  Content= "Recenzije"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="50" Grid.Column="12"  Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="6" />
-
-                <Label  Content= "   Ostavite vaš komentar"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="35" Grid.Column="10"  Grid.Row="19" Grid.RowSpan="5" Grid.ColumnSpan="10" Margin="10,11,0,10" />
-
-                <StackPanel  Grid.Row="22" Grid.Column="9" Grid.ColumnSpan="14" Grid.RowSpan="8" HorizontalAlignment="Left" Width="500" >
-                    <TextBox Background="WhiteSmoke" FontWeight="DemiBold" Height="131" x:Name="Komentar" materialDesign:HintAssist.HelperText="Iznad unesite vaš komentar" Text="{Binding NoviKomentar, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,0,-32,0"/>
-                </StackPanel>
-
-                <DataGrid x:Name="dataGridRecenzije"
-                    SelectedItem="{Binding Path=SelektovanaRecenzija, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                    ItemsSource="{Binding Path=Recenzije}"
-                    AutoGenerateColumns="True" 
-                    SelectionMode="Single" 
-                    IsReadOnly="True" 
-                    HorizontalAlignment="Center"
-                    Width="951" 
-                    Background="#FF226397" Grid.ColumnSpan="22" Grid.RowSpan="16" Grid.Column="4" Grid.Row="4" Margin="0,0,0,5"
-                    />
-                
-                <Button Content="Pošalji recenziju" Grid.Row="30" Grid.Column="12" Grid.ColumnSpan="5" Grid.RowSpan="3" Margin="33,5,10,16" Command="{Binding OstaviRecenzijuCommand}" Height="Auto"/>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -98,6 +78,26 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
+                <Label  Content= "Recenzije"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="50" Grid.Column="12"  Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="6" />
+
+                <Label  Content= "   Ostavite vaš komentar"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="35" Grid.Column="10"  Grid.Row="19" Grid.RowSpan="5" Grid.ColumnSpan="10" Margin="10,11,0,10" />
+
+                <StackPanel  Grid.Row="22" Grid.Column="9" Grid.ColumnSpan="14" Grid.RowSpan="8" HorizontalAlignment="Left" Width="500" >
+                    <TextBox Background="WhiteSmoke" FontWeight="DemiBold" Height="131" x:Name="Komentar" materialDesign:HintAssist.HelperText="Iznad unesite vaš komentar" Text="{Binding NoviKomentar, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,0,-32,0"/>
+                </StackPanel>
+
+                <DataGrid x:Name="dataGridRecenzije"
+                    SelectedItem="{Binding SelektovanaRecenzija, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    ItemsSource="{Binding Recenzije}"
+                    AutoGenerateColumns="True" 
+                    SelectionMode="Single" 
+                    IsReadOnly="True" 
+                    HorizontalAlignment="Center"
+                    Width="951" 
+                    Background="#FF148DF0" Grid.ColumnSpan="22" Grid.RowSpan="16" Grid.Column="4" Grid.Row="4" Margin="0,0,0,5"
+                    />
+
+                <Button Content="Pošalji recenziju" Grid.Row="28" Grid.Column="12" Grid.ColumnSpan="5" Grid.RowSpan="3" Margin="33,15,10,5" Command="{Binding OstaviRecenzijuCommand}" Height="Auto"/>
             </Grid>
 
         </StackPanel>

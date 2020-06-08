@@ -3,6 +3,7 @@ using HelathClinicPatienteRole.Model;
 using HelathClinicPatienteRole.ViewModel.Commands;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -14,14 +15,14 @@ namespace HelathClinicPatienteRole.ViewModel
 {
     class ZakaziPregledPatientViewModel : INotifyPropertyChanged
     {
-        private IList<Lekar> _LekariList;
+        private ObservableCollection<Lekar> _LekariList;
 
         public ZakaziPregledPatientViewModel()
         {
             PirkaziPreporukaTerminaDialogCommand = new RelayCommand(PirkaziPreporukaTerminaDialog);
             ZakaziPregledCommand = new RelayCommand(ZakaziPregled);
 
-            _LekariList = new List<Lekar>
+            _LekariList = new ObservableCollection<Lekar>
             {
                 new Lekar{DoctorId=1, FirstAndLastName = "Pera Perić" },
                 new Lekar{DoctorId=1, FirstAndLastName = "Mika Mikić" },
@@ -98,21 +99,26 @@ namespace HelathClinicPatienteRole.ViewModel
 
         public RelayCommand ZakaziPregledCommand { get; private set; }
 
+        private DateTime vremePrethodnoZakazanogPregleda; 
         public void ZakaziPregled(object obj)
         {
+            if(vremePrethodnoZakazanogPregleda.Day == DateTime.Now.Day)
+            {
+                MessageBox.Show("Nije moguće opet zakazati pregled! Potrebno je da prođe 24h od prethodno zakazanog pregleda!");
+                return;
+            }
 
             if (SelektovaniLekar is null)
             {
                 MessageBox.Show("Niste selektovali ni jednog lekara!!!");
                 return;
             }
-            
 
-            MessageBox.Show("Usepsno ste zakazali pregled kod " + SelektovaniLekar.FirstAndLastName  + "!!!" + SelektovaniDatum);
-           // Pregled pregled = new Pregled { IdPregleda = 9, NazivPregleda = "Novo zakazan pregled", TerminPregleda = "22.06.2020  19:00h", StatusPregleda = "Zakazan", Lekar = SelektovaniLekar };
-           // Pregledi.Add(pregled);
-
-
+            string termin = SelektovaniDatum.Day + "." + SelektovaniDatum.Month+ "." + SelektovaniDatum.Year;
+            MessageBox.Show("Usepsno ste zakazali pregled kod " + SelektovaniLekar.FirstAndLastName  + ".");
+            Pregled pregled = new Pregled { IdPregleda = 9, NazivPregleda = "Pregled kod lekara opšte prakse", TerminPregleda = termin, StatusPregleda = "Zakazan", Lekar = SelektovaniLekar.FirstAndLastName };
+            vremePrethodnoZakazanogPregleda = DateTime.Now;
+            PocetnaPatientViewModel.Instance.Pregledi.Add(pregled);
 
         }
 
@@ -129,7 +135,7 @@ namespace HelathClinicPatienteRole.ViewModel
         }
         #endregion
 
-        public IList<Lekar> Lekari
+        public ObservableCollection<Lekar> Lekari
         {
             get
             {
@@ -146,5 +152,26 @@ namespace HelathClinicPatienteRole.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
+
+        #region Singlton
+        private static ZakaziPregledPatientViewModel instance = null;
+        private static readonly object padlock = new object();
+
+
+        public static ZakaziPregledPatientViewModel Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new ZakaziPregledPatientViewModel();
+                    }
+                    return instance;
+                }
+            }
+        }
+        #endregion
     }
 }
