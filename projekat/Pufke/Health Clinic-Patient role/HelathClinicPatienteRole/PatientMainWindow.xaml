@@ -14,6 +14,7 @@
         <KeyBinding Command="{Binding PirkaziIzmeniPregledDialogCommand}" Gesture="CTRL+I"/>
         <KeyBinding Command="{Binding PirkaziOtkaziPregledDialogCommand}" Gesture="CTRL+O"/>
         <KeyBinding Command="{Binding PirkaziAnketaLekaraDialogCommand}" Gesture="CTRL+Q"/>
+        <KeyBinding Command="{Binding ProfilPotvrdiCommand}" Key="ENTER"/>
     </Window.InputBindings>
     <Grid>
         <StackPanel>

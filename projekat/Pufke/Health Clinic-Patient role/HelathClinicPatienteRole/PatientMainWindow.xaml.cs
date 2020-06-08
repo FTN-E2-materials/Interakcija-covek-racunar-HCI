@@ -42,7 +42,7 @@ namespace HelathClinicPatienteRole
         }
         private void ProfilButton_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new ProfilPatientViewModel();
+            DataContext = ProfilPatientViewModel.Instance;
         }
         private void PropisanaTerapijaButton_Click(object sender, RoutedEventArgs e)
         {

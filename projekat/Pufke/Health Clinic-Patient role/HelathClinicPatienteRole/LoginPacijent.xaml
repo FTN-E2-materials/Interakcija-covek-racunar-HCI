@@ -7,6 +7,9 @@
         xmlns:ViewModel="clr-namespace:HelathClinicPatienteRole.ViewModel"
         mc:Ignorable="d"
         Title="Login" Height="353" Width="490">
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding LoginCommand}" Key="ENTER"/>
+    </Window.InputBindings>
     <Grid Margin="0,0,2,-21">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="107*"/>
