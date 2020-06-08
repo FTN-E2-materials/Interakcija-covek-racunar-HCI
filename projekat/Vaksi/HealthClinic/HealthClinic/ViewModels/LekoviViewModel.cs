@@ -208,8 +208,7 @@ namespace HealthClinic.ViewModels
 
                 doc.Close();
             }
-            var dijalog = new GenerisiIzvestajLekovaDijalog();
-            dijalog.ShowDialog();
+            MessageBox.Show("Uspesno kreiran izvestaj lekova, mozete ga pogledati u tekucem direktorijumu");
         }
 
         public void DodajLek(object obj)

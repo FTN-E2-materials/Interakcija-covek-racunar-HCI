@@ -375,8 +375,7 @@ namespace HealthClinic.ViewModels
 
                 doc.Close();
             }
-            var dijalog = new GenerisiIzvestajProstorijaDijalog();
-            dijalog.ShowDialog();
+            MessageBox.Show("Uspesno kreiran izvestaj prostorija, mozete ga pogledati u tekucem direktorijumu");
         }
 
         public void DodajProstoriju(object obj)

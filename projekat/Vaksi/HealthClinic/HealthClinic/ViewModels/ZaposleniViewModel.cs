@@ -271,8 +271,7 @@ namespace HealthClinic.ViewModels
                 doc.Close(true);
             }
 
-            var dijalog = new GenerisiIzvestajZaposlenihDijalog();
-            dijalog.ShowDialog();
+            MessageBox.Show("Uspesno kreiran izvestaj zaposlenih, mozete ga pogledati u tekucem direktorijumu");
         }
 
         public void DodajZaposlenog(object obj)
