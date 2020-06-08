@@ -23,6 +23,7 @@ namespace HelathClinicPatienteRole.ViewModel
             PirkaziPreporukaTerminaDialogCommand = new RelayCommand(PirkaziPreporukaTerminaDialog);
             ZakaziPregledCommand = new RelayCommand(ZakaziPregled);
             PreporukaTerminaCommand = new RelayCommand(PreporukaTermina);
+            ZakaziPregledPreporukaTerminaCommand = new RelayCommand(ZakaziPregledPreporuka);
 
             _LekariList = new ObservableCollection<Lekar>
             {
@@ -76,14 +77,22 @@ namespace HelathClinicPatienteRole.ViewModel
         #region Preporuka termina 
 
         public RelayCommand PreporukaTerminaCommand { get; private set; }
-
+        int i = 1;
         public void PreporukaTermina(object obj)
         {
+
+            if (SelektovaniDatumDo.Date < SelektovaniDatumOd.Date)
+            {
+                MessageBox.Show("Nesipravan vremenski interval! 'Datum OD' mora biti manji od 'datuma DO'");
+                return;
+            }
+
             if (SelektovaniDatumDo.Date == SelektovaniDatumOd.Date)
             {
                 MessageBox.Show("Potrebno je izabrati datumski opseg u minimalnom razmaku od jednog dana!");
                 return;
             }
+
             if (SelektovaniLekar is null)
             {
                 MessageBox.Show("Potrebno je izabrati lekara!");
@@ -94,8 +103,8 @@ namespace HelathClinicPatienteRole.ViewModel
                 MessageBox.Show("Potrebno je izabrati prioritet, ako vam prioritet nije bitan izaberite i Lekara i Datum!");
                 return;
             }
-
-            MessageBox.Show("Preporuka termina je ......");
+            PreporucenTermin = SelektovaniDatumOd.AddDays(i++);
+    
         }
 
         #endregion
@@ -115,7 +124,7 @@ namespace HelathClinicPatienteRole.ViewModel
 
         public RelayCommand ZakaziPregledCommand { get; private set; }
 
-        private DateTime vremePrethodnoZakazanogPregleda; 
+        private static DateTime vremePrethodnoZakazanogPregleda; 
         public void ZakaziPregled(object obj)
         {
             if(vremePrethodnoZakazanogPregleda.Day == DateTime.Now.Day)
@@ -130,7 +139,7 @@ namespace HelathClinicPatienteRole.ViewModel
                 return;
             }
 
-            string termin = SelektovaniDatum.Day + "." + SelektovaniDatum.Month+ "." + SelektovaniDatum.Year;
+            string termin = SelektovaniDatum.Day + "." + SelektovaniDatum.Month+ "." + SelektovaniDatum.Year + "   " + SelektovaniDatum.Hour + ":" + SelektovaniDatum.Minute ;
             MessageBox.Show("Usepsno ste zakazali pregled kod " + SelektovaniLekar.FirstAndLastName  + ".");
             Pregled pregled = new Pregled { IdPregleda = 9, NazivPregleda = "Pregled kod lekara opšte prakse", TerminPregleda = termin, StatusPregleda = "Zakazan", Lekar = SelektovaniLekar.FirstAndLastName };
             vremePrethodnoZakazanogPregleda = DateTime.Now;
@@ -140,6 +149,34 @@ namespace HelathClinicPatienteRole.ViewModel
 
         #endregion
 
+        #region Zakazi pregled preporuka termina
+
+        public RelayCommand ZakaziPregledPreporukaTerminaCommand { get; private set; }
+
+    
+        public void ZakaziPregledPreporuka(object obj)
+        {
+            if (vremePrethodnoZakazanogPregleda.Day == DateTime.Now.Day)
+            {
+                MessageBox.Show("Nije moguće opet zakazati pregled! Potrebno je da prođe 24h od prethodno zakazanog pregleda!");
+                return;
+            }
+
+            if (PreporucenTermin.Date == DateTime.MinValue)
+            {
+                MessageBox.Show("Morate prvo izgenerisati termin!");
+                return;
+            }
+
+            string termin = PreporucenTermin.Day + "." + PreporucenTermin.Month + "." + PreporucenTermin.Year + "   " + PreporucenTermin.Hour + ":" + PreporucenTermin.Minute;
+            MessageBox.Show("Usepsno ste zakazali pregled kod " + SelektovaniLekar.FirstAndLastName + ".");
+            Pregled pregled = new Pregled { IdPregleda = 9, NazivPregleda = "Pregled kod lekara opšte prakse", TerminPregleda = termin, StatusPregleda = "Zakazan", Lekar = SelektovaniLekar.FirstAndLastName };
+            vremePrethodnoZakazanogPregleda = DateTime.Now;
+            PocetnaPatientViewModel.Instance.Pregledi.Add(pregled);
+
+        }
+
+        #endregion
 
         #region Preporuka termina dialog
 
@@ -154,7 +191,16 @@ namespace HelathClinicPatienteRole.ViewModel
 
         #endregion
 
+        #region Preporuceni Termin
 
+        private DateTime _preporuceniTermin ;
+
+        public DateTime PreporucenTermin
+        {
+            get { return _preporuceniTermin; }
+            set { _preporuceniTermin = value; OnPropertyChanged("PreporucenTermin"); }
+        }
+        #endregion
 
 
         #region Selektovani Datum OD za preporuku termina

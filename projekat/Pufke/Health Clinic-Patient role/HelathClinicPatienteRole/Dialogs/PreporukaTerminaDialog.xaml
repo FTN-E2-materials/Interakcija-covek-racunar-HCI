@@ -7,22 +7,22 @@
         xmlns:local="clr-namespace:HelathClinicPatienteRole.Dialogs"
         xmlns:ViewModel="clr-namespace:HelathClinicPatienteRole.ViewModel"
         mc:Ignorable="d"
-        Title="PreporukaTerminaDialog" Height="660" Width="500">
+        Title="PreporukaTerminaDialog" Height="750" Width="500">
     <Grid>
-        <StackPanel Background="White" >
+        <StackPanel Background="White" Margin="0,0,0,-71" >
             <Grid Height="700" >
 
                 <Label FontWeight="Bold" HorizontalAlignment="Center"  Content="Izaberite vremenski interval" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="1" Grid.Column="7" Grid.ColumnSpan="28" Grid.RowSpan="2" Width="346" />
 
                 <DatePicker SelectedDate="{Binding Path=SelektovaniDatumOd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="21" Background="WhiteSmoke" Foreground="#FF148DF0" Grid.Row ="3" Grid.Column="7" Grid.ColumnSpan="11" Grid.RowSpan="2" materialDesign:HintAssist.Hint="Od datuma" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="10,0,0,3"   />
 
-                <Label FontWeight="Bold" HorizontalAlignment="Center"  Content="Izaberite lekara  " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="5" Grid.Column="12" Grid.ColumnSpan="18" Grid.RowSpan="2" Margin="9,6,10,0" />
-                <Label FontWeight="Bold" HorizontalAlignment="Center"  Content=" Izaberite vaš prioritet. Datum ili lekar ?  " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="17" Grid.ColumnSpan="40" Grid.RowSpan="2"  Width="480" Margin="10,10,2,0"/>
+                <Label FontWeight="Bold" HorizontalAlignment="Center"  Content="Izaberite lekara  " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="5" Grid.Column="12" Grid.ColumnSpan="18" Grid.RowSpan="2" Margin="10,1,6,0" />
+                <Label FontWeight="Bold" HorizontalAlignment="Center"  Content=" Izaberite vaš prioritet. Datum ili lekar ?  " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="16" Grid.ColumnSpan="40" Grid.RowSpan="2"  Width="480" Margin="10,10,2,0"/>
 
 
                 <DataGrid  x:Name="dataGridLekari" ItemsSource="{Binding Lekari}" 
                     IsReadOnly="True"  CanUserAddRows="false"  SelectedItem="{Binding Path=SelektovaniLekar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                AutoGenerateColumns="False" Grid.ColumnSpan="24" Margin="0,0,7,2" Grid.RowSpan="10" Grid.Row="7" Background="#FF148DF0" Grid.Column="9">
+                AutoGenerateColumns="False" Grid.ColumnSpan="24" Margin="0,16,7,12" Grid.RowSpan="11" Grid.Row="6" Background="#FF148DF0" Grid.Column="9">
 
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="     Ime i prezime lekara"
@@ -36,21 +36,25 @@
                             </DataGridColumn.HeaderStyle>
                         </DataGridTextColumn>
                     </DataGrid.Columns>
-                    
+
 
                 </DataGrid>
 
                 <CheckBox Name="lekarCheckedCB"
-                   Checked="lekarChecked" Style="{StaticResource MaterialDesignFilterChipCheckBox}" Background="#FF148DF0"  Grid.ColumnSpan="8"  Grid.RowSpan="2" Width="85" Grid.Column="12" Grid.Row="19" Margin="9,4,0,16">
+                   Checked="lekarChecked" Style="{StaticResource MaterialDesignFilterChipCheckBox}" Background="#FF148DF0"  Grid.ColumnSpan="8"  Grid.RowSpan="2" Width="85" Grid.Column="12" Grid.Row="18" Margin="10,0,0,20">
                     Lekar
                 </CheckBox>
                 <CheckBox Name="datumCheckedCB"
-                    Checked="datumChecked"  Style="{StaticResource MaterialDesignFilterChipCheckBox}" Background="#FF148DF0" Grid.ColumnSpan="8"  Grid.RowSpan="2" Width="85" Grid.Column="20" Grid.Row="19" Margin="10,4,0,16" >
+                    Checked="datumChecked"  Style="{StaticResource MaterialDesignFilterChipCheckBox}" Background="#FF148DF0" Grid.ColumnSpan="8"  Grid.RowSpan="2" Width="85" Grid.Column="20" Grid.Row="18" Margin="11,0,0,20" >
                     Datum
                 </CheckBox>
 
-                <Button Content="Preporuka termina" Grid.Row="21" Grid.Column="14" Grid.ColumnSpan="13" Grid.RowSpan="2" RenderTransformOrigin="-0.436,-1.938" Margin="3,20,0,0" Command="{Binding PreporukaTerminaCommand}"/>
+                <Button Content="Preporuči termin" Grid.Row="19" Grid.Column="13" Grid.ColumnSpan="14" Grid.RowSpan="2" RenderTransformOrigin="-0.436,-1.938" Margin="10,20,5,0" Command="{Binding PreporukaTerminaCommand}"/>
                 <DatePicker SelectedDate="{Binding Path=SelektovaniDatumDo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="21" Background="WhiteSmoke" Foreground="#FF148DF0"  Grid.Row ="3" Grid.Column="22" Grid.ColumnSpan="11" Grid.RowSpan="2" materialDesign:HintAssist.Hint="Do datuma" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="1,0,0,3" RenderTransformOrigin="0.466,0.02"   />
+
+                <TextBlock Background="WhiteSmoke" FontWeight="Bold" HorizontalAlignment="Center"  Text="{Binding Path=PreporucenTermin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,StringFormat=dd/MM/yyyy    hh:mm}" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="22" Grid.Column="9" Grid.ColumnSpan="22" Grid.RowSpan="3" Margin="8,19,0,0" Height="42" Width="260" />
+                <Button Content="Zakaži pregled" Grid.Row="25" Grid.Column="13" Grid.ColumnSpan="14" Grid.RowSpan="2" RenderTransformOrigin="-0.436,-1.938" Margin="10,5,5,15" Command="{Binding ZakaziPregledPreporukaTerminaCommand}"/>
+                <Label FontWeight="Bold" HorizontalAlignment="Center"  Content=" Preporučen termin je:   " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="15" Grid.Row="21" Grid.ColumnSpan="31" Grid.RowSpan="2"  Width="480" Margin="0,17,-102,0" Grid.Column="9"/>
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
