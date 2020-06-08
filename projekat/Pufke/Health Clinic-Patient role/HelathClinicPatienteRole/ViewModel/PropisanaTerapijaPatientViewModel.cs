@@ -12,6 +12,9 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Media;
 using HelathClinicPatienteRole.Model;
+using Syncfusion.Pdf.Tables;
+using System.Data;
+using Syncfusion.Pdf.Grid;
 
 namespace HelathClinicPatienteRole.ViewModel
 {
@@ -128,17 +131,49 @@ namespace HelathClinicPatienteRole.ViewModel
             {
           
                 PdfPage page = document.Pages.Add();
+                PdfGrid pdfGrid = new PdfGrid();
+                PdfLightTable pdfLightTable = new PdfLightTable();
+                DataTable table = new DataTable();
 
-                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
-                page.Graphics.DrawString("Izvestaj o uzimanju terapije!", font, PdfBrushes.Black, new System.Drawing.PointF(0, 0));
-                page.Graphics.DrawString("Ponedeljak 18h lek za pritisak", font, PdfBrushes.Black, new System.Drawing.PointF(0, 40));
-                page.Graphics.DrawString("Utorak 18h lek za pritisak", font, PdfBrushes.Black, new System.Drawing.PointF(0, 80));
-                page.Graphics.DrawString("Cetvrtak 18h lek za pritisak", font, PdfBrushes.Black, new System.Drawing.PointF(0, 120));
-                page.Graphics.DrawString("Petak 18h lek za pritisak", font, PdfBrushes.Black, new System.Drawing.PointF(0, 160));
-                page.Graphics.DrawString("Terapiju uzimati u trajanju od tri nedelje", font, PdfBrushes.Black, new System.Drawing.PointF(0, 200));
+                table.Columns.Add("Ponedeljak");
+                table.Columns.Add("Utorak");
+                table.Columns.Add("Sreda");
+                table.Columns.Add("Četvrtak");
+                table.Columns.Add("Petak");
+                table.Columns.Add("Subota");
+                table.Columns.Add("Nedelja");
+
+                pdfGrid.DataSource = table;
+
+
+                int i = 1;
+                foreach (string e in eventNameCollection)
+                {
+                    if (i == 29)
+                    {
+                        table.Rows.Add(i + " Jun 2020 Terapija: " + e, i+1 + " Jun 2020 Terapija: " + e, "" , "" , "", "" , "" );
+                        break;
+                    }
+                    table.Rows.Add(i + " Jun 2020 Terapija: " + e, i+1 + " Jun 2020 Terapija: "+ e , i+2 + " Jun 2020 Terapija: " + e, i+3 + " Jun 2020 Terapija: " + e, i+4 + " Jun 2020 Terapija: " + e, i+5 + " Jun 2020 Terapija: " + e, i+6 + " Jun 2020 Terapija: " + e);
+                    i = i + 7;
+                    
+                }
+
+                pdfLightTable.DataSource = table;
+
+                PdfLightTableStyle lightTableStyle = new PdfLightTableStyle();
+                lightTableStyle.CellPadding = 12;
+                lightTableStyle.CellSpacing = 2;
+                lightTableStyle.ShowHeader = true;
+                lightTableStyle.RepeatHeader = true;
+
+                pdfLightTable.Style = lightTableStyle;
+
+                pdfLightTable.Draw(page, new System.Drawing.PointF(0, 0));
+
 
                 document.Save("C:\\Users\\Pufke\\Desktop\\Izvestaj.pdf");
-                MessageBox.Show("Izvestaj je izgenerisan da Desktop vaseg racunara");
+                MessageBox.Show("Izvestaj u vidu kalendara je izgenerisan da Desktop vaseg racunara");
             }
             
         }
