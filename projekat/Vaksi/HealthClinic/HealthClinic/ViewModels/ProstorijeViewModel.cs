@@ -325,16 +325,20 @@ namespace HealthClinic.ViewModels
 
         public void PrikaziZauzetostAktivnost(object obj)
         {
-            var dijalog = new ZauzetostAktivnostDijalog();
-            dijalog.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
-            dijalog.ShowDialog();
+            TrenutniProzor = new ZauzetostAktivnostDijalog();
+            TrenutniProzor.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
+            TrenutniProzor.ShowDialog();
         }
 
         public void PrikaziSpisakOpreme(object obj)
         {
-            var dijalog = new SpisakOpremeDijalog();
-            dijalog.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
-            dijalog.ShowDialog();
+            SpisakOpreme = new ObservableCollection<string>();
+            SpisakOpreme.Add("krevet");
+            SpisakOpreme.Add("sto");
+
+            TrenutniProzor = new SpisakOpremeDijalog();
+            TrenutniProzor.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
+            TrenutniProzor.ShowDialog();
         }
 
         public void GenerisiIzvestaj(object obj)
@@ -627,6 +631,18 @@ namespace HealthClinic.ViewModels
                 }
             }
         }
+        #endregion
+
+        #region Spisak opreme odredjene prostorije
+        private ObservableCollection<string> _spisakOpreme;
+
+        public ObservableCollection<string> SpisakOpreme
+        {
+            get { return _spisakOpreme; }
+            set { _spisakOpreme = value; OnPropertyChanged("SpisakOpreme"); }
+        }
+
+
         #endregion
     }
 

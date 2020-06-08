@@ -41,6 +41,9 @@ namespace HealthClinic.ViewModels
             PotvrdaBrisanjaPodatakaCommand = new RelayCommand(PotvrdaBrisanjaPodataka);
 
             odredjivanjeMogucihVrstaLekova();
+
+            NuspojaveCommand = new RelayCommand(PrikaziNuspojave);
+            AlergijeCommand = new RelayCommand(PrikaziAlergije);
         }
 
         
@@ -116,6 +119,8 @@ namespace HealthClinic.ViewModels
         public RelayCommand DodajLekCommand { get; private set; }
         public RelayCommand IzmeniLekCommand { get; private set; }
         public RelayCommand IzbrisiLekCommand { get; private set; }
+        public RelayCommand NuspojaveCommand { get; private set; }
+        public RelayCommand AlergijeCommand { get; private set; }
 
         #endregion
 
@@ -168,6 +173,8 @@ namespace HealthClinic.ViewModels
             SelektovaniLek.Kolicina = LekZaIzmenu.Kolicina;
             SelektovaniLek.NazivLeka = LekZaIzmenu.NazivLeka;
             SelektovaniLek.VrstaLeka = LekZaIzmenu.VrstaLeka;
+            SelektovaniLek.Alergije = LekZaIzmenu.Alergije;
+            SelektovaniLek.Nuspojave = LekZaIzmenu.Nuspojave;
 
             this.TrenutniProzor.Close();            // gasenje trenutnog prozora
         }
@@ -233,7 +240,10 @@ namespace HealthClinic.ViewModels
                     NazivLeka = SelektovaniLek.NazivLeka,
                     Kolicina = SelektovaniLek.Kolicina,
                     SifraLeka = SelektovaniLek.SifraLeka,
-                    VrstaLeka = SelektovaniLek.VrstaLeka
+                    VrstaLeka = SelektovaniLek.VrstaLeka,
+                    Nuspojave = SelektovaniLek.Nuspojave,
+                    Alergije = SelektovaniLek.Alergije
+                    
                 };
             }
             else
@@ -259,6 +269,16 @@ namespace HealthClinic.ViewModels
             TrenutniProzor = new ObrisiLekDijalog();
             TrenutniProzor.DataContext = this;
             TrenutniProzor.ShowDialog();
+        }
+
+        public void PrikaziNuspojave(object obj)
+        {
+            MessageBox.Show(SelektovaniLek.Nuspojave);
+        }
+
+        public void PrikaziAlergije(object obj)
+        {
+            MessageBox.Show(SelektovaniLek.Alergije);
         }
 
         #endregion

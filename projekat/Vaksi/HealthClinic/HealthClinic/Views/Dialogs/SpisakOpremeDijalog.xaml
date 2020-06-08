@@ -85,15 +85,8 @@
                     
                     SelectionMode="Single"
                     FontSize="14"
-                    ItemsSource="{Binding Prostorije}" 
+                    ItemsSource="{Binding SpisakOpreme}" 
                     >
-                    <ListView.View>
-                        <GridView >
-                            <GridViewColumn Header="Odeljenje" DisplayMemberBinding="{Binding Odeljenje}" Width="100"/>
-                            <GridViewColumn Header="Broj sobe" DisplayMemberBinding="{Binding BrojSobe}" Width="100"/>
-
-                        </GridView>
-                    </ListView.View>
                 </ListView>
             </GroupBox>
             <!-- Kraj spiska opreme-->

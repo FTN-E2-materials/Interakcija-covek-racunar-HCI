@@ -91,7 +91,21 @@
                 x:Name="Nuspojava"
                 materialDesign:HintAssist.Hint="Ovde unesite nuspojavu, ako postoji"
                 materialDesign:HintAssist.HelperText="Nuspojava">
+                <TextBox.Text>
+                    <!-- Bajndovanje nuspojave leka + validacija-->
+                    <Binding 
+                        Path="LekZaIzmenu.Nuspojave"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                        <Binding.ValidationRules>
+                            <validations:MinimumCharacterRule MinimumCharacters="1"/>
+                            <validations:MaximumCharacterRule MaximumCharacters="200"/>
 
+                        </Binding.ValidationRules>
+                    </Binding>
+                    <!-- Kraj bajndovanje nuspojave leka + validacija-->
+                </TextBox.Text>
             </TextBox>
             <!-- Kraj nuspojave -->
 
@@ -108,7 +122,19 @@
                 x:Name="Alergija"
                 materialDesign:HintAssist.Hint="Ovde unesite koju alergiju izaziva, ako izaziva"
                 materialDesign:HintAssist.HelperText="Alergija">
-
+                <TextBox.Text>
+                    <!-- Bajndovanje alergije koju lek izaziva + validacija-->
+                    <Binding 
+                        Path="LekZaIzmenu.Alergije"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                        <Binding.ValidationRules>
+                            <validations:MaximumCharacterRule MaximumCharacters="200"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                    <!-- Kraj bajndovanje alergije leka + validacija-->
+                </TextBox.Text>
             </TextBox>
             <!-- Kraj alergije -->
 

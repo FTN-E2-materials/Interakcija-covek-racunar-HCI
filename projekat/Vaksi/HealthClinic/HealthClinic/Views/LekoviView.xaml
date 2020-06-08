@@ -48,7 +48,7 @@
                     SelectedItem="{Binding Path=SelektovaniLek, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     x:Name="dataGridLekovi"
                     ItemsSource="{Binding Path=Lekovi}"
-                    AutoGenerateColumns="True" 
+                    AutoGenerateColumns="False" 
                     SelectionMode="Single" 
                     IsReadOnly="True"
                     
@@ -58,7 +58,40 @@
                     Width="602" 
                     Background="#FF226397"
                           >
-   
+                    <!-- Custom kolone tabele-->
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding NazivLeka}" Header="Naziv leka"/>
+                        <DataGridTextColumn Binding="{Binding Kolicina}" Header="Kolicina"/>
+                        <!-- Dugmad u tabeli -->
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Button
+                                            Command="{Binding Path=DataContext.NuspojaveCommand,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGrid}}}"
+                                            >
+                                            nuspojave
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Button
+                                            Command="{Binding Path=DataContext.AlergijeCommand,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGrid}}}"
+                                            >
+                                            alergije
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <!-- Kraj dugmadi u tabeli -->
+                    </DataGrid.Columns>
                 </DataGrid>
                 <!-- Kraj tabele lekova. -->
 

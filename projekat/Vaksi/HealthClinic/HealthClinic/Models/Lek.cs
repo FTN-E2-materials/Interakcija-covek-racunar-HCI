@@ -14,9 +14,34 @@ namespace HealthClinic.Models
         private string _sifraLeka;
         private string _kolicina;
         private string _vrstaLeka;
+        private string _nuspojave;
+        private string _alergije;
 
-        
+        public string Alergije
+        {
+            get { return _alergije; }
+            set
+            {
+                if (value != _alergije)
+                {
+                    _alergije = value;
+                    OnPropertyChanged("Alergije");
+                }
+            }
+        }
 
+        public string Nuspojave
+        {
+            get { return _nuspojave; }
+            set
+            {
+                if (value != _nuspojave)
+                {
+                    _nuspojave = value;
+                    OnPropertyChanged("Nuspojave");
+                }
+            }
+        }
 
         public string NazivLeka
         {
