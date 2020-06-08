@@ -139,17 +139,26 @@
                     </Grid.ColumnDefinitions>
                     <!-- Kraj definisanja broja kolona za meni -->
 
-                    <Button Grid.Column="0" Height="50" Content="Pocetna" Click="PocetnaTab_Click"/>
-                    <Button Grid.Column="1" Height="50" Content="Blog" Click="BlogTab_Click" />
-                    <Button Grid.Column="2" Height="50" Content="O klinici" Click="AboutTab_Click" />
-                    <Button Grid.Column="3" Height="50" Content="Recenzije" Click="RecenzijeTab_Click" />
-                    <Button Grid.Column="4" Height="50" Content="Zaposleni" Click="ZaposleniTab_Click" />
-                    <Button Grid.Column="5" Height="50" Content="Prostorije" Click="ProstorijeTab_Click" />
-                    <Button Grid.Column="6" Height="50" Content="Lekovi" Click="LekoviTab_Click" />
-                    <Button Grid.Column="7" Height="50" Content="Profil" Click="ProfilTab_Click" />
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Column="0" Height="50" Uid="0" Content="Pocetna" Click="PocetnaTab_Click"/>
+                    <Button Grid.Column="1" Height="50" Uid="1" Content="Blog" Click="BlogTab_Click" />
+                    <Button Grid.Column="2" Height="50" Uid="2" Content="O klinici" Click="AboutTab_Click" />
+                    <Button Grid.Column="3" Height="50" Uid="3" Content="Recenzije" Click="RecenzijeTab_Click" />
+                    <Button Grid.Column="4" Height="50" Uid="4" Content="Zaposleni" Click="ZaposleniTab_Click" />
+                    <Button Grid.Column="5" Height="50" Uid="5" Content="Prostorije" Click="ProstorijeTab_Click" />
+                    <Button Grid.Column="6" Height="50" Uid="6" Content="Lekovi" Click="LekoviTab_Click" />
+                    <Button Grid.Column="7" Height="50" Uid="7" Content="Profil" Click="ProfilTab_Click" />
+
+                    <StackPanel x:Name="GridCursor" Grid.Column="0" Grid.ColumnSpan="8" Width="110" Height="3" Opacity="0.5" Background="White" HorizontalAlignment="Left" Margin="10, 40, 0, 0"/>
                 </Grid>
+                
             </DockPanel>
             <!--Kraj glavnog dela meni bara. -->
+            
             <!--Kraj meni bara aplikacije.-->
 
 
