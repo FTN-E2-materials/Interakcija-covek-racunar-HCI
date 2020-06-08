@@ -102,6 +102,7 @@
     <Compile Include="Model\MedicinskiKarton.cs" />
     <Compile Include="Model\Meeting.cs" />
     <Compile Include="Model\Pregled.cs" />
+    <Compile Include="Model\Recenzije.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="OnlyLettersRule.cs" />
     <Compile Include="OnlyNumbers.cs" />
