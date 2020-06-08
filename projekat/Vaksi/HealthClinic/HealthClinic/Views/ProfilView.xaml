@@ -6,15 +6,308 @@
              xmlns:local="clr-namespace:HealthClinic.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:validations ="clr-namespace:HealthClinic.Utilities.Validations"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1080">
-    <Grid Background="#cdfbf4">
+    <StackPanel Background="#cdfbf4" Orientation="Horizontal">
+
+        <!-- Deo sa podacima-->
+        <StackPanel>
+            <!-- Text iznad podataka-->
+            <TextBlock 
+                Height="30"
+                Width="240"
+                HorizontalAlignment="Left"
+                FontFamily="Times New Roman" 
+                FontSize="22" 
+                FontStyle="Italic"
+                Text="Moji personalni podaci"
+                Margin="50, 20, 0, 10"
+                Foreground="#FF2196F3">
+            </TextBlock>
+            <!-- Kraj teksta iznad podatka -->
+            
+            <!-- Shadow karta za podatke-->
+            <materialDesign:Card
+                Height="410"
+                Width="620"
+                HorizontalAlignment="Center"
+                materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                Margin="50, 0, 0, 0"
+                Padding="3" 
+                Background="#FFCDFBF8">
+                
+                <!-- Content kartice -->
+                <StackPanel>
+                    
+                    <!-- Podaci -->
+                    <StackPanel Margin="0, 0, 0, 0" Orientation="Horizontal">
+                        <!-- Prva kolona podataka-->
+                        <StackPanel Margin="25, 20, 25, 0">
+                            <!-- Kontakt telefon -->
+                            <TextBox
+                                IsEnabled="{Binding IzmenaProfila}"
+                                Background="WhiteSmoke"
+                                FontWeight="DemiBold"
+                                Width="230"
+                                Height="40"
+                                Margin="10,10,10,20"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                x:Name="KontaktTelefon"
+                                materialDesign:HintAssist.Hint="Ovde unesti kontakt telefon"
+                                materialDesign:HintAssist.HelperText="Kontakt telefon">
+                                <TextBox.Text>
+                                    <!-- Bajndovanje KontaktTelefona + validacija-->
+                                    <Binding 
+                                        Path="Upravnik.KontaktTelefon"
+                                        ValidatesOnDataErrors="True"
+                                        UpdateSourceTrigger="PropertyChanged"
+                                        >
+                                        <Binding.ValidationRules>
+                                            <validations:MinimumCharacterRule MinimumCharacters="6"/>
+                                            <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                                            <validations:NumberRule/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                    <!-- Kraj bajndovanje KontaktTelefona + validacija-->
+                                </TextBox.Text>
+                            </TextBox>
+                            <!-- Kraj kontakt telefon-a-->
+
+                            <!-- Adresa stanovanja -->
+                            <TextBox
+                                IsEnabled="{Binding IzmenaProfila}"
+                                Background="WhiteSmoke"
+                                FontWeight="DemiBold"
+                                Width="230"
+                                Height="40"
+                                Margin="10,20,10,20"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                x:Name="AdresaStanovanja"
+                                materialDesign:HintAssist.Hint="Ovde unesite adresu stanovanja"
+                                materialDesign:HintAssist.HelperText="Adresa stanovanja">
+                                <TextBox.Text>
+                                    <!-- Bajndovanje AdresaStanovanja + validacija-->
+                                    <Binding 
+                                        Path="Upravnik.AdresaStanovanja"
+                                        ValidatesOnDataErrors="True"
+                                        UpdateSourceTrigger="PropertyChanged"
+                                        >
+                                        <Binding.ValidationRules>
+                                            <validations:MinimumCharacterRule MinimumCharacters="6"/>
+                                            <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                    <!-- Kraj bajndovanje AdresaStanovanja + validacija-->
+                                </TextBox.Text>
+                            </TextBox>
+                            <!-- Kraj adrese stanovanja -->
+
+                            <!-- Trenutna lozinka -->
+                            <TextBox
+                                IsEnabled="{Binding IzmenaProfila}"
+                                Background="WhiteSmoke"
+                                FontWeight="DemiBold"
+                                Width="230"
+                                Height="40"
+                                Margin="10,20,10,20"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                x:Name="TrenutnaLozinka"
+                                materialDesign:HintAssist.Hint="Ovde unesite trenutnu lozinku"
+                                materialDesign:HintAssist.HelperText="Trenutna lozinka">
+                                <TextBox.Text>
+                                    <!-- Bajndovanje Sifra + validacija-->
+                                    <Binding 
+                                        Path="Upravnik.Sifra"
+                                        ValidatesOnDataErrors="True"
+                                        UpdateSourceTrigger="PropertyChanged"
+                                        >
+                                        <Binding.ValidationRules>
+                                            <validations:PasswordRule/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                    <!-- Kraj bajndovanje Sifra + validacija-->
+                                </TextBox.Text>
+                            </TextBox>
+                            <!-- Kraj trenutne lozinke -->
+
+                            <!-- Nova lozinka -->
+                            <TextBox
+                                IsEnabled="{Binding IzmenaProfila}"
+                                x:Name="NovaLozinka"
+                                Background="WhiteSmoke"
+                                FontWeight="DemiBold"
+                                Width="230"
+                                Height="40"
+                                Margin="10,20,10,20"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                        
+                                materialDesign:HintAssist.Hint="Ovde unesite novu lozinku"
+                                materialDesign:HintAssist.HelperText="Nova lozinka">
+                                <TextBox.Text>
+                                    <!-- Bajndovanje Sifra + validacija-->
+                                    <Binding 
+                                        Path="Upravnik.Sifra"
+                                        ValidatesOnDataErrors="True"
+                                        UpdateSourceTrigger="PropertyChanged"
+                                        >
+                                        <Binding.ValidationRules>
+                                            <validations:PasswordRule/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                    <!-- Kraj bajndovanje Sifra + validacija-->
+                                </TextBox.Text>
+                            </TextBox>
+                            <!-- Kraj nove lozinke -->
+                        </StackPanel>
+                        <!-- Kraj prve kolone podataka-->
 
 
-       
+                        <!-- Druga kolona podataka-->
+                        <StackPanel Margin="25, 20, 20, 0">
+                            <!-- Ime -->
+                            <TextBox
+                                IsEnabled="{Binding IzmenaProfila}"
+                                x:Name="Ime"
+                                Background="WhiteSmoke"
+                                FontWeight="DemiBold"
+                                Width="230"
+                                Height="40"
+                                Margin="10,10,10,20"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                        
+                                materialDesign:HintAssist.Hint="Ovde unesite Vase ime"
+                                materialDesign:HintAssist.HelperText="Vase ime">
+                                <TextBox.Text>
+                                    <!-- Bajndovanje imena + validacija-->
+                                    <Binding 
+                                        Path="Upravnik.Ime"
+                                        ValidatesOnDataErrors="True"
+                                        UpdateSourceTrigger="PropertyChanged"
+                                        >
+                                        <Binding.ValidationRules>
+                                            <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                                            <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                                            <validations:WordRule/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                    <!-- Kraj bajndovanje imena + validacija-->
+                                </TextBox.Text>
+                            </TextBox>
+                            <!-- Kraj imena -->
+
+                            <!-- Prezime -->
+                            <TextBox
+                                IsEnabled="{Binding IzmenaProfila}"
+                                x:Name="Prezime"
+                                Background="WhiteSmoke"
+                                FontWeight="DemiBold"
+                                Width="230"
+                                Height="40"
+                                Margin="10,20,10,20"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                        
+                                materialDesign:HintAssist.Hint="Ovde unesite Vase prezime"
+                                materialDesign:HintAssist.HelperText="Vase prezime">
+                                <TextBox.Text>
+                                    <!-- Bajndovanje prezimena + validacija-->
+                                    <Binding 
+                                        Path="Upravnik.Prezime"
+                                        ValidatesOnDataErrors="True"
+                                        UpdateSourceTrigger="PropertyChanged"
+                                        >
+                                        <Binding.ValidationRules>
+                                            <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                                            <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                                            <validations:WordRule/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                    <!-- Kraj bajndovanje prezimena + validacija-->
+                                </TextBox.Text>
+                            </TextBox>
+                            <!-- Kraj prezimena -->
+
+                            <!-- Biografija -->
+                            <TextBox
+                                IsEnabled="{Binding IzmenaProfila}"
+                                x:Name="Biografija"
+                                Background="WhiteSmoke"
+                                FontWeight="DemiBold"
+                                Width="230"
+                                Height="90"
+                                Margin="10,20,10,20"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                AcceptsReturn="True"
+                                AcceptsTab="True"
+                                materialDesign:HintAssist.Hint="Ovde unesite Vasu biografiju"
+                                materialDesign:HintAssist.HelperText="Vasa biografija">
+                                <TextBox.Text>
+                                    <!-- Bajndovanje biografije + validacija-->
+                                    <Binding 
+                                        Path="Upravnik.Biografija"
+                                        ValidatesOnDataErrors="True"
+                                        UpdateSourceTrigger="PropertyChanged"
+                                        >
+                                        <Binding.ValidationRules>
+                                            <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                                            <validations:MaximumCharacterRule MaximumCharacters="200"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                    <!-- Kraj bajndovanje biografije + validacija-->
+                                </TextBox.Text>
+                            </TextBox>
+                            <!-- Kraj biografije -->
+
+                        </StackPanel>
+                        <!-- Kraj druge kolone podataka-->
+
+
+
+                    </StackPanel>
+                    <!-- Kraj dela sa podacima -->
+                    
+                    <!-- Dugmad-->
+                    <StackPanel Orientation="Horizontal" Width="400" Margin="0, 20, 0, 0">
+                        <Button
+                            IsEnabled="{Binding IzmenaProfila}"
+                            Width="140"
+                            ToolTip="Resource name: MaterialDesignRaisedButton"
+                            Content="Potvrdi izmene"
+                            Command="{Binding PotvrdiIzmeneProfilaCommand}"
+                            Margin="40, 0, 0, 0">
+
+                        </Button>
+                        <Button
+                            IsEnabled="{Binding IzmenaProfila}"
+                            Width="140"
+                            ToolTip="Resource name: MaterialDesignRaisedButton"
+                            Content="Odustani"
+                            Command="{Binding OdustaniOdIzmeneCommand}"
+                            Margin="40, 0, 0, 0">
+
+                        </Button>
+                        
+                    </StackPanel>
+                    <!-- Kraj dugmadi -->
+                </StackPanel>
+                <!-- Kraj kontenta kartice-->
+            </materialDesign:Card>
+            <!-- Kraj shadow karte za podatke-->
+        </StackPanel>
+        <!-- Kraj dela sa podacima -->
+        
+        
         <!-- Deo sa profilom -->
-        <StackPanel HorizontalAlignment="Center" >
-
+        <StackPanel Margin="50, 0, 0, 0" HorizontalAlignment="Left" >
+            
+            <!-- Shadow karta za profil-->
             <materialDesign:Card
                   HorizontalAlignment="Left"
                   HorizontalContentAlignment="Center"
@@ -35,40 +328,43 @@
                     <!-- Deo sa slikom -->
                     <StackPanel Grid.Row="0">
                         <materialDesign:PackIcon
-                                HorizontalAlignment="Center"
-                                Height="120"
-                                Width="120"
-                                Kind="AccountCircle"
-                                Foreground="White"/>
+                            HorizontalAlignment="Center"
+                            Height="120"
+                            Width="120"
+                            Kind="AccountCircle"
+                            Foreground="White"/>
                     </StackPanel>
                     <!-- Kraj dela sa slikom -->
-                    
+
                     <!-- Deo sa biografijom-->
-                    <StackPanel Grid.Row="1" Margin="10, 30, 0, 0">
-                        <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
-                           
-                           Width="270"
-                           Height="210"
+                    <StackPanel Grid.Row="1" Margin="10, 40, 0, 0">
+                        <TextBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
+                           IsEnabled="False"
+                           Width="250"
+                           Height="140"
+                           Foreground="Black"
                            VerticalAlignment="Center" 
-                           
+                           Background="WhiteSmoke"
+                           FontWeight="DemiBold"
                            HorizontalAlignment="Center"
                            FontSize="13"
-                           FontWeight="DemiBold"
-                           TextWrapping="WrapWithOverflow"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                            It has survived not only five centuries, but also the leap into electronic typesetting.
-                            
-                            </TextBlock>
+                           HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center"
+                           AcceptsReturn="True"
+                           AcceptsTab="True"
+                           Text="{Binding Upravnik.Biografija}"
+                           materialDesign:HintAssist.Hint="Izmenite profil i dopunite biografiju"
+                           materialDesign:HintAssist.HelperText="Moja biografija"
+                           TextWrapping="Wrap">
+
+                        </TextBox>
                     </StackPanel>
                     <!-- Kraj biografije-->
-                    
+
                 </Grid>
 
             </materialDesign:Card>
-
-
-
+            <!-- Kraj shadow karte za profil-->
 
             <!-- Dugmad izmene i odjavi se-->
             <StackPanel 
@@ -79,33 +375,34 @@
                 Margin="30, 0, 0, 0">
 
                 <Button
-                    Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="150"
-                    ToolTip="Ovim menjas profil"
-                    Content="Izmena profila"
+                    ToolTip="Sledeci put ovome mozes brze pristupiti: Alt+I"
                     Margin="0, 0, 0, 0"
-                    Command="{Binding IzmenaDijalogCommand}"
-                    
+                    Command="{Binding IzmeniProfilCommand}"
                     >
-                    <!-- content iz naslovne poruke prosledjujemo kao parametar(text iz nje prosledjujemo ovde) -->
-
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="AccountEditOutline" Margin="0, 0, 10, 0" />
+                        <AccessText>_Izmeni profil</AccessText>
+                    </StackPanel>
 
                 </Button>
 
                 <Button
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Width="140"
-                    ToolTip="Resource name: MaterialDesignRaisedButton"
-                    Content="Odjavi se"
+                    ToolTip="Sledeci put ovome mozes brze pristupiti: Alt+O"
+                    
                     Margin="10">
-
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Logout" Margin="0, 0, 10, 0" />
+                        <AccessText>_Odjavi se</AccessText>
+                    </StackPanel>
                 </Button>
             </StackPanel>
             <!-- Kraj dugmadi izmene i odjave-->
-            
+
         </StackPanel>
         <!-- Kraj dela sa profilom -->
-        
-        
-    </Grid>
+
+    </StackPanel>
 </UserControl>

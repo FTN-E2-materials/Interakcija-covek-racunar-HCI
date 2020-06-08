@@ -27,5 +27,6 @@ namespace HealthClinic.Views
         {
             InitializeComponent();
         }
+
     }
 }
