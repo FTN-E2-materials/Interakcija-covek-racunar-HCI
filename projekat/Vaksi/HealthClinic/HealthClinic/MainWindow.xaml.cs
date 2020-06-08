@@ -39,7 +39,6 @@ namespace HealthClinic
 
             GridCursor.Margin = new Thickness(10 + (125 * index), 40, 0, 0);
 
-            //DataContext = new UcitavanjeViewModel();
             DataContext = new HomeViewModel();
             // TODO: Prebaciti na homeviewmodel ako se odlucim za tu varijantu.
         }
@@ -75,7 +74,8 @@ namespace HealthClinic
             int index = int.Parse(((Button)e.Source).Uid);
 
             GridCursor.Margin = new Thickness(10 + (133 * index), 40, 0, 0);
-            DataContext = new ZaposleniViewModel();
+
+            DataContext = ZaposleniViewModel.Instance;
         }
 
         private void ProstorijeTab_Click(object sender, RoutedEventArgs e)
@@ -83,7 +83,8 @@ namespace HealthClinic
             int index = int.Parse(((Button)e.Source).Uid);
 
             GridCursor.Margin = new Thickness(10 + (133 * index), 40, 0, 0);
-            DataContext = new ProstorijeViewModel();
+
+            DataContext = ProstorijeViewModel.Instance;
         }
 
         private void LekoviTab_Click(object sender, RoutedEventArgs e)
@@ -91,7 +92,8 @@ namespace HealthClinic
             int index = int.Parse(((Button)e.Source).Uid);
 
             GridCursor.Margin = new Thickness(10 + (133 * index), 40, 0, 0);
-            DataContext = new LekoviViewModel();
+
+            DataContext = LekoviViewModel.Instance;
         }
 
         private void ProfilTab_Click(object sender, RoutedEventArgs e)
