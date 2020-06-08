@@ -608,5 +608,28 @@ namespace HealthClinic.ViewModels
         }
 
         #endregion
+
+        #region Singlton pattern
+        private static ProstorijeViewModel instance = null;
+        private static readonly object padlock = new object();
+
+
+        public static ProstorijeViewModel Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new ProstorijeViewModel();
+                    }
+                    return instance;
+                }
+            }
+        }
+        #endregion
     }
+
 }
+

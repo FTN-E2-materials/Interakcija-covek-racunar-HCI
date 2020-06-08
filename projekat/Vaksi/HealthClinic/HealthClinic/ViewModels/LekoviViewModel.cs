@@ -464,5 +464,26 @@ namespace HealthClinic.ViewModels
         }
 
         #endregion
+
+        #region Singlton pattern
+        private static LekoviViewModel instance = null;
+        private static readonly object padlock = new object();
+
+
+        public static LekoviViewModel Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new LekoviViewModel();
+                    }
+                    return instance;
+                }
+            }
+        }
+        #endregion
     }
 }
