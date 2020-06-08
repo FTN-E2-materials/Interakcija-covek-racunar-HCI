@@ -5,100 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:HelathClinicPatienteRole.Dialogs"
+        xmlns:ViewModel="clr-namespace:HelathClinicPatienteRole.ViewModel"
         mc:Ignorable="d"
-        Title="PreporukaTerminaDialog" Height="700" Width="450">
+        Title="PreporukaTerminaDialog" Height="660" Width="500">
     <Grid>
         <StackPanel Background="White" >
             <Grid Height="700" >
 
-                <Label HorizontalAlignment="Center"  Content="Izaberite datum pregleda" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="1" Grid.Column="7" Grid.ColumnSpan="27" Grid.RowSpan="2" />
+                <Label FontWeight="Bold" HorizontalAlignment="Center"  Content="Izaberite vremenski interval" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="1" Grid.Column="7" Grid.ColumnSpan="28" Grid.RowSpan="2" Width="346" />
 
-                <DatePicker FontSize="21"  Foreground="#FF148DF0" Grid.Row ="2" Grid.Column="13" Grid.ColumnSpan="17" Grid.RowSpan="3" materialDesign:HintAssist.Hint="Izaberite datum" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="10,10,1,6"   />
+                <DatePicker SelectedDate="{Binding Path=SelektovaniDatumOd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="21" Background="WhiteSmoke" Foreground="#FF148DF0" Grid.Row ="3" Grid.Column="7" Grid.ColumnSpan="11" Grid.RowSpan="2" materialDesign:HintAssist.Hint="Od datuma" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="10,0,0,3"   />
 
-                <Label HorizontalAlignment="Center"  Content="Izaberite lekara  " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="4" Grid.Column="12" Grid.ColumnSpan="18" Grid.RowSpan="3" />
-                <Label HorizontalAlignment="Center"  Content=" Izaberite vaš prioritet. Datum ili lekar ?  " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="15" Grid.ColumnSpan="40" Grid.RowSpan="3"  Width="442" Margin="0,21,0,0"/>
+                <Label FontWeight="Bold" HorizontalAlignment="Center"  Content="Izaberite lekara  " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="5" Grid.Column="12" Grid.ColumnSpan="18" Grid.RowSpan="2" Margin="9,6,10,0" />
+                <Label FontWeight="Bold" HorizontalAlignment="Center"  Content=" Izaberite vaš prioritet. Datum ili lekar ?  " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="17" Grid.ColumnSpan="40" Grid.RowSpan="2"  Width="480" Margin="10,10,2,0"/>
 
 
-                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="28" Grid.RowSpan="11" Margin="2,15,10,12">
-                    <Border BorderThickness="1,1,1,1" BorderBrush="#FF148DF0" >
-                        <ItemsControl  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="6" Grid.RowSpan="10">
-                            <Grid  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="6" Grid.RowSpan="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="0*"/>
-                                    <ColumnDefinition Width="142*"/>
+                <DataGrid  x:Name="dataGridLekari" ItemsSource="{Binding Lekari}" 
+                    IsReadOnly="True"  CanUserAddRows="false"  SelectedItem="{Binding Path=SelektovaniLekar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                AutoGenerateColumns="False" Grid.ColumnSpan="24" Margin="0,0,7,2" Grid.RowSpan="10" Grid.Row="7" Background="#FF148DF0" Grid.Column="9">
 
-                                    <ColumnDefinition Width="20*"/>
-                                    <ColumnDefinition Width="117*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Label  Content="Naziv lekara 1" Foreground="#FF148DF0" FontSize="20" Grid.Row="0" Grid.ColumnSpan="2" />
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="0" Grid.Column="3" Margin="0,4"/>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="     Ime i prezime lekara"
+                            Binding="{Binding FirstAndLastName}">
+                            <DataGridColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="DarkGray"/>
+                                    <Setter Property="Width" Value="280"/>
+                                    <Setter Property="FontSize" Value="24"/>
+                                </Style>
+                            </DataGridColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                    
 
-                                <Label  Content="Naziv lekara 2" Foreground="#FF148DF0" FontSize="20"  Grid.Row="2" Grid.ColumnSpan="2" />
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="2" Grid.Column="3" Margin="0,4" />
+                </DataGrid>
 
-                                <Label  Content="Naziv lekara 3" Foreground="#FF148DF0" FontSize="20"   Grid.Row="3" Grid.ColumnSpan="2"/>
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="3"  Grid.Column="3" Margin="0,4"/>
-
-                                <Label  Content="Naziv lekara 4" Foreground="#FF148DF0" FontSize="20"  Grid.Row="4" Grid.ColumnSpan="2" />
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="4" Grid.Column="3" Margin="0,4" />
-
-                                <Label  Content="Naziv lekara 5" Foreground="#FF148DF0" FontSize="20"  Grid.Row="6" Grid.ColumnSpan="2" />
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="6" Grid.Column="3" Margin="0,4" />
-
-                                <Label  Content="Naziv lekara 6" Foreground="#FF148DF0" FontSize="20"  Grid.Row="8" Grid.ColumnSpan="2" />
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="8" Grid.Column="3" Margin="0,4" />
-
-                                <Label  Content="Naziv lekara 7" Foreground="#FF148DF0" FontSize="20"  Grid.Row="10" Grid.ColumnSpan="2" />
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="10" Grid.Column="3" Margin="0,4" />
-
-                                <Label  Content="Naziv lekara 8" Foreground="#FF148DF0" FontSize="20"  Grid.Row="12" Grid.ColumnSpan="2" />
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="12" Grid.Column="3" Margin="0,4" />
-
-                                <Label  Content="Naziv lekara 9" Foreground="#FF148DF0" FontSize="20"  Grid.Row="14" Grid.ColumnSpan="2" />
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="14" Grid.Column="3" Margin="0,4" />
-
-                                <Label  Content="Naziv lekara 10" Foreground="#FF148DF0" FontSize="20"  Grid.Row="16" Grid.ColumnSpan="2" />
-                                <Button HorizontalAlignment="Right"  Height="27" Content="Izaberi lekara" Grid.Row="16" Grid.Column="3" Margin="0,4" />
-
-                            </Grid>
-                        </ItemsControl>
-                    </Border>
-                </ScrollViewer>
-
-                <CheckBox
-                     Style="{StaticResource MaterialDesignFilterChipCheckBox}" Background="#FF148DF0"  Grid.ColumnSpan="8"  Grid.RowSpan="3" Width="85" Grid.Column="11" Grid.Row="17" Margin="0,23.182,0,22.818">
+                <CheckBox Name="lekarCheckedCB"
+                   Checked="lekarChecked" Style="{StaticResource MaterialDesignFilterChipCheckBox}" Background="#FF148DF0"  Grid.ColumnSpan="8"  Grid.RowSpan="2" Width="85" Grid.Column="12" Grid.Row="19" Margin="9,4,0,16">
                     Lekar
                 </CheckBox>
-                <CheckBox
-                     Style="{StaticResource MaterialDesignFilterChipCheckBox}" Background="#FF148DF0" Grid.ColumnSpan="9"  Grid.RowSpan="3" Width="85" Grid.Column="20" Grid.Row="17" Margin="10,23.182,0,22.818" >
+                <CheckBox Name="datumCheckedCB"
+                    Checked="datumChecked"  Style="{StaticResource MaterialDesignFilterChipCheckBox}" Background="#FF148DF0" Grid.ColumnSpan="8"  Grid.RowSpan="2" Width="85" Grid.Column="20" Grid.Row="19" Margin="10,4,0,16" >
                     Datum
                 </CheckBox>
-                <Button Content="Preporuka termina" Grid.Row="20" Grid.Column="12" Grid.ColumnSpan="15" Grid.RowSpan="2" RenderTransformOrigin="-0.436,-1.938" Margin="4,0.091,5,19.909"/>
 
-
-                <Label HorizontalAlignment="Center"  Content="Zelite automatsku prepororuku termina?" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="25" Grid.Column="8" Grid.ColumnSpan="16" Grid.RowSpan="3"/>
+                <Button Content="Preporuka termina" Grid.Row="21" Grid.Column="14" Grid.ColumnSpan="13" Grid.RowSpan="2" RenderTransformOrigin="-0.436,-1.938" Margin="3,20,0,0" Command="{Binding PreporukaTerminaCommand}"/>
+                <DatePicker SelectedDate="{Binding Path=SelektovaniDatumDo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="21" Background="WhiteSmoke" Foreground="#FF148DF0"  Grid.Row ="3" Grid.Column="22" Grid.ColumnSpan="11" Grid.RowSpan="2" materialDesign:HintAssist.Hint="Do datuma" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="1,0,0,3" RenderTransformOrigin="0.466,0.02"   />
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -177,4 +129,9 @@
             </Grid>
         </StackPanel>
     </Grid>
+    <Window.DataContext>
+        <ViewModel:ZakaziPregledPatientViewModel/>
+    </Window.DataContext>
+
+
 </Window>

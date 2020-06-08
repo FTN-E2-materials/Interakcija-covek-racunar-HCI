@@ -1,4 +1,5 @@
-﻿using HelathClinicPatienteRole.Dialogs;
+﻿using DocumentFormat.OpenXml.Office2010.Word;
+using HelathClinicPatienteRole.Dialogs;
 using HelathClinicPatienteRole.Model;
 using HelathClinicPatienteRole.ViewModel.Commands;
 using System;
@@ -21,6 +22,7 @@ namespace HelathClinicPatienteRole.ViewModel
         {
             PirkaziPreporukaTerminaDialogCommand = new RelayCommand(PirkaziPreporukaTerminaDialog);
             ZakaziPregledCommand = new RelayCommand(ZakaziPregled);
+            PreporukaTerminaCommand = new RelayCommand(PreporukaTermina);
 
             _LekariList = new ObservableCollection<Lekar>
             {
@@ -73,13 +75,27 @@ namespace HelathClinicPatienteRole.ViewModel
 
         #region Preporuka termina 
 
-        public RelayCommand PirkaziPreporukaTerminaDialogCommand { get; private set; }
+        public RelayCommand PreporukaTerminaCommand { get; private set; }
 
-        public void PirkaziPreporukaTerminaDialog(object obj)
+        public void PreporukaTermina(object obj)
         {
-            var s = new PreporukaTerminaDialog();
-            s.ShowDialog();
+            if (SelektovaniDatumDo.Date == SelektovaniDatumOd.Date)
+            {
+                MessageBox.Show("Potrebno je izabrati datumski opseg u minimalnom razmaku od jednog dana!");
+                return;
+            }
+            if (SelektovaniLekar is null)
+            {
+                MessageBox.Show("Potrebno je izabrati lekara!");
+                return;
+            }
+            if(!PreporukaTerminaDialog.IzabranPrioritet)
+            {
+                MessageBox.Show("Potrebno je izabrati prioritet, ako vam prioritet nije bitan izaberite i Lekara i Datum!");
+                return;
+            }
 
+            MessageBox.Show("Preporuka termina je ......");
         }
 
         #endregion
@@ -124,6 +140,45 @@ namespace HelathClinicPatienteRole.ViewModel
 
         #endregion
 
+
+        #region Preporuka termina dialog
+
+        public RelayCommand PirkaziPreporukaTerminaDialogCommand { get; private set; }
+
+        public void PirkaziPreporukaTerminaDialog(object obj)
+        {
+            var s = new PreporukaTerminaDialog();
+            s.ShowDialog();
+
+        }
+
+        #endregion
+
+
+
+
+        #region Selektovani Datum OD za preporuku termina
+
+        private DateTime _selektovaniDatumOd = DateTime.Now;
+
+        public DateTime SelektovaniDatumOd
+        {
+            get { return _selektovaniDatumOd; }
+            set { _selektovaniDatumOd = value; OnPropertyChanged("SelektovaniDatumOd"); }
+        }
+        #endregion
+
+        #region Selektovani Datum DO za preporuku termina
+
+        private DateTime _selektovaniDatumDo = DateTime.Now;
+
+        public DateTime SelektovaniDatumDo
+        {
+            get { return _selektovaniDatumDo; }
+            set { _selektovaniDatumDo = value; OnPropertyChanged("SelektovaniDatumDo"); }
+        }
+        #endregion
+
         #region Selektovani Datum
 
         private DateTime _selektovaniDatum = DateTime.Now;
@@ -135,6 +190,8 @@ namespace HelathClinicPatienteRole.ViewModel
         }
         #endregion
 
+        
+
         public ObservableCollection<Lekar> Lekari
         {
             get
@@ -144,6 +201,7 @@ namespace HelathClinicPatienteRole.ViewModel
             set { _LekariList = value; }
         }
 
+        # region properzChange
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)
         {
@@ -152,6 +210,7 @@ namespace HelathClinicPatienteRole.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
+        #endregion
 
         #region Singlton
         private static ZakaziPregledPatientViewModel instance = null;

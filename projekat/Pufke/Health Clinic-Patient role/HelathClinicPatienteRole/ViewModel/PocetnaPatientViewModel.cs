@@ -26,7 +26,7 @@ namespace HelathClinicPatienteRole.ViewModel
             ObrisiPregledPotvrdiButtonCommand = new RelayCommand(ObrisiPregledPotvrdiButton);
           
 
-            _PregledList = new List<Pregled>
+              _PregledList = new List<Pregled>
             {
                 new Pregled{IdPregleda=1, NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan",Lekar="Pera Perić"},
                 new Pregled{IdPregleda=2,NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.04.2020  9:00h",StatusPregleda="Obavljen",Lekar="Mika Mikić"},
@@ -75,7 +75,8 @@ namespace HelathClinicPatienteRole.ViewModel
         }
         #endregion
 
-    
+      
+
         #region Obrisi pregled command
 
         public RelayCommand ObrisiPregledPotvrdiButtonCommand { get; private set; }

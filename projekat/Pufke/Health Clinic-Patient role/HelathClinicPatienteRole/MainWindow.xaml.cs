@@ -53,7 +53,7 @@ namespace HelathClinicPatienteRole
 
         private void RecenzijeItem_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new RecenzijeViewModel();
+            DataContext = RecenzijeViewModel.Instance;
         }
 
  

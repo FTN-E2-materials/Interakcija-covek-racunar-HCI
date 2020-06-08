@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelathClinicPatienteRole.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,63 @@ namespace HelathClinicPatienteRole.Dialogs
     /// </summary>
     public partial class PreporukaTerminaDialog : Window
     {
-        public PreporukaTerminaDialog()
+		private static bool izabranPrioritet;
+
+		public static bool IzabranPrioritet { get => izabranPrioritet; set => izabranPrioritet = value; }
+
+		public PreporukaTerminaDialog()
         {
             InitializeComponent();
         }
+
+		private void lekarChecked(object sender, RoutedEventArgs e)
+		{
+		
+			if (lekarCheckedCB.IsChecked == true)
+			{
+                izabranPrioritet = true;
+            }
+            if (lekarCheckedCB.IsChecked == false)
+            {
+                izabranPrioritet = false;
+
+            }
+        }
+
+		private void datumChecked(object sender, RoutedEventArgs e)
+		{
+
+			if (datumCheckedCB.IsChecked == true)
+			{
+                izabranPrioritet = true;
+
+            }
+            if (datumCheckedCB.IsChecked == false)
+            {
+                izabranPrioritet = false;
+
+            }
+        }
+
+        #region Singlton
+        private static PreporukaTerminaDialog instance = null;
+        private static readonly object padlock = new object();
+
+
+        public static PreporukaTerminaDialog Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new PreporukaTerminaDialog();
+                    }
+                    return instance;
+                }
+            }
+        }
+        #endregion
     }
 }
