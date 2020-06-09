@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelathClinicPatienteRole"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-        Title="Wizard aplikacije" Height="500" Width="700">
+        Title="Wizard aplikacije" Height="700" Width="1000">
     <Grid>
         <xctk:Wizard FinishButtonClosesWindow="True">
             <xctk:WizardPage x:Name="IntroPage" 
                                    Title="Dobrodošli u 'Wizard' aplikacije namenjene pacijentima naše Zdravo klinike!"
+                             
                                    Description="Ovaj 'Wizard' je namenjen novim korisnicima radi vašeg lakšeg upoznavanja sa funkcionalnostima aplikacije kao i njenim mogućnostima, nadamo se da će te uživati! " />
             <xctk:WizardPage x:Name="Page1" PageType="Interior"
                                    Title="Mogućnosti aplikacije"
@@ -18,22 +19,46 @@
                                    PreviousPage="{Binding ElementName=IntroPage}"
                              >
                 <Grid>
-                    <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika1.jpg"  Width="600" Height="600"   />
+                    <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika1.jpg"  Width="800"    />
                 </Grid>
             </xctk:WizardPage>
             <xctk:WizardPage x:Name="Page2" PageType="Interior"
                                    Title="Mogućnosti aplikacije"
                                    Description="Pored ovih sjajnih mogućnosti aplikacija sadrži i blog na kom možete da čitate i edukujete se o najnovijim vestima iz sveta medicine.">
                 <Grid>
-                    <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika2.jpg"  Width="500" Height="400"   />
+                    <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika2.jpg"  Width="800"    />
+                </Grid>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page3" PageType="Interior"
+                                   Title="Mogućnosti aplikacije"
+                                  Description="Pored klasičnog načina zakazivanja pregleda, gde je potrebno da unesete termin kada želite da obavite pregled i lekara koji vam je omiljeni, našim korisnicima smo omogućili nešto sasvim novo, upitanju je preporuka termina. Potrebno je da unesete vremenski interval u kom želite da zakažete pregled kao i da odaberete omiljenog lekara, pored toga birate i koji je vaš prioritet tj. da li vam je bitnije da budete kod vašeg omiljenog lekara ili da vaš pregled bude u izabranom vremenskom intervalu. Nakon toga sistem za vas generiše predlog za termin pregleda i na vama je da ga prihvatite ili izgenerišete novi. "
+                                 >
+
+                <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika3.jpg"  Width="900" Height="500"   />
+            </xctk:WizardPage>
+
+            <xctk:WizardPage x:Name="Page4" PageType="Interior"
+                                   Title="Mogućnosti aplikacije"
+                                   Description="Naša aplikacija sadrži moderni kalendar uz pomoć kog će te moći da interaktivno pratite propisane terapije od strane vaših lekara, i da znate tačno kada treba da popijete lek. Pored kalendara možete izgenerisati i PDF izveštaj u vidu kalenadara odštampati ga i na taj način će te uvek i u svakom trenutku znati kada i koji lek treba da pijete. ">
+                <Grid>
+                    <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika4.jpg"  Width="1000" />
+                </Grid>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page5" PageType="Interior"
+                                   Title="Prečice"
+                                   Description="Naša Zdravo klinika je mislila i na iskusnije korisnike, iz tog razloga smo omogućili prečice radi lakšeg korišćenja naše aplikacije.">
+                <Grid>
+                    <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika5.jpg"  Width="800" VerticalAlignment="Top"/>
+                    <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika6.jpg"  Width="800" />
+                    <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika7.jpg"  Width="800" VerticalAlignment="Bottom"/>
                 </Grid>
             </xctk:WizardPage>
             <xctk:WizardPage x:Name="LastPage" PageType="Interior"
                                    Title="Zakazivanje pregleda"
-                                   Description="Pored klasičnog načina zakazivanja pregleda, gde je potrebno da unesete termin kada želite da obavite pregled i lekara koji vam je omiljeni, našim korisnicima smo omogućili nešto sasvim novo, upitanju je preporuka termina. Potrebno je da unesete vremenski interval u kom želite da zakažete pregled kao i da odaberete omiljenog lekara, pored toga birate i koji je vaš prioritet tj. da li vam je bitnije da budete kod vašeg omiljenog lekara ili da vaš pregled bude u izabranom vremenskom intervalu. Nakon toga sistem za vas generiše predlog za termin pregleda i na vama je da ga prihvatite ili izgenerišete novi. "
+                                   Description=" "
                                    CanFinish="True">
              
-                    <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika3.jpg"  Width="600" Height="500"   />
+                    <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika5.jpg"  Width="600" Height="500"   />
                 
             </xctk:WizardPage>
         </xctk:Wizard>
