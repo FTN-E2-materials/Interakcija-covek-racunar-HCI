@@ -97,7 +97,16 @@
                     Background="#FF148DF0" Grid.ColumnSpan="22" Grid.RowSpan="16" Grid.Column="4" Grid.Row="4" Margin="0,0,0,5"
                     />
 
-                <Button Content="Pošalji recenziju" Grid.Row="28" Grid.Column="12" Grid.ColumnSpan="5" Grid.RowSpan="3" Margin="33,15,10,5" Command="{Binding OstaviRecenzijuCommand}" Height="Auto"/>
+                <Button Content="Pošalji recenziju" Grid.Row="28" Grid.Column="12" Grid.ColumnSpan="5" Grid.RowSpan="3" Margin="33,15,10,5" Command="{Binding OstaviRecenzijuCommand}" Height="Auto">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Vaše mišljenje o aplikaciji</TextBlock>
+                                <TextBlock>Vaše mišljenje nam puno znači! Učinimo zajedno našu aplikaciju još boljom!</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
             </Grid>
 
         </StackPanel>

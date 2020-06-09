@@ -28,6 +28,14 @@
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
+            <TextBox.ToolTip>
+                <ToolTip>
+                    <StackPanel>
+                        <TextBlock FontWeight="Bold">JMBG</TextBlock>
+                        <TextBlock>Jedinstveni matični broj sadrži tačno 13 cifara</TextBlock>
+                    </StackPanel>
+                </ToolTip>
+            </TextBox.ToolTip>
         </TextBox>
 
         <TextBox BorderBrush="#FF148DF0" BorderThickness="1" Background="WhiteSmoke" Validation.ErrorTemplate="{StaticResource errorTemplate}" Grid.ColumnSpan="2" Margin="79,175,99,123">
@@ -38,13 +46,30 @@
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
+            <TextBox.ToolTip>
+                <ToolTip>
+                    <StackPanel>
+                        <TextBlock FontWeight="Bold">Šifra</TextBlock>
+                        <TextBlock>Šifra sadrži minimalno 8 karaktera</TextBlock>
+                    </StackPanel>
+                </ToolTip>
+            </TextBox.ToolTip>
         </TextBox>
 
 
 
 
 
-        <Button Content="Login" Height="28" HorizontalAlignment="Left" Margin="180,234,0,0" Name="button1" VerticalAlignment="Top" Width="104" Grid.ColumnSpan="2"  Command="{Binding LoginCommand}"/>
+        <Button Content="Ulogujte se" Height="28" HorizontalAlignment="Left" Margin="180,234,0,0" Name="button1" VerticalAlignment="Top" Width="104" Grid.ColumnSpan="2"  Command="{Binding LoginCommand}">
+            <Button.ToolTip>
+                <ToolTip>
+                    <StackPanel>
+                        <TextBlock FontWeight="Bold">Ulogujte se</TextBlock>
+                        <TextBlock>Pristupiti svim pogodnostima aplikacije</TextBlock>
+                    </StackPanel>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
         <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="errormessage" VerticalAlignment="Top" Width="247" Margin="118,253,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C" Grid.ColumnSpan="2"  />
     </Grid>
 

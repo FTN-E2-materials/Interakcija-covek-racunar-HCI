@@ -13,7 +13,7 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Blue.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
+           
 
             <ControlTemplate x:Key="errorTemplate">
                 <Border BorderBrush="OrangeRed" BorderThickness="2">

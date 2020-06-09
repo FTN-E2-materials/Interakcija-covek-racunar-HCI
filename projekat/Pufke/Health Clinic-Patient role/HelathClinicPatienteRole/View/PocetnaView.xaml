@@ -37,8 +37,50 @@
                 <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Upravnik.png"  Grid.Row="22" Grid.RowSpan="4" Grid.ColumnSpan="3" Grid.Column="14" />
                 <Label HorizontalAlignment="Left"  Content="Sekretar" Foreground="#FF148DF0"   FontSize="32"  Grid.Row="23" Grid.RowSpan="3" Grid.ColumnSpan="10" Grid.Column="17"/>
 
-                <Button Content="Login" VerticalAlignment="Top" Width="75" Click="Login_Click"  Grid.Row="14" Grid.RowSpan="3" Grid.ColumnSpan="10" Grid.Column="17"/>
+                <Button Content="Ulogujte se" VerticalAlignment="Top" Click="Login_Click"  Grid.Row="13" Grid.RowSpan="3" Grid.ColumnSpan="3" Grid.Column="19" Margin="30,17,33,0">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Ulogujte se</TextBlock>
+                                <TextBlock>Personalizovana aplikacija za lekare naše klinike</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
 
+                <Button Content="Ulogujte se" VerticalAlignment="Top" Click="PersonalizovaniLogin_Click"  Grid.Row="8" Grid.RowSpan="3" Grid.ColumnSpan="3" Grid.Column="19" Margin="30,17,33,0">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Ulogujte se</TextBlock>
+                                <TextBlock>Personalizovana aplikacija za pacijnte naše klinike</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+
+                <Button Content="Ulogujte se" VerticalAlignment="Top" Click="PersonalizovaniLogin_Click"  Grid.Row="18" Grid.RowSpan="3" Grid.ColumnSpan="3" Grid.Column="19" Margin="30,17,33,0">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Ulogujte se</TextBlock>
+                                <TextBlock>Personalizovana aplikacija za upravnike naše klinike</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+                
+                <Button Content="Ulogujte se" VerticalAlignment="Top" Click="PersonalizovaniLogin_Click"  Grid.Row="23" Grid.RowSpan="3" Grid.ColumnSpan="3" Grid.Column="19" Margin="30,17,33,0">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Ulogujte se</TextBlock>
+                                <TextBlock>Personalizovana aplikacija za sekretare naše klinike</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+            
                 <Grid.ColumnDefinitions>
                     <!--16 columns-->
                     <ColumnDefinition Width="*"/>

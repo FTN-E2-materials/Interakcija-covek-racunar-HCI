@@ -26,7 +26,16 @@
 
 
 
-                <Button Grid.Column="12" Grid.Row="23" Grid.RowSpan="2" Grid.ColumnSpan="3" Height="35" Content="Odjavi se" Margin="48,10,38,5" Click="OdjaviSeButton_Click" />
+                <Button Grid.Column="12" Grid.Row="23" Grid.RowSpan="2" Grid.ColumnSpan="3" Height="35" Content="Odjavi se" Margin="48,10,38,5" Click="OdjaviSeButton_Click">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Odjavi se</TextBlock>
+                                <TextBlock>Odjava iz aplikacije i gašenje cele aplikacije</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
 
                 <DataGrid  x:Name="dataGridPregledi" ItemsSource="{Binding Pregledi}"
                   IsReadOnly="True"  CanUserAddRows="false"  SelectedItem="{Binding Path=SelektovaniPregled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -57,7 +66,7 @@
                             <DataGridColumn.HeaderStyle>
                                 <Style TargetType="DataGridColumnHeader">
                                     <Setter Property="Background" Value="DarkGray"/>
-                             
+
                                     <Setter Property="FontSize" Value="25"/>
 
                                 </Style>
@@ -69,7 +78,7 @@
                             <DataGridColumn.HeaderStyle>
                                 <Style TargetType="DataGridColumnHeader">
                                     <Setter Property="Background" Value="DarkGray"/>
-                              
+
                                     <Setter Property="FontSize" Value="21"/>
 
                                 </Style>
@@ -80,31 +89,61 @@
                             <DataGridColumn.HeaderStyle>
                                 <Style TargetType="DataGridColumnHeader">
                                     <Setter Property="Background" Value="DarkGray"/>
-                            
+
                                     <Setter Property="FontSize" Value="21"/>
-                                   
+
                                 </Style>
                             </DataGridColumn.HeaderStyle>
-                         </DataGridTextColumn>
-                            <DataGridTextColumn Header="   Lekar"
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="   Lekar"
                             Binding="{Binding Lekar}">
                             <DataGridColumn.HeaderStyle>
-                            <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="Background" Value="DarkGray"/>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="DarkGray"/>
                                     <Setter Property="Width" Value="200"/>
                                     <Setter Property="FontSize" Value="21"/>
-                     
-                            </Style>
+
+                                </Style>
                             </DataGridColumn.HeaderStyle>
                         </DataGridTextColumn>
                     </DataGrid.Columns>
 
                 </DataGrid>
 
-                <Button HorizontalAlignment="Right"  Height="Auto" Content="Anketa pregleda" Grid.Row="19"  Command="{Binding PirkaziAnketaLekaraDialogCommand}" Margin="0,14,10,10" Grid.RowSpan="3" Grid.ColumnSpan="2" Grid.Column="5" Width="144" />
+                <Button HorizontalAlignment="Right"  Height="Auto" Content="Anketa pregleda" Grid.Row="19"  Command="{Binding PirkaziAnketaLekaraDialogCommand}" Margin="0,14,10,10" Grid.RowSpan="3" Grid.ColumnSpan="2" Grid.Column="5" Width="144">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Anketa pregleda</TextBlock>
+                                <TextBlock>Prethodno mora da bude selektovan pregled u tabeli koji ima status 'Obavljen'</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
 
-                <Button HorizontalAlignment="Right"  Height="Auto" Content="Otkaži pregled" Grid.Row="19" Command="{Binding PirkaziOtkaziPregledDialogCommand}" Grid.ColumnSpan="3"   Margin="0,14,59,10" Grid.RowSpan="3" Width="130" />
-                <Button HorizontalAlignment="Right"  Height="Auto" Content="Izmeni pregled" Grid.Row="19" Command="{Binding PirkaziIzmeniPregledDialogCommand}"   Grid.ColumnSpan="2" Grid.Column="3" Margin="0,15,32,10" Grid.RowSpan="3" Width="142" />
+                </Button>
+
+                <Button HorizontalAlignment="Right"  Height="Auto" Content="Otkaži pregled" Grid.Row="19" Command="{Binding PirkaziOtkaziPregledDialogCommand}" Grid.ColumnSpan="3"   Margin="0,14,59,10" Grid.RowSpan="3" Width="130">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Otkaži pregled</TextBlock>
+                                <TextBlock>Prethodno mora da bude selektovan pregled u tabeli koji ima status 'Zakazan'</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+
+                <Button HorizontalAlignment="Right"  Height="Auto" Content="Izmeni pregled" Grid.Row="19" Command="{Binding PirkaziIzmeniPregledDialogCommand}"   Grid.ColumnSpan="2" Grid.Column="3" Margin="0,15,32,10" Grid.RowSpan="3" Width="142">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Izmeni pregled</TextBlock>
+                                <TextBlock>Prethodno mora da bude selektovan pregled u tabeli koji ima status 'Zakazan'</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+
                 <Border Grid.Column="8" Grid.Row="7" Grid.RowSpan="15" Grid.ColumnSpan="7"
                     BorderThickness="2"
                     BorderBrush="#FF148DF0"
@@ -118,9 +157,19 @@
                         <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\BlogPhoto.jpg"  Width="405" Height="231" Canvas.Left="77" Canvas.Top="10"  />
                         <TextBlock Foreground="#FF148DF0" FontSize="23" FontWeight="Bold" Canvas.Top="246" Canvas.Left="41"><Run Text="Novi aparati stigli u kliniku!"/></TextBlock>
                         <TextBlock Foreground="#FF148DF0" FontSize="15" Canvas.Top="281" Canvas.Left="35" Width="349" Height="54"><Run Text="Potpuni novi aparati su stigli u našu kliniku, &#10;naša klinika postaje vodeći gigant u svetu medicine!"/></TextBlock>
-                        <Button Grid.Column="8" Grid.Row="19" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="25" Content="Pročitaj više" Canvas.Left="389" Canvas.Top="297" Command="{Binding ProcitajViseDialogCommand}"/>
+                        <Button Grid.Column="8" Grid.Row="19" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="25" Content="Pročitaj više" Canvas.Left="389" Canvas.Top="297" Command="{Binding ProcitajViseDialogCommand}">
+                            <Button.ToolTip>
+                                <ToolTip>
+                                    <StackPanel>
+                                        <TextBlock FontWeight="Bold">Pročitaj više</TextBlock>
+                                        <TextBlock>Pročitaj ceo tekst u novom prozoru koji će se otvoriti</TextBlock>
+                                    </StackPanel>
+                                </ToolTip>
+                            </Button.ToolTip>
+                        </Button>
                     </Canvas>
                 </Border>
+               
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>

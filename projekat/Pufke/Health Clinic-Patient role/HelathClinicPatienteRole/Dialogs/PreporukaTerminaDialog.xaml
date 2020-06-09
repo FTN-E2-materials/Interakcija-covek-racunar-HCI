@@ -43,19 +43,53 @@
                 <CheckBox Name="lekarCheckedCB"
                    Checked="lekarChecked" Style="{StaticResource MaterialDesignFilterChipCheckBox}" Background="#FF148DF0"  Grid.ColumnSpan="8"  Grid.RowSpan="2" Width="85" Grid.Column="12" Grid.Row="18" Margin="10,0,0,20">
                     Lekar
+                    <CheckBox.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Klikni na mene</TextBlock>
+
+                            </StackPanel>
+                        </ToolTip>
+                    </CheckBox.ToolTip>
                 </CheckBox>
                 <CheckBox Name="datumCheckedCB"
                     Checked="datumChecked"  Style="{StaticResource MaterialDesignFilterChipCheckBox}" Background="#FF148DF0" Grid.ColumnSpan="8"  Grid.RowSpan="2" Width="85" Grid.Column="20" Grid.Row="18" Margin="11,0,0,20" >
                     Datum
+                    <CheckBox.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Klikni na mene</TextBlock>
+                               
+                            </StackPanel>
+                        </ToolTip>
+                    </CheckBox.ToolTip>
                 </CheckBox>
 
-                <Button Content="Preporuči termin" Grid.Row="19" Grid.Column="13" Grid.ColumnSpan="14" Grid.RowSpan="2" RenderTransformOrigin="-0.436,-1.938" Margin="10,20,5,0" Command="{Binding PreporukaTerminaCommand}"/>
+                <Button Content="Preporuči termin" Grid.Row="19" Grid.Column="13" Grid.ColumnSpan="14" Grid.RowSpan="2" RenderTransformOrigin="-0.436,-1.938" Margin="10,20,5,0" Command="{Binding PreporukaTerminaCommand}">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Preporuči termin</TextBlock>
+                                <TextBlock>Nakon što izaberete vremenski interval i omiljenog lekara sistem će vam predložiti termin</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
                 <DatePicker SelectedDate="{Binding Path=SelektovaniDatumDo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="21" Background="WhiteSmoke" Foreground="#FF148DF0"  Grid.Row ="3" Grid.Column="22" Grid.ColumnSpan="11" Grid.RowSpan="2" materialDesign:HintAssist.Hint="Do datuma" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="1,0,0,3" RenderTransformOrigin="0.466,0.02"   />
 
                 <TextBlock Background="WhiteSmoke" FontWeight="Bold" HorizontalAlignment="Center"  Text="{Binding Path=PreporucenTermin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,StringFormat=dd/MM/yyyy    hh:mm}" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="22" Grid.Column="9" Grid.ColumnSpan="22" Grid.RowSpan="3" Margin="8,19,0,0" Height="42" Width="260" />
-                <Button Content="Zakaži pregled" Grid.Row="25" Grid.Column="13" Grid.ColumnSpan="14" Grid.RowSpan="2" RenderTransformOrigin="-0.436,-1.938" Margin="10,5,5,15" Command="{Binding ZakaziPregledPreporukaTerminaCommand}"/>
-                <Label FontWeight="Bold" HorizontalAlignment="Center"  Content=" Preporučen termin je:   " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="15" Grid.Row="21" Grid.ColumnSpan="31" Grid.RowSpan="2"  Width="480" Margin="0,17,-102,0" Grid.Column="9"/>
-
+                <Button Content="Zakaži pregled" Grid.Row="25" Grid.Column="13" Grid.ColumnSpan="14" Grid.RowSpan="2" RenderTransformOrigin="-0.436,-1.938" Margin="10,5,5,15" Command="{Binding ZakaziPregledPreporukaTerminaCommand}">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Zakaži pregled</TextBlock>
+                                <TextBlock>Ako vam odgovara predložen termin možete zakazati pregled</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+                    <Label FontWeight="Bold" HorizontalAlignment="Center"  Content=" Preporučen termin je:   " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="15" Grid.Row="21" Grid.ColumnSpan="31" Grid.RowSpan="2"  Width="480" Margin="0,17,-102,0" Grid.Column="9"/>
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>

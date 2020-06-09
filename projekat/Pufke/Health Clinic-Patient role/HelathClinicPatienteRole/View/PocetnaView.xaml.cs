@@ -31,5 +31,10 @@ namespace HelathClinicPatienteRole.View
             LoginPacijent loginPacijent = new LoginPacijent();
             loginPacijent.Show();
         }
+        private void PersonalizovaniLogin_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Personalizovana aplikacija je trenutno dostupna samo za Pacijenta!");
+        }
+     
     }
 }

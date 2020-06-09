@@ -85,7 +85,26 @@
 
 
                 </Grid>
-
+                <Button HorizontalAlignment="Right"  Height="Auto" Content="Isključi Tooltipove" Command="{Binding IskljuciToolTipsCommand}"   Margin="0,10,47,19" Width="154" Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="23" Grid.RowSpan="3" RenderTransformOrigin="-0.502,5.712">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Isključi Tooltipove</TextBlock>
+                                <TextBlock>Tooltipovi se neće prikazivati u celoj aplikaciji</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+                <Button HorizontalAlignment="Left"  Height="Auto" Content="Uključi Tooltipove" Command="{Binding UkljuciToolTipsCommand}"   Margin="65,10,0,19" Width="156" Grid.Column="7" Grid.ColumnSpan="3" Grid.Row="23" Grid.RowSpan="3">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Uključi Tooltipove</TextBlock>
+                                <TextBlock>Tooltipovi će se prikazivati u celoj aplikaciji &#xA;nakon prevlačenja mišem preko dugmeta</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>

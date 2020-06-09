@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace HelathClinicPatienteRole.ViewModel
@@ -19,8 +20,9 @@ namespace HelathClinicPatienteRole.ViewModel
       
         public ProfilPatientViewModel()
         {
-            ProfilPotvrdiCommand = new RelayCommand(ProfilPotvrdi);
-
+          
+            IskljuciToolTipsCommand = new RelayCommand(IskljuciToolTips);
+            UkljuciToolTipsCommand = new RelayCommand(UkljuciToolTips);
             _UsersList = new ObservableCollection<User>
             {
                 new User{UserId = 1,FirstName="Marko",LastName="Markovic", Jmbg="0208998500079", PhoneNumber="0602545687",Email="marko@gmail.com"}
@@ -69,21 +71,6 @@ namespace HelathClinicPatienteRole.ViewModel
         }
         #endregion
 
-        #region Potvrdi profil
-
-        public RelayCommand ProfilPotvrdiCommand { get; private set; }
-
-        public void ProfilPotvrdi(object obj)
-        {
-            if (Users.ElementAt(0).FirstName is null)
-            {
-                MessageBox.Show("Niste uneli ispravno ime!");
-            }
-            MessageBox.Show("Uspešno ste sačuvali promene na profilu!");
-        }
-
-        #endregion
-
         #region Singlton
         private static ProfilPatientViewModel instance = null;
         private static readonly object padlock = new object();
@@ -105,9 +92,69 @@ namespace HelathClinicPatienteRole.ViewModel
         }
         #endregion
 
+        #region  Iskljuci ToolTipove
 
+        public RelayCommand IskljuciToolTipsCommand { get; private set; }
 
+        private bool _isToolTipVisible = true;
+        public void IskljuciToolTips(object obj)
+        {
+            Style style = new Style(typeof(ToolTip));
+            style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+            style.Seal();
 
+            if (_isToolTipVisible)
+            {
+                _isToolTipVisible = false;
+                foreach (Window window in Application.Current.Windows)
+                {
+                    window.Resources.Add(typeof(ToolTip), style); //Show
+                   
+                    /* _isToolTipVisible = true;
+                     window.Resources.Remove(typeof(ToolTip));  //hide*/
+
+                }
+                MessageBox.Show("Uspešno isključeni tooltipovi");
+            }
+            else
+            {
+                MessageBox.Show("Već ste isključili tooltipove!");
+            }
+        }
+
+        #endregion
+
+        #region  Ukljkuci ToolTipove
+
+        public RelayCommand UkljuciToolTipsCommand { get; private set; }
+
+        public void UkljuciToolTips(object obj)
+        {
+            Style style = new Style(typeof(ToolTip));
+            style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+            style.Seal();
+
+            if (!_isToolTipVisible)
+            {
+                _isToolTipVisible = true;
+                foreach (Window window in Application.Current.Windows)
+                {
+                   
+
+                     _isToolTipVisible = true;
+                     window.Resources.Remove(typeof(ToolTip));  //hide
+                 
+
+                }
+                MessageBox.Show("Uspešno uključeni tooltipovi");
+            }
+            else
+            {
+                MessageBox.Show("Već su uključeni tooltipovi");
+            }
+        }
+
+        #endregion
 
 
         public event PropertyChangedEventHandler PropertyChanged;

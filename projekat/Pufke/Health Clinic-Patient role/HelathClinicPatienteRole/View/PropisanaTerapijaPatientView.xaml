@@ -35,7 +35,16 @@
 
                 <Button  Content="Generiši" Grid.Row="22" HorizontalAlignment="Left"  Name="generisiButton"   
                       VerticalAlignment="Top" Width="140"  
-                      Command="{Binding GenerisiIzvestajCommand}" Grid.Column="10" Margin="0,10.154,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2" RenderTransformOrigin="0.318,1.422" Height="34"  />
+                      Command="{Binding GenerisiIzvestajCommand}" Grid.Column="10" Margin="0,10.154,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2" RenderTransformOrigin="0.318,1.422" Height="34" >
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Generiši PDF</TextBlock>
+                                <TextBlock>na desktop vašeg računara će se izgenerisati PDF izveštaj o rasporedu uzimanja terapije (u obliku kalendara)</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>

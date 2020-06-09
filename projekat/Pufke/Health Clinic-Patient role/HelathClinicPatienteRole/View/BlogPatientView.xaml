@@ -60,17 +60,44 @@
                                 <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\BlogPhoto.jpg"  Width="400" Height="300" Grid.Column="0" Margin="62,23,63,17"  />
                                 <TextBlock FontWeight="Bold" Foreground="#FF148DF0" FontSize="30" Grid.ColumnSpan="6" Margin="530,23,66,277" Grid.RowSpan="6"><Run Text="Novi aparati stigli u kliniku!"/><LineBreak/><Run/></TextBlock>
                                 <TextBlock Foreground="#FF148DF0" FontSize="18"  Grid.ColumnSpan="10"  HorizontalAlignment="Center" Margin="526,75,0,10" Width="706" ><Run Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, &#xA; sed do eiusmod tempor incididunt u"/><Run Text="t labore et dolore magna aliqua. &#xA; Ut enim ad minim veniam, &#xA; quis nostrud exercitation ullamco laboris nisi ut aliquip ex  &#xA; ea commodo consequat.&#xA; Duis aute irure dolor  in reprehenderit in voluptate velit esse &#xA; cillum dolore eu fugiat nulla pariatur.&#xA; Excepteur sint occaecat cupidatat non proident,&#xA; sunt in culpa qui officia deserunt mollit anim id est laborum."/></TextBlock>
-                                <Button Grid.Column="5"  Height="30" Content="Pročitaj više" Canvas.Left="300" Canvas.Top="238" Margin="10,298,0,17" RenderTransformOrigin="1.104,1.38" Command="{Binding ProcitajViseDialogCommand}"/>
+                                <Button Grid.Column="5"  Height="30" Content="Pročitaj više" Canvas.Left="300" Canvas.Top="238" Margin="10,298,0,17" RenderTransformOrigin="1.104,1.38" Command="{Binding ProcitajViseDialogCommand}">
+                                    <Button.ToolTip>
+                                        <ToolTip>
+                                            <StackPanel>
+                                                <TextBlock FontWeight="Bold">Pročitaj više</TextBlock>
+                                                <TextBlock>Pročitaj ceo tekst u novom prozoru koji će se otvoriti</TextBlock>
+                                            </StackPanel>
+                                        </ToolTip>
+                                    </Button.ToolTip>
+                                </Button>
 
                                 <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\BlogPhoto.jpg"  Width="400" Height="300" Grid.Row="3" Grid.Column="0" Margin="62,23,63,17"  />
                                 <TextBlock FontWeight="Bold" Foreground="#FF148DF0" FontSize="30" Grid.ColumnSpan="6" Margin="530,23,66,277" Grid.RowSpan="6" Grid.Row="3"><Run Text="Novi aparati stigli u kliniku!"/><LineBreak/><Run/></TextBlock>
                                 <TextBlock Foreground="#FF148DF0" FontSize="18"  Grid.Row="3" Grid.ColumnSpan="10"  HorizontalAlignment="Center" Margin="526,75,0,10" Width="706" ><Run Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, &#xA; sed do eiusmod tempor incididunt u"/><Run Text="t labore et dolore magna aliqua. &#xA; Ut enim ad minim veniam, &#xA; quis nostrud exercitation ullamco laboris nisi ut aliquip ex  &#xA; ea commodo consequat.&#xA; Duis aute irure dolor  in reprehenderit in voluptate velit esse &#xA; cillum dolore eu fugiat nulla pariatur.&#xA; Excepteur sint occaecat cupidatat non proident,&#xA; sunt in culpa qui officia deserunt mollit anim id est laborum."/></TextBlock>
-                                <Button Grid.Column="5" Grid.Row="3"  Height="30" Content="Pročitaj više" Canvas.Left="300" Canvas.Top="238" Margin="10,298,0,17" RenderTransformOrigin="1.104,1.38" Command="{Binding ProcitajViseDialogCommand}"/>
+                                <Button Grid.Column="5" Grid.Row="3"  Height="30" Content="Pročitaj više" Canvas.Left="300" Canvas.Top="238" Margin="10,298,0,17" RenderTransformOrigin="1.104,1.38" Command="{Binding ProcitajViseDialogCommand}">
+                                    <Button.ToolTip>
+                                        <ToolTip>
+                                            <StackPanel>
+                                                <TextBlock FontWeight="Bold">Pročitaj više</TextBlock>
+                                                <TextBlock>Pročitaj ceo tekst u novom prozoru koji će se otvoriti</TextBlock>
+                                            </StackPanel>
+                                        </ToolTip>
+                                    </Button.ToolTip>
+                                </Button>
 
                                 <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\BlogPhoto.jpg"  Width="400" Height="300" Grid.Row="6" Grid.Column="0" Margin="62,23,63,17"  />
                                 <TextBlock FontWeight="Bold" Foreground="#FF148DF0" FontSize="30" Grid.ColumnSpan="6" Margin="530,23,66,277" Grid.RowSpan="6" Grid.Row="6"><Run Text="Novi aparati stigli u kliniku!"/><LineBreak/><Run/></TextBlock>
                                 <TextBlock Foreground="#FF148DF0" FontSize="18"  Grid.Row="6" Grid.ColumnSpan="10"  HorizontalAlignment="Center" Margin="526,75,0,10" Width="706" ><Run Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, &#xA; sed do eiusmod tempor incididunt u"/><Run Text="t labore et dolore magna aliqua. &#xA; Ut enim ad minim veniam, &#xA; quis nostrud exercitation ullamco laboris nisi ut aliquip ex  &#xA; ea commodo consequat.&#xA; Duis aute irure dolor  in reprehenderit in voluptate velit esse &#xA; cillum dolore eu fugiat nulla pariatur.&#xA; Excepteur sint occaecat cupidatat non proident,&#xA; sunt in culpa qui officia deserunt mollit anim id est laborum."/></TextBlock>
-                                <Button Grid.Column="5" Grid.Row="6"  Height="30" Content="Pročitaj više" Canvas.Left="300" Canvas.Top="238" Margin="10,298,0,17" RenderTransformOrigin="1.104,1.38" Command="{Binding ProcitajViseDialogCommand}" />
+                                <Button Grid.Column="5" Grid.Row="6"  Height="30" Content="Pročitaj više" Canvas.Left="300" Canvas.Top="238" Margin="10,298,0,17" RenderTransformOrigin="1.104,1.38" Command="{Binding ProcitajViseDialogCommand}">
+                                    <Button.ToolTip>
+                                        <ToolTip>
+                                            <StackPanel>
+                                                <TextBlock FontWeight="Bold">Pročitaj više</TextBlock>
+                                                <TextBlock>Pročitaj ceo tekst u novom prozoru koji će se otvoriti</TextBlock>
+                                            </StackPanel>
+                                        </ToolTip>
+                                    </Button.ToolTip>
+                                </Button>
                             </Grid>
                         </ItemsControl>
                     </Border>

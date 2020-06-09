@@ -28,6 +28,7 @@ namespace HelathClinicPatienteRole.View
         public PocetnaPatientView()
         {
             InitializeComponent();
+
         
         }
 
@@ -35,5 +36,9 @@ namespace HelathClinicPatienteRole.View
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+
+        
+    
     }
 }
