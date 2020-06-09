@@ -60,7 +60,7 @@
 
 
 
-        <Button Content="Ulogujte se" Height="28" HorizontalAlignment="Left" Margin="180,234,0,0" Name="button1" VerticalAlignment="Top" Width="104" Grid.ColumnSpan="2"  Command="{Binding LoginCommand}">
+        <Button Content="Ulogujte se" Height="28" HorizontalAlignment="Left" Margin="180,234,0,0" Name="button1" VerticalAlignment="Top" Width="104" Grid.ColumnSpan="2" Click="button1_Click" Command="{Binding LoginCommand}">
             <Button.ToolTip>
                 <ToolTip>
                     <StackPanel>
