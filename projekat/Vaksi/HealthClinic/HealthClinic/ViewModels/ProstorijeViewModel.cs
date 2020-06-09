@@ -332,9 +332,23 @@ namespace HealthClinic.ViewModels
 
         public void PrikaziSpisakOpreme(object obj)
         {
-            SpisakOpreme = new ObservableCollection<string>();
-            SpisakOpreme.Add("krevet");
-            SpisakOpreme.Add("sto");
+            if(SpisakOpreme is null)
+            {
+                SpisakOpreme = new ObservableCollection<Oprema>();
+                SpisakOpreme.Add(new Oprema()
+                {
+                    KolicinaOpreme=10,
+                    NazivOpreme="sto"
+                });
+
+                SpisakOpreme.Add(new Oprema()
+                {
+                    KolicinaOpreme = 11,
+                    NazivOpreme = "stolica"
+                });
+            }
+                
+            
 
             TrenutniProzor = new SpisakOpremeDijalog();
             TrenutniProzor.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
@@ -634,9 +648,9 @@ namespace HealthClinic.ViewModels
         #endregion
 
         #region Spisak opreme odredjene prostorije
-        private ObservableCollection<string> _spisakOpreme;
+        private ObservableCollection<Oprema> _spisakOpreme;
 
-        public ObservableCollection<string> SpisakOpreme
+        public ObservableCollection<Oprema> SpisakOpreme
         {
             get { return _spisakOpreme; }
             set { _spisakOpreme = value; OnPropertyChanged("SpisakOpreme"); }

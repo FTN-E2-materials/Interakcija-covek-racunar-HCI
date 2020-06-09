@@ -87,6 +87,13 @@
                     FontSize="14"
                     ItemsSource="{Binding SpisakOpreme}" 
                     >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding NazivOpreme}" Width="100"/>
+                            <GridViewColumn Header="Kolicina" DisplayMemberBinding="{Binding KolicinaOpreme}" Width="100"/>
+
+                        </GridView>
+                    </ListView.View>
                 </ListView>
             </GroupBox>
             <!-- Kraj spiska opreme-->
