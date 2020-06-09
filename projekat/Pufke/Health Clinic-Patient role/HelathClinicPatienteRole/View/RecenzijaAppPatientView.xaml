@@ -78,7 +78,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Label  Content= "Recenzije"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="50" Grid.Column="12"  Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="6" />
+                <Label  FontWeight="Bold" Content= "Recenzije"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="50" Grid.Column="12"  Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="6" />
 
                 <Label  Content= "   Ostavite vaš komentar"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="35" Grid.Column="10"  Grid.Row="19" Grid.RowSpan="5" Grid.ColumnSpan="10" Margin="10,11,0,10" />
 

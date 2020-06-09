@@ -8,25 +8,26 @@
              d:DesignHeight="700" d:DesignWidth="1300">
     <Grid >
         <StackPanel Background="White">
-            <Grid Height="700"  DataContext="{Binding Users}">
-                <Label  Content= "Zdravo klinika "  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="50" Grid.Column="5"  Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="6" />
+            <Grid Height="700">
+                <Canvas Background="Wheat" Grid.ColumnSpan="14" Grid.Column="1" Grid.Row="5" Grid.RowSpan="20" Margin="0,10,0,0"/>
+                <Label FontWeight="Bold" Content= "Zdravo klinika "  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="50" Grid.Column="5"  Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="6" />
 
                 <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\KontaktPhoto.jpg"  Grid.Column="0" Grid.Row="8" Grid.RowSpan="12" Grid.ColumnSpan="7" />
 
-                <Label  Content= "Adresa:"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="30" Grid.Column="5"  Grid.Row="7" Grid.RowSpan="4" Grid.ColumnSpan="3" />
-                <Label  Content= "Ilije Ognjanovića 30, 21000 Novi Sad "  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="7" Grid.RowSpan="2" Grid.ColumnSpan="7" Margin="37,0,32,0" />
+                <Label FontWeight="Bold" Content= "Adresa:"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="30" Grid.Column="5"  Grid.Row="7" Grid.RowSpan="4" Grid.ColumnSpan="3" />
+                <Label  Content= "Ilije Ognjanovića 30, 21000 Novi Sad "  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="7" Grid.RowSpan="2" Grid.ColumnSpan="7" Margin="29,0,40,0" />
 
-                <Label  Content= "Telefon:"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="30" Grid.Column="5"  Grid.Row="12" Grid.RowSpan="4" Grid.ColumnSpan="3" />
-                <Label  Content= "+381 21 512 130"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="10" Grid.RowSpan="2" Grid.ColumnSpan="10" Margin="37,0,0,0" />
-                <Label  Content= "+381 21 625 110"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="12" Grid.RowSpan="2" Grid.ColumnSpan="10" Margin="37,0,0,0" />
-                <Label  Content= "+381 21 313 150"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="14" Grid.RowSpan="2" Grid.ColumnSpan="10" Margin="37,0,0,0" />
+                <Label FontWeight="Bold" Content= "Telefon:"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="30" Grid.Column="5"  Grid.Row="12" Grid.RowSpan="4" Grid.ColumnSpan="3" />
+                <Label  Content= "+381 21 512 130"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="10" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="29,0,0,0" />
+                <Label  Content= "+381 21 625 110"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="12" Grid.RowSpan="3" Grid.ColumnSpan="4" Margin="29,5,0,18" />
+                <Label  Content= "+381 21 313 150"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="14" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="29,0,0,0" />
 
-                <Label  Content= "Mobilni:"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="30" Grid.Column="5"  Grid.Row="18" Grid.RowSpan="4" Grid.ColumnSpan="3" />
-                <Label  Content= "+381 60 6582 145"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="17" Grid.RowSpan="2" Grid.ColumnSpan="10" Margin="37,0,0,0" />
-                <Label  Content= "+381 60 3658 221"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="19" Grid.RowSpan="2" Grid.ColumnSpan="10" Margin="37,0,0,0" />
+                <Label  FontWeight="Bold" Content= "Mobilni:"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="30" Grid.Column="5"  Grid.Row="18" Grid.RowSpan="4" Grid.ColumnSpan="3" />
+                <Label  Content= "+381 60 6582 145"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="17" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="27,0,0,0" />
+                <Label  Content= "+381 60 3658 221"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="19" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="27,0,0,0" />
 
-                <Label  Content= "Email:"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="30" Grid.Column="5"  Grid.Row="22" Grid.RowSpan="4" Grid.ColumnSpan="3" />
-                <Label  Content= "klinika@zdravoklinika.com"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="22" Grid.RowSpan="2" Grid.ColumnSpan="10" Margin="37,0,0,0" />
+                <Label  FontWeight="Bold" Content= "Email:"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="30" Grid.Column="6"  Grid.Row="22" Grid.RowSpan="4" Grid.ColumnSpan="2" Margin="4,0,65,0" />
+                <Label  Content= "klinika@zdravoklinika.com"  HorizontalAlignment="Left" Foreground="#FF148DF0" FontSize="30" Grid.Column="7"  Grid.Row="22" Grid.RowSpan="2" Grid.ColumnSpan="5" Margin="27,0,0,0" />
 
                 <Grid.ColumnDefinitions>
                     <!--16 columns-->

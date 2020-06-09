@@ -9,8 +9,8 @@
     <Grid >
         <StackPanel Background="White">
             <Grid Height="700"  DataContext="{Binding Users}">
-
-                <TextBlock Foreground="#FF148DF0" FontSize="60"  HorizontalAlignment="Center" Text="О klinici" Grid.Column="6" Grid.Row="1"  Grid.ColumnSpan="4" Grid.RowSpan="3" />
+                <Canvas Background="Wheat" Margin="10,10,10,0" Grid.ColumnSpan="16" Grid.RowSpan="21" Grid.Row="4" Height="477" VerticalAlignment="Top"/>
+                <TextBlock FontWeight="Bold" Foreground="#FF148DF0" FontSize="50"  HorizontalAlignment="Center" Text="О klinici" Grid.Column="6" Grid.Row="1"  Grid.ColumnSpan="4" Grid.RowSpan="3" />
 
                 <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\OkliniciPhoto.jpg"  Grid.Column="1" Grid.Row="5" Grid.RowSpan="12" Grid.ColumnSpan="7" />
 

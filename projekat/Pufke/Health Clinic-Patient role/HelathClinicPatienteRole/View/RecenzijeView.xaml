@@ -78,7 +78,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Label  Content= "Recenzije"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="50" Grid.Column="12"  Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="6" />
+                <Label FontWeight="Bold" Content= "Recenzije"  HorizontalAlignment="Center" Foreground="#FF148DF0" FontSize="50" Grid.Column="12"  Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="6" />
 
                 <StackPanel  Grid.Row="22" Grid.Column="9" Grid.ColumnSpan="14" Grid.RowSpan="8" HorizontalAlignment="Left" Width="500" />
 

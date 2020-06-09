@@ -14,7 +14,7 @@
                                    Description="Ovaj 'Wizard' je namenjen novim korisnicima radi vašeg lakšeg upoznavanja sa funkcionalnostima aplikacije kao i njenim mogućnostima, nadamo se da će te uživati! " />
             <xctk:WizardPage x:Name="Page1" PageType="Interior"
                                    Title="Mogućnosti aplikacije"
-                                   Description="Uz pomoć ove aplikacije možete da zakazujete, otkazujete kao i modifikujete već zakazan pregled, više nema potrebe da dolazite lično kod nas ili da nas zovete telefonom, potrebno je samo par klikova mišem! Nakon obavljenog pregleda možete da popunite anketu i pregledu, koja će nam pomoći da još bolje i profesionalnije obavljamo naš posao!"
+                                   Description="Uz pomoć ove aplikacije možete da zakazujete, otkazujete kao i modifikujete već zakazan pregled, više nema potrebe da dolazite lično kod nas ili da nas zovete telefonom, potrebno je samo par klikova mišem! Nakon obavljenog pregleda možete da popunite anketu o pregledu, koja će nam pomoći da još bolje i profesionalnije obavljamo naš posao!"
                                    NextPage="{Binding ElementName=Page2}"
                                    PreviousPage="{Binding ElementName=IntroPage}"
                              >
