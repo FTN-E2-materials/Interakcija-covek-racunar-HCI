@@ -102,7 +102,6 @@
                         UpdateSourceTrigger="PropertyChanged"
                         >
                         <Binding.ValidationRules>
-                            <validations:MinimumCharacterRule MinimumCharacters="1"/>
                             <validations:MaximumCharacterRule MaximumCharacters="200"/>
 
                         </Binding.ValidationRules>
