@@ -16,7 +16,7 @@ namespace HealthClinic.Models
         private string _spisakOpreme;     //TODO: Na otvaranje ovoga dobijamo dijalog sa tabelom opreme
         private string _uvidZauzetosti;  //TODO: Na otvaranje ovoga mozemo da vidimo kad je soba zauzeta/slobodna
         private List<Oprema> _opremaProstorije;
-        private List<FizickiRad> _fizickiRadovi;
+        private FizickiRad _fizickiRadovi;
 
 
         public string Odeljenje
@@ -55,7 +55,7 @@ namespace HealthClinic.Models
             set { _opremaProstorije = value; OnPropertyChanged("OpremaProstorije"); }
         }
 
-        public List<FizickiRad> FizickiRadovi
+        public FizickiRad FizickiRadovi
         {
             get { return _fizickiRadovi; }
             set { _fizickiRadovi = value; OnPropertyChanged("FizickiRadovi"); }

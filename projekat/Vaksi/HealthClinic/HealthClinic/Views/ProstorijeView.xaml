@@ -70,7 +70,7 @@
                                         <Button
                                             Command="{Binding Path=DataContext.ZauzetostAktivnostCommand,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGrid}}}"
                                             >
-                                            aktivnost
+                                            aktivnosti
                                         </Button>
                                     </StackPanel>
                                 </DataTemplate>

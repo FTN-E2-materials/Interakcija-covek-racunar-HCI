@@ -166,6 +166,9 @@
     <Compile Include="Views\Dialogs\ProduzeneInformacije\AlergijeDijalog.xaml.cs">
       <DependentUpon>AlergijeDijalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dialogs\ProduzeneInformacije\FizickiRadoviDijalog.xaml.cs">
+      <DependentUpon>FizickiRadoviDijalog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dialogs\ProduzeneInformacije\Nuspojave.xaml.cs">
       <DependentUpon>Nuspojave.xaml</DependentUpon>
     </Compile>
@@ -278,6 +281,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dialogs\ProduzeneInformacije\AlergijeDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\ProduzeneInformacije\FizickiRadoviDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

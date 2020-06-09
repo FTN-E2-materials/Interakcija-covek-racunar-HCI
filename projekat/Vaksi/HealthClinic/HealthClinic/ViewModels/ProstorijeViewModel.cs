@@ -18,6 +18,7 @@ using System.Drawing;
 using HealthClinic.Views.Dialogs.Brisanje;
 using Syncfusion.Pdf.Tables;
 using System.Data;
+using HealthClinic.Views.Dialogs.ProduzeneInformacije;
 
 namespace HealthClinic.ViewModels
 {
@@ -329,9 +330,33 @@ namespace HealthClinic.ViewModels
             SelektovanaProstorija.Odeljenje = ProstorijaZaIzmenu.Odeljenje;
             this.TrenutniProzor.Close();
         }
+        public void PotvrdiZauzetostAktivnost(object obj)
+        {
+            // preuzimam od pomocne promenljive podatke iz forme
+            SelektovanaProstorija.FizickiRadovi.NazivRada = TrenutniFizickiRad.NazivRada;
+            SelektovanaProstorija.FizickiRadovi.DoDatuma = TrenutniFizickiRad.DoDatuma;
+            SelektovanaProstorija.FizickiRadovi.OdDatuma = TrenutniFizickiRad.OdDatuma;
+
+            this.TrenutniProzor.Close();
+        }
 
         public void PrikaziZauzetostAktivnost(object obj)
         {
+            //kreiram temp promenjivu za trenutni fizicki rad
+            if(TrenutniFizickiRad is null)
+            {
+                TrenutniFizickiRad = new FizickiRad()
+                {
+                    OdDatuma = new DateTime(2020,1,1),
+                    DoDatuma = new DateTime(2020,12,12)
+                };
+            }
+            if(SelektovanaProstorija.FizickiRadovi is null)
+            {
+                SelektovanaProstorija.FizickiRadovi = new FizickiRad();
+            }
+
+            //MessageBox.Show(TrenutniFizickiRad.OdDatuma.ToShortDateString());
             TrenutniProzor = new ZauzetostAktivnostDijalog();
             TrenutniProzor.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
             TrenutniProzor.ShowDialog();
@@ -443,14 +468,20 @@ namespace HealthClinic.ViewModels
             TrenutniProzor.ShowDialog();
         }
 
-        public void PotvrdiZauzetostAktivnost(object obj)
-        {
-            this.TrenutniProzor.Close();
-        }
+        
 
         public void PrikaziFizickeRadove(object obj)
         {
-            MessageBox.Show("prikaz fizickih radova");
+            if (SelektovanaProstorija.FizickiRadovi is null)
+            {
+                MessageBox.Show("Izabrana prostorija u narednom periodu nema zakazanih fizickih radova");
+                return;
+            }
+                
+
+            TrenutniProzor = new FizickiRadoviDijalog();
+            TrenutniProzor.DataContext = this;
+            TrenutniProzor.ShowDialog();
         }
 
 
@@ -674,6 +705,17 @@ namespace HealthClinic.ViewModels
             set { _spisakOpreme = value; OnPropertyChanged("SpisakOpreme"); }
         }
 
+
+        #endregion
+
+        #region Fizicki radovi za dodavanje/prikaz
+        private FizickiRad _trenutniFizickiRad;
+
+        public FizickiRad TrenutniFizickiRad
+        {
+            get { return _trenutniFizickiRad; }
+            set { _trenutniFizickiRad = value; OnPropertyChanged("TrenutniFizickiRad"); }
+        }
 
         #endregion
     }

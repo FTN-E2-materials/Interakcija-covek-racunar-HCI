@@ -96,7 +96,7 @@
                     materialDesign:HintAssist.Hint="Izaberite od kog datuma">
                     <DatePicker.SelectedDate>
                         <Binding
-                        Path="PocetniDatum"
+                        Path="TrenutniFizickiRad.OdDatuma"
                         UpdateSourceTrigger="PropertyChanged">
                         </Binding>
                     </DatePicker.SelectedDate>
@@ -118,7 +118,7 @@
                     materialDesign:HintAssist.Hint="Izaberite do kog datuma">
                     <DatePicker.SelectedDate>
                         <Binding
-                        Path="KrajnjiDatum"
+                        Path="TrenutniFizickiRad.DoDatuma"
                         UpdateSourceTrigger="PropertyChanged">
                         </Binding>
                     </DatePicker.SelectedDate>
@@ -126,7 +126,8 @@
                 <!-- Kraj pocetni datum-->
 
                 <!-- Tip renoviranja -->
-                <ComboBox
+                <TextBox
+                    Text="{Binding TrenutniFizickiRad.NazivRada, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     Visibility="{Binding PrikazTipaRenoviranja, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     Background="WhiteSmoke"
                     FontWeight="DemiBold"
@@ -136,20 +137,11 @@
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
                     x:Name="TipRenoviranja"
-                    materialDesign:HintAssist.Hint="Izaberite tip renoviranja"
+                    materialDesign:HintAssist.Hint="Unesite tip renoviranja"
                     materialDesign:HintAssist.HelperText="Tip renoviranja"
-                >
-                    <ComboBoxItem>
-                        popravka klime
-                    </ComboBoxItem>
-                    <ComboBoxItem>
-                        popravka namestaja
-                    </ComboBoxItem>
-                    <ComboBoxItem>
-                        poprava interijera
-                    </ComboBoxItem>
+                    >
 
-                </ComboBox>
+                </TextBox>
                 <!-- Kraj tipa renoviranja -->
 
                 <!-- Izbor prostorije s kojom vrsimo spajanje -->
