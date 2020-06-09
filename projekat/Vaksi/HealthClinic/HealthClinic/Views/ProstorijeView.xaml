@@ -62,20 +62,7 @@
                         <DataGridTextColumn Binding="{Binding BrojSobe}" Header="Broj sobe"/>
                         <DataGridTextColumn Binding="{Binding Namena}" Header="Namena"/>
                         <!-- Dugmad u tabeli -->
-                        <DataGridTemplateColumn>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-                                        <Button
-                                            Command="{Binding Path=DataContext.SpisakOpremeCommand,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGrid}}}"
-                                            >
-                                            spisak opreme
-                                        </Button>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        
+                        <!-- Aktivnosti -->
                         <DataGridTemplateColumn>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -89,6 +76,40 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
+                        <!-- Kraj aktivnosti -->
+                        
+                        <!-- Radovi -->
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Button
+                                            Command="{Binding Path=DataContext.PrikaziFizickeRadoveCommand,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGrid}}}"
+                                            >
+                                            radovi
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <!-- Kraj radova -->
+
+                        <!-- Spisak opreme -->
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Button
+                                            Command="{Binding Path=DataContext.SpisakOpremeCommand,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGrid}}}"
+                                            >
+                                            oprema
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <!-- Kraj spiska opreme -->
+
                         <!-- Kraj dugmadi u tabeli -->
                     </DataGrid.Columns>
                     <!-- Kraj custom kolona u tabeli -->

@@ -55,6 +55,11 @@ namespace HealthClinic.ViewModels
 
             odredjivanjeMogucihTipovaProstorije();
 
+            // Potvrdjujem uneto podesavanje za odredjivanje aktivnosti i radova u narednom periodu izabrane prostorije
+            PotvrdiZauzetostAktivnostCommand = new RelayCommand(PotvrdiZauzetostAktivnost);
+
+            // prikaz fizickih radova nad prostorijom u narednom periodu
+            PrikaziFizickeRadoveCommand = new RelayCommand(PrikaziFizickeRadove);
 
         }
         
@@ -269,7 +274,9 @@ namespace HealthClinic.ViewModels
         public RelayCommand DodajProstorijuCommand { get; private set; }
         public RelayCommand IzmeniProstorijuCommand { get; private set; }
         public RelayCommand IzbrisiProstorijuCommand { get; private set; }
-
+        public RelayCommand PotvrdiZauzetostAktivnostCommand { get; private set; }
+        public RelayCommand PrikaziFizickeRadoveCommand { get; private set; }
+        
         #endregion
 
         #region Funkcije koje komande koriste
@@ -436,7 +443,18 @@ namespace HealthClinic.ViewModels
             TrenutniProzor.ShowDialog();
         }
 
-        #endregion 
+        public void PotvrdiZauzetostAktivnost(object obj)
+        {
+            this.TrenutniProzor.Close();
+        }
+
+        public void PrikaziFizickeRadove(object obj)
+        {
+            MessageBox.Show("prikaz fizickih radova");
+        }
+
+
+        #endregion
 
         #region Tabela
 

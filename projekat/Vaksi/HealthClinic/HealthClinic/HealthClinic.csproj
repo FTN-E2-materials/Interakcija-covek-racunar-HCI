@@ -114,6 +114,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\BusinessHours.cs" />
+    <Compile Include="Models\FizickiRad.cs" />
     <Compile Include="Models\Oprema.cs" />
     <Compile Include="Models\Upravnik.cs" />
     <Compile Include="Utilities\RoutedCommands.cs" />

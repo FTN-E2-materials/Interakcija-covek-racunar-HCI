@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Zauzetost/Aktivnost" Height="450" Width="600"
-        MaxHeight="450" MinHeight="450"
+        MaxHeight="450" MinHeight="550"
         MaxWidth="400" MinWidth="800">
     <Grid Background="#cdfbf4">
 
@@ -41,8 +41,8 @@
             <!-- Kalendar-->
             <Viewbox 
                 Stretch="Fill"
-                Height="340"
-                Width="270"
+                Height="390"
+                Width="300"
                 Grid.Column="0"
                 Margin="0, 10, 0, 0"
             >
@@ -80,7 +80,51 @@
                         IsChecked="{Binding Deljenje, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
                 <!-- Kraj radio buttons-->
-  
+
+                <!-- Pocetni datum -->
+                <DatePicker
+                    Visibility="{Binding PrikazTipaRenoviranja, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    ToolTip="U desnom delu mozes klikom na kalendar, izabrati zeljeni datum"
+                    Background="WhiteSmoke"
+                    FontWeight="DemiBold"
+                    Width="320"
+                    Height="40"
+                    Margin="10, 20, 10, 10"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    materialDesign:HintAssist.HelperText="Od datuma"
+                    materialDesign:HintAssist.Hint="Izaberite od kog datuma">
+                    <DatePicker.SelectedDate>
+                        <Binding
+                        Path="PocetniDatum"
+                        UpdateSourceTrigger="PropertyChanged">
+                        </Binding>
+                    </DatePicker.SelectedDate>
+                </DatePicker>
+                <!-- Kraj pocetni datum-->
+
+                <!-- Krajnji datum -->
+                <DatePicker
+                    Visibility="{Binding PrikazTipaRenoviranja, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    ToolTip="U desnom delu mozes klikom na kalendar, izabrati zeljeni datum"
+                    Background="WhiteSmoke"
+                    FontWeight="DemiBold"
+                    Width="320"
+                    Height="40"
+                    Margin="10, 20, 10, 10"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    materialDesign:HintAssist.HelperText="Do datuma"
+                    materialDesign:HintAssist.Hint="Izaberite do kog datuma">
+                    <DatePicker.SelectedDate>
+                        <Binding
+                        Path="KrajnjiDatum"
+                        UpdateSourceTrigger="PropertyChanged">
+                        </Binding>
+                    </DatePicker.SelectedDate>
+                </DatePicker>
+                <!-- Kraj pocetni datum-->
+
                 <!-- Tip renoviranja -->
                 <ComboBox
                     Visibility="{Binding PrikazTipaRenoviranja, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -239,6 +283,7 @@
             <StackPanel Margin="0, 20, 0, 0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
 
                 <Button
+                    Command="{Binding PotvrdiZauzetostAktivnostCommand}"
                     IsDefault="True"
                     Height="40"
                     Width="120"

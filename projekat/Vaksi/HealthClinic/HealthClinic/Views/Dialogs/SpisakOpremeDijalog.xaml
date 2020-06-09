@@ -7,9 +7,9 @@
         xmlns:local="clr-namespace:HealthClinic.Dialogs"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Spisak opreme" Height="450" Width="400" 
+        Title="Spisak opreme" Height="450" Width="300" 
         MaxHeight="450" MinHeight="450"
-        MaxWidth="400" MinWidth="400">
+        MaxWidth="300" MinWidth="300">
     <Grid Background="#cdfbf4">
 
         <StackPanel>
@@ -70,9 +70,9 @@
             <!-- Prikaz spiska opreme-->
             <GroupBox
                 Background="#FF226397"
-                Header="Spisak opreme u izabranoj prostoriji"
+                Header="Spisak opreme u prostoriji"
                 Height="300"
-                Width="350"
+                Width="250"
                 FontSize="15"
                 HorizontalContentAlignment="Center"
                 
@@ -81,7 +81,7 @@
                 materialDesign:ShadowAssist.ShadowDepth="Depth0"
                 BorderThickness="1">
                 <ListView  
-                    Width="335"
+                    Width="295"
                     
                     SelectionMode="Single"
                     FontSize="14"
