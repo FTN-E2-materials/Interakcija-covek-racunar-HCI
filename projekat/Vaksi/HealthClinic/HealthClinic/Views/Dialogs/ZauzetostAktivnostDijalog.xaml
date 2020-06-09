@@ -166,6 +166,8 @@
                 </TextBox>
                 <!-- Kraj izbora prostorije s kojom vrsimo spajanje -->
 
+                
+                
                 <!-- Broj nove prostorije -->
                 <TextBox
                     TextWrapping="Wrap"
@@ -182,7 +184,7 @@
                     materialDesign:HintAssist.Hint="Ovde unesite broj nove prostorije"
                     materialDesign:HintAssist.HelperText="Broj nove prostorije">
                     <TextBox.Text>
-                        <!-- Bajndovanje naziva prostorije + validacija-->
+                        <!-- Bajndovanje broja nove prostorije + validacija-->
                         <Binding 
                         Path="BrojNoveSobe"
                         ValidatesOnDataErrors="True"
@@ -193,13 +195,14 @@
                                 <validations:MaximumCharacterRule MaximumCharacters="20"/>
                             </Binding.ValidationRules>
                         </Binding>
-                        <!-- Kraj bajndovanje naziva nove prostorije + validacija-->
+                        <!-- Kraj bajndovanje broja nove prostorije + validacija-->
                     </TextBox.Text>
                 </TextBox>
                 <!-- Kraj naziva nove prostorije -->
 
                 <!-- Tip prostorije -->
                 <ComboBox
+                    Visibility="{Binding PrikazSobeSaKojomSpajamo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     Validation.ErrorTemplate="{StaticResource errorTemplate}"
                     ItemsSource="{Binding MoguciTipoviProstorije}"
                     SelectedItem="{Binding ProstorijaZaDodavanje.Namena}"
@@ -212,8 +215,7 @@
                     VerticalContentAlignment="Center"
                     x:Name="TipLeka"
                     materialDesign:HintAssist.Hint="Izaberite tip prostorije"
-                    materialDesign:HintAssist.HelperText="Tip prostorije"
-                    >
+                    materialDesign:HintAssist.HelperText="Tip prostorije">
 
                 </ComboBox>
                 <!-- Kraj tipa prostorije -->
@@ -221,6 +223,7 @@
                 <!-- Naziv druge nove prostorije -->
                 <TextBox
                     TextWrapping="Wrap"
+                    Validation.ErrorTemplate="{StaticResource errorTemplate}"
                     Visibility="{Binding PrikazDrugeNoveProstorije, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     Background="WhiteSmoke"
                     FontWeight="DemiBold"
@@ -230,22 +233,21 @@
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
                     x:Name="NazivDrugeNoveProstorije"
-                    materialDesign:HintAssist.Hint="Ovde unesite naziv druge nove prostorije"
-                    materialDesign:HintAssist.HelperText="Naziv druge nove prostorije">
+                    materialDesign:HintAssist.Hint="Ovde unesite broj druge nove prostorije"
+                    materialDesign:HintAssist.HelperText="Broj druge nove prostorije">
                     <TextBox.Text>
-                        <!-- Bajndovanje naziva prostorije + validacija-->
+                        <!-- Bajndovanje broja nove prostorije + validacija-->
                         <Binding 
-                        Path="NazivProstorije"
+                        Path="BrojDrugeNoveSobe"
                         ValidatesOnDataErrors="True"
                         UpdateSourceTrigger="PropertyChanged"
                         >
                             <Binding.ValidationRules>
-                                <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                                <validations:MinimumCharacterRule MinimumCharacters="1"/>
                                 <validations:MaximumCharacterRule MaximumCharacters="20"/>
-                                <validations:WordRule/>
                             </Binding.ValidationRules>
                         </Binding>
-                        <!-- Kraj bajndovanje naziva nove prostorije + validacija-->
+                        <!-- Kraj bajndovanje broja nove prostorije + validacija-->
                     </TextBox.Text>
                 </TextBox>
                 <!-- Kraj naziva nove prostorije -->

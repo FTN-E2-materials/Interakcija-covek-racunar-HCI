@@ -341,7 +341,38 @@ namespace HealthClinic.ViewModels
             }
             else if (Deljenje)
             {
-                MessageBox.Show("deljenje");
+                MessageBox.Show("deljenje" + BrojNoveSobe +" " + BrojDrugeNoveSobe);
+                // obrisem trenutno selektovanu prostoriju
+                foreach (Prostorija trenutnaProstorija in Prostorije)
+                {
+                    if (trenutnaProstorija.BrojSobe == SelektovanaProstorija.BrojSobe)
+                    {
+                        podesiBrojOdredjenihProstorija(trenutnaProstorija, -1);
+                        Prostorije.Remove(trenutnaProstorija);
+
+                        break;
+                    }
+                }
+
+                // dodam ove dve nove
+                Prostorija p1 = new Prostorija()
+                {
+                    BrojSobe = BrojNoveSobe,
+                    Namena ="soba za pacijente"
+                    
+                };
+
+                Prostorija p2 = new Prostorija()
+                {
+                    BrojSobe = BrojDrugeNoveSobe,
+                    Namena = "soba za pacijente"
+
+                };
+                Prostorije.Add(p1);
+                Prostorije.Add(p2);
+                podesiBrojOdredjenihProstorija(p1, 1);
+                podesiBrojOdredjenihProstorija(p2, 1);
+
             }
             else if (Spajanje)
             {
@@ -377,7 +408,6 @@ namespace HealthClinic.ViewModels
                 Prostorije.Add(tempProstorija);
                 podesiBrojOdredjenihProstorija(tempProstorija, 1);
 
-                MessageBox.Show("Uspesno izvrseno spajanje prostorija");
             }
 
 
@@ -784,9 +814,11 @@ namespace HealthClinic.ViewModels
 
         #endregion
 
-        #region Broj nove sobe u spajanju
+        #region Broj nove sobe u spajanju + druge nove sobe za deljenje
 
         private string _brojNoveSobe;
+        private string _brojDrugeNoveSobe;
+
 
         public string BrojNoveSobe
         {
@@ -794,6 +826,11 @@ namespace HealthClinic.ViewModels
             set { _brojNoveSobe = value; OnPropertyChanged("BrojNoveSobe"); }
         }
 
+        public string BrojDrugeNoveSobe
+        {
+            get { return _brojDrugeNoveSobe; }
+            set { _brojDrugeNoveSobe = value; OnPropertyChanged("BrojDrugeNoveSobe"); }
+        }
 
         #endregion
     }
