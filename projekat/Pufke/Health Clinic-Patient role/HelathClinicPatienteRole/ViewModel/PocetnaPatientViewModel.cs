@@ -3,6 +3,7 @@ using HelathClinicPatienteRole.Model;
 using HelathClinicPatienteRole.ViewModel.Commands;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace HelathClinicPatienteRole.ViewModel
     class PocetnaPatientViewModel : INotifyPropertyChanged
     {
         private IList<Pregled> _PregledList;
-
+        private ObservableCollection<Lekar> _LekariList;
 
         public PocetnaPatientViewModel()
         {
@@ -24,9 +25,10 @@ namespace HelathClinicPatienteRole.ViewModel
             PirkaziAnketaLekaraDialogCommand = new RelayCommand(PirkaziAnketaLekaraDialog);
             ProcitajViseDialogCommand = new RelayCommand(ProcitajViseDialog);
             ObrisiPregledPotvrdiButtonCommand = new RelayCommand(ObrisiPregledPotvrdiButton);
-          
+            IzmeniPregledCommand = new RelayCommand(IzmeniPregled);
+            _LekariList = ZakaziPregledPatientViewModel.Instance.Lekari;
 
-              _PregledList = new List<Pregled>
+            _PregledList = new List<Pregled>
             {
                 new Pregled{IdPregleda=1, NazivPregleda = "Specijalisticki pregled",TerminPregleda = "22.06.2020  19:00h",StatusPregleda="Zakazan",Lekar="Pera Perić"},
                 new Pregled{IdPregleda=2,NazivPregleda = "Ortorinolaringoloski pregled",TerminPregleda = "26.04.2020  9:00h",StatusPregleda="Obavljen",Lekar="Mika Mikić"},
@@ -75,7 +77,62 @@ namespace HelathClinicPatienteRole.ViewModel
         }
         #endregion
 
-      
+        #region Izmeni pregled Command
+
+        public RelayCommand IzmeniPregledCommand { get; private set; }
+
+        public void IzmeniPregled(object obj)
+        {
+
+            if (SelektovaniLekar is null || SelektovaniDatum == DateTime.MinValue)
+            {
+                MessageBox.Show("Niste izmenili ni lekara ni datum!!!");
+                return;
+            }
+
+            string termin = SelektovaniDatum.Day + "." + SelektovaniDatum.Month + "." + SelektovaniDatum.Year + "   " + "08:00h";
+
+            foreach (Pregled pregled in Pregledi)
+            {
+                if (pregled.IdPregleda == SelektovaniPregled.IdPregleda)
+                {
+                    if (!(SelektovaniLekar is null))
+                    {
+                        pregled.Lekar = SelektovaniLekar.FirstAndLastName;
+                    }
+                    if (!(SelektovaniDatum.Day == DateTime.Now.Day))
+                    {
+                        pregled.TerminPregleda = termin;
+                    }
+                    MessageBox.Show("Uspešno ste izmenili pregled!");
+                }
+            }
+
+        }
+
+        #endregion
+
+        #region Selektovani Lekar
+
+        private Lekar _selektovaniLekar;
+
+        public Lekar SelektovaniLekar
+        {
+            get { return _selektovaniLekar; }
+            set { _selektovaniLekar = value; OnPropertyChanged("SelektovaniLekar"); }
+        }
+        #endregion
+
+        #region Selektovani Datum
+
+        private DateTime _selektovaniDatum = DateTime.Now;
+
+        public DateTime SelektovaniDatum
+        {
+            get { return _selektovaniDatum; }
+            set { _selektovaniDatum = value; OnPropertyChanged("SelektovaniDatum"); }
+        }
+        #endregion
 
         #region Obrisi pregled command
 
@@ -226,5 +283,13 @@ namespace HelathClinicPatienteRole.ViewModel
         }
         #endregion
 
+        public ObservableCollection<Lekar> Lekari
+        {
+            get
+            {
+                return _LekariList;
+            }
+            set { _LekariList = value; }
+        }
     }
 }

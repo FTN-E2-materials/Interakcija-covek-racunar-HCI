@@ -24,7 +24,8 @@ namespace HelathClinicPatienteRole.ViewModel
             ZakaziPregledCommand = new RelayCommand(ZakaziPregled);
             PreporukaTerminaCommand = new RelayCommand(PreporukaTermina);
             ZakaziPregledPreporukaTerminaCommand = new RelayCommand(ZakaziPregledPreporuka);
-
+           
+      
             _LekariList = new ObservableCollection<Lekar>
             {
                 new Lekar{DoctorId=1, FirstAndLastName = "Pera Perić" },
@@ -73,6 +74,8 @@ namespace HelathClinicPatienteRole.ViewModel
             #endregion
         }
         #endregion
+
+      
 
         #region Preporuka termina 
 
@@ -201,7 +204,6 @@ namespace HelathClinicPatienteRole.ViewModel
             set { _preporuceniTermin = value; OnPropertyChanged("PreporucenTermin"); }
         }
         #endregion
-
 
         #region Selektovani Datum OD za preporuku termina
 

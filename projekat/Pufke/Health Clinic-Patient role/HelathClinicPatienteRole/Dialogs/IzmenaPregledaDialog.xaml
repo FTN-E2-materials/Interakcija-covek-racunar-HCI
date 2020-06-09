@@ -5,41 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:HelathClinicPatienteRole.Dialogs"
+        xmlns:ViewModel="clr-namespace:HelathClinicPatienteRole.ViewModel"
         mc:Ignorable="d"
-        Title="Izmena pregleda" Height="400" Width="450">
+        Title="Izmena pregleda" Height="600" Width="500">
     <Grid>
         <StackPanel Background="White" >
-            <Grid Height="580" >
-                <TextBox
-                Background="WhiteSmoke"
-                FontWeight="DemiBold"
-                Margin="0,16,13,4"
-                HorizontalContentAlignment="Center"
-                VerticalContentAlignment="Center"
-                x:Name="Naziv"
-                Text="{Binding SelektovaniPregled.TerminPregleda}"
-                materialDesign:HintAssist.Hint="Unesite datum u formatu dd.mm.gggg"
-                materialDesign:HintAssist.HelperText="Datum" Grid.ColumnSpan="14" Grid.RowSpan="3" Grid.Column="4" Grid.Row="3"/>
-                <Label HorizontalAlignment="Center"  Content="Izmenite datum pregleda" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="15" Grid.RowSpan="2" Margin="11,1,0,0" Width="290"/>
+            <Grid Height="600" >
 
-                <Label HorizontalAlignment="Center"  Content="Lista slobodnih lekara opste " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="16" Grid.RowSpan="3"/>
-                <Label HorizontalAlignment="Center"  Content=" prakse za taj datum " Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="20" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="16" Grid.RowSpan="3"/>
+                <Label FontWeight="Bold" HorizontalAlignment="Center"  Content="Izmenite datum pregleda" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="14" Grid.RowSpan="3" Margin="7,16,14,0" Width="290"/>
 
-                <Button Content="Potvrdi" Grid.Row="14" Grid.Column="7" Grid.ColumnSpan="6" Grid.RowSpan="2" Margin="10,10,10,1" Click="OkButton_Click"/>
+                <DatePicker Background="WhiteSmoke" SelectedDate="{Binding Path=SelektovaniDatum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="21"  Foreground="#FF148DF0" Grid.Row ="4" Grid.Column="5" Grid.ColumnSpan="11" Grid.RowSpan="3" materialDesign:HintAssist.Hint="Izaberite datum" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="22,3,10,10" Height="55"  />
 
-                <ComboBox Text="{Binding SelektovaniPregled.Lekar, UpdateSourceTrigger=PropertyChanged}"
-                     FontSize="25" IsEditable="True" Grid.ColumnSpan="12" Height="43" Margin="19,10,10,10" Grid.RowSpan="3" Grid.Column="4" Grid.Row="10"  Background="WhiteSmoke"  >
-                    <ComboBoxItem   Content="{Binding Path=Pregledi.Lekar}" />
-                    <ComboBoxItem Content="Pera Perić"/>
-                    <ComboBoxItem Content="Mika Mikić"/>
-                    <ComboBoxItem Content="Miodrag Milić"/>
-                    <ComboBoxItem Content="Miodrag Mitrović"/>
-                    <ComboBoxItem Content="Jovan Jovanović"/>
-                    <ComboBoxItem Content="Milomir Mirković"/>
-                    <ComboBoxItem Content="Stevan Jovanić"/>
+                <Button Content="Potvrdi" Grid.Row="23" Grid.Column="8" Grid.ColumnSpan="6" Grid.RowSpan="2" Margin="0,0,20,11" Command="{Binding IzmeniPregledCommand}"/>
 
-                </ComboBox>
+                <DataGrid  x:Name="dataGridLekari" ItemsSource="{Binding Lekari}" 
+                    IsReadOnly="True"  CanUserAddRows="false"  SelectedItem="{Binding Path=SelektovaniLekar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                AutoGenerateColumns="False" SelectionMode="Single" Grid.ColumnSpan="14" Margin="10,5,17,0" Grid.RowSpan="10" Grid.Row="10" Background="#FF148DF0" Grid.Column="4">
 
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="     Ime i prezime lekara"
+                            Binding="{Binding FirstAndLastName}">
+                            <DataGridColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="DarkGray"/>
+                                    <Setter Property="Width" Value="280"/>
+                                    <Setter Property="FontSize" Value="24"/>
+                                </Style>
+                            </DataGridColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                
+                <Label FontWeight="Bold" HorizontalAlignment="Center"  Content="Izaberite drugog lekara" Foreground="#FF148DF0" VerticalAlignment="Top" FontSize="25" Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="14" Grid.RowSpan="2" Margin="10,1,16,0" Width="290"/>
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -100,6 +97,8 @@
             </Grid>
         </StackPanel>
     </Grid>
-
+    <Window.DataContext>
+        <ViewModel:ZakaziPregledPatientViewModel/>
+    </Window.DataContext>
 
 </Window>
