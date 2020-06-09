@@ -17,6 +17,7 @@ using System.Windows;
 using Syncfusion.Pdf.Tables;
 using System.Data;
 using HealthClinic.Utilities.Validations;
+using System.Windows.Controls;
 
 namespace HealthClinic.ViewModels
 {
@@ -475,9 +476,12 @@ namespace HealthClinic.ViewModels
                 MessageBox.Show("Niste uneli vrstu leka");
                 return false;
             }
-            
-            // TODO: Kako da proverim da li nasa aplikacija ima ErrorContenta da bih bacio poruku greske ovde neku
 
+
+            // TODO: Kako da proverim da li nasa aplikacija ima ErrorContenta da bih bacio poruku greske ovde neku
+            
+
+            
 
             return true;
         }

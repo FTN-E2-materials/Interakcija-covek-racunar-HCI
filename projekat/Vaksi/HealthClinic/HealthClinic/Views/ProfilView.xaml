@@ -279,20 +279,25 @@
                         <Button
                             IsEnabled="{Binding IzmenaProfila}"
                             Width="140"
-                            ToolTip="Resource name: MaterialDesignRaisedButton"
-                            Content="Potvrdi izmene"
+                            ToolTip="Potvrdi izmene profila"
                             Command="{Binding PotvrdiIzmeneProfilaCommand}"
                             Margin="40, 0, 0, 0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="CheckboxMarkedCircle" Margin="0, 2, 5, 0" />
+                                <TextBlock Text="Potvrdi"/>
+                            </StackPanel>
 
                         </Button>
                         <Button
                             IsEnabled="{Binding IzmenaProfila}"
                             Width="140"
-                            ToolTip="Resource name: MaterialDesignRaisedButton"
-                            Content="Odustani"
+                            ToolTip="Odustani od izmene profile"
                             Command="{Binding OdustaniOdIzmeneCommand}"
                             Margin="40, 0, 0, 0">
-
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="CloseCircle" Margin="0, 2, 5, 0" />
+                                <TextBlock Text="Odustani"/>
+                            </StackPanel>
                         </Button>
                         
                     </StackPanel>

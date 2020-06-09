@@ -92,19 +92,25 @@
 
             <Button 
                 Height="40"
-                Width="100"
+                Width="120"
                 Margin="10"
                 >
-                    Potvrdi
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="CheckboxMarkedCircle" Margin="0, 2, 5, 0" />
+                    <TextBlock Text="Potvrdi"/>
+                </StackPanel>
             </Button>
 
-            <Button 
+            <Button
                 IsCancel="True"
                 Height="40"
-                Width="100"
+                Width="120"
                 Margin="10"
                 >
-                    Odustani
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="CloseCircle" Margin="0, 2, 5, 0" />
+                    <TextBlock Text="Odustani"/>
+                </StackPanel>
             </Button>
 
         </StackPanel>
