@@ -23,7 +23,7 @@
                 <DataGrid  x:Name="dataGridLekari" ItemsSource="{Binding Lekari}" 
                     IsReadOnly="True"  CanUserAddRows="false"  SelectedItem="{Binding Path=SelektovaniLekar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 AutoGenerateColumns="False" SelectionMode="Single" Grid.ColumnSpan="24" Margin="0,16,7,12" Grid.RowSpan="11" Grid.Row="6" Background="#FF148DF0" Grid.Column="9"  HorizontalScrollBarVisibility="Disabled">
-
+            
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="     Ime i prezime lekara"
                             Binding="{Binding FirstAndLastName}">

@@ -40,7 +40,7 @@
                 <DataGrid  x:Name="dataGridPregledi" ItemsSource="{Binding Pregledi}"
                   IsReadOnly="True"  CanUserAddRows="false"  SelectedItem="{Binding Path=SelektovaniPregled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 AutoGenerateColumns="False" Grid.ColumnSpan="8" Margin="10,10,43,10" Grid.RowSpan="12" Grid.Row="7" Background="#FF148DF0"  HorizontalScrollBarVisibility="Hidden">
-
+                   
                     <DataGrid.RowStyle>
                         <Style TargetType="DataGridRow">
                             <Setter Property="IsHitTestVisible" Value="True" ></Setter>
@@ -48,16 +48,40 @@
 
                                 <DataTrigger Binding="{Binding StatusPregleda}" Value="Zakazan">
                                     <Setter  Property="Background" Value="#FF148DF0"></Setter>
+                                    <Setter Property="Height" Value="40"/>
+                                    <Setter Property="FontSize" Value="17"/>
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding StatusPregleda}" Value="Otkazan">
                                     <Setter Property="Background" Value="Red"></Setter>
+                                    <Setter Property="Height" Value="40"/>
+                                    <Setter Property="FontSize" Value="17"/>
+        
+
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding StatusPregleda}" Value="Obavljen">
                                     <Setter Property="Background" Value="Green"></Setter>
+                                    <Setter Property="Height" Value="40"/>
+                                    <Setter Property="FontSize" Value="17"/>
                                 </DataTrigger>
+                            
+                            </Style.Triggers>
+                            
+                        </Style>
+                 
+                    </DataGrid.RowStyle>
+                    <DataGrid.CellStyle>
+                        <Style TargetType="{x:Type DataGridCell}">
+                            <Setter Property="Foreground" Value="{Binding MyProperty}" />
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="Gray"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="Height" Value="40"/>
+                                </Trigger>
                             </Style.Triggers>
                         </Style>
-                    </DataGrid.RowStyle>
+                    </DataGrid.CellStyle>
+
 
 
                     <DataGrid.Columns>
@@ -227,4 +251,5 @@
         </StackPanel>
 
     </Grid>
+    
 </UserControl>
