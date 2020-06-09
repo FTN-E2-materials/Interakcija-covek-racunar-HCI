@@ -16,7 +16,7 @@
 
                 <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\Patient.png" Grid.Column="6" Grid.ColumnSpan="4" Grid.RowSpan="7" Margin="36,15,49,10" Grid.Row="1" />
 
-
+                <Canvas Background="Wheat" Grid.ColumnSpan="9" Margin="0,10,0,0" Grid.RowSpan="15" Grid.Column="3" Grid.Row="8"></Canvas>
                 <Grid x:Name="Korisnici" Grid.Row="8" Grid.ColumnSpan="11" Grid.RowSpan="18"  DataContext="{Binding Users}" Margin="48,12,0,-2">
                     <Grid.RowDefinitions>
                         <RowDefinition/>

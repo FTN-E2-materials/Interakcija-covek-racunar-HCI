@@ -46,21 +46,15 @@
             </xctk:WizardPage>
             <xctk:WizardPage x:Name="Page5" PageType="Interior"
                                    Title="Prečice"
-                                   Description="Naša Zdravo klinika je mislila i na iskusnije korisnike, iz tog razloga smo omogućili prečice radi lakšeg korišćenja naše aplikacije.">
+                                   Description="Naša Zdravo klinika je mislila i na iskusnije korisnike, iz tog razloga smo omogućili prečice radi lakšeg korišćenja naše aplikacije."
+                              CanFinish="True">
                 <Grid>
                     <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika5.jpg"  Width="800" VerticalAlignment="Top"/>
                     <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika6.jpg"  Width="800" />
                     <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika7.jpg"  Width="800" VerticalAlignment="Bottom"/>
                 </Grid>
             </xctk:WizardPage>
-            <xctk:WizardPage x:Name="LastPage" PageType="Interior"
-                                   Title="Zakazivanje pregleda"
-                                   Description=" "
-                                   CanFinish="True">
-             
-                    <Image Source="C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\PhotosForWizard\Slika5.jpg"  Width="600" Height="500"   />
-                
-            </xctk:WizardPage>
+          
         </xctk:Wizard>
     </Grid>
 </Window>
