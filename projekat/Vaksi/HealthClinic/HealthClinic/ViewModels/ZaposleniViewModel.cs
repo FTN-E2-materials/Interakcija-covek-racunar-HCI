@@ -347,11 +347,6 @@ namespace HealthClinic.ViewModels
             TrenutniProzor = new RadnoVremeZaposlenogDijalog();
             TrenutniProzor.DataContext = this;
             TrenutniProzor.ShowDialog();
-            //MessageBox.Show( "U narednom periodu, gospodin " + SelektovaniZaposleni.Prezime + " " + SelektovaniZaposleni.Ime + " radi" + 
-            //    "\nOd: " + odDatuma +
-            //    "\tDo: " + doDatuma + 
-            //    "\n\nU smeni od: " + odVremena + "\t do: " + doVremena + " casova" 
-            //    );
         }
         
         public void OdrediRadnoVremeZaposlenih(object ojb)

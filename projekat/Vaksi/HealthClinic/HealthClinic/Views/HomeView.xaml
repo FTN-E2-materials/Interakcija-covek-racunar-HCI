@@ -98,11 +98,9 @@
 
                             <!-- Parcad u grafikonu.-->
                             <Wpf:PieChart.Series>
-                                <Wpf:PieSeries Title="Ostava" Values="5" LabelPoint="{Binding PointLabel}"/>
-                                <Wpf:PieSeries Title="Kancelarije" Values="5" LabelPoint="{Binding PointLabel}"/>
-                                <Wpf:PieSeries Title="Sobe" Values="45"  LabelPoint="{Binding PointLabel}"/>
-                                <Wpf:PieSeries Title="Opercione sale" Values="25"  LabelPoint="{Binding PointLabel}"/>
-                                <Wpf:PieSeries Title="Pregled sobe" Values="25" LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries DataLabels="True" Title="Soba za pacijente" Values="{Binding UkupnoSobaZaPacijente}" LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries DataLabels="True" Title="Soba za preglede" Values="{Binding UkupnoSobaZaPreglede}" LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries DataLabels="True" Title="Operacionih sala" Values="{Binding UkupnoOperacionihSala}"  LabelPoint="{Binding PointLabel}"/>
                             </Wpf:PieChart.Series>
                             <!-- Kraj parcadi u grafikonu -->
 
@@ -159,11 +157,9 @@
 
                             <!-- Parcad u grafikonu.-->
                             <Wpf:PieChart.Series>
-                                <Wpf:PieSeries Title="Lekari" Values="75"  LabelPoint="{Binding PointLabel}"/>
-                                <Wpf:PieSeries Title="Sekretari" Values="5" LabelPoint="{Binding PointLabel}"/>
-                                <Wpf:PieSeries Title="Cistacice" Values="5"  LabelPoint="{Binding PointLabel}"/>
-                                <Wpf:PieSeries Title="Sobarice" Values="5" LabelPoint="{Binding PointLabel}"/>
-                                <Wpf:PieSeries Title="Cuvari" Values="5"  LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries DataLabels="True" Title="Lekari opste prakse" Values="{Binding UkupnoLekaraOpstePrakse}"  LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries DataLabels="True" Title="Lekari specijalisti" Values="{Binding UkupnoLekaraSpecijalista}" LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries DataLabels="True" Title="Ostali zaposleni" Values="{Binding UkupnoOstalihZaposlenih}"  LabelPoint="{Binding PointLabel}"/>
                             </Wpf:PieChart.Series>
                             <!-- Kraj parcadi u grafikonu -->
 
@@ -177,7 +173,7 @@
                             FontSize="15" 
                             FontStyle="Italic"
                             FontWeight="Bold"
-                            Text="3. Produktivnost zaposlenih"
+                            Text="3. Trenutno stanje zaposlenih"
                             Margin="0, 1, 0, 0"
                             Foreground="#FF2196F3">
 
@@ -212,11 +208,10 @@
 
                             <!-- Parcad u grafikonu.-->
                             <Wpf:PieChart.Series>
-                                <Wpf:PieSeries Title="Antibiotici" Values="15"  LabelPoint="{Binding PointLabel}"/>
-                                <Wpf:PieSeries Title="Kardiovaskularni" Values="15"  LabelPoint="{Binding PointLabel}"/>
-                                <Wpf:PieSeries Title="Alergijski" Values="45"  LabelPoint="{Binding PointLabel}"/>
-                                <Wpf:PieSeries Title="Kardiovaskularni" Values="20"  LabelPoint="{Binding PointLabel}"/>
-                                <Wpf:PieSeries Title="Kardiovaskularni" Values="30"  LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries DataLabels="True" Title="Analgetici" Values="{Binding UkupnoAnalgetika}"  LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries DataLabels="True" Title="Anestetici" Values="{Binding UkupnoAnestetika}"  LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries DataLabels="True" Title="Antibiotici" Values="{Binding UkupnoAntibiotika}"  LabelPoint="{Binding PointLabel}"/>
+                                <Wpf:PieSeries DataLabels="True" Title="Kardiovaskularni" Values="{Binding UkupnoKardioVaskularnih}"  LabelPoint="{Binding PointLabel}"/>
                             </Wpf:PieChart.Series>
                             <!-- Kraj parcadi u grafikonu -->
 
