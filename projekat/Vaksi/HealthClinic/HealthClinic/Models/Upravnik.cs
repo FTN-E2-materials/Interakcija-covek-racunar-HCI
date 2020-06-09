@@ -11,8 +11,9 @@ namespace HealthClinic.Models
 		private string _kontaktTelefon;
 		private string _adresaStanovanja;
 		private string _biografija;
+		private DateTime _datumRodjenja;
 
-
+		
 		public string KontaktTelefon
 		{
 			get { return _kontaktTelefon; }
@@ -49,6 +50,20 @@ namespace HealthClinic.Models
 				}
 			}
 		}
+		public DateTime DatumRodjenja
+		{
+			get { return _datumRodjenja; }
+			set
+			{
+				if (value != _datumRodjenja)
+				{
+					_datumRodjenja = value;
+					OnPropertyChanged("DatumRodjenja");
+				}
+			}
+		}
+
+
 
 	}
 }

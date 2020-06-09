@@ -30,6 +30,8 @@ namespace HealthClinic.ViewModels
             PotvrdiIzmeneProfilaCommand = new RelayCommand(PotvrdiIzmeneProfila);
             OdustaniOdIzmeneCommand = new RelayCommand(OdustaniOdIzmene);
 
+            ucitavanjeUpravnikaPosleLogina();
+
         }
 
         #region Upravnikov profil
@@ -96,7 +98,8 @@ namespace HealthClinic.ViewModels
             UpravnikZaCuvanjePodataka.Sifra = Upravnik.Sifra;
             UpravnikZaCuvanjePodataka.Struka = Upravnik.Struka;
             UpravnikZaCuvanjePodataka.KorisnickoIme = Upravnik.KorisnickoIme;
-            
+            UpravnikZaCuvanjePodataka.DatumRodjenja = Upravnik.DatumRodjenja;
+
             // sada je moguca izmena profila
             IzmenaProfila = true;
         }
@@ -117,6 +120,7 @@ namespace HealthClinic.ViewModels
             Upravnik.Sifra = UpravnikZaCuvanjePodataka.Sifra;
             Upravnik.Struka = UpravnikZaCuvanjePodataka.Struka;
             Upravnik.KorisnickoIme = UpravnikZaCuvanjePodataka.KorisnickoIme;
+            Upravnik.DatumRodjenja = UpravnikZaCuvanjePodataka.DatumRodjenja;
 
             IzmenaProfila = false;
         }
@@ -134,6 +138,20 @@ namespace HealthClinic.ViewModels
         {
             get { return _izmenaProfila; }
             set { _izmenaProfila = value; OnPropertyChanged("IzmenaProfila"); }
+        }
+
+        #endregion
+
+        #region Ucitavanje nakon logina
+        private void ucitavanjeUpravnikaPosleLogina()
+        {
+            Upravnik = new Upravnik()
+            {
+                Ime = "Dusan",
+                Prezime = "Marjanski",
+                Sifra = "Upravnik1",
+                DatumRodjenja = new DateTime(1990, 01, 01)
+            };
         }
 
         #endregion

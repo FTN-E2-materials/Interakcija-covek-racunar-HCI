@@ -106,36 +106,7 @@
                                 </TextBox.Text>
                             </TextBox>
                             <!-- Kraj adrese stanovanja -->
-
-                            <!-- Trenutna lozinka -->
-                            <TextBox
-                                Validation.ErrorTemplate="{StaticResource errorTemplate}"
-                                IsEnabled="{Binding IzmenaProfila}"
-                                Background="WhiteSmoke"
-                                FontWeight="DemiBold"
-                                Width="230"
-                                Height="40"
-                                Margin="10,20,10,20"
-                                HorizontalContentAlignment="Center"
-                                VerticalContentAlignment="Center"
-                                x:Name="TrenutnaLozinka"
-                                materialDesign:HintAssist.Hint="Ovde unesite trenutnu lozinku"
-                                materialDesign:HintAssist.HelperText="Trenutna lozinka">
-                                <TextBox.Text>
-                                    <!-- Bajndovanje Sifra + validacija-->
-                                    <Binding 
-                                        Path="Upravnik.Sifra"
-                                        ValidatesOnDataErrors="True"
-                                        UpdateSourceTrigger="PropertyChanged"
-                                        >
-                                        <Binding.ValidationRules>
-                                            <validations:PasswordRule/>
-                                        </Binding.ValidationRules>
-                                    </Binding>
-                                    <!-- Kraj bajndovanje Sifra + validacija-->
-                                </TextBox.Text>
-                            </TextBox>
-                            <!-- Kraj trenutne lozinke -->
+                           
 
                             <!-- Nova lozinka -->
                             <TextBox
@@ -167,6 +138,29 @@
                                 </TextBox.Text>
                             </TextBox>
                             <!-- Kraj nove lozinke -->
+
+                            <!-- Datum rodjenja-->
+                            <DatePicker
+                                IsEnabled="{Binding IzmenaProfila}"
+                                ToolTip="U desnom delu mozes klikom na kalendar, izabrati datum rodjenja"
+                                Background="WhiteSmoke"
+                                FontWeight="DemiBold"
+                                Width="230"
+                                Height="40"
+                                Margin="10, 20, 10, 10"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                materialDesign:HintAssist.HelperText="Datum rodjenja"
+                                materialDesign:HintAssist.Hint="Izaberite datum rodjenja">
+                                <DatePicker.SelectedDate>
+                                    <Binding
+                                        Path="Upravnik.DatumRodjenja"
+                                        UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </DatePicker.SelectedDate>
+                            </DatePicker>
+                            <!-- Kraj datuma rodjenja -->
+
                         </StackPanel>
                         <!-- Kraj prve kolone podataka-->
 

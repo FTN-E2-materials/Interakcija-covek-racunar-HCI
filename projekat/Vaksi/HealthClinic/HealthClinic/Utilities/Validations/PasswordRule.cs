@@ -26,7 +26,7 @@ namespace HealthClinic.Utilities.Validations
 
             if (!IsValidPassword(charString))
             {
-                return new ValidationResult(false, $"Minimalno 8 slova, jedno malo i jedno veliko slovo, bar jedan broj.");
+                return new ValidationResult(false, $"Bar 8 slova(1 malo, 1 veliko, 1 broj)");
             }
 
             return new ValidationResult(true, null);
