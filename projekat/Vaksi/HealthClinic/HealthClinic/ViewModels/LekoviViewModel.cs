@@ -293,6 +293,7 @@ namespace HealthClinic.ViewModels
                 pdfDocument.Save("C:\\Users\\Vaxi\\Desktop\\6-semestar\\HCI\\projekat\\Vaksi\\HealthClinic\\IzvestajLekova.pdf");
                 pdfDocument.Close(true);
                 //Close the document
+                document.Save("C:\\Users\\Vaxi\\Desktop\\6-semestar\\HCI\\projekat\\Vaksi\\HealthClinic\\IzvestajLekova.docx");
                 document.Close();
             }
             MessageBox.Show("Uspesno kreiran izvestaj lekova, mozete ga pogledati u tekucem direktorijumu");
