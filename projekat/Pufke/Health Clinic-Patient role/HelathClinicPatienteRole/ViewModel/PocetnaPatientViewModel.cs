@@ -186,6 +186,11 @@ namespace HelathClinicPatienteRole.ViewModel
                 MessageBox.Show("Niste selektovali ni jedan pregled u tabeli!");
                 return;
             }
+            if (SelektovaniPregled.StatusPregleda != "Obavljen")
+            {
+                MessageBox.Show("Selektovani pregled mora da ima status 'Obavljen'!");
+                return;
+            }
             var s = new AnketaPregledaDialog();
             s.DataContext = this;
             s.ShowDialog();
@@ -205,10 +210,14 @@ namespace HelathClinicPatienteRole.ViewModel
                 MessageBox.Show("Niste selektovali ni jedan pregled u tabeli!");
                 return;
             }
+            if(SelektovaniPregled.StatusPregleda != "Zakazan")
+            {
+                MessageBox.Show("Selektovani pregled mora da ima status 'Zakazan'!");
+                return;
+            }
             var s = new IzmenaPregledaDialog();
              s.DataContext = this;             
              s.ShowDialog();
-
         }
 
         #endregion
@@ -224,6 +233,11 @@ namespace HelathClinicPatienteRole.ViewModel
                 MessageBox.Show("Niste selektovali ni jedan pregled u tabeli!");
                 return;
             }
+            if (SelektovaniPregled.StatusPregleda != "Zakazan")
+            {
+                MessageBox.Show("Selektovani pregled mora da ima status 'Zakazan'!");
+                return;
+            }
             var s = new OtkaziPregled();
             s.DataContext = this;
             s.ShowDialog();
@@ -231,8 +245,6 @@ namespace HelathClinicPatienteRole.ViewModel
         }
 
         #endregion
-
-      
 
         #region Selektovani pregled
 
