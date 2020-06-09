@@ -34,7 +34,7 @@
                  IsEnabled="{Binding IsChecked, ElementName=MaterialDesignOutlinedTextFieldTextBoxEnabledComboBox}" RenderTransformOrigin="0.487,0.773" />
         </StackPanel>
 
-        <Button Content="Posalji anketu" Grid.Row="23" Grid.Column="8" Grid.ColumnSpan="6" Grid.RowSpan="3" Margin="0,14,0,0"/>
+        <Button Content="Posalji anketu" Grid.Row="23" Grid.Column="8" Grid.ColumnSpan="6" Grid.RowSpan="3" Margin="0,14,0,0" Click="AnketaButton_Click"/>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>

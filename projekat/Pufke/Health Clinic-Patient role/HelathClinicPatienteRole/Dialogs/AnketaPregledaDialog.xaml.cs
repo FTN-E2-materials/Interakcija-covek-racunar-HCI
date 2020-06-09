@@ -23,5 +23,10 @@ namespace HelathClinicPatienteRole.Dialogs
         {
             InitializeComponent();
         }
+
+        private void AnketaButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Anketa uspešno poslata! Hvala!");
+        }
     }
 }

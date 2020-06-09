@@ -83,7 +83,11 @@ namespace HelathClinicPatienteRole.ViewModel
         int i = 1;
         public void PreporukaTermina(object obj)
         {
-
+            if (SelektovaniDatumOd.Day < DateTime.Now.Day)
+            {
+                MessageBox.Show("Izabrani 'datum OD' je prošao!");
+                return;
+            }
             if (SelektovaniDatumDo.Date < SelektovaniDatumOd.Date)
             {
                 MessageBox.Show("Nesipravan vremenski interval! 'Datum OD' mora biti manji od 'datuma DO'");
@@ -141,6 +145,14 @@ namespace HelathClinicPatienteRole.ViewModel
                 MessageBox.Show("Niste selektovali ni jednog lekara!!!");
                 return;
             }
+
+            if (SelektovaniDatum < DateTime.Now)
+            {
+                MessageBox.Show("Izabrani datum mora da bude minimalno jedan dan veći od trenutnog datuma!");
+                return;
+            }
+
+           
 
             string termin = SelektovaniDatum.Day + "." + SelektovaniDatum.Month+ "." + SelektovaniDatum.Year + "   " + SelektovaniDatum.Hour + ":" + SelektovaniDatum.Minute ;
             MessageBox.Show("Usepsno ste zakazali pregled kod " + SelektovaniLekar.FirstAndLastName  + ".");

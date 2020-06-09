@@ -30,7 +30,7 @@
 
                 <DataGrid  x:Name="dataGridPregledi" ItemsSource="{Binding Pregledi}"
                   IsReadOnly="True"  CanUserAddRows="false"  SelectedItem="{Binding Path=SelektovaniPregled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                AutoGenerateColumns="False" Grid.ColumnSpan="8" Margin="10,10,43,10" Grid.RowSpan="12" Grid.Row="7" Background="#FF148DF0">
+                AutoGenerateColumns="False" Grid.ColumnSpan="8" Margin="10,10,43,10" Grid.RowSpan="12" Grid.Row="7" Background="#FF148DF0"  HorizontalScrollBarVisibility="Hidden">
 
                     <DataGrid.RowStyle>
                         <Style TargetType="DataGridRow">
@@ -52,14 +52,51 @@
 
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Status"
-                            Binding="{Binding StatusPregleda}"/>
-                        <DataGridTextColumn Header="Termin pregleda"
-                            Binding="{Binding TerminPregleda}"/>
-                        <DataGridTextColumn Header="Naziv Pregleda"
-                            Binding="{Binding NazivPregleda}"/>
-                        <DataGridTextColumn Header="Lekar"
-                            Binding="{Binding Lekar}"/>
+                        <DataGridTextColumn Header=" Status"
+                            Binding="{Binding StatusPregleda}">
+                            <DataGridColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="DarkGray"/>
+                             
+                                    <Setter Property="FontSize" Value="25"/>
+
+                                </Style>
+                            </DataGridColumn.HeaderStyle>
+
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="  Termin pregleda"
+                            Binding="{Binding TerminPregleda}">
+                            <DataGridColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="DarkGray"/>
+                              
+                                    <Setter Property="FontSize" Value="21"/>
+
+                                </Style>
+                            </DataGridColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="  Naziv Pregleda"
+                            Binding="{Binding NazivPregleda}">
+                            <DataGridColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="DarkGray"/>
+                            
+                                    <Setter Property="FontSize" Value="21"/>
+                                   
+                                </Style>
+                            </DataGridColumn.HeaderStyle>
+                         </DataGridTextColumn>
+                            <DataGridTextColumn Header="   Lekar"
+                            Binding="{Binding Lekar}">
+                            <DataGridColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="DarkGray"/>
+                                    <Setter Property="Width" Value="200"/>
+                                    <Setter Property="FontSize" Value="21"/>
+                     
+                            </Style>
+                            </DataGridColumn.HeaderStyle>
+                        </DataGridTextColumn>
                     </DataGrid.Columns>
 
                 </DataGrid>
