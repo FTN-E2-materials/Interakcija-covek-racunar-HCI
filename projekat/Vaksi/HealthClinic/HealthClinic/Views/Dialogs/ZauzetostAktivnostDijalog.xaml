@@ -8,8 +8,8 @@
         xmlns:validations ="clr-namespace:HealthClinic.Utilities.Validations"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Zauzetost/Aktivnost" Height="450" Width="600"
-        MaxHeight="450" MinHeight="550"
+        Title="Zauzetost/Aktivnost" Height="500" Width="600"
+        MaxHeight="450" MinHeight="500"
         MaxWidth="400" MinWidth="800">
     <Grid Background="#cdfbf4">
 
@@ -127,6 +127,7 @@
 
                 <!-- Tip renoviranja -->
                 <TextBox
+                    Validation.ErrorTemplate="{StaticResource errorTemplate}"
                     Text="{Binding TrenutniFizickiRad.NazivRada, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     Visibility="{Binding PrikazTipaRenoviranja, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     Background="WhiteSmoke"
@@ -145,8 +146,10 @@
                 <!-- Kraj tipa renoviranja -->
 
                 <!-- Izbor prostorije s kojom vrsimo spajanje -->
-                <ComboBox
+                <TextBox
+                    Validation.ErrorTemplate="{StaticResource errorTemplate}"
                     Visibility="{Binding PrikazSobeSaKojomSpajamo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Text="{Binding BrojSobeSaKojomVrsimoSpajanje}"
                     Background="WhiteSmoke"
                     FontWeight="DemiBold"
                     Width="320"
@@ -155,25 +158,18 @@
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
                     x:Name="ProstorijaSaKojomSpajam"
-                    materialDesign:HintAssist.Hint="Izaberite prostoriju s kojom vrsite spajanje"
-                    materialDesign:HintAssist.HelperText="Tip renoviranja"
-                >
-                    <ComboBoxItem>
-                        soba 3
-                    </ComboBoxItem>
-                    <ComboBoxItem>
-                        soba 4
-                    </ComboBoxItem>
-                    <ComboBoxItem>
-                        soba 5
-                    </ComboBoxItem>
+                    materialDesign:HintAssist.Hint="Unesite broj prostorije sa kojom vrsite spajanje"
+                    materialDesign:HintAssist.HelperText="Broj sobe prostorije sa kojom vrsite spajanje"
+                    >
 
-                </ComboBox>
+
+                </TextBox>
                 <!-- Kraj izbora prostorije s kojom vrsimo spajanje -->
 
-                <!-- Naziv nove prostorije -->
+                <!-- Broj nove prostorije -->
                 <TextBox
                     TextWrapping="Wrap"
+                    Validation.ErrorTemplate="{StaticResource errorTemplate}"
                     Visibility="{Binding PrikazNoveProstorije, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     Background="WhiteSmoke"
                     FontWeight="DemiBold"
@@ -183,25 +179,44 @@
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
                     x:Name="NazivNoveProstorije"
-                    materialDesign:HintAssist.Hint="Ovde unesite naziv nove prostorije"
-                    materialDesign:HintAssist.HelperText="Naziv nove prostorije">
+                    materialDesign:HintAssist.Hint="Ovde unesite broj nove prostorije"
+                    materialDesign:HintAssist.HelperText="Broj nove prostorije">
                     <TextBox.Text>
                         <!-- Bajndovanje naziva prostorije + validacija-->
                         <Binding 
-                        Path="NazivProstorije"
+                        Path="BrojNoveSobe"
                         ValidatesOnDataErrors="True"
                         UpdateSourceTrigger="PropertyChanged"
                         >
                             <Binding.ValidationRules>
-                                <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                                <validations:MinimumCharacterRule MinimumCharacters="1"/>
                                 <validations:MaximumCharacterRule MaximumCharacters="20"/>
-                                <validations:WordRule/>
                             </Binding.ValidationRules>
                         </Binding>
                         <!-- Kraj bajndovanje naziva nove prostorije + validacija-->
                     </TextBox.Text>
                 </TextBox>
                 <!-- Kraj naziva nove prostorije -->
+
+                <!-- Tip prostorije -->
+                <ComboBox
+                    Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                    ItemsSource="{Binding MoguciTipoviProstorije}"
+                    SelectedItem="{Binding ProstorijaZaDodavanje.Namena}"
+                    Background="WhiteSmoke"
+                    FontWeight="DemiBold"
+                    Width="320"
+                    Height="40"
+                    Margin="10"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    x:Name="TipLeka"
+                    materialDesign:HintAssist.Hint="Izaberite tip prostorije"
+                    materialDesign:HintAssist.HelperText="Tip prostorije"
+                    >
+
+                </ComboBox>
+                <!-- Kraj tipa prostorije -->
 
                 <!-- Naziv druge nove prostorije -->
                 <TextBox
@@ -235,36 +250,6 @@
                 </TextBox>
                 <!-- Kraj naziva nove prostorije -->
                 
-                <!-- Poruka obavestenja -->
-                <TextBox
-                    TextWrapping="Wrap"
-                    Visibility="Visible"
-                    Background="WhiteSmoke"
-                    FontWeight="DemiBold"
-                    Width="320"
-                    Height="80"
-                    Margin="10"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    x:Name="PorukaObavestenja"
-                    materialDesign:HintAssist.Hint="Ovde unesite poruku obavestenja"
-                    materialDesign:HintAssist.HelperText="Poruka obavestenja">
-                    <TextBox.Text>
-                        <!-- Bajndovanje PorukaObavestenja + validacija-->
-                        <Binding 
-                        Path="PorukaObavestenja"
-                        ValidatesOnDataErrors="True"
-                        UpdateSourceTrigger="PropertyChanged"
-                        >
-                            <Binding.ValidationRules>
-                                <validations:MinimumCharacterRule MinimumCharacters="2"/>
-                                <validations:MaximumCharacterRule MaximumCharacters="20"/>
-                            </Binding.ValidationRules>
-                        </Binding>
-                        <!-- Kraj bajndovanje PorukaObavestenja + validacija-->
-                    </TextBox.Text>
-                </TextBox>
-                <!-- Kraj poruke obavestenja -->
                 
 
             </StackPanel>

@@ -332,31 +332,63 @@ namespace HealthClinic.ViewModels
         }
         public void PotvrdiZauzetostAktivnost(object obj)
         {
-            // preuzimam od pomocne promenljive podatke iz forme
-            SelektovanaProstorija.FizickiRadovi.NazivRada = TrenutniFizickiRad.NazivRada;
-            SelektovanaProstorija.FizickiRadovi.DoDatuma = TrenutniFizickiRad.DoDatuma;
-            SelektovanaProstorija.FizickiRadovi.OdDatuma = TrenutniFizickiRad.OdDatuma;
+            
+            if (Renoviranje)
+            {   // preuzimam od pomocne promenljive podatke iz forme
+                SelektovanaProstorija.FizickiRadovi.NazivRada = TrenutniFizickiRad.NazivRada;
+                SelektovanaProstorija.FizickiRadovi.DoDatuma = TrenutniFizickiRad.DoDatuma;
+                SelektovanaProstorija.FizickiRadovi.OdDatuma = TrenutniFizickiRad.OdDatuma;
+            }
+            else if (Deljenje)
+            {
+                MessageBox.Show("deljenje");
+            }
+            else if (Spajanje)
+            {
+                // prvo moram uklonite ove 2 prostorije
+                foreach (Prostorija trenutnaProstorija in Prostorije)
+                {
+                    if (trenutnaProstorija.BrojSobe == SelektovanaProstorija.BrojSobe)
+                    {
+                        podesiBrojOdredjenihProstorija(trenutnaProstorija, -1);
+                        Prostorije.Remove(trenutnaProstorija);
+
+                        break;
+                    }
+                }
+                // namerno 2 fora kako ne bih doslo do errora zbog brisanja
+                foreach (Prostorija trenutnaProstorija in Prostorije)
+                {
+                    if (trenutnaProstorija.BrojSobe == BrojSobeSaKojomVrsimoSpajanje)
+                    {
+                        podesiBrojOdredjenihProstorija(trenutnaProstorija, -1);
+                        Prostorije.Remove(trenutnaProstorija);
+
+                        break;
+                    }
+                }
+
+                // dodajem prostoriju
+                Prostorija tempProstorija = new Prostorija()
+                {
+                    BrojSobe = BrojNoveSobe,   
+                };
+
+                Prostorije.Add(tempProstorija);
+                podesiBrojOdredjenihProstorija(tempProstorija, 1);
+
+                MessageBox.Show("Uspesno izvrseno spajanje prostorija");
+            }
+
 
             this.TrenutniProzor.Close();
         }
 
         public void PrikaziZauzetostAktivnost(object obj)
         {
-            //kreiram temp promenjivu za trenutni fizicki rad
-            if(TrenutniFizickiRad is null)
-            {
-                TrenutniFizickiRad = new FizickiRad()
-                {
-                    OdDatuma = new DateTime(2020,1,1),
-                    DoDatuma = new DateTime(2020,12,12)
-                };
-            }
-            if(SelektovanaProstorija.FizickiRadovi is null)
-            {
-                SelektovanaProstorija.FizickiRadovi = new FizickiRad();
-            }
 
-            //MessageBox.Show(TrenutniFizickiRad.OdDatuma.ToShortDateString());
+            instanciranjeFizickihRadova();
+      
             TrenutniProzor = new ZauzetostAktivnostDijalog();
             TrenutniProzor.DataContext = this;             // kako bi povezao i ViewModel Zaposlenih za ovaj dijalog
             TrenutniProzor.ShowDialog();
@@ -473,6 +505,10 @@ namespace HealthClinic.ViewModels
         public void PrikaziFizickeRadove(object obj)
         {
             if (SelektovanaProstorija.FizickiRadovi is null)
+            {
+                MessageBox.Show("Izabrana prostorija u narednom periodu nema zakazanih fizickih radova");
+                return;
+            }else if(SelektovanaProstorija.FizickiRadovi.NazivRada is null)
             {
                 MessageBox.Show("Izabrana prostorija u narednom periodu nema zakazanih fizickih radova");
                 return;
@@ -716,6 +752,48 @@ namespace HealthClinic.ViewModels
             get { return _trenutniFizickiRad; }
             set { _trenutniFizickiRad = value; OnPropertyChanged("TrenutniFizickiRad"); }
         }
+
+        private void instanciranjeFizickihRadova()
+        {
+            if (TrenutniFizickiRad is null)
+            {
+                TrenutniFizickiRad = new FizickiRad()
+                {
+                    OdDatuma = new DateTime(2020, 1, 1),
+                    DoDatuma = new DateTime(2020, 12, 12)
+                };
+            }
+
+            // instanciram fizicke radove selektovane prostorije
+            if (SelektovanaProstorija.FizickiRadovi is null)
+            {
+                SelektovanaProstorija.FizickiRadovi = new FizickiRad();
+            }
+        }
+
+        #endregion
+
+        #region Soba(samo broj trenutno) sa kojom vrsimo spajanje
+        private string _brojSobeSaKojomVrsimoSpajanje;
+
+        public string BrojSobeSaKojomVrsimoSpajanje
+        {
+            get { return _brojSobeSaKojomVrsimoSpajanje; }
+            set { _brojSobeSaKojomVrsimoSpajanje = value; OnPropertyChanged("BrojSobeSaKojomVrsimoSpajanje"); }
+        }
+
+        #endregion
+
+        #region Broj nove sobe u spajanju
+
+        private string _brojNoveSobe;
+
+        public string BrojNoveSobe
+        {
+            get { return _brojNoveSobe; }
+            set { _brojNoveSobe = value; OnPropertyChanged("BrojNoveSobe"); }
+        }
+
 
         #endregion
     }
