@@ -19,6 +19,9 @@ using System.Data;
 using HealthClinic.Utilities.Validations;
 using System.Windows.Controls;
 using HealthClinic.Views.Dialogs.ProduzeneInformacije;
+using Syncfusion.DocIO.DLS;
+using Syncfusion.DocToPDFConverter;
+using HorizontalAlignment = Syncfusion.DocIO.DLS.HorizontalAlignment;
 
 namespace HealthClinic.ViewModels
 {
@@ -181,41 +184,116 @@ namespace HealthClinic.ViewModels
             this.TrenutniProzor.Close();            // gasenje trenutnog prozora
         }
 
+
+        /// <summary>
+        /// Koristan link: https://help.syncfusion.com/file-formats/pdf/working-with-flow-layout?cs-save-lang=1&cs-lang=csharp#working-with-table
+        /// </summary>
+        /// <param name="obj"></param>
         public void GenerisiIzvestaj(object obj)
         {
-            using (PdfDocument doc = new PdfDocument())
+            using (WordDocument document = new WordDocument())
             {
-                //Add a page to the document
-                PdfPage page = doc.Pages.Add();
+                //Adding a new section to the document.
+                WSection section = document.AddSection() as WSection;
+                //Set Margin of the section
+                section.PageSetup.Margins.All = 20;
 
-                // Create a PdfLightTable.
-                PdfLightTable pdfLightTable = new PdfLightTable();
+                
+                #region Create paragraph styles
+                WParagraphStyle style = document.AddParagraphStyle("Normal") as WParagraphStyle;
+                style.CharacterFormat.FontName = "Calibri";
+                style.ParagraphFormat.HorizontalAlignment = Syncfusion.DocIO.DLS.HorizontalAlignment.Justify;
+                style.CharacterFormat.FontSize = 11f;
+                style.ParagraphFormat.AfterSpacing = 8;
+                style.ParagraphFormat.FirstLineIndent = 36f;
 
-                // Initialize DataTable to assign as DateSource to the light table.
-                DataTable table = new DataTable();
+                style = document.AddParagraphStyle("Heading 1") as WParagraphStyle;
+                style.ApplyBaseStyle("Normal");
+                style.CharacterFormat.FontName = "Calibri Light";
+                style.CharacterFormat.FontSize = 16f;
+                style.CharacterFormat.TextColor = Color.FromArgb(46, 116, 181);
+                #endregion
 
-                //Include columns to the DataTable.
-                table.Columns.Add("Naziv");
+                #region Appends paragraph
+                IWParagraph paragraph = section.AddParagraph();
+                paragraph.ApplyStyle("Heading 1");
+                paragraph.ParagraphFormat.HorizontalAlignment = Syncfusion.DocIO.DLS.HorizontalAlignment.Center;
+                paragraph.ParagraphFormat.AfterSpacing = 10;
+                WTextRange textRange = paragraph.AppendText("\nIzvestaj stanja lekova Zdravo Korporacije") as WTextRange;
+                textRange.CharacterFormat.FontSize = 18f;
+                textRange.CharacterFormat.FontName = "Calibri";
+                string text =
+                " Datum kreiranja izvestaja: " + DateTime.Now.ToShortDateString() + "\n Vreme kreiranja izvestaja: " + DateTime.Now.ToShortTimeString();
+                //Appends paragraph.
+                paragraph = section.AddParagraph();
+                textRange = paragraph.AppendText(text) as WTextRange;
 
-                table.Columns.Add("Kolicina");
 
-                //Include rows to the DataTable.
-                foreach (Lek lek in Lekovi)
+
+                #endregion
+
+                #region Tabela deo
+                // Adding a new Table
+                WTable table = section.AddTable() as WTable;
+                table.TableFormat.Paddings.All = 2;
+                table.TableFormat.Borders.BorderType = Syncfusion.DocIO.DLS.BorderStyle.Single;
+                // Inserting rows to the table.
+                table.ResetCells(Lekovi.Count + 2, 4);
+
+                //Appends paragraph with header.
+                IWParagraph paragraphTable = table[0, 0].AddParagraph();
+                paragraphTable.AppendText("ID leka");
+
+                paragraphTable = table[0, 1].AddParagraph();
+                paragraphTable.AppendText("Ime leka");
+
+                paragraphTable = table[0, 2].AddParagraph();
+                paragraphTable.AppendText("Tip leka");
+
+                paragraphTable = table[0, 3].AddParagraph();
+                paragraphTable.AppendText("Broj lekova");
+
+
+                // Dodavnje kroz for petlju
+                for(int red = 1; red < Lekovi.Count+1; red++)
                 {
-                    table.Rows.Add(new string[] { lek.NazivLeka, lek.Kolicina });
+                    int kolona = 0;
+                    int indexElementaNiza = red - 1;
+
+                    paragraphTable = table[red, kolona++].AddParagraph();
+                    paragraphTable.AppendText(red.ToString());
+
+                    paragraphTable = table[red, kolona++].AddParagraph();
+                    paragraphTable.AppendText(Lekovi[indexElementaNiza].NazivLeka);
+
+                    paragraphTable = table[red, kolona++].AddParagraph();
+                    paragraphTable.AppendText(Lekovi[indexElementaNiza].VrstaLeka);
+
+                    paragraphTable = table[red, kolona++].AddParagraph();
+                    paragraphTable.AppendText(Lekovi[indexElementaNiza].Kolicina);
                 }
 
+                int redova = Lekovi.Count + 1;
+                table[redova, 0].CellFormat.HorizontalMerge = CellMerge.Start;
+                for(int kolona=1; kolona < 4; kolona++)
+                {
+                    table[redova, kolona].CellFormat.HorizontalMerge = CellMerge.Continue;
+                }
 
-                //Assign data source.
-                pdfLightTable.DataSource = table;
+                //Apply built-in table style to the table.
+                table.ApplyStyle(BuiltinTableStyle.MediumShading1Accent1);
+                #endregion
 
-                //Draw PdfLightTable.
-                pdfLightTable.Draw(page, new PointF(0, 0));
+                //Creates an instance of the DocToPDFConverter
+                DocToPDFConverter converter = new DocToPDFConverter();
+                //Converts Word document into PDF document
+                PdfDocument pdfDocument = converter.ConvertToPDF(document);
 
-                //Save the document
-                doc.Save("C:\\Users\\Vaxi\\Desktop\\6-semestar\\HCI\\projekat\\Vaksi\\HealthClinic\\IzvestajLekova.pdf");
-
-                doc.Close();
+                //Save and close the PDF document 
+                pdfDocument.Save("C:\\Users\\Vaxi\\Desktop\\6-semestar\\HCI\\projekat\\Vaksi\\HealthClinic\\IzvestajLekova.pdf");
+                pdfDocument.Close(true);
+                //Close the document
+                document.Close();
             }
             MessageBox.Show("Uspesno kreiran izvestaj lekova, mozete ga pogledati u tekucem direktorijumu");
         }
