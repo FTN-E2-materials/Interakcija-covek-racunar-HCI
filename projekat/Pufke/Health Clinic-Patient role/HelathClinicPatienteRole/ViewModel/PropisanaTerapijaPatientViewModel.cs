@@ -134,6 +134,50 @@ namespace HelathClinicPatienteRole.ViewModel
                 PdfGrid pdfGrid = new PdfGrid();
                 PdfLightTable pdfLightTable = new PdfLightTable();
                 DataTable table = new DataTable();
+                //Create a header and draw the image.
+
+                System.Drawing.RectangleF bounds = new System.Drawing.RectangleF(0, 0, document.Pages[0].GetClientSize().Width, 50);
+
+                PdfPageTemplateElement header = new PdfPageTemplateElement(bounds);
+                //Add the header at the top.
+
+                PdfImage image = new PdfBitmap(@"C:\Users\Pufke\Desktop\interakcija-covek-racunar\projekat\Pufke\Health Clinic-Patient role\HelathClinicPatienteRole\Images and Videos\logo.png");
+
+                //Draw the image in the header.
+
+                header.Graphics.DrawImage(image, new System.Drawing.PointF(0, 0), new System.Drawing.SizeF(60, 60));
+
+                document.Template.Top = header;
+                //Create a Page template that can be used as footer.
+
+                PdfPageTemplateElement footer = new PdfPageTemplateElement(bounds);
+
+                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 7);
+
+                PdfBrush brush = new PdfSolidBrush(System.Drawing.Color.Black);
+
+                //Create page number field.
+
+                PdfPageNumberField pageNumber = new PdfPageNumberField(font, brush);
+
+                //Create page count field.
+
+                PdfPageCountField count = new PdfPageCountField(font, brush);
+
+                //Add the fields in composite fields.
+
+                PdfCompositeField compositeField = new PdfCompositeField(font, brush, "Page {0} of {1}", pageNumber, count);
+
+                compositeField.Bounds = footer.Bounds;
+
+                //Draw the composite field in footer.
+
+                compositeField.Draw(footer.Graphics, new System.Drawing.PointF(470, 20));
+
+                //Add the footer template at the bottom.
+
+                document.Template.Bottom = footer;
+
 
                 table.Columns.Add("Ponedeljak");
                 table.Columns.Add("Utorak");
@@ -169,8 +213,13 @@ namespace HelathClinicPatienteRole.ViewModel
 
                 pdfLightTable.Style = lightTableStyle;
 
-                pdfLightTable.Draw(page, new System.Drawing.PointF(0, 0));
+                pdfLightTable.Draw(page, new System.Drawing.PointF(0, 40));
 
+      
+                font = new PdfStandardFont(PdfFontFamily.Helvetica, 16);
+
+                page.Graphics.DrawString("Izveštaj o uzimanju terpaija za Pacijenta Marka Markovića", font, PdfBrushes.Black, new System.Drawing.PointF(80, 0));
+                page.Graphics.DrawString("Datum generisanja:  " + DateTime.Now, font, PdfBrushes.Black, new System.Drawing.PointF(80, 20));
 
                 document.Save("C:\\Users\\Pufke\\Desktop\\Izvestaj.pdf");
                 MessageBox.Show("Izvestaj u vidu kalendara je izgenerisan da Desktop vaseg racunara");
