@@ -205,7 +205,7 @@
                     Visibility="{Binding PrikazSobeSaKojomSpajamo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     Validation.ErrorTemplate="{StaticResource errorTemplate}"
                     ItemsSource="{Binding MoguciTipoviProstorije}"
-                    SelectedItem="{Binding ProstorijaZaDodavanje.Namena}"
+                    SelectedItem="{Binding NamenaProstorije}"
                     Background="WhiteSmoke"
                     FontWeight="DemiBold"
                     Width="320"

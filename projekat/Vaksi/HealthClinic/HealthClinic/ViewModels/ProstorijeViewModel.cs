@@ -402,7 +402,8 @@ namespace HealthClinic.ViewModels
                 // dodajem prostoriju
                 Prostorija tempProstorija = new Prostorija()
                 {
-                    BrojSobe = BrojNoveSobe,   
+                    BrojSobe = BrojNoveSobe,
+                    Namena = NamenaProstorije
                 };
 
                 Prostorije.Add(tempProstorija);
@@ -830,6 +831,17 @@ namespace HealthClinic.ViewModels
         {
             get { return _brojDrugeNoveSobe; }
             set { _brojDrugeNoveSobe = value; OnPropertyChanged("BrojDrugeNoveSobe"); }
+        }
+
+        #endregion
+
+        #region Namena prostorije prilikom spajanja prostorija
+        private string _namenaProstorije;
+
+        public string NamenaProstorije
+        {
+            get { return _namenaProstorije; }
+            set { _namenaProstorije = value; OnPropertyChanged("NamenaProstorije"); }
         }
 
         #endregion
