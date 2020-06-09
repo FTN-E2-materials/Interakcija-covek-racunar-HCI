@@ -1,0 +1,38 @@
+﻿<Window x:Class="HealthClinic.Views.Dialogs.ProduzeneInformacije.Nuspojave"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HealthClinic.Views.Dialogs.ProduzeneInformacije"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
+        WindowStartupLocation="CenterScreen"
+        Title="Nuspojave izabranog leka" Height="220" Width="330"
+        MaxHeight="450" MinHeight="220"
+        MaxWidth="400" MinWidth="300">
+
+    <Grid Background="#cdfbf4">
+        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox
+                IsEnabled="False"
+                Width="250"
+                Height="120"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Margin="0, 0 ,0, 0"
+                TextWrapping="Wrap"
+                Background="WhiteSmoke"
+                FontWeight="DemiBold"
+                FontFamily="Times New Roman" 
+                FontSize="14" 
+                materialDesign:HintAssist.Hint="Izmeni lek za dodavanje nuspojave"
+                materialDesign:HintAssist.HelperText="Nuspojave koje lek ima"
+                Text="{Binding SelektovaniLek.Nuspojave}"
+                >
+
+            </TextBox>
+
+        </StackPanel>
+    </Grid>
+</Window>

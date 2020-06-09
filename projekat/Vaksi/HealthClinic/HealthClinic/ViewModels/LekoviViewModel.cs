@@ -18,6 +18,7 @@ using Syncfusion.Pdf.Tables;
 using System.Data;
 using HealthClinic.Utilities.Validations;
 using System.Windows.Controls;
+using HealthClinic.Views.Dialogs.ProduzeneInformacije;
 
 namespace HealthClinic.ViewModels
 {
@@ -274,12 +275,17 @@ namespace HealthClinic.ViewModels
 
         public void PrikaziNuspojave(object obj)
         {
-            MessageBox.Show(SelektovaniLek.Nuspojave);
+            TrenutniProzor = new NuspojaveDijalog();
+            TrenutniProzor.DataContext = this;
+            TrenutniProzor.ShowDialog();
         }
 
         public void PrikaziAlergije(object obj)
         {
-            MessageBox.Show(SelektovaniLek.Alergije);
+            TrenutniProzor = new AlergijeDijalog();
+            TrenutniProzor.DataContext = this;
+            TrenutniProzor.ShowDialog();
+
         }
 
         #endregion

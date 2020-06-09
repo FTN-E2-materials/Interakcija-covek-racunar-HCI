@@ -146,6 +146,15 @@
     <Compile Include="Views\Dialogs\Izmena\IzmeniZaposlenogDijalog.xaml.cs">
       <DependentUpon>IzmeniZaposlenogDijalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dialogs\ProduzeneInformacije\AlergijeDijalog.xaml.cs">
+      <DependentUpon>AlergijeDijalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\ProduzeneInformacije\Nuspojave.xaml.cs">
+      <DependentUpon>Nuspojave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\ProduzeneInformacije\NuspojaveDijalog.xaml.cs">
+      <DependentUpon>NuspojaveDijalog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dialogs\RadniKalendarDijalog.xaml.cs">
       <DependentUpon>RadniKalendarDijalog.xaml</DependentUpon>
     </Compile>
@@ -245,6 +254,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dialogs\Izmena\IzmeniZaposlenogDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\ProduzeneInformacije\AlergijeDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\ProduzeneInformacije\Nuspojave.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\ProduzeneInformacije\NuspojaveDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

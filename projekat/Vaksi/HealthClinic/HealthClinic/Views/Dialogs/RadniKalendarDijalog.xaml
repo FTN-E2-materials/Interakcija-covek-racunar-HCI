@@ -126,6 +126,7 @@
                     <!-- Kraj prikaza slobodnih lekara-->
 
                     <Button 
+                        IsDefault="True"
                         Command="{Binding PotvrdaOdredjivanjaRadnogVremenaCommand}"
                         Height="30"
                         Width="100"
