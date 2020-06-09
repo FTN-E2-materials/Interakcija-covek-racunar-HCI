@@ -20,6 +20,7 @@
 
             <!-- Ime zaposlenog -->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -50,6 +51,7 @@
 
             <!-- Prezime -->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -80,6 +82,7 @@
 
             <!-- Korisnicko ime -->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -110,6 +113,7 @@
 
             <!-- Lozinka -->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -140,6 +144,7 @@
 
             <!-- Tip zaposlenog -->
             <ComboBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 ItemsSource="{Binding MoguciTipoviZaposlenih}"
                 SelectedItem="{Binding ZaposleniZaIzmenu.Struka}"
                 Background="WhiteSmoke"
@@ -159,6 +164,7 @@
 
             <!-- Specijalizacija -->
             <ComboBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"

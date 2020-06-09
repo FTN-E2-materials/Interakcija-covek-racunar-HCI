@@ -19,6 +19,7 @@
 
             <!-- Naziv odeljenja -->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -49,6 +50,7 @@
 
             <!-- Broj prostorije-->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -78,6 +80,7 @@
 
             <!-- Tip prostorije -->
             <ComboBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 ItemsSource="{Binding MoguciTipoviProstorije}"
                 SelectedItem="{Binding ProstorijaZaDodavanje.Namena}"
                 Background="WhiteSmoke"
@@ -97,6 +100,7 @@
 
             <!-- Oprema -->
             <ComboBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"

@@ -21,12 +21,12 @@
             
             <!-- Podesavanja custom error template-a -->
             <ControlTemplate x:Key="errorTemplate">
-                <Border BorderBrush="OrangeRed" BorderThickness="2">
+                <Border BorderBrush="PaleVioletRed" BorderThickness="1">
                     <Grid>
                         <AdornedElementPlaceholder/>
-                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="OrangeRed"
-                               VerticalAlignment="Center" HorizontalAlignment="Right"
-                               Margin="0,0,4,0"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="PaleVioletRed"
+                               VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                               Margin="0,18,4,2"/>
                     </Grid>
                 </Border>
             </ControlTemplate>

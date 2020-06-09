@@ -21,6 +21,7 @@
 
             <!-- Naziv leka -->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -51,6 +52,7 @@
 
             <!-- Kolicina -->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 FontWeight="DemiBold"
                 Background="WhiteSmoke"
                 Width="320"
@@ -81,6 +83,7 @@
 
             <!-- Nuspojava -->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 TextWrapping="Wrap"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
@@ -112,6 +115,7 @@
 
             <!-- Alergija -->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 TextWrapping="Wrap"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
@@ -141,6 +145,7 @@
            
             <!-- Vrsta leka -->
             <ComboBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 SelectedItem="LekZaDodavanje.VrstaLeka"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"

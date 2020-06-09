@@ -46,6 +46,7 @@
                         <StackPanel Margin="25, 20, 25, 0">
                             <!-- Kontakt telefon -->
                             <TextBox
+                                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                                 IsEnabled="{Binding IzmenaProfila}"
                                 Background="WhiteSmoke"
                                 FontWeight="DemiBold"
@@ -77,6 +78,7 @@
 
                             <!-- Adresa stanovanja -->
                             <TextBox
+                                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                                 IsEnabled="{Binding IzmenaProfila}"
                                 Background="WhiteSmoke"
                                 FontWeight="DemiBold"
@@ -107,6 +109,7 @@
 
                             <!-- Trenutna lozinka -->
                             <TextBox
+                                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                                 IsEnabled="{Binding IzmenaProfila}"
                                 Background="WhiteSmoke"
                                 FontWeight="DemiBold"
@@ -136,6 +139,7 @@
 
                             <!-- Nova lozinka -->
                             <TextBox
+                                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                                 IsEnabled="{Binding IzmenaProfila}"
                                 x:Name="NovaLozinka"
                                 Background="WhiteSmoke"
@@ -171,6 +175,7 @@
                         <StackPanel Margin="25, 20, 20, 0">
                             <!-- Ime -->
                             <TextBox
+                                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                                 IsEnabled="{Binding IzmenaProfila}"
                                 x:Name="Ime"
                                 Background="WhiteSmoke"
@@ -203,6 +208,7 @@
 
                             <!-- Prezime -->
                             <TextBox
+                                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                                 IsEnabled="{Binding IzmenaProfila}"
                                 x:Name="Prezime"
                                 Background="WhiteSmoke"
@@ -235,6 +241,7 @@
 
                             <!-- Biografija -->
                             <TextBox
+                                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                                 IsEnabled="{Binding IzmenaProfila}"
                                 x:Name="Biografija"
                                 TextWrapping="Wrap"

@@ -20,6 +20,7 @@
 
             <!-- Kontakt telefon -->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -37,6 +38,7 @@
 
             <!-- Adresa stanovanja -->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -53,6 +55,7 @@
 
             <!-- Trenutna lozinka -->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
@@ -69,6 +72,7 @@
 
             <!-- Nova lozinka -->
             <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
                 Background="WhiteSmoke"
                 FontWeight="DemiBold"
                 Width="320"
