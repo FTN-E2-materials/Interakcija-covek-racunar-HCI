@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:HealthClinic.Dialogs"
+        xmlns:validations ="clr-namespace:HealthClinic.Utilities.Validations"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Zauzetost/Aktivnost" Height="450" Width="600"
@@ -148,6 +149,21 @@
                     x:Name="NazivNoveProstorije"
                     materialDesign:HintAssist.Hint="Ovde unesite naziv nove prostorije"
                     materialDesign:HintAssist.HelperText="Naziv nove prostorije">
+                    <TextBox.Text>
+                        <!-- Bajndovanje naziva prostorije + validacija-->
+                        <Binding 
+                        Path="NazivProstorije"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                            <Binding.ValidationRules>
+                                <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                                <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                                <validations:WordRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                        <!-- Kraj bajndovanje naziva nove prostorije + validacija-->
+                    </TextBox.Text>
                 </TextBox>
                 <!-- Kraj naziva nove prostorije -->
 
@@ -165,6 +181,21 @@
                     x:Name="NazivDrugeNoveProstorije"
                     materialDesign:HintAssist.Hint="Ovde unesite naziv druge nove prostorije"
                     materialDesign:HintAssist.HelperText="Naziv druge nove prostorije">
+                    <TextBox.Text>
+                        <!-- Bajndovanje naziva prostorije + validacija-->
+                        <Binding 
+                        Path="NazivProstorije"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                            <Binding.ValidationRules>
+                                <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                                <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                                <validations:WordRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                        <!-- Kraj bajndovanje naziva nove prostorije + validacija-->
+                    </TextBox.Text>
                 </TextBox>
                 <!-- Kraj naziva nove prostorije -->
                 
@@ -182,6 +213,20 @@
                     x:Name="PorukaObavestenja"
                     materialDesign:HintAssist.Hint="Ovde unesite poruku obavestenja"
                     materialDesign:HintAssist.HelperText="Poruka obavestenja">
+                    <TextBox.Text>
+                        <!-- Bajndovanje PorukaObavestenja + validacija-->
+                        <Binding 
+                        Path="PorukaObavestenja"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                            <Binding.ValidationRules>
+                                <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                                <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                        <!-- Kraj bajndovanje PorukaObavestenja + validacija-->
+                    </TextBox.Text>
                 </TextBox>
                 <!-- Kraj poruke obavestenja -->
                 

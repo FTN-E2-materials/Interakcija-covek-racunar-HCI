@@ -155,6 +155,9 @@
     <Compile Include="Views\Dialogs\ProduzeneInformacije\NuspojaveDijalog.xaml.cs">
       <DependentUpon>NuspojaveDijalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dialogs\ProduzeneInformacije\RadnoVremeZaposlenogDijalog.xaml.cs">
+      <DependentUpon>RadnoVremeZaposlenogDijalog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dialogs\RadniKalendarDijalog.xaml.cs">
       <DependentUpon>RadniKalendarDijalog.xaml</DependentUpon>
     </Compile>
@@ -266,6 +269,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dialogs\ProduzeneInformacije\NuspojaveDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\ProduzeneInformacije\RadnoVremeZaposlenogDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

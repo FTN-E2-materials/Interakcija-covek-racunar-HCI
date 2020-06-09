@@ -18,6 +18,7 @@ using HealthClinic.Views.Dialogs.Brisanje;
 using System.Windows.Input;
 using Syncfusion.Pdf.Tables;
 using System.Data;
+using HealthClinic.Views.Dialogs.ProduzeneInformacije;
 
 namespace HealthClinic.ViewModels
 {
@@ -337,16 +338,20 @@ namespace HealthClinic.ViewModels
         public void PrikaziRadniKalendarZaposlenog(object obj)
         {
             // prikazivanje bez vremena, samo datum ovako dobijam
-            string odDatuma = SelektovaniZaposleni.RadniKalendar.FromDate.ToShortDateString();
-            string doDatuma = SelektovaniZaposleni.RadniKalendar.ToDate.ToShortDateString();
+            OdDatuma = SelektovaniZaposleni.RadniKalendar.FromDate.ToShortDateString();
+            DoDatuma = SelektovaniZaposleni.RadniKalendar.ToDate.ToShortDateString();
 
-            string odVremena = SelektovaniZaposleni.RadniKalendar.FromHour.ToShortTimeString();
-            string doVremena = SelektovaniZaposleni.RadniKalendar.ToHour.ToShortTimeString();
-            MessageBox.Show( "U narednom periodu, gospodin " + SelektovaniZaposleni.Prezime + " " + SelektovaniZaposleni.Ime + " radi" + 
-                "\nOd: " + odDatuma +
-                "\tDo: " + doDatuma + 
-                "\n\nU smeni od: " + odVremena + "\t do: " + doVremena + " casova" 
-                );
+            OdVremena = SelektovaniZaposleni.RadniKalendar.FromHour.ToShortTimeString();
+            DoVremena = SelektovaniZaposleni.RadniKalendar.ToHour.ToShortTimeString();
+
+            TrenutniProzor = new RadnoVremeZaposlenogDijalog();
+            TrenutniProzor.DataContext = this;
+            TrenutniProzor.ShowDialog();
+            //MessageBox.Show( "U narednom periodu, gospodin " + SelektovaniZaposleni.Prezime + " " + SelektovaniZaposleni.Ime + " radi" + 
+            //    "\nOd: " + odDatuma +
+            //    "\tDo: " + doDatuma + 
+            //    "\n\nU smeni od: " + odVremena + "\t do: " + doVremena + " casova" 
+            //    );
         }
         
         public void OdrediRadnoVremeZaposlenih(object ojb)
@@ -830,6 +835,39 @@ namespace HealthClinic.ViewModels
             return slobodniLekari;
 
         }
+
+        #endregion
+
+        #region Podaci za prikaz radnog vremena lekara
+        private string _odVremena;
+        private string _doVremena;
+        private string _odDatuma;
+        private string _doDatuma;
+
+        
+        public string OdDatuma
+        {
+            get { return _odDatuma; }
+            set { _odDatuma = value; OnPropertyChanged("OdDatuma"); }
+        }
+
+        public string DoDatuma
+        {
+            get { return _doDatuma; }
+            set { _doDatuma = value; OnPropertyChanged("DoDatuma"); }
+        }
+        public string OdVremena
+        {
+            get { return _odVremena; }
+            set { _odVremena = value; OnPropertyChanged("OdVremena"); }
+        }
+
+        public string DoVremena
+        {
+            get { return _doVremena; }
+            set { _doVremena = value; OnPropertyChanged("DoVremena"); }
+        }
+
 
         #endregion
     }
