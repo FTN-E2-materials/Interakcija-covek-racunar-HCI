@@ -206,6 +206,10 @@ namespace HealthClinic.ViewModels
                 return;
 
             // dodajem zaposlenog ukoliko je odgovor bio potvrdan
+            ZaposleniZaDodavanje.RadniKalendar = new BusinessHours();
+            ZaposleniZaDodavanje.RadniKalendar.FromDate = DateTime.Now;
+            ZaposleniZaDodavanje.RadniKalendar.ToDate = DateTime.Now;
+
             Zaposleni.Add(ZaposleniZaDodavanje);
             podesiBrojOdredjenihZaposlenih(ZaposleniZaDodavanje, 1);
             this.TrenutniProzor.Close();

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Radno vreme izabranog zaposlenog" Height="150" Width="300"
+        Title="Radno vreme" Height="150" Width="300"
         MaxHeight="450" MinHeight="150"
         MaxWidth="400" MinWidth="300">
 
@@ -15,7 +15,7 @@
         <!-- Podaci od kad do kad radi-->
         <StackPanel Margin="0, 20, 0, 0" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Gospodin "/>
+                <TextBlock Text="Zaposleni-a "/>
                 <TextBlock Text="{Binding SelektovaniZaposleni.Ime}"/>
                 <TextBlock Text=" u narednom periodu radi "/>
 

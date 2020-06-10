@@ -150,8 +150,8 @@
                                 Margin="10, 20, 10, 10"
                                 HorizontalContentAlignment="Center"
                                 VerticalContentAlignment="Center"
-                                materialDesign:HintAssist.HelperText="Datum rodjenja"
-                                materialDesign:HintAssist.Hint="Izaberite datum rodjenja">
+                                materialDesign:HintAssist.HelperText="Datum ro&#x111;enja"
+                                materialDesign:HintAssist.Hint="Izaberite datum ro&#x111;enja">
                                 <DatePicker.SelectedDate>
                                     <Binding
                                         Path="Upravnik.DatumRodjenja"
@@ -180,8 +180,8 @@
                                 HorizontalContentAlignment="Center"
                                 VerticalContentAlignment="Center"
                         
-                                materialDesign:HintAssist.Hint="Ovde unesite Vase ime"
-                                materialDesign:HintAssist.HelperText="Vase ime">
+                                materialDesign:HintAssist.Hint="Ovde unesite Va&#x161;e ime"
+                                materialDesign:HintAssist.HelperText="Va&#x161;e ime">
                                 <TextBox.Text>
                                     <!-- Bajndovanje imena + validacija-->
                                     <Binding 
@@ -213,8 +213,8 @@
                                 HorizontalContentAlignment="Center"
                                 VerticalContentAlignment="Center"
                         
-                                materialDesign:HintAssist.Hint="Ovde unesite Vase prezime"
-                                materialDesign:HintAssist.HelperText="Vase prezime">
+                                materialDesign:HintAssist.Hint="Ovde unesite Va&#x161;e prezime"
+                                materialDesign:HintAssist.HelperText="Va&#x161;e prezime">
                                 <TextBox.Text>
                                     <!-- Bajndovanje prezimena + validacija-->
                                     <Binding 
@@ -248,8 +248,8 @@
                                 VerticalContentAlignment="Center"
                                 AcceptsReturn="True"
                                 AcceptsTab="True"
-                                materialDesign:HintAssist.Hint="Ovde unesite Vasu biografiju"
-                                materialDesign:HintAssist.HelperText="Vasa biografija">
+                                materialDesign:HintAssist.Hint="Ovde unesite Va&#x161;u biografiju"
+                                materialDesign:HintAssist.HelperText="Va&#x161;a biografija">
                                 <TextBox.Text>
                                     <!-- Bajndovanje biografije + validacija-->
                                     <Binding 

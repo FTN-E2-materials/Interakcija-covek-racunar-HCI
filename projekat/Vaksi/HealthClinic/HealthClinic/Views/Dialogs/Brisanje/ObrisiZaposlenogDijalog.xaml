@@ -31,7 +31,7 @@
                 Margin="10, 20, 0, 0"
                 Width="300"
                 FontSize="18"
-                Text="Da li ste sigurni da zelite obrisati izabranog zaposlenog ?"
+                Text="Da li ste sigurni da &#x17E;elite obrisati izabranog zaposlenog ?"
                 TextWrapping="Wrap">
 
             </TextBlock>

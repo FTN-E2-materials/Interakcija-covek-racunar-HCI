@@ -43,7 +43,7 @@ namespace HealthClinic.ViewModels
             {
                 new LineSeries
                 {
-                    Title="Decije", Values = new  ChartValues<double>{100,200,100,200 }
+                    Title="Onkologija", Values = new  ChartValues<double>{100,200,100,200 }
                 },
                 new LineSeries
                 {
@@ -51,7 +51,7 @@ namespace HealthClinic.ViewModels
                 },
                 new LineSeries
                 {
-                    Title="Oporavak", Values = new  ChartValues<double>{200,600,100,200 }
+                    Title="De\u010Dije", Values = new  ChartValues<double>{200,600,100,200 }
                 },
                 new LineSeries
                 {

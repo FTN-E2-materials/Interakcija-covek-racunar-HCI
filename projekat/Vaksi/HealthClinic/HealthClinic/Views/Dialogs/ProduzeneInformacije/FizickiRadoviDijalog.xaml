@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
-        Title="Fizicki radovi u narednom periodu" Height="140" Width="390"
+        Title="Fizi&#x10D;ki radovi u narednom periodu" Height="140" Width="390"
         MaxHeight="450" MinHeight="140"
         MaxWidth="400" MinWidth="390">
     <Grid Background="#cdfbf4">
@@ -16,7 +16,7 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Prostorija broj "/>
                 <TextBlock Text="{Binding SelektovanaProstorija.BrojSobe}"/>
-                <TextBlock Text=" u narednom periodu ima fizicke radove tipa"/>
+                <TextBlock Text=" u narednom periodu ima fizi&#x10D;ke radove tipa"/>
             </StackPanel>
             <StackPanel>
                 <!-- Vrsta fizickog rada -->

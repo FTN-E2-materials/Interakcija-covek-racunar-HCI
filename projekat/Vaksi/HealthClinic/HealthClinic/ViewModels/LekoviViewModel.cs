@@ -219,11 +219,11 @@ namespace HealthClinic.ViewModels
                 paragraph.ApplyStyle("Heading 1");
                 paragraph.ParagraphFormat.HorizontalAlignment = Syncfusion.DocIO.DLS.HorizontalAlignment.Center;
                 paragraph.ParagraphFormat.AfterSpacing = 10;
-                WTextRange textRange = paragraph.AppendText("\nIzvestaj stanja lekova Zdravo Korporacije") as WTextRange;
+                WTextRange textRange = paragraph.AppendText("\nIzve\u0161taj stanja lekova Zdravo Korporacije") as WTextRange;
                 textRange.CharacterFormat.FontSize = 18f;
                 textRange.CharacterFormat.FontName = "Calibri";
                 string text =
-                " Datum kreiranja izvestaja: " + DateTime.Now.ToShortDateString() + "\n Vreme kreiranja izvestaja: " + DateTime.Now.ToShortTimeString();
+                " Datum kreiranja izve\u0161taja: " + DateTime.Now.ToShortDateString() + "\n Vreme kreiranja izve\u0161taja: " + DateTime.Now.ToShortTimeString();
                 //Appends paragraph.
                 paragraph = section.AddParagraph();
                 textRange = paragraph.AppendText(text) as WTextRange;
@@ -296,7 +296,7 @@ namespace HealthClinic.ViewModels
                 document.Save("C:\\Users\\Vaxi\\Desktop\\6-semestar\\HCI\\projekat\\Vaksi\\HealthClinic\\IzvestajLekova.docx");
                 document.Close();
             }
-            MessageBox.Show("Uspesno kreiran izvestaj lekova, mozete ga pogledati u tekucem direktorijumu");
+            MessageBox.Show("Uspe\u0161no kreiran izve\u0161taj lekova, mo\u017Eete ga pogledati u teku\u0107em direktorijumu");
         }
 
         public void DodajLek(object obj)
@@ -382,10 +382,10 @@ namespace HealthClinic.ViewModels
         private void ucitavanjeLekova()
         {
             Lekovi = new ObservableCollection<Lek>();
-            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan", SifraLeka = "0x21FDAF", Kolicina = "10" , VrstaLeka="antibiotik"});
-            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan2", SifraLeka = "0x22FDAF", Kolicina = "11", VrstaLeka = "analgetik" });
-            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan3", SifraLeka = "0x23FDAF", Kolicina = "12", VrstaLeka = "kardio vaskularni" });
-            Lekovi.Add(new Lek() { NazivLeka = "Bromozepan4", SifraLeka = "0x24FDAF", Kolicina = "13", VrstaLeka = "anestetik" });
+            Lekovi.Add(new Lek() { NazivLeka = "Andol", SifraLeka = "0x21FDAF", Kolicina = "10" , VrstaLeka="antibiotik"});
+            Lekovi.Add(new Lek() { NazivLeka = "Sabax", SifraLeka = "0x22FDAF", Kolicina = "11", VrstaLeka = "analgetik" });
+            Lekovi.Add(new Lek() { NazivLeka = "Kafetin", SifraLeka = "0x23FDAF", Kolicina = "12", VrstaLeka = "kardio vaskularni" });
+            Lekovi.Add(new Lek() { NazivLeka = "Bensedin", SifraLeka = "0x24FDAF", Kolicina = "13", VrstaLeka = "anestetik" });
             
             // Odredjivanje koliko imamo kog leka
             foreach (Lek lek in Lekovi)

@@ -14,7 +14,7 @@
 
             <!-- Text iznad grafikona-->
             <TextBlock
-                Text="Grafikoni stanja nase klinike"
+                Text="Grafikoni stanja na&#x161;e klinike"
                 
                 HorizontalAlignment="Left"
                 FontFamily="Times New Roman" 
@@ -63,7 +63,7 @@
                             FontSize="15" 
                             FontStyle="Italic"
                             FontWeight="Bold"
-                            Text="1. Posecenost klinike"
+                            Text="1. Pose&#x107;enost klinike"
                             Margin="0, 1, 0, 0"
                             Foreground="#FF2196F3">
 

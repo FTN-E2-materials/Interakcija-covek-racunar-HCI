@@ -32,7 +32,7 @@
                 Margin="10, 20, 0, 0"
                 Width="300"
                 FontSize="18"
-                Text="Da li ste sigurni da zelite obrisati izabranu prostoriju iz sistema ?"
+                Text="Da li ste sigurni da &#x17E;elite obrisati izabranu prostoriju iz sistema ?"
                 TextWrapping="Wrap">
 
             </TextBlock>

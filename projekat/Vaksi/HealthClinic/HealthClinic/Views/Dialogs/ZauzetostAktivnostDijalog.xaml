@@ -62,7 +62,7 @@
                     Margin="40,10 ,0, 0"
                     FontFamily="Times New Roman" 
                     FontSize="18" 
-                    Content="Izaberi zeljenu manipulaciju"
+                    Content="Izaberi &#x17E;eljenu manipulaciju"
                     Foreground="#FF2196F3"/>
                 <!-- Radio buttons-->
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="80,10,0,0">
@@ -158,8 +158,8 @@
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
                     x:Name="ProstorijaSaKojomSpajam"
-                    materialDesign:HintAssist.Hint="Unesite broj prostorije sa kojom vrsite spajanje"
-                    materialDesign:HintAssist.HelperText="Broj sobe prostorije sa kojom vrsite spajanje"
+                    materialDesign:HintAssist.Hint="Unesite broj prostorije sa kojom vr&#x161;ite spajanje"
+                    materialDesign:HintAssist.HelperText="Broj sobe prostorije sa kojom vr&#x161;ite spajanje"
                     >
 
 

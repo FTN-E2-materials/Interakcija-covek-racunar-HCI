@@ -90,8 +90,8 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="KorisnickoIme"
-                materialDesign:HintAssist.Hint="Ovde unesite korisnicko ime"
-                materialDesign:HintAssist.HelperText="Korisnicko ime zaposlenog">
+                materialDesign:HintAssist.Hint="Ovde unesite korisni&#x10D;ko ime"
+                materialDesign:HintAssist.HelperText="Korisni&#x10D;ko ime zaposlenog">
                 <TextBox.Text>
                     <!-- Bajndovanje korisnickog imena zaposlenog + validacija-->
                     <Binding 
@@ -172,8 +172,8 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Specijalizacija"
-                materialDesign:HintAssist.Hint="Izaberite specijalizaciju u slucaju lekara"
-                materialDesign:HintAssist.HelperText="[Samo u slucaju lekara] Specijalizacija lekara"
+                materialDesign:HintAssist.Hint="Izaberite specijalizaciju u slu&#x10D;aju lekara"
+                materialDesign:HintAssist.HelperText="[Samo u slu&#x10D;aju lekara] Specijalizacija lekara"
                 >
                 <ComboBoxItem>
                     Opste prakse

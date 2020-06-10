@@ -61,8 +61,8 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 x:Name="Kolicina"
-                materialDesign:HintAssist.Hint="Ovde unesite kolicinu leka"
-                materialDesign:HintAssist.HelperText="Kolicina leka">
+                materialDesign:HintAssist.Hint="Ovde unesite koli&#x10D;inu leka"
+                materialDesign:HintAssist.HelperText="Koli&#x10D;ina leka">
                 <TextBox.Text>
                     <!-- Bajndovanje kolicine leka + validacija-->
                     <Binding 

@@ -24,7 +24,7 @@
                 FontFamily="Times New Roman" 
                 FontSize="22" 
                 FontStyle="Italic"
-                Text=" Odredjivanje radnog vremena zaposlenih"
+                Text=" Odre&#x111;ivanje radnog vremena zaposlenih"
                 Margin="46, 10, 0, 0"
                 Foreground="#FF2196F3">
             </TextBlock>

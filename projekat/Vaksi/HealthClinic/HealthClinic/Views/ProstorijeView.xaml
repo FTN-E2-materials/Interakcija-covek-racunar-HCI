@@ -25,7 +25,7 @@
                 FontFamily="Times New Roman" 
                 FontSize="22" 
                 FontStyle="Italic"
-                Text="Prostorije s kojima raspolaze nasa klinika"
+                Text="Prostorije s kojima raspola&#x17E;e na&#x161;a klinika"
                 Margin="60, 20, 0, 0"
                 Foreground="#FF2196F3">
             </TextBlock>
@@ -223,7 +223,7 @@
 
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Download" Foreground="White" Margin="0, 0, 10, 0"/>
-                            <AccessText Foreground="White">_Generisi izvestaj</AccessText>
+                            <AccessText Foreground="White">_Generi&#x161;i izve&#x161;taj</AccessText>
                         </StackPanel>
                     </Button>
                     <!-- Kraj dugmeta za generisanje izvestaja. -->
