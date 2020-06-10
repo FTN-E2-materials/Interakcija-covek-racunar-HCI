@@ -62,6 +62,11 @@ namespace HealthClinic.ViewModels
             // prikaz fizickih radova nad prostorijom u narednom periodu
             PrikaziFizickeRadoveCommand = new RelayCommand(PrikaziFizickeRadove);
 
+            // dodavanje opreme
+            DodajOpremuCommand = new RelayCommand(DodajOpremu);
+
+            // uklanjanje opreme
+            UkloniOpremuCommand = new RelayCommand(UkloniOpremu);
         }
         
         #region Prostorija koja sluzi za dodavanje u listu prostorija
@@ -277,7 +282,9 @@ namespace HealthClinic.ViewModels
         public RelayCommand IzbrisiProstorijuCommand { get; private set; }
         public RelayCommand PotvrdiZauzetostAktivnostCommand { get; private set; }
         public RelayCommand PrikaziFizickeRadoveCommand { get; private set; }
-        
+        public RelayCommand DodajOpremuCommand { get; private set; }
+        public RelayCommand UkloniOpremuCommand { get; private set; }
+
         #endregion
 
         #region Funkcije koje komande koriste
@@ -330,6 +337,7 @@ namespace HealthClinic.ViewModels
             SelektovanaProstorija.Odeljenje = ProstorijaZaIzmenu.Odeljenje;
             this.TrenutniProzor.Close();
         }
+        
         public void PotvrdiZauzetostAktivnost(object obj)
         {
             
@@ -427,22 +435,20 @@ namespace HealthClinic.ViewModels
 
         public void PrikaziSpisakOpreme(object obj)
         {
-            if(SpisakOpreme is null)
-            {
-                SpisakOpreme = new ObservableCollection<Oprema>();
-                SpisakOpreme.Add(new Oprema()
-                {
-                    KolicinaOpreme=10,
-                    NazivOpreme="sto"
-                });
+            SpisakOpreme = new ObservableCollection<Oprema>();
 
-                SpisakOpreme.Add(new Oprema()
-                {
-                    KolicinaOpreme = 11,
-                    NazivOpreme = "stolica"
-                });
+            TrenutnaOprema = new Oprema();
+            if(SelektovanaProstorija.OpremaProstorije is null)
+            {
+                SelektovanaProstorija.OpremaProstorije = new List<Oprema>();
+
             }
-                
+
+            // preuzimanje od prave opreme prostorije
+            foreach (Oprema oprema in SelektovanaProstorija.OpremaProstorije)
+            {
+                SpisakOpreme.Add(oprema);
+            }
             
 
             TrenutniProzor = new SpisakOpremeDijalog();
@@ -531,8 +537,6 @@ namespace HealthClinic.ViewModels
             TrenutniProzor.ShowDialog();
         }
 
-        
-
         public void PrikaziFizickeRadove(object obj)
         {
             if (SelektovanaProstorija.FizickiRadovi is null)
@@ -549,6 +553,57 @@ namespace HealthClinic.ViewModels
             TrenutniProzor = new FizickiRadoviDijalog();
             TrenutniProzor.DataContext = this;
             TrenutniProzor.ShowDialog();
+        }
+
+        public void DodajOpremu(object obj)
+        {
+            foreach (Oprema oprema in SpisakOpreme)
+            {
+                if (oprema.NazivOpreme == TrenutnaOprema.NazivOpreme)
+                {
+                    oprema.KolicinaOpreme += TrenutnaOprema.KolicinaOpreme;
+                    return;
+                }
+            }
+
+            // ako dodjem dovde znaci da moram celu tu trenutnu opremu dodati jer je nema u spisku opreme
+            Oprema opremaZaDodavanje = new Oprema()
+            {
+                NazivOpreme = TrenutnaOprema.NazivOpreme,
+                KolicinaOpreme = TrenutnaOprema.KolicinaOpreme
+            };
+            // i kolekciji i zapravo selektovanom dodam
+            SpisakOpreme.Add(opremaZaDodavanje);
+            SelektovanaProstorija.OpremaProstorije.Add(opremaZaDodavanje);
+            
+        }
+
+        public void UkloniOpremu(object obj)
+        {
+            foreach (Oprema oprema in SpisakOpreme)
+            {
+                if (oprema.NazivOpreme == TrenutnaOprema.NazivOpreme)
+                {
+                    oprema.KolicinaOpreme -= TrenutnaOprema.KolicinaOpreme;
+                    if(oprema.KolicinaOpreme <= 0)
+                    {
+                        // uklonim iz prave opreme
+                        foreach (Oprema opremaPrava in SelektovanaProstorija.OpremaProstorije)
+                        {
+                            if(opremaPrava.NazivOpreme == oprema.NazivOpreme)
+                            {
+                                SelektovanaProstorija.OpremaProstorije.Remove(opremaPrava);
+                                break;
+                            }
+                        }
+                        // ali i iz observable liste
+                        SpisakOpreme.Remove(oprema);
+                    }
+                    return;
+                }
+            }
+            // ako sam dosao do ovoga onda znaci da te opreme zapravo i nema u listi
+            MessageBox.Show("Pokusao si ukloniti opremu koju klinika trenutno nema u posedovanju");
         }
 
 
@@ -773,6 +828,17 @@ namespace HealthClinic.ViewModels
         }
 
 
+        #endregion
+
+        #region Trenutna oprema
+
+        private Oprema _trenutnaOprema;
+
+        public Oprema TrenutnaOprema
+        {
+            get { return _trenutnaOprema; }
+            set { _trenutnaOprema = value; OnPropertyChanged("TrenutnaOprema"); }
+        }
         #endregion
 
         #region Fizicki radovi za dodavanje/prikaz

@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:HealthClinic.Dialogs"
+        xmlns:validations ="clr-namespace:HealthClinic.Utilities.Validations"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Spisak opreme" Height="450" Width="300" 
+        Title="Spisak opreme" Height="450" Width="600" 
         MaxHeight="450" MinHeight="450"
-        MaxWidth="300" MinWidth="300">
+        MaxWidth="300" MinWidth="600">
     <Grid Background="#cdfbf4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
 
         <StackPanel>
             <!-- Informacije iznad spiska opreme-->
@@ -23,7 +28,7 @@
                         FontSize="20" 
                         
                         Text="Odeljenje: "
-                        Margin="20, 20, 0, 0"
+                        Margin="0, 20, 0, 0"
                         Foreground="#FF2196F3">
                     </TextBlock>
                     <TextBlock 
@@ -48,7 +53,7 @@
                         
                         
                         Text="Broj prostorije: "
-                        Margin="20, 5, 0, 0"
+                        Margin="0, 5, 0, 0"
                         Foreground="#FF2196F3">
                     </TextBlock>
                     <TextBlock 
@@ -98,6 +103,108 @@
             </GroupBox>
             <!-- Kraj spiska opreme-->
             
+            
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <!-- Text iznad forme-->
+            <TextBlock 
+                HorizontalAlignment="Center"
+                FontFamily="Times New Roman" 
+                FontSize="20" 
+                        
+                Text="Manipulacija nad opremom"
+                Margin="0, 30, 0, 0"
+                Foreground="#FF2196F3">
+            </TextBlock>
+            <!-- Kraj texta iznad forme -->
+            
+            <!-- Naziv opreme -->
+            <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                Background="WhiteSmoke"
+                FontWeight="DemiBold"
+                Width="280"
+                Height="40"
+                Margin="10, 35, 10, 10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="Naziv"
+                materialDesign:HintAssist.Hint="Ovde unesite naziv opreme"
+                materialDesign:HintAssist.HelperText="Naziv opreme">
+                <TextBox.Text>
+                    <!-- Bajndovanje naziva opreme + validacija-->
+                    <Binding 
+                        Path="TrenutnaOprema.NazivOpreme"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                        <Binding.ValidationRules>
+                            <validations:MinimumCharacterRule MinimumCharacters="2"/>
+                            <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                            <validations:WordRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                    <!-- Kraj bajndovanje naziva opreme + validacija-->
+                </TextBox.Text>
+            </TextBox>
+            <!-- Kraj opreme -->
+            
+            <!-- Kolicina opreme -->
+            <TextBox
+                Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                Background="WhiteSmoke"
+                FontWeight="DemiBold"
+                Width="280"
+                Height="40"
+                Margin="10,20, 10, 10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                x:Name="KolicinaOpreme"
+                materialDesign:HintAssist.Hint="Ovde unesite kolicinu opreme za dodavanje"
+                materialDesign:HintAssist.HelperText="Kolicina opreme">
+                <TextBox.Text>
+                    <!-- Bajndovanje kolicina opreme + validacija-->
+                    <Binding 
+                        Path="TrenutnaOprema.KolicinaOpreme"
+                        ValidatesOnDataErrors="True"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                        <Binding.ValidationRules>
+                            <validations:MinimumCharacterRule MinimumCharacters="1"/>
+                            <validations:MaximumCharacterRule MaximumCharacters="20"/>
+                            <validations:NumberRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                    <!-- Kraj bajndovanje naziva leka + validacija-->
+                </TextBox.Text>
+            </TextBox>
+            <!-- Kraj opreme -->
+            
+            <Button
+                IsDefault="True"
+                Command="{Binding DodajOpremuCommand}"
+                Margin="0, 30, 0, 0"
+                Height="40"
+                Width="200"
+                >
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="PlusCircle" Margin="0, 0, 10, 0" />
+                    <TextBlock Text="Dodaj opremu"/>
+                </StackPanel>
+            </Button>
+            
+            <Button
+                Command="{Binding UkloniOpremuCommand}"
+                Margin="0, 30, 0, 0"
+                Height="40"
+                Width="200"
+                >
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="DeleteEmpty" Margin="0, 0, 10, 0" />
+                    <TextBlock Text="Ukloni opremu"/>
+                </StackPanel>
+            </Button>
             
         </StackPanel>
         
