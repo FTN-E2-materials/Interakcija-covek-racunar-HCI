@@ -1,0 +1,852 @@
+* Napomena: Predlazem da se uz ovo preslusaju i profesorova predavanja (ako je islo preko video poziva). Na usmenom se striktno drzi onoga sto je pricao
+  na predavanjima.
+
+Prediktivna i eksplinatorna teorija
+	- Prediktivna teorija sluzi za (kako ime kaze) izvodjenje zakljucaka na osnovu nekih postojecih podataka. 
+		- Uglavnom se bazira na statistici 
+	- Eksplinatorna teorija se bazira na kvalitativnim metodama zakljucivanja.
+		- Ne koristimo je za predvidjanje, vec vise za objasnjavanje stvari koje su se desile 
+	- Primer: 
+		- Imamo "cancer clinic".
+		- Prediktivnu teoriju bismo koristili kada bismo hteli da procenimo koliko ce kojoj sekciji bolnice biti dodeljeno novca.
+		  U zavisnosti od toga koliko je taj sektor bolnice imao pacijenata u proteklom periodu. 
+		- Eksplinatornu teoriju bismo koristili u slucaju da hocemo da pokrenemo nation-wide kampanju protiv raka. 
+		  Na osnovu podataka i relacija izmedju njih bismo objasnjavali ljudima KOJA JE RELACIJA izmedju nekih njihovih zivotnih navika 
+		  i sanse za pojavu kancera. 
+
+	- KLM je prediktivna teorija 
+		- Keystroke level modelling 
+		- Koristi se da predvidi motoricke pokrete korisnika za odredjene akcije 
+		- Imamo 5 operatora koji predstavljaju najnizi sloj interakcije coveka sa racunarom 
+		- Operatori: 
+			- M - mentalna priprema (gledamo i kopcamo sta treba da uradimo na ekranu)
+			- B - button click (mis, ili pointing device)
+			- K - key na tastaturi
+			- H - homing, premestanje ruku sa pointing devica, na tastaturu i obrnuto (salteruse)
+			- P - pointing, pomeranje uredjaja (misa npr) da bismo selektovali ono sto nam treba
+		- Svaki operator KLM teorije ima odredjeno vreme izvrsavanja koje je odredjeno eksperimentalnim putem 
+		- Mane ovoga: 
+			- KLM UZIMA U OBZIR ISKUSNOG KORISNIKA, KOJI NE PRAVI GRESKE i KOJI SVE ZNA 
+			- Sta ako program koristi baba koja ne zna sa kompjuterima? 
+			- Ne uzima u obzir mental/cognitive load (sta ako je haos na ekranu? Duza mentalna priprema)
+
+	- GOMS je produzetak KLM teorije 
+		- Od cega se sastoji: 
+			- G - Goals (sta zelimo da postignemo 
+			- O - Operators (mogu biti KLM nivo, ali i komplikovaniji 
+			- M - Methods (metode odnosno nacini na koje mozemo postici isti cilj (d&d, right click, itd)
+			- S - Selection rules (na koji nacin odabiramo metodu koju cemo koristiti) 
+		- Goms nam omogucava detaljniji prikaz operacije na apstraktnijem nivou, jer se udaljavamo od najnizeg KLM sloja
+		- Uzima u obzir sve moguce putanje do resenja 
+	
+
+Industrijska petlja 
+	Receptorima primamo informacije od sistema koji koristimo
+	Efektorima pravimo promene na sistemu da bi se ponasao onako kako hocemo
+
+	Veza izmedju receptora i efektora je FEEDBACK. Neophodan je feedback da bi korisnik znao sta se desava, da li je njegova akcija primljena k znanju.
+
+	Don Norman je osmisio koncept Informacione petlje:
+		1) Struja evaluacije 
+			- Korisnik mora da moze da osmotri SVAKO stanje sistema. Npr preko widgeta (temperatura recimo)
+			- Korisnik mora da bude u stanju da INTERPRETIRA svako stanje sistema (da mu bude jasno u sta gleda)
+			- Korisnik treba da bude u stanju da EVALUIRA ishod. Sta se desava ako nista ne pipam? 
+		2) Struja egzekucije
+			- Formiranje intencije (sta treba da uradimo da postignemo cilj?)
+			- Specifikacija akcije (sta moram da uradim da ostvarim intenciju?)
+			- Dajem naredbu za akciju (stiskam nesto i sl.)
+
+	Kako testiramo jel interfejs podlozan stvaranju problema?
+		- Sami 
+		- Pomognu nam kolege
+		- Human cognitive processing
+		- Ona elektricna kapa
+		- Damo korisnicima da probaju da koriste
+
+
+
+Usability
+
+Usability - U kojoj meri se moze koristiti odredjeni proizvod od odredjenog 
+korisnika, tako da postigne odredjene ciljeve sa max efikasnoscu i zadovoljstvom.
+	
+
+Nilsenova taksonomija prihvatljivosti sistema:
+	1. Prakticna prihvatljivost
+		• Pouzdanost
+		• Kompatibilnost
+			~ Laksa tranzicija sa prethodnih verzija sistema
+		• Performanse
+		• Cena
+			~ Niska cena ume biti sumnjiva
+		• Korisnost (usefulness)	
+			• Utility - Koristan skup funkcija za upotrebu
+			• Usability - te funkcije moraju biti lako upotrebljive od strane korisnika!
+				• Lako za nauciti (neobavezno!)
+ 				• Efikasno za koriscenje
+				• Lako za pamcenje
+				• Malo gresaka	
+				• Prijatno za koriscenje 
+
+	2. Socioloska prihvatljivost
+		- Da sistem ne ide protiv razlicitih uverenja ili dogmi nekog podrucja.
+		- Primer fiat u finskoj
+
+
+Ekspertska revizija:
+
+	1) Revizija eksperta kroz heuristike
+
+	2) Revizija uz smernice (Apple)
+		- Mnogo konkretnije od heuristika. Dobijamo tacan spisak stvari koje moraju biti ispostovane.
+
+	3) Revizija konzistentnosti
+		- Provera da li su imena, boje i raspored konzistentni kroz celu aplikaciju.
+
+	4) Cognitive walkthrough 
+		Situacija gde se ekspert stavlja u korisnicke "cipele" kako bi 
+		koristio odredjeni softver. 
+
+	5) Formalna inspekcija utilitarnosti 
+		Courtroom-style sastanak, gde imamo odbranu i tuzioce.
+		Odbranu cine oni koji su dizajnirali interfejs.
+		Tuzioci su takodje dizajneri i projektanti, ali ni u kom smislu
+		nisu ucestvovali u izradi tog softvera. 
+
+		Sudija sluzi da drzi sastanak, ne donosi nikakvu presudu.
+		Porotu cine juniori pripravnici. Oni slusaju i uce. Nista vise. 
+
+	6) Usability labs 
+		Kompleksi posveceni testiranju u simuliranim uslovima.
+		Poprilicno su skupi, ali za velike kompanije isplativo
+
+
+
+HCI kroz godine: 
+	- Nekada smo imali jedan racunar pa su svi obigravali oko njega
+	- Danas racunari obigravaju oko nas (tu spadaju i telefoni i TV i sve ostalo) 
+	- Spisak bitnih milestonova: 
+		1) Eniac
+			- Koristio lampe, 10tine hiljada
+			- Zauzimao je nekoliko soba i mnogo se grejao 
+			- Programiranje -> Prevezivanje zica 
+			- Mogli su da programiraju samo ovi sto su ga pravili jer je bio prekomplikovan 
+			- Input preko busenih kartica 
+			- Programiranje preko prevezivanja zica
+			- Koriscen za proracune artiljerijskih tablica 	
+			- Zbog grejanja cesto su mu cevi ostajale sprzene
+			- Trosio je boga oca struje (150kw nesto)
+
+		2) Harward Mark I 
+			- Umesto kablova, programirao se prekidacima
+			- Unos i ispis takodje preko punchcarda (busene kartice)
+			
+		3) IBM 305 RAMAC
+			- Prvi put koriscena tastatura za input/output!
+			- Prvi put koriscen tranzistor!! (Umesto lampi)
+			- Mnogo manja velicina (par ormara umesto par soba)
+			
+		4) DEC PDP 11 
+			- Jedan od prvih text editora
+			- Imao par desetina KB memorije
+			- Komunikacija putem teksta (glagol:imenica)
+			- Kasnije izmenjeno u imenica:glagol da bude error-proof
+			- Mogao da stampa dokumente 
+		
+	- Dolazak Point-and-Click interfejsa
+	- WIMP
+		- Window
+			- Svaka aplikacija imala prozor u kome se izvrsavala
+		- Icon
+			- Uvedene ikonice za kliktanje umesto terminala za unos. 
+			- Neretko i labele uz te ikonice da bude jasnije sta je sta 
+		- Menu
+			- U okviru programa, spisak funkcija koje moze da odradi.
+		- Point(er)
+			- Pokazivac koji smo koristili da odaberemo sta hocemo da uradimo (point and click jelte)
+
+	- U buducnosti se gadja na NON-WIMP sisteme 
+		- Interfejsi ne postoje (transparentni)
+		- Ja mislim da je ovo tipa Alexa ili google assistant? 
+		- takodje mobilni telefoni nzm dal spadaju pod WIMP 
+		
+	- Neke poznate glave: 
+		- Ivan Sutherland 
+			- WIMP
+			- SketchPad pomocu CRT monitora i kamere
+		- Douglas Engelbart
+			- Smislio kompjuterski mis 
+			- Mis pobedio dzojstik za default pointer device 	
+		- Alex Kay
+			- Rekao da stremimo ka simbiozi racunara i coveka
+			- Tako da racunar olaksa coveku svakodnevni zivot 
+
+	- 1970. godine prvi PC racunar
+	
+
+Sta se desava na klik misa? 
+	- Prekida se kolo na misu i kroz kabel ide signal da je pritisnut neki klik (npr levi)
+	- Signal ulazi u racunar i ide do serijskog kontrolera racunara 
+	- Signal uz sebe ima interrupt signal, znaci da ce da prekine sve sto racunar trenutno radi 
+		- Ovo ne pali uvek, vec se gledaju prioriteti
+	- Serijski kontroler racunara prepoznaje da je u pitanju mis i poziva drajver za mis 
+	- Drajver pretvara hardverski signal u softver
+	- Softverski signal se prosledjuje Application menadzeru 
+	- On gleda apsolutne koordinate i trazi u koju aplikaciju, tj ciji window smo kliknuli 
+	- Kad nadje, onda toj aplikaciji prosledi klik signal, ali umesto apsolutnih koordinat, prosledi relativne u odnosu na prozor te aplikacije 
+	- Aplikacija dobije koordinate klika 
+	- Prolazi kroz svoj Visual container tree i poredi koordinate elemenata sa koordinatama klika da vidi sta je kliknuto (tunneling)
+	- Kad nadjemo na sta smo kliknuli (recimo neki Button) u Visual drvetu, gledamo tabelu Eventhandlera za taj element 
+		- tabela laicki receno izgleda ovako 
+			• Left mouse click : function1()
+			• Right mouse click : function2()
+			• ...
+	- Iz tabele Eventhandlera se nalazi i poziva funkcija vezana za taj event koji je prosledjen (klik misa) 
+	- Adresa funkcije koja se poziva se prosledjuje procesoru na obradu 
+	- Procesor izvrsava tu komandu
+	- Mi prolazimo unazad kroz parent elemente Buttona (bubbling) da obavestimo sve parente da je doslo do klika 
+	- Desava se neka interakcija na ekranu ili sta vec treba da se desi 
+	-- Ovde vrlo verovatno postoji neka greska, proveriti
+	
+
+Prototipovi 
+	- Sluze da predstavimo korisnicima svoj proizvod radi feedbacka 
+	- Zasto ih pravimo? Jeftinije je i lakse nego praviti praviti pravi proizvod odmah
+		- Mozemo uvek ponovo nacrtati, ali je mnogo teze ponovo programirati/graditi itd.
+	- U User centered dizajnu, korisnici su bitni i zato moramo napraviti prototip da bismo dobili feedback 
+	  o nekim delovima sistema. Da li valja ili ne valja, sta da menjamo.
+	- U zavisnosti od detaljnosti prototipa delimo ga na: 
+		1) Low fidelity - Kroki (Croquis = skica -> francuski?)
+			- Malo detalja, crtan rucno 
+			- Ima ulogu da predstavi osnovni koncept aplikacije 
+			- Nema mnogo detalja, radi se na konceptualnom nivou 
+			- Najlakse ispraviti zamerke korisnika 
+		2) Medium fidelity 
+			- Pocinje da se detaljise
+			- Mogu da se koriste programi za prototipiziranje (Figma, Adobe XD ...)
+			- Ne mora da ima boje i neke komplikovane delove tipa animacije, ali je bitno da lici na finalni proizvod 
+		3) High fidelity 
+			- Lici na finalni proizvod 
+			- Daje se programerima da ga pretoce u program
+			- Minimalna razlika u odnosu na ono sto ce biti release verzija 
+			- U ovom stadijumu bi trebali da smo ispeglali veliki deo korisnickih zamerki (ako ne i sve)
+
+	- Zasto pravimo prototipe u ovom redosledu? Cena. 
+		- Jeftinije je naci greske u startu sa krokijem, nego na kraju kada imamo program. 
+		- Najjeftnije greske su u periodu ideje, najskuplje u periodu Maintenance 
+		- Zelimo da od starta krenemo da "vajamo" svoj proizvod kako treba, zajedno sa korisnicima 
+		- Prototip je mnoooooogo jeftiniji od pravljenja proizvoda 
+			- Lakse opet nacrtati, nego opet isprogramirati
+
+
+Heuristike
+
+• Shneiderman-ovih 8 zlatnih pravila 
+	1. Teziti konzistentosti
+		Identicna terminologija 
+		Boje, fontovi, oblici itd. 
+	2. Omoguciti upotrebu precica iskusnim korisnicima
+		Hotkeys, skrivene komande itd 
+		Ove precice se kombinuju sa regularnim komandama,
+		i omogucavaju UBRZAVANJE 
+	3. Davati informativni feedback korisniku
+		Promena kursora, loading animacije, 
+		generalno davanje korisniku do znanja sta se desava na ekranu.
+	4. Projektovati dijaloge naglasene zatvorenosti
+		Sekvence akcija vezane za istu stvar grupisati u isti dijalog
+		Takodje, sekvence akcija moraju imati definisan pocetak i kraJ!
+			Npr kadkupuje nesto na amazonu, korisnik ima pregled svih akcija koje ga ocekuju
+			(payment, gifting, wrapping, itd itd) tako da uvek zna kolko ima do kraja interakcije.
+	5. Ponuditi prevenciju greske i rukovanje greskom 
+		
+	6. Dozvoliti ponistavanja efekata akcija
+		Undo, Redo
+		Korisnik moze da bude slobodniji prilikom upotrebe softvera, tj da istrazuju
+		
+	7. Interno podrzavati kontrolu
+		Obezbediti korisnku da ima osecaj kontrole 
+		
+	8. Redukovati opterecenje radne memorije 
+		Covek moze u jednom momentu da radi sa ¬7 informacija.
+		Manje teksta 
+		Podsecaj, ne pamti
+
+NILSENOVI PRINCIPI 
+	1. Nalikovati stvarnosti 
+		Koristiti uobicajenu terminologiju za ono sta pravimo 
+		Informacije predstaviti u prirodnom i logickom rasporedu
+	2. Konzistentnosti i standardi 
+		Interni i eksterni. Interni su u okviru aplikacije. Eksterni 
+		posmatraju slicost izmedju nase i tudjih aplikacija. 
+	3. Help i dokumentacija 
+		Obezbediti pomoc korisniku on i offline. 
+		Dokumentovati rad aplikacije da korisnici mogu da citaju.
+		Help podrazumeva recimo tooltipove/hintove. 
+		
+	4. Korisnikova kontrola i sloboda
+		Korisnik da ima mogucnost istrazivanja i izmena, tako da uvek
+		moze da se vrati na mesto odakle je poceo (undo).
+		Ako imamo dugacku operaciju (download, upload), uvek mora postojati mogucnost PREKIDA!
+		
+	5. Vidljivost statusa sistema 
+		U svakom stanju da bude svestan sta se desava na ekranu
+		(idle, loading, clicked, downloading, ...)
+		Imamo podelu vremena odgovora
+			< 0.1s	(ovde nije neophodan feedback)
+			0.1s - 1s
+			1s-10s
+			> 10s
+ 		U zavisnosti od ovih vremena se razlikuje nacin prikaza
+		sistemskog statusa
+
+	6. Fleksibilnost i efikasnost uporebe 
+		Precice itd. 
+		Napredni korisnici da imaju mogucnost ubrzanog koriscenja.
+
+	7. Prevencija gresaka 
+		Speciti pravljenje gresaka (unos znakova u imenu npr) 
+		Bez preterivanja!
+
+	8. Prepoznaj, ne da se pamti
+		Korisnik treba da pamti sto manje detalja i informacija
+		Npr pamcenje licnih informacija, prethodnih querija itd itd 
+		
+	9. Prijava greske, dijagnostika i oporavak
+		Dati korisnku kratku prijavu greske i omoguciti mu da lako 
+		ispravi ono sto je pogresio. 
+		Bez komplikovanih tekstova o razlogu ili upustvima.
+
+	10. Estetican i minimalisticki dizajn
+		Manje je vise.
+		Perfekcija je kada vise nema nista da se ukloni.
+		
+
+PREDAVANJE 4:
+_____________________________________
+
+Moore's Law 1965. godina 
+	Svakih 18 meseci se broj tranzistora u cipu udvostrucava
+
+Buxton's law 2000. godina 
+	Uredjaji ce nuditi vecu funkcionalnost zahvaljujuci 
+	vecoj brzini procesora/cipova.
+
+God's law
+	Ljudske osobine i kapaciteti se nisu menjali.
+
+U odredjenom periodu ('50 - '90) ljudi su bili sposobniji od masina.
+Sada su masine mnogo efikasnije u obradi podataka
+Pre je bio "System-centered design". 
+	sistemi su bili jednostavni, takoreci sistem je bio "gluplji"
+	od korisnika, te se podrazumevalo da ce korisnik moci da savlada koriscenje.
+Moderno doba koristi "User-centered design"
+	Sada nismo orijentisani na masinu/sistem koji pravimo.
+	Citav razvoj stavlja korisnika u centar paznje.
+
+User-centered design se fokusira na:
+	Prisustvo korisnika tokom razvoja kako bi davao feedback.
+	Mora da da feedback o svim kriticnim tackama tokom svake tacke razvoja
+	
+	Problem:
+		Korisnik nije tehnoloski ekspert.
+
+	Resenje:
+		Izrada prototipa.
+		Kroki (Croquis - skica)
+		Izradi se pojednostavljeno resenje iz kog je izbaceno sve sto nije interesantno trenutno.
+		Pravi se tako da korisnik moze da razume to sto gleda.	 
+		Sluzi da proizvede reakciju korisnika vezanu za neki uzak deo sistema. 
+
+	Fokus na:
+		1. Stakeholders
+			- Sve osobe koje imaju bilo kakav interes u tom softveru.
+			- Primarni, sekundarni i tercijarni
+				• Primarni
+					- Korisnici u direktnom kontaktu sa softverom
+				• Sekundarni
+					- Nisu u direktnom kontaktu. 
+					- Softver ima output koji utice na ove korisnike.
+					- Recimo softver za racun za struju utice na korisnike struje 
+						- tu su primarni radnici iz EPS-a, a sekundarni su gradjani
+						- zelimo da taj softver radi kako treba, da placamo samo ono sto smo potrosili
+				• Tercijarni 
+					- Uglavnom oni koji posmatraju siru sliku podataka koje proizvodi aplikacija
+						• Direktori EPS-a, kojima je u cilju da sistem pravi sto bolji obrt novca recimo
+					- Oni koji potencijalno treba da menjaju sistem
+
+
+		2. Kontekst upotrebe 
+			U zavisnosti od platforme i nacina uporebe (racunar/mobilni npr) se razlikuje pristup dizajnu.
+				Npr Excel za telefon nece imati Print opciju
+			
+		3. Posao i zadatke
+			Ovo je donekle uvezano sa tackom broj 2. 
+			Zadaci i poslovi zavise od konteksta upotrebe.
+			Ne mozemo na svim platformama imati iste funkcionalnosti
+
+
+Formiranje zahteva
+
+	- 3 pitanja:
+		1) STA
+			Sto bolje razumeti korisnike, zadatak i kontekst upotrebe
+		2) KAKO 
+			Naci razlicite nacine za izvedbu zahteva
+		3) ZASTO
+			Requirements engineering
+			Ovde su greske najskuplje.
+
+	Izmene u kasnijim fazama izrade su skuplje.
+	Najskuplje izmene su u Maintenance fazi (kada je app vec izbacen)
+
+	- 3 faze:
+		1) Sakupljanje podataka
+			O stakeholderima, zadacima sistema i kontekstu upotrebe
+		2) Analiza i interpretacija podataka
+			- Proverimo da li postoje duplikati podataka
+			- izaberemo podatke koji su bitni za nas
+		3) Odredjivanje zahteva
+			- Requirements determination
+
+	
+Tehnike skupljanja podataka
+
+	- Kljucno
+		- Moramo postaviti ciljeve 
+		- Odnos sa korisnicima mora biti korektan i jasan
+		- Triangulacija 
+			- Koristimo vise tehnika i pristupa odjednom
+			- Ispitujemo mozda u razlicito vreme da vidimo
+			  da li se podaci razlikuju
+		- Pilot studije 
+			- Ako nas korisnici ne razumeju, ili nemamo dobar odnos sa jnima 
+			- Da mi proverimo da li ce nacin prikupljanja podataka nama biti dobar
+			- "Test studija"
+
+	- Nacini belezenja podataka:
+		Pisanje
+		Audio
+		Video
+		Kompjuterski loging  
+			Prati se korisnicka interakcija automatski
+			Problem obrade podataka 
+
+	- Nacini skupljanja: 
+		• Ankete
+			- Serija pitanja da izmamimo specificnu informaciju
+			- Yes/No je najbolje za obradu
+			- "Zatvorena pitanja" - ponudjeni odgovori
+				- Garantuju korektne odgovore koji nam trebaju
+			- "Otvorena pitanja" su komplikovana za obradu
+				- Daje tacnije podatke!
+			- Test pitanja da proverimo jel validno
+				- Isto pitanje na raznim mestima da vidimo jel rezultat isti
+		• Intervju
+			- Licem u lice ili preko telefona
+			- Neformalno. Omogucuje siri spektar pitanja.
+			- Odnosi vreme! Vremenski skupo.
+			- Struktura:
+				- Uvod, zagrevanje (kako ste, hoecte kafu itd)
+				- Main body (glavna pitanja)
+				- Cool-off period. Razlaz
+			Tip pitanja:
+				• Nestrukturirana
+					- Opsta slika onoga sto hocemo da pitamo i 
+					usput se prilagodjavamo onome sto korisnik odgovori
+					- Mozemo dobiti odgovor na pitanje koje nismo planirali
+				• Stukturirana
+					- Striktno definisan skup pitanja koja cemo postaviti korisniku
+					- Opsteprimenjivo ali nije tako bogato
+				• Semistrukturirana
+					- Rukovodjenje po scenariju ali dozvoljava da odsetamo sa teme
+					- Dobar balans opsteprimenljivosti i bogatstva
+	
+		• Intervju u grupi
+			- Resava problem intervjua sa trosenjem vremena 
+			- Odjednom vise subjekata
+			- Pustimo pitanje i pustimo ucesnike "radionice" da debatuju 
+			- Mi hvatamo beleske i donosimo zakljucke
+			- Imamo flow konverzacije
+			- Dolazi do sukoba misljenja potencijalno
+	
+		• Direktna ili indirektna opservacija 
+			- Provesti vreme sa stakeholdersima na svakodnevnim zadacima
+			- Odlican za razumevanje prirode zadatka i korisnika
+			- Moze biti pasivno (gledamo) ili aktivno (postavljamo pitanja)
+			- Moze biti direktno ili indirektno (uzivo ili preko video snimka)
+			- Problem sa direktnim posmatranjem je potencijalna smetnja
+			  takodje korisnik mozda nece imati isto ponasanje ako zna da je posmatran
+ 
+		• Proucavanje dokumentacije
+			- Posmatramo nacine kako neki poslovi funkcionisu, kako su 
+			  regulisani, kakav je protokol itd. 
+			- Korisnici mozda ne prate protokole!
+			- Problem je sto ima mnogo papira potencijalno. 
+			- Jako zavisi od kvaliteta dokumentacije 
+
+		• Posmatranje slicnih proizvoda
+			- Ucimo na njihovim uspesima i greskama.
+
+
+	- Interpretacija podataka
+		- Bitan nacin procene podataka. Sta kako interpretiramo, da ne dodje do greske u zakljucivanju.
+		- Prica o 6 slepih iz Indije
+			- Zakljucak: Kombinovati izvore informacija, ne posmatrati ih zasebno.
+		
+	- Analiza podataka
+		• Kvantitativna 
+			- Dobijamo brojeve, statistiku.
+			- Potraga za generalnim cinjenicama u moru brojevnih podataka.
+			- Bitan nacin obrade, posto su brojevi veoma konfuzni
+			- Statisticka obrada
+				Medijana, prosek, rang, devijacija itd.
+		
+		• Kvalitativna 
+			- Problematicna za analizu
+			- "Content analysis" - napraviti transkript podataka
+				- Transkript podataka (AV -> Tekst)
+				- Procitati transkripte 
+				- Podvuci vazno 
+				- Kodirati bitne podatke u grupe/sablone
+				- Opisati sablone i obrasce
+
+	- Dokument zahteva
+		• Arhitektonski zahtevi 
+			- Tehnicki opis kako nesto mora da se izvede
+		• Funkcionalni zahtevi
+			- Funkcionalnost koja MORA da se izvrsava u sistemu
+			- Kad na faksu dobijemo zadatak - mora to to to i to da radi!
+			- Patriot raketni sistem prica
+		• Nefunkcionalni zahtevi
+			- Zahtevi kvaliteta
+		• Zahtevi ogranicenja
+			- Uspostavlja marginu rada sistema 
+			- Prica o Patriot sistemu
+
+		
+Spoznavanje korisnika: 
+	- Saznati ko su korisnici i stakeholderi
+	- Opisati korisnike kroz njihove karakteristike
+		- Pol, godine, IT iskustvo, itd.
+	- Projektovati softer za impaired stanovnistvo
+	- Uvek je lakse proizvesti softver za manju grupu ljudi 
+
+	- Kako najbolje upoznati korisnika? 
+		- Sednemo u intervju i pricamo s njim. 
+		- Sta je ovde problem?
+			- Ne mozemo bas sa svima da pricamo
+			- Sta ako pravimo softver za sve ljude na planeti? Previse ih je.
+	- PERSONAS
+		- Arhetipovi licnosti 
+		- Mozemo sve ljude na svetu izdeliti u ove arhetipove
+	- Sta radimo onda? 
+		- Moramo saznati sto vise o korisnicima.
+		- Onda moramo saznati o tome sta oni zele, koje akcije 
+			- Te akcije se onda neretko pojave kao funkcije u meniju
+
+	- Opisati korisnikovi posao: 
+		- Cilj
+			- Krajni rezultat koji korisnik zeli da postigne
+		- Zadatak 
+			- Struktuirani skup aktivnosti koje se sprovode u nekom redosledu
+			- Podela zadataka:
+				- Frekventnost 
+				- Kompleksnost 
+				- vremenska kriticnost 
+					- Ako je nesto hitno, dati korisniku do znanje da mora da resi taj problem/zadatak
+				- Zahtevano znanje i vestina 
+		- Akcija 
+			- Individualna operacija ili korak, koji se obavlja kao deo zadatka 
+
+
+	- Imamo 2 tipa tehnika 
+		• How to do it 
+			- Opis koraka 
+				- UC, EUC
+				- Scenariji
+		• Opis znanja korisnika i kognitivnih akcija 
+			- XUAN. dijagram, CTT
+
+	- SCENARIO 
+		- Opis recima onoga sto treba da se desi
+		- Dobar je jer je lak za napraviti, samo ispisemo sta nam treba
+		- Los je zato sto obicne reci nekad nisu dovoljne. Ostaje nedefinisano.
+	- USE CASE
+		- Najcesce ide preko tabele. 
+		- Imamo sa leve strane kolonu "Sta radi korisnik"
+		- Sa desne strane imamo kolonu "sta radi sistem"
+		- use case koristi tehnicki jezik i sto manje reci pa nas tera da budemo koncizni
+	- ESSENTIAL USE CASE
+		- Poostren use case
+		- Izbacena tehnicka terminologija iz desne kolone
+		- Treba recima opisati sta sistem treba da radi
+		- Ostavljamo detalje tehnologije za trenutak implementacije
+	- Primer razlike:
+		- UC 
+			- Korisnik bankomata ubacuje karticu
+		- EUC 
+			- Korisnik bankomata se identifikuje
+			- Esencijalna svrha ubacivanja kartice jeste IDENTIFIKACIJA
+			- Zato se i zove ovako valjda	
+	- Zasto su EUC bolji?
+		- jer se ne vezuju za tehnologiju
+		- govore sta, ali ne i kako 
+		- Ostavljaju mesta za inovaciju
+
+	- XUAN i UAN (Extended user action notation)
+		- Isto kao Use casovi, ali imamo poduplane kolone iz Use case-ova
+		- U jednoj je "Sta korisnik radi"
+		- U drugoj je "Sta korisnik misli"
+		- u trecoj je "Sta sistem prikazuje"
+		- u cetvrtoj je "Sta sistem radi interno"
+		- XUAN ima petu kolonu Stanje interfejsa
+		 
+
+	- DIJAGRAM TOKA INTERFEJSA
+		- Opisuje stanja interfejsa
+		- Govori sta korisnik treba da uradi da predje iz jednog u drugo
+		- 2 elmenta
+			• Stanja (kvadratici)
+			• Prelazi (linija koje vezuju stanja)
+
+	- Concur task tree
+		- ConcurTaskTrees (CTT) is a notation for task model specifications useful to support design of interactive applications specifically tailored for user interface model-based design.
+		- U osnovi mehanizam za opis zadataka koji mogu biti paralelni
+		- Dijagram je stablo (tree jelte)
+		- Koristi ikonice da predstavi zadatke 
+		- Imamo 3 stvari (ako sam ja dobro skopcao)
+			- Drvnu hijerarhiju
+			- Temporalnu relaciju
+			- Taskove
+		- Dobar je zato sto je omogucavao da se netehnicki ljudi informisuo tome sta se desava
+		  Ali i programeri su mogli to da koriste da naprave proizvod
+
+		
+Nosioci interakcije 
+	- Ovo su ustvari elementi interfejsa koji kako im ime kaze, izvode interakciju sa korisnikom.
+	- Sta tu spada?
+		1) Tekst
+		2) Slike
+		3) Video
+		4) Audio 
+		5) Animacija 
+
+	- Delimo nosioce na 
+		• Diskretne 
+			- U bilo kom momentu mozemo prekinuti, otici, vratiti se i nastaviti bez problema 
+			- Ovo su tekst i slika
+			- Ako prekinemo citanje knjige i vratimo se kasnije, nismo nista propustili, krecemo odakle smo stali
+		• Kontinualne 
+			- Ako prekinemo, odemo, pa se vratimo, propusticemo nesto
+			- Video, audio i animacija 
+			
+	- Koje je najbitnije culo? 
+		- Objektivno ne postoji. Sva cula imaju svoju ulogu i bitna su za razlicite stvari.
+	- Za unos informacija, najbitnije je culo vida
+	- Kako da dobacimo informaciju do korisnika? U kom formatu? 
+		- Zavisi sta pokusavamo da objasnimo/prenesemo
+		• Tekst
+			- Dobar za detaljisanje. Cesto se koristi. 
+			- Korisnici ne vole mnogo da citaju!
+		• Slika 
+			- Dobra kada zelimo da objasnimo nesto sto ce tekstualno mozda traziti previse mesta.
+			- Takodje dobra za prenos emocije (recimo kada platimo racun na bankovnoj aplikaciji, pa se prikaze nasmejan covek)
+			- Slika vredi 1000 reci 
+		• Animacija vs Video snimak 
+			- Animacija je programski napravljena uglavnom (moze i rucno ali ko je lud)
+			- Video je to sto mu ime kaze, uzmemo i snimimo nesto u stvarnosti.
+			- Animacija je mnogo jezgrovitija, prikazace samo ono sto hocemo da prikaze. Pritom je apstraktna (uglavnom). 
+			- Video ce uz ono sto snima, uhvatiti i komad REALNOSTI, koji moze da odvlaci paznju 
+			- Treba da vidimo kontekst i da uocimo sta nama treba 
+			- Tipa reklama moze i ovako i onako 
+			- Demonstracija upotrebe nekog alata je bolja na snimku 
+			- Demonstracija teoreme iz matematike je mozda bolja na animaciji (ne moramo da vidimo predavaca i tablu, ne zanima nas)
+			- I na kraju, animacija moze biti nerealna! Ako treba da prikazemo raketu, necemo sigurno praviti pravu raketu za potrebu snimka.
+
+	- Multimedija 
+		- Kombinacija 2 ili vise nosilaca interakcije, gde je bar 1 kontinualan i bar 1 diskretan 
+			- Npr novine su tekst + slika (2 diskretna) dakle novine NISU multimedija.
+
+
+Stilovi interakcije 
+	- Nacini na koje covek moze da stupi u komunikaciju sa sistemom,
+	- Svaki nacin interakcije (stil) dovodi do zavrsetka odredjenog zadatka 
+	- Podela: 
+		1) Komandna linija
+		2) Meni
+		3) Forma
+		4) Direktna manipulacija 
+		5) Antropomorfna interakcija 
+
+	- Ovde ispod su poredjani po tezini implementacije (od najtezeg)
+	- Detaljnije: 
+		5) Antropomorfna 
+			- Zahteva znanje iz raznih oblasti da bi se izvelo 
+			- Prepoznaje pokrete lica, govor, pokrete tela i sl.
+		4) Direktna manipulacija 
+			- Na ekranu nam se daje vizuelni prikaz podataka ili nekih objekata 
+			  koji mogu da menjaju podatke (recimo mikseta)
+			- Dajemo instrukcije koje su donekle fizicki logicne (pojacavamo zvuk na skali)
+			- Moramo paziti da instrukcije budu izvodljive 
+				- Npr dragdrop mora da dropuje negde na radnu povrsinu a ne u meni ili titlebar
+			- Trazi dodatno programiranje za ogranicenja ("fizicka")
+
+		3) Komandna linija 
+			- Iako deluje kao najlaksa, i dalje zahteva parsiranje inputa, fail safe logiku
+			- Dobra je praksa ponuditi moguca resenja ako korisnik napravi typo 
+				- Tipa git za unos "get push origin master" ponudi "git push origin master" 
+				  da smanji potrebu za kucanjem 
+
+		2, 1) Meni i forme
+			- Problem kod menija je napraviti razliku izmedju elemenata
+			- Nemamo mnogo mesta da objasnimo cemu sluzi (sirina menija je mala uglavnom)
+
+	- Organizacija menija:
+		1) Jedan
+			- Obican meni, samo spisak
+		2) Sekvenca
+			- Vise menija koji se nadovezuju
+		3) Stablo
+			- Vise menija ali iz svakog se stvara novi zaseban meni 
+		4) Aciklicni
+			- Na isto mesto mozemo doci iz vise pravaca 
+			- Ne mozemo unazad
+		5) Ciklicni 
+			- Isto ko ovo gore al mozemo unazad
+
+	- Forma 
+		- Sastoji se od labela i edit polja
+		- Ima neko submit dugme 
+		- Kako dizajnirati? 
+			- Labele najbolje poravnati levo
+			- Dati korisniku neki znak ako premasi max char count za edit polje
+			- Sta se desava ako je prazan input?
+				- Najbolje zalediti send dugme, ne saljemo gresku ako ne moramo 
+			- Sta se desava ako je neki input nekorektan?
+				- Moramo dati do znanja nekom crvenom ibicom
+
+	- Direktna manipulacija 
+		- Bitan Fitt's law (guglati nmg da objasnjavam)
+		- Ivica ekrana se smatra beskonacnim otvorom!
+			- Sta ovo znaci? 
+			- Ako nabijemo mis u cosak bez ciljanja, on ce stati u cosku
+			- Dakle kolko god jako da zaletimo, on ce stati u cosku na nekom elementu
+			- Zbog ovoga je dobro neke menije drzati levo ili desno 
+			- X dugme stoji u cosku da je lako ugasiti program, samo frknemo mis gore desno i kliknemo
+				- Nema ciljanja, probajte
+			- Scrollbarovi takodje uglavnom u infinite corneru
+
+		- Lose stvari
+			- Eksperti ce nekad vise preferirati command line zbog precizosti (pixel perfect crtanje?)
+
+
+
+Dizajnersko okruzenje 
+
+	• Tipovi:
+		1) GUI 
+			- Graphical user interface
+			- Vezan za specificnu platformu (OS) na kom se koristi
+		2) Web 
+			- GUI sa idejom prenosivosti 
+			- Ali gubi na kompleksnosti jer mora biti prilagodljiv svima uvek
+		
+		3) Mobilni 
+			- Dedicated platforma sa zasebnim operativnim sistemom 
+			- Sistem prilagodjen prenosivosti i telekomunikacionim operacijama
+
+		4) Embedded
+			- Uglavnom sistem koji nema OS, vec nas proizvod direktno komunicira sa masinom 
+
+		5) Ubiquotous computing 
+			- Sveprisutno racunarstvo (odeca, kuhinja?)
+
+	• Svojstva:
+		1) Widgeti 
+			- Elementi interfejsa (dugmici, textboxovi, i sve ostalo)
+			- Sa njima korisnik moze da interaguje (vizuelno, i da klikce ili stavec)
+
+		2) Interakcioni uredjaji
+			- Uredjaj koji sluzi da bi korisnik stupio u kontakt sa widgetima 
+			- Mis na racunaru uglavnom, ili prst na telefonu itd.
+			- Dizajner moze da bira koji ce uredjaj da se koristi 
+
+		3) Interakcione tehnike
+			- Povezuju widgete i interakcione uredjaje
+			- Govore kako ce interakcija da se desi
+
+	- Kategorije dobrog grafickog dizajna: 
+		• Simplicizam
+			- Dobar dizajn je onaj kod kog nista vise ne mozemo da uklonimo
+			- Kako doci do simplicizma? 
+				• Redukcija 
+					- Izbaciti sve sto mozemo, nekad cak i previse posto mozemo uvek vratiti 
+				• Pravilnost 
+					- Sve treba da bude uredjeno po nekim pravilima 
+					- Boje, oblici, pozicija itd. da bude smisleno i konzistentno
+				• Double duty
+					- Neki widget preuzme na sebe vise odgovornosti 
+					- Npr scrollbar za skrolovanje, za prikaz u kom segmentu teksta se nalazimo
+					- Npr title bar sluzi za pomeranje prozora, da vidimo ime, za minimize, maximize
+		• Kontrast
+			- Grupisati elemente pomocu kontrasta tako da najbitniji najvise iskacu 
+			- Najmanje bitni ce logicno najmanje iskakati iz pozadine
+			- Npr guglova pretraga, naslov stranice najveci, a ispod obicnim slovima sadrzaj
+
+		• Bela margina 
+			- Za esteticno razdvajanje sadrzaja (ne doprinosi toliko guzvi na ekranu koliko linije 
+			- Stvara osecaj otvorenosti, sa druge strane previse linija mogu stvoriti tenziju
+			- Mana = Zauzima previse mesta 
+			
+		• Balans 
+			- Izbalansirati upotrebu boja! Da bude lepo za videti 
+			- Koristiti princip 60 30 10 za raspored boja 
+			- Balansirati raspored elemenata (recimo po nekoj osi)
+
+		• Poravnanje 
+			- Poravnati elemente duz neke zajednicke linije ili ose
+			- Npr sve poravnati levo (instagram feed recimo, slike, opis, itd)
+		
+
+	- Gestalt principi
+		- Similarity
+		- Proximity
+		- Continuity 
+		- Closure 
+
+
+WEB dizajn 
+	- Moramo znati par stvari:
+		- Hardver korisnika
+		- browser korisnika 
+		- Rezoluciju ekrana korisnika 
+		- Moramo planirati kome se obracamo i sa kojim ciljem 
+
+	- Web safe area - prostor koji ce svi korisnici da vide 
+	- Struktura i navigacija
+		- Struktura - sta cemo imati od sadrzaja i kako 
+		- Navigacija - kako se setati kroz strukturu efikasno
+ 		- Dizajn - Kako dizajnirati sadrzaj da bud lep i ugodan za upotrebu
+
+	- Sta treba da sadrzi DIZAJN? 
+		- Identitet
+			- Da znamo na cijem smo sajtu 
+			- Brending
+			- Osecaj poverenja i sigurnosti 
+		- Navigacija 
+			- U svakom momentu da znamo gde smo 
+			- Uvek da budu vidljive opcije koje nam trebaju za dalje kretanje/explore
+		- Fokus na sadrzaj
+			- Na efikasan nacin predstaviti sadrzaj tako da bude lak za konzumiranje 
+			- Logicko razdvajanje celina i grupisanje slicnih elemenata u grupe (inbox je jedna grupa, news druga, notifications treca ...)
+		- Alati
+			- Obezbediti korisne alate poput searcha, filtera i sl.
+
+	- Ako imamo razlicite prikaze treba da vodimo racuna o tome 
+		- PC nece izgledati isto kao mobilni 
+		- Ako imamo print pdf, ne sme da printa reklame i slicno
+		- Razlikujemo 2 pojma 
+			• E-copy 
+				- Online verzija 
+			• H-copy (hardcopy)
+				- Verzija za papir
